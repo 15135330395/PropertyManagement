@@ -1,0 +1,22 @@
+package com.utils;
+
+import com.alibaba.fastjson.JSONObject;
+import com.entity.PageBean;
+
+import java.util.List;
+
+/**
+ * @Description JsonUtil
+ * @Author WYR
+ * @CreateTime 2019-03-26 14:45
+ */
+public class JsonUtil {
+    public static <T> JSONObject getJsonObject(List<T> list, PageBean pageBean) {
+        JSONObject table = new JSONObject();
+        table.put("code", 0);
+        table.put("msg", "");
+        table.put("count", pageBean.getCount());
+        table.put("data", list);
+        return table;
+    }
+}
