@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 /**
  * @Description JdbcUtil
- * @Author WYR
+ * @Author 项目组
  * @CreateTime 2019-03-26 14:47
  */
 public class JdbcUtil {
