@@ -12,8 +12,10 @@ public class CleaningTask {
     private String taskType;
     private Date taskStart;
     private Date taskEnd;
+    private int staffId;
     private String staffName;
     private boolean completion = false;
+    // private int evaluation;
 
     public CleaningTask() {
     }
@@ -50,6 +52,14 @@ public class CleaningTask {
         this.taskEnd = taskEnd;
     }
 
+    public int getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(int staffId) {
+        this.staffId = staffId;
+    }
+
     public String getStaffName() {
         return staffName;
     }
@@ -65,4 +75,6 @@ public class CleaningTask {
     public void setCompletion(boolean completion) {
         this.completion = completion;
     }
+
+
 }

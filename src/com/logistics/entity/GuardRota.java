@@ -11,6 +11,7 @@ public class GuardRota {
     private int rotaId;
     private Date rotaStart;
     private Date rotaEnd;
+    private int staffId;
     private String staffName;
     private Date clockIn;
     private Date clockOut;
@@ -48,6 +49,13 @@ public class GuardRota {
         this.rotaEnd = rotaEnd;
     }
 
+    public int getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(int staffId) {
+        this.staffId = staffId;
+    }
 
     public String getStaffName() {
         return staffName;

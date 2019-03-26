@@ -9,6 +9,7 @@ import java.util.Date;
  */
 public class OperatingRecord {
     private int recordId;
+    private int staffId;
     private String staffName;
     private String equipmentName;
     private Date borrowingTime;
@@ -23,6 +24,14 @@ public class OperatingRecord {
 
     public void setRecordId(int recordId) {
         this.recordId = recordId;
+    }
+
+    public int getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(int staffId) {
+        this.staffId = staffId;
     }
 
     public String getStaffName() {

@@ -13,7 +13,8 @@ public class FireIncident {
     private int incidentId;
     private Date alarmTime;
     private String incidentLocale;
-    private String staffName;
+    private int[] staffId;
+    private String[] staffName;
     private String cause;
     private String loss;
 
@@ -44,11 +45,19 @@ public class FireIncident {
         this.incidentLocale = incidentLocale;
     }
 
-    public String getStaffName() {
+    public int[] getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(int[] staffId) {
+        this.staffId = staffId;
+    }
+
+    public String[] getStaffName() {
         return staffName;
     }
 
-    public void setStaffName(String staffName) {
+    public void setStaffName(String[] staffName) {
         this.staffName = staffName;
     }
 
