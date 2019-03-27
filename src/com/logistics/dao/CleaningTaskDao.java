@@ -67,5 +67,29 @@ public interface CleaningTaskDao {
      */
     int deleteTask(int taskId);
 
+    /**
+     * 添加评分
+     *
+     * @param taskId
+     * @param score
+     * @return
+     */
+    int addScore(int taskId, int score);
 
+    /**
+     * 修改评分
+     *
+     * @param taskId
+     * @param score
+     * @return
+     */
+    int updateScore(int taskId, int score);
+
+    /**
+     * 删除评分
+     *
+     * @param taskId
+     * @return
+     */
+    int deleteScore(int taskId);
 }

@@ -5,6 +5,7 @@ import com.logistics.dao.GuardRotaDao;
 import com.logistics.dao.impl.GuardRotaDaoImpl;
 import com.logistics.entity.GuardRota;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -49,5 +50,13 @@ public class GuardRotaService {
             sum += dao.deleteRota(rotaIds[i]);
         }
         return sum;
+    }
+
+    public int clockIn(int rotaId, Date clockInTime) {
+        return dao.clockIn(rotaId, clockInTime);
+    }
+
+    public int clockOut(int rotaId, Date clockOutTime) {
+        return dao.clockIn(rotaId, clockOutTime);
     }
 }

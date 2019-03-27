@@ -9,6 +9,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -78,9 +79,8 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
 
     @Override
     public int addRecord(OperatingRecord operatingRecord) {
-         /*
-        String sql = "insert into operating_record () values ()";
-        Object[] obj = {operatingRecord.getRecordId()};
+        String sql = "insert into operating_record (staff_id,equipment_id,borrowing_time) values (?,?,?)";
+        Object[] obj = {operatingRecord.getStaffId(), operatingRecord.getEquipmentName(), operatingRecord.getBorrowingTime()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
@@ -89,15 +89,13 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
         } finally {
             JdbcUtil.close();
         }
-        */
         return 0;
     }
 
     @Override
     public int updateRecord(OperatingRecord operatingRecord) {
-         /*
-        String sql = "update operating_record set    where record_id = ?";
-        Object[] obj = {operatingRecord.getRecordId()};
+        String sql = "update operating_record set staff_id=?,equipment_id=?,borrowing_time=?  where record_id = ?";
+        Object[] obj = {operatingRecord.getStaffId(), operatingRecord.getEquipmentName(), operatingRecord.getBorrowingTime(), operatingRecord.getRecordId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
@@ -106,7 +104,6 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
         } finally {
             JdbcUtil.close();
         }
-        */
         return 0;
     }
 
@@ -115,6 +112,20 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
         String sql = "delete from operating_record where record_id = ?";
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, recordId);
+            return i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return 0;
+    }
+
+    @Override
+    public int returnEquipment(int recordId, Date returnTime) {
+        String sql = "update operating_record set return_time=? where record_id = ?";
+        try {
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql, returnTime, recordId);
             return i;
         } catch (SQLException e) {
             e.printStackTrace();

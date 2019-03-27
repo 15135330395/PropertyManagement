@@ -3,6 +3,7 @@ package com.logistics.dao;
 import com.entity.PageBean;
 import com.logistics.entity.OperatingRecord;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -65,5 +66,14 @@ public interface OperatingRecordDao {
      * @return
      */
     int deleteRecord(int recordId);
+
+    /**
+     * 添加归还器材时间
+     *
+     * @param recordId
+     * @param returnTime
+     * @return
+     */
+    int returnEquipment(int recordId, Date returnTime);
 
 }

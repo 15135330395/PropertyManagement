@@ -78,9 +78,8 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
 
     @Override
     public int addTask(CleaningTask cleaningTask) {
-        /*
-        String sql = "insert into cleaning_task () values ()";
-        Object[] obj = {cleaningTask.getTaskId()};
+        String sql = "insert into cleaning_task (task_type,task_start,task_end,staff_id,completion) values (?,?,?,?,?)";
+        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskStart(), cleaningTask.getTaskEnd(), cleaningTask.getStaffId(), cleaningTask.isCompletion()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
@@ -89,15 +88,13 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
         } finally {
             JdbcUtil.close();
         }
-        */
         return 0;
     }
 
     @Override
     public int updateTask(CleaningTask cleaningTask) {
-        /*
-        String sql = "update cleaning_task set    where task_id = ?";
-        Object[] obj = {cleaningTask.getTaskId()};
+        String sql = "update cleaning_task set task_type=?,task_start=?,task_end=?,staff_id=?,completion=? where task_id = ?";
+        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskStart(), cleaningTask.getTaskEnd(), cleaningTask.getStaffId(), cleaningTask.isCompletion(), cleaningTask.getTaskId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
@@ -106,13 +103,54 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
         } finally {
             JdbcUtil.close();
         }
-        */
         return 0;
     }
 
     @Override
     public int deleteTask(int taskId) {
         String sql = "delete from cleaning_task where task_id = ?";
+        try {
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql, taskId);
+            return i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return 0;
+    }
+
+    @Override
+    public int addScore(int taskId, int score) {
+        String sql = "update cleaning_task set score=? where task_id = ?";
+        try {
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql, score, taskId);
+            return i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return 0;
+    }
+
+    @Override
+    public int updateScore(int taskId, int score) {
+        String sql = "update cleaning_task set score=? where task_id = ?";
+        try {
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql, score, taskId);
+            return i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return 0;
+    }
+
+    @Override
+    public int deleteScore(int taskId) {
+        String sql = "update cleaning_task set score=null where task_id = ?";
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, taskId);
             return i;

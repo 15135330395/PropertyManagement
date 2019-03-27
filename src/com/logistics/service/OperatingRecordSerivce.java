@@ -6,6 +6,7 @@ import com.logistics.dao.impl.OperatingRecordDaoImpl;
 import com.logistics.entity.GuardRota;
 import com.logistics.entity.OperatingRecord;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -50,5 +51,9 @@ public class OperatingRecordSerivce {
             sum += dao.deleteRecord(recordIds[i]);
         }
         return sum;
+    }
+
+    public int returnEquipment(int recordId, Date returnTime) {
+        return dao.returnEquipment(recordId, returnTime);
     }
 }

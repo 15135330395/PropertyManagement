@@ -112,6 +112,7 @@ public class GenEntityTool {
      */
     private void processAllMethod(StringBuffer sb) {
         for (int i = 0; i < colnames.length; i++) {
+
             sb.append("\tpublic void set" + initcap(colnames[i]) + "(" + sqlType2JavaType(colTypes[i]) + " "
                     + colnames[i] + "){\r\n");
             sb.append("\t\tthis." + colnames[i] + "=" + colnames[i] + ";\r\n");

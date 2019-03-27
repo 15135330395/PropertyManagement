@@ -15,7 +15,7 @@ public class CleaningTask {
     private int staffId;
     private String staffName;
     private boolean completion = false;
-    // private int evaluation;
+    private int score;
 
     public CleaningTask() {
     }
@@ -76,5 +76,11 @@ public class CleaningTask {
         this.completion = completion;
     }
 
+    public int getScore() {
+        return score;
+    }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
 }

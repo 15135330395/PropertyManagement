@@ -64,9 +64,8 @@ public class FireIncidentDaoImpl implements FireIncidentDao {
 
     @Override
     public int addIncident(FireIncident fireIncident) {
-         /*
-        String sql = "insert into fire_incident () values ()";
-        Object[] obj = {fireIncident.getIncidentId()};
+        String sql = "insert into fire_incident (alarm_time,incident_locale,staff_id,cause,loss) values (?,?,?,?,?)";
+        Object[] obj = {fireIncident.getAlarmTime(), fireIncident.getIncidentLocale(), fireIncident.getStaffId(), fireIncident.getCause(), fireIncident.getLoss()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
@@ -75,15 +74,13 @@ public class FireIncidentDaoImpl implements FireIncidentDao {
         } finally {
             JdbcUtil.close();
         }
-        */
         return 0;
     }
 
     @Override
     public int updateIncident(FireIncident fireIncident) {
-        /*
-        String sql = "update fire_incident set    where incident_id = ?";
-        Object[] obj = {fireIncident.getIncidentId()};
+        String sql = "update fire_incident set alarm_time=?,incident_locale=?,staff_id=?,cause=?,loss=? where incident_id = ?";
+        Object[] obj = {fireIncident.getAlarmTime(), fireIncident.getIncidentLocale(), fireIncident.getStaffId(), fireIncident.getCause(), fireIncident.getLoss(), fireIncident.getIncidentId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
@@ -92,7 +89,6 @@ public class FireIncidentDaoImpl implements FireIncidentDao {
         } finally {
             JdbcUtil.close();
         }
-        */
         return 0;
     }
 

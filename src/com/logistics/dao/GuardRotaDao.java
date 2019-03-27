@@ -3,6 +3,7 @@ package com.logistics.dao;
 import com.entity.PageBean;
 import com.logistics.entity.GuardRota;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -65,4 +66,22 @@ public interface GuardRotaDao {
      * @return
      */
     int deleteRota(int rotaId);
+
+    /**
+     * 上班打卡
+     *
+     * @param rotaId
+     * @param clockInTime
+     * @return
+     */
+    int clockIn(int rotaId, Date clockInTime);
+
+    /**
+     * 下班打卡
+     *
+     * @param rotaId
+     * @param clockOutTime
+     * @return
+     */
+    int clockOut(int rotaId, Date clockOutTime);
 }
