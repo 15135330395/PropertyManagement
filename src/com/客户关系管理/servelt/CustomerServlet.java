@@ -3,8 +3,10 @@ package com.客户关系管理.servelt;
 import com.alibaba.fastjson.JSONObject;
 import com.entity.PageBean;
 import com.utils.JsonUtil;
+import com.utils.StringUtil;
 import com.客户关系管理.entity.Customer;
 import com.客户关系管理.service.CustomerService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,17 +49,20 @@ public class CustomerServlet extends HttpServlet {
 
     protected void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String page = request.getParameter("page");
+        String pageIndex = request.getParameter("page");
         String limit = request.getParameter("limit");
 
         PageBean pageBean = new PageBean();
-        pageBean.setPageIndex(Integer.parseInt(page));
+        if(!StringUtil.isEmpty(pageIndex)){
+            pageBean.setPageIndex(Integer.parseInt(pageIndex));
+        }
+        pageBean.setPageIndex(Integer.parseInt(pageIndex));
         pageBean.setPageCount(Integer.parseInt(limit));
         pageBean.setCount(service.findAll().size());
 
         List<Customer> customer = service.queryAll(pageBean);
 
-        JSONObject jsonObject = JsonUtil.getJsonObject(customer,pageBean);
+        JSONObject jsonObject = JsonUtil.getJsonObject(customer, pageBean);
         response.getWriter().print(jsonObject);
     }
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
