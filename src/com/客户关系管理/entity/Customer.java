@@ -1,0 +1,111 @@
+package com.客户关系管理.entity;
+
+/**
+ * @author：Ganlan；
+ * @date：2019-03-25；
+ */
+
+public class Customer {
+
+    //客户ID
+    private int id;
+    //客户名称
+    private String name;
+    // 设置客户信息包括的客户性质（租户、现业户、前业主）
+    private String customerNature;
+    //联系方式
+    private String phone;
+    //证件号码
+    private String idCard;
+    // 车辆
+    private String car = "无";
+    // 宠物
+    private String pet = "无";
+    // 特别需求等信息
+    private String extraDemand = "无";
+    // 住户地址
+    private String addr;
+
+    public Customer(int id, String name, String customerNature, String phone, String idCard, String car, String pet, String extraDemand, String addr) {
+        this.name = name;
+        this.customerNature = customerNature;
+        this.phone = phone;
+        this.idCard = idCard;
+        this.car = car;
+        this.pet = pet;
+        this.extraDemand = extraDemand;
+        this.addr = addr;
+    }
+
+    public String getAddr() {
+        return addr;
+    }
+
+    public void setAddr(String addr) {
+        this.addr = addr;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCustomerNature() {
+        return customerNature;
+    }
+
+    public void setCustomerNature(String customerNature) {
+        this.customerNature = customerNature;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getCar() {
+        return car;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
+
+    public String getPet() {
+        return pet;
+    }
+
+    public void setPet(String pet) {
+        this.pet = pet;
+    }
+
+    public String getExtraDemand() {
+        return extraDemand;
+    }
+
+    public void setExtraDemand(String extraDemand) {
+        this.extraDemand = extraDemand;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+}
