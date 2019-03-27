@@ -2,7 +2,7 @@ package com.entity;
 
 /**
  * @Description PageBean
- * @Author WYR
+ * @Author 项目组
  * @CreateTime 2019-03-26 14:45
  */
 public class PageBean {
