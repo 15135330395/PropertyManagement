@@ -3,10 +3,10 @@ package com.客户关系管理.dao.impl;
 import com.utils.JdbcUtil;
 import com.客户关系管理.dao.CustomerRegisterDao;
 import com.客户关系管理.entity.CustomerRegister;
+import com.客户关系管理.entity.PageBean;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
-
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,7 +14,6 @@ import java.util.List;
  * @author：Ganlan；
  * @date：2019-03-26；
  */
-
 
 public class CustomerRegisterDaoImpl implements CustomerRegisterDao {
 
@@ -48,12 +47,12 @@ public class CustomerRegisterDaoImpl implements CustomerRegisterDao {
     }
 
     @Override
-    public List<CustomerRegister> findAll() {
+    public List<CustomerRegister> findAll(PageBean pageBean) {
 
         String sql = "SELECT * FROM customer_register";
 
         try {
-            List<CustomerRegister> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CustomerRegister.class));
+            List<CustomerRegister> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CustomerRegister.class),pageBean.getIndex(),pageBean.getPegeCount());
             return list;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -62,16 +61,17 @@ public class CustomerRegisterDaoImpl implements CustomerRegisterDao {
     }
 
     @Override
-    public CustomerRegister find(String name) {
+    public CustomerRegister find(String name,PageBean pageBean) {
 
-        String sql = "SELECT * FROM customer_register where name like '?%' ";
+        String sql = "SELECT * FROM customer_register where name like ? limit ?,?";
 
         try {
-            CustomerRegister customerRegister = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(CustomerRegister.class), name);
+            CustomerRegister customerRegister = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(CustomerRegister.class), name,pageBean.getIndex(),pageBean.getPegeCount());
             return customerRegister;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
+
 }

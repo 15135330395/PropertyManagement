@@ -3,9 +3,11 @@ package com.客户关系管理.dao.impl;
 import com.utils.JdbcUtil;
 import com.客户关系管理.dao.CustomerDao;
 import com.客户关系管理.entity.Customer;
+import com.客户关系管理.entity.PageBean;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -62,11 +64,11 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public List<Customer> findAll() {
+    public List<Customer> findAll(PageBean pageBean) {
 
-        String sql = "SELECT * FROM customer";
+        String sql = "SELECT * FROM customer limit ?,?";
         try {
-            List<Customer> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Customer.class));
+            List<Customer> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Customer.class),pageBean.getIndex(),pageBean.getPegeCount());
             return list;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,12 +77,12 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public Customer findByName(String name) {
+    public Customer findByName(String name,PageBean pageBean) {
 
-        String sql = "SELECT * FROM customer where name like '?%' ";
+        String sql = "SELECT * FROM customer where name like ? limit ?,?";
 
         try {
-            Customer customer = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Customer.class),name);
+            Customer customer = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Customer.class),name,pageBean.getIndex(),pageBean.getPegeCount());
             return customer;
         } catch (SQLException e) {
             e.printStackTrace();

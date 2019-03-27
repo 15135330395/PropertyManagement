@@ -2,6 +2,7 @@ package com.客户关系管理.service;
 
 import com.客户关系管理.dao.impl.CustomerRegisterDaoImpl;
 import com.客户关系管理.entity.CustomerRegister;
+import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 
@@ -27,15 +28,15 @@ public class CustomerRegisterService {
         return i;
     }
 
-    public List<CustomerRegister> findAll(){
+    public List<CustomerRegister> findAll(PageBean pageBean){
 
-        List<CustomerRegister> list = dao.findAll();
+        List<CustomerRegister> list = dao.findAll(pageBean);
         return list;
     }
 
-    public CustomerRegister find(String name){
+    public CustomerRegister find(String name,PageBean pageBean){
 
-        CustomerRegister customerRegister = dao.find(name);
+        CustomerRegister customerRegister = dao.find(name,pageBean);
         return customerRegister;
     }
 }

@@ -73,7 +73,7 @@ public class DecorateApply {
         return applyTime;
     }
 
-    public void setApplyTime(Date applyTime) {
+    public void setApply_time(Date applyTime) {
         this.applyTime = applyTime;
     }
 
@@ -81,7 +81,7 @@ public class DecorateApply {
         return secondaryDecorate;
     }
 
-    public void setSecondaryDecorate(String secondaryDecorate) {
+    public void setSecondary_decorate(String secondaryDecorate) {
         this.secondaryDecorate = secondaryDecorate;
     }
 

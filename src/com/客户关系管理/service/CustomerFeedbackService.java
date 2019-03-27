@@ -2,6 +2,7 @@ package com.客户关系管理.service;
 
 import com.客户关系管理.dao.impl.CustomerFeedbackDaoImpl;
 import com.客户关系管理.entity.CustomerFeedback;
+import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 
@@ -15,9 +16,9 @@ public class CustomerFeedbackService {
 
     CustomerFeedbackDaoImpl dao =  new CustomerFeedbackDaoImpl();
 
-    public List<CustomerFeedback> find (){
+    public List<CustomerFeedback> find (PageBean pageBean){
 
-        List<CustomerFeedback> list = dao.find();
+        List<CustomerFeedback> list = dao.find(pageBean);
         return list;
     }
 
