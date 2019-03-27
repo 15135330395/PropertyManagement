@@ -18,7 +18,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label"></label>
             <div class="layui-input-block">
-                <input type="hidden" name="payItemsById" required  value="${payItemsById.payId}"  autocomplete="off" class="layui-input">
+                <input type="hidden" name="payId" required  value="${payItemsById.payId}"  autocomplete="off" class="layui-input">
             </div>
         </div>
 

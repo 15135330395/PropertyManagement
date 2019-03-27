@@ -63,7 +63,7 @@ public class PayItemsDaoImpl implements PayItemsDao {
 
     @Override
     public int addPayItems(PayItems payItems) {
-        String sql="insert into pay_items (pay_name,pay_type,billingAccuracyl,note) values (?,?,?,?)";
+        String sql="insert into pay_items (pay_name,pay_type,billing_accuracy,note) values (?,?,?,?)";
         try {
             int i = queryRunner.update(JdbcUtils.getConnection(), sql,
                     payItems.getPayName(),payItems.getPayType(),payItems.getBillingAccuracy(),payItems.getNote());
@@ -88,7 +88,7 @@ public class PayItemsDaoImpl implements PayItemsDao {
 
     @Override
     public int updatePayItems(PayItems payItems) {
-        String sql="update pay_items set type_name=?,pay_type=?,billingAccuracyl=?,note=? where  pay_id = ?";
+        String sql="update pay_items set pay_name=?,pay_type=?,billing_accuracy=?,note=? where  pay_id = ?";
         try {
             int i = queryRunner.update(JdbcUtils.getConnection(), sql, payItems.getPayName(),
                     payItems.getPayType(),payItems.getBillingAccuracy(),payItems.getNote(),payItems.getPayId());

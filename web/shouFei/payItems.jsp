@@ -30,9 +30,15 @@
 </div>
 <div class="x-body">
     <table class="layui-hide" id="tab" lay-filter="test"></table>
+    <script type="text/html" id="toolbarDemo">
+        <div class="layui-btn-container">
+            <button class="layui-btn"  lay-event="toadd"><i class="layui-icon"> </i>添加收费项目</button>
+        </div>
+    </script>
     <script type="text/html" id="barDemo">
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        <a class="layui-btn layui-btn-xs" lay-event="addnorm">添加收费标准</a>
     </script>
 </div>
 <script>
@@ -47,17 +53,38 @@
             ,title: '收费项目表'
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
-                ,{field:'payName', title:'收费项目名称', width:'20%', fixed: 'left', unresize: true, sort: true}
-                ,{field:'payId', title:'payId'}
-                ,{field:'payType', title:'收费类别', width:'20%'}
-                ,{field:'billingAccuracy', title:'计费精度', width:'20%'}
-                ,{field:'note', title:'备注', width:'20%'}
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
+                ,{field:'payId', title:'payId',width:'10%',fixed: 'left',unresize: true, sort: true}
+                ,{field:'payName', title:'收费项目名称', width:'10%'}
+                ,{field:'payType', title:'收费类别', width:'15%'}
+                ,{field:'billingAccuracy', title:'计费精度', width:'10%'}
+                ,{field:'note', title:'备注', width:'35%'}
+                ,{fixed: 'right', title:'操作', width:'20%',toolbar: '#barDemo'}
             ]]
             ,page: true
         });
 
-
+//头工具栏事件
+        table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'toadd':
+                    //iframe窗
+                    layer.open({
+                        type: 2,
+                        title: "添加信息",
+                        closeBtn: 1, //不显示关闭按钮
+                        shade: [0],
+                        area: ['620px', '540px'],
+                        offset: 'auto', //右下角弹出
+                        anim: 2,
+                        content: ['<%=request.getContextPath()%>/shouFei/payItemsAdd.jsp', 'no'], //iframe的url，no代表不显示滚动条
+                        // end: function(){ //此处用于演示 关闭之后执行
+                        //     alert(123)
+                        // }
+                    });
+                    break;
+            };
+        });
         //监听行工具事件
         table.on('tool(test)', function(obj){
             var data = obj.data;
@@ -95,6 +122,20 @@
                     anim: 2,
                     content: ['<%=request.getContextPath()%>/PayItemsServlet?action=queryOne&id='+data.payId, 'no'], //iframe的url，no代表不显示滚动条
                 });
+            }
+            //添加收费标准，待修改！！！
+            else if(obj.event === 'addnorm'){
+                layer.open({
+                    type: 2,
+                    title: "修改信息",
+                    closeBtn: 1, //不显示关闭按钮
+                    shade: [0],
+                    area: ['620px', '540px'],
+                    offset: 'auto', //右下角弹出
+                    anim: 2,
+                    content: ['<%=request.getContextPath()%>/shouFei/payItemsAdd.jsp', 'no'], //iframe的url，no代表不显示滚动条
+                });
+
             }
         });
     });

@@ -103,7 +103,7 @@ public class PayItemsServlet extends HttpServlet {
             resultCode.setMessage("收费项目下有收费标准不可删除");
         }
         String json = JSONObject.toJSONString(resultCode);
-        System.out.println(json);
+        //System.out.println(json);
         response.getWriter().print(json);
     }
 
@@ -117,7 +117,7 @@ public class PayItemsServlet extends HttpServlet {
         }
         PayItems payItemsById = service.findPayItemsById(Integer.parseInt(id));
         request.setAttribute("payItemsById",payItemsById);
-        request.getRequestDispatcher("shouFei/payItemsAdd.jsp").forward(request,response);
+        request.getRequestDispatcher("/shouFei/payItemsAdd.jsp").forward(request,response);
 
     }
 }
