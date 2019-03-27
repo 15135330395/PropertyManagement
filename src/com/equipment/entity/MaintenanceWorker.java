@@ -8,4 +8,8 @@ import com.entity.Staff;
  * @CreateTime 2019-03-26 8:40
  */
 public class MaintenanceWorker extends Staff {
+
+
+
+
 }
