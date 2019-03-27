@@ -11,6 +11,9 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+<%
+  request.getRequestDispatcher("/shouFei/payItems.jsp").forward(request,response);
+    //request.getRequestDispatcher("/shouFei/payItemsAdd.jsp").forward(request,response);
+%>
   </body>
 </html>

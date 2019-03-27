@@ -1,0 +1,2 @@
+INSERT INTO property_management.pay_items (pay_id, pay_name, pay_type, billing_accuracy, note) VALUES (1, '物业费', '周期性', '元', null);
+INSERT INTO property_management.pay_items (pay_id, pay_name, pay_type, billing_accuracy, note) VALUES (2, '水费', '押金性', '角', null);
