@@ -22,34 +22,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
     private QueryRunner queryRunner = new QueryRunner();
 
     @Override
-    public GuardRota findRotaByRotaId(int rotaId) {
-        String sql = "select * from guard_rota where rota_id = ?";
-        try {
-            GuardRota query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(GuardRota.class), rotaId);
-            return query;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
-        }
-        return null;
-    }
-
-    @Override
-    public List<GuardRota> findRotaByStaffId(int staffId) {
-        String sql = "select * from guard_rota where staff_id = ?";
-        try {
-            List<GuardRota> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(GuardRota.class), staffId);
-            return query;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
-        }
-        return null;
-    }
-
-    @Override
     public List<GuardRota> getAllRota() {
         String sql = "select * from guard_rota";
         try {
@@ -68,6 +40,34 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
         String sql = "select * from guard_rota limit ? ,?";
         try {
             List<GuardRota> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(GuardRota.class), pageBean.getIndex(), pageBean.getPageCount());
+            return query;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return null;
+    }
+
+    @Override
+    public GuardRota findRotaByRotaId(int rotaId) {
+        String sql = "select * from guard_rota where rota_id = ?";
+        try {
+            GuardRota query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(GuardRota.class), rotaId);
+            return query;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return null;
+    }
+
+    @Override
+    public List<GuardRota> findRotaByStaffId(int staffId) {
+        String sql = "select * from guard_rota where staff_id = ?";
+        try {
+            List<GuardRota> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(GuardRota.class), staffId);
             return query;
         } catch (SQLException e) {
             e.printStackTrace();

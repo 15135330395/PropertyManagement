@@ -12,6 +12,7 @@ public class CleaningTask {
     private String taskType;
     private Date taskStart;
     private Date taskEnd;
+    private String taskArea;
     private int staffId;
     private String staffName;
     private boolean completion = false;
@@ -20,11 +21,18 @@ public class CleaningTask {
     public CleaningTask() {
     }
 
+    public CleaningTask(String taskType, Date taskStart, Date taskEnd, int staffId) {
+        this.taskType = taskType;
+        this.taskStart = taskStart;
+        this.taskEnd = taskEnd;
+        this.staffId = staffId;
+    }
+
     public int getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(int taskId) {
+    public void setTask_id(int taskId) {
         this.taskId = taskId;
     }
 
@@ -32,7 +40,7 @@ public class CleaningTask {
         return taskType;
     }
 
-    public void setTaskType(String taskType) {
+    public void setTask_type(String taskType) {
         this.taskType = taskType;
     }
 
@@ -40,7 +48,7 @@ public class CleaningTask {
         return taskStart;
     }
 
-    public void setTaskStart(Date taskStart) {
+    public void setTask_start(Date taskStart) {
         this.taskStart = taskStart;
     }
 
@@ -48,15 +56,23 @@ public class CleaningTask {
         return taskEnd;
     }
 
-    public void setTaskEnd(Date taskEnd) {
+    public void setTask_end(Date taskEnd) {
         this.taskEnd = taskEnd;
+    }
+
+    public String getTaskArea() {
+        return taskArea;
+    }
+
+    public void setTask_area(String taskArea) {
+        this.taskArea = taskArea;
     }
 
     public int getStaffId() {
         return staffId;
     }
 
-    public void setStaffId(int staffId) {
+    public void setStaff_id(int staffId) {
         this.staffId = staffId;
     }
 
@@ -64,7 +80,7 @@ public class CleaningTask {
         return staffName;
     }
 
-    public void setStaffName(String staffName) {
+    public void setStaff_name(String staffName) {
         this.staffName = staffName;
     }
 

@@ -22,7 +22,7 @@ public class OperatingRecord {
         return recordId;
     }
 
-    public void setRecordId(int recordId) {
+    public void setRecord_id(int recordId) {
         this.recordId = recordId;
     }
 
@@ -30,7 +30,7 @@ public class OperatingRecord {
         return staffId;
     }
 
-    public void setStaffId(int staffId) {
+    public void setStaff_id(int staffId) {
         this.staffId = staffId;
     }
 
@@ -38,7 +38,7 @@ public class OperatingRecord {
         return staffName;
     }
 
-    public void setStaffName(String staffName) {
+    public void setStaff_name(String staffName) {
         this.staffName = staffName;
     }
 
@@ -46,7 +46,7 @@ public class OperatingRecord {
         return equipmentName;
     }
 
-    public void setEquipmentName(String equipmentName) {
+    public void setEquipment_name(String equipmentName) {
         this.equipmentName = equipmentName;
     }
 
@@ -54,7 +54,7 @@ public class OperatingRecord {
         return borrowingTime;
     }
 
-    public void setBorrowingTime(Date borrowingTime) {
+    public void setBorrowing_time(Date borrowingTime) {
         this.borrowingTime = borrowingTime;
     }
 
@@ -62,7 +62,7 @@ public class OperatingRecord {
         return returnTime;
     }
 
-    public void setReturnTime(Date returnTime) {
+    public void setReturn_time(Date returnTime) {
         this.returnTime = returnTime;
     }
 }

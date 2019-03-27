@@ -22,6 +22,34 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
     private QueryRunner queryRunner = new QueryRunner();
 
     @Override
+    public List<OperatingRecord> getAllRecord() {
+        String sql = "select * from operating_record";
+        try {
+            List<OperatingRecord> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(OperatingRecord.class));
+            return query;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return null;
+    }
+
+    @Override
+    public List<OperatingRecord> getAllRecordByPage(PageBean pageBean) {
+        String sql = "select * from operating_record limit ? ,?";
+        try {
+            List<OperatingRecord> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(OperatingRecord.class), pageBean.getIndex(), pageBean.getPageCount());
+            return query;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return null;
+    }
+
+    @Override
     public OperatingRecord findRecordByRecordId(int recordId) {
         String sql = "select * from operating_record where record_id = ?";
         try {
@@ -40,34 +68,6 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
         String sql = "select * from operating_record where staff_id = ?";
         try {
             List<OperatingRecord> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(OperatingRecord.class), staffId);
-            return query;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
-        }
-        return null;
-    }
-
-    @Override
-    public List<OperatingRecord> findAllRecord() {
-        String sql = "select * from operating_record";
-        try {
-            List<OperatingRecord> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(OperatingRecord.class));
-            return query;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
-        }
-        return null;
-    }
-
-    @Override
-    public List<OperatingRecord> findAllRecordByPage(PageBean pageBean) {
-        String sql = "select * from operating_record limit ? ,?";
-        try {
-            List<OperatingRecord> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(OperatingRecord.class), pageBean.getIndex(), pageBean.getPageCount());
             return query;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -13,6 +13,21 @@ import java.util.List;
  */
 public interface GuardRotaDao {
     /**
+     * 查询所有的值班表
+     *
+     * @return
+     */
+    List<GuardRota> getAllRota();
+
+    /**
+     * 查询所有值班表的分页
+     *
+     * @param pageBean
+     * @return
+     */
+    List<GuardRota> getAllRotaByPage(PageBean pageBean);
+
+    /**
      * 通过排班表ID查找
      *
      * @param rotaId
@@ -27,21 +42,6 @@ public interface GuardRotaDao {
      * @return
      */
     List<GuardRota> findRotaByStaffId(int staffId);
-
-    /**
-     * 查询所有的值班表
-     *
-     * @return
-     */
-    List<GuardRota> getAllRota();
-
-    /**
-     * 查询所有值班表的分页
-     *
-     * @param pageBean
-     * @return
-     */
-    List<GuardRota> getAllRotaByPage(PageBean pageBean);
 
     /**
      * 添加值班表

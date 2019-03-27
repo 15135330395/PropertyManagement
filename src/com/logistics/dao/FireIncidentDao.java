@@ -12,14 +12,6 @@ import java.util.List;
  */
 public interface FireIncidentDao {
     /**
-     * 通过事故ID查找
-     *
-     * @param incidentId
-     * @return
-     */
-    FireIncident findIncidentById(int incidentId);
-
-    /**
      * 查询所有的事故
      *
      * @return
@@ -33,6 +25,14 @@ public interface FireIncidentDao {
      * @return
      */
     List<FireIncident> getAllIncidentByPage(PageBean pageBean);
+
+    /**
+     * 通过事故ID查找
+     *
+     * @param incidentId
+     * @return
+     */
+    FireIncident findIncidentById(int incidentId);
 
     /**
      * 添加事故

@@ -21,20 +21,6 @@ public class FireIncidentDaoImpl implements FireIncidentDao {
     private QueryRunner queryRunner = new QueryRunner();
 
     @Override
-    public FireIncident findIncidentById(int incidentId) {
-        String sql = "select * from fire_incident where incident_id = ?";
-        try {
-            FireIncident query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(FireIncident.class), incidentId);
-            return query;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
-        }
-        return null;
-    }
-
-    @Override
     public List<FireIncident> getAllIncident() {
         String sql = "select * from fire_incident";
         try {
@@ -53,6 +39,20 @@ public class FireIncidentDaoImpl implements FireIncidentDao {
         String sql = "select * from fire_incident limit ? ,?";
         try {
             List<FireIncident> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(FireIncident.class), pageBean.getIndex(), pageBean.getPageCount());
+            return query;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return null;
+    }
+
+    @Override
+    public FireIncident findIncidentById(int incidentId) {
+        String sql = "select * from fire_incident where incident_id = ?";
+        try {
+            FireIncident query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(FireIncident.class), incidentId);
             return query;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -25,7 +25,7 @@ public class FireIncident {
         return incidentId;
     }
 
-    public void setIncidentId(int incidentId) {
+    public void setIncident_id(int incidentId) {
         this.incidentId = incidentId;
     }
 
@@ -33,7 +33,7 @@ public class FireIncident {
         return alarmTime;
     }
 
-    public void setAlarmTime(Date alarmTime) {
+    public void setAlarm_time(Date alarmTime) {
         this.alarmTime = alarmTime;
     }
 
@@ -41,7 +41,7 @@ public class FireIncident {
         return incidentLocale;
     }
 
-    public void setIncidentLocale(String incidentLocale) {
+    public void setIncident_locale(String incidentLocale) {
         this.incidentLocale = incidentLocale;
     }
 
@@ -49,7 +49,7 @@ public class FireIncident {
         return staffId;
     }
 
-    public void setStaffId(int[] staffId) {
+    public void setStaff_id(int[] staffId) {
         this.staffId = staffId;
     }
 
@@ -57,7 +57,7 @@ public class FireIncident {
         return staffName;
     }
 
-    public void setStaffName(String[] staffName) {
+    public void setStaff_name(String[] staffName) {
         this.staffName = staffName;
     }
 

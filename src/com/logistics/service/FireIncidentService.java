@@ -15,16 +15,16 @@ import java.util.List;
 public class FireIncidentService {
     private FireIncidentDao dao = new FireIncidentDaoImpl();
 
-    public FireIncident findIncidentById(int incidentId) {
-        return dao.findIncidentById(incidentId);
-    }
-
     public List<FireIncident> getAllIncident() {
         return dao.getAllIncident();
     }
 
     public List<FireIncident> getAllIncidentByPage(PageBean pageBean) {
         return dao.getAllIncidentByPage(pageBean);
+    }
+
+    public FireIncident findIncidentById(int incidentId) {
+        return dao.findIncidentById(incidentId);
     }
 
     public int addIncident(FireIncident fireIncident) {
@@ -37,13 +37,5 @@ public class FireIncidentService {
 
     public int deleteIncident(int incidentId) {
         return dao.deleteIncident(incidentId);
-    }
-
-    public int deleteIncidents(int... incidentIds) {
-        int sum = 0;
-        for (int i = 0; i < incidentIds.length; i++) {
-            sum += dao.deleteIncident(incidentIds[i]);
-        }
-        return sum;
     }
 }

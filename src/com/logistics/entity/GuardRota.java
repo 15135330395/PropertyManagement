@@ -29,7 +29,7 @@ public class GuardRota {
      *
      * @param rotaId
      */
-    public void setRotaId(int rotaId) {
+    public void setRota_id(int rotaId) {
         this.rotaId = rotaId;
     }
 
@@ -37,7 +37,7 @@ public class GuardRota {
         return rotaStart;
     }
 
-    public void setRotaStart(Date rotaStart) {
+    public void setRota_start(Date rotaStart) {
         this.rotaStart = rotaStart;
     }
 
@@ -45,7 +45,7 @@ public class GuardRota {
         return rotaEnd;
     }
 
-    public void setRotaEnd(Date rotaEnd) {
+    public void setRota_end(Date rotaEnd) {
         this.rotaEnd = rotaEnd;
     }
 
@@ -53,7 +53,7 @@ public class GuardRota {
         return staffId;
     }
 
-    public void setStaffId(int staffId) {
+    public void setStaff_id(int staffId) {
         this.staffId = staffId;
     }
 
@@ -61,7 +61,7 @@ public class GuardRota {
         return staffName;
     }
 
-    public void setStaffName(String staffName) {
+    public void setStaff_name(String staffName) {
         this.staffName = staffName;
     }
 
@@ -69,7 +69,7 @@ public class GuardRota {
         return clockIn;
     }
 
-    public void setClockIn(Date clockIn) {
+    public void setClock_in(Date clockIn) {
         this.clockIn = clockIn;
     }
 
@@ -77,7 +77,7 @@ public class GuardRota {
         return clockOut;
     }
 
-    public void setClockOut(Date clockOut) {
+    public void setClock_out(Date clockOut) {
         this.clockOut = clockOut;
     }
 }

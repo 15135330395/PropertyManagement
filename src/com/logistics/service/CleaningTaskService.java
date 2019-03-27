@@ -15,20 +15,20 @@ import java.util.List;
 public class CleaningTaskService {
     private CleaningTaskDao dao = new CleaningTaskDaoImpl();
 
-    public CleaningTask findTaskByTaskId(int taskId) {
-        return dao.findTaskByTaskId(taskId);
-    }
-
-    public List<CleaningTask> findTaskByStaffId(int staffId) {
-        return dao.findTaskByStaffId(staffId);
-    }
-
     public List<CleaningTask> getAllTask() {
         return dao.getAllTask();
     }
 
     public List<CleaningTask> getAllTaskByPage(PageBean pageBean) {
         return dao.getAllTaskByPage(pageBean);
+    }
+
+    public CleaningTask findTaskByTaskId(int taskId) {
+        return dao.findTaskByTaskId(taskId);
+    }
+
+    public List<CleaningTask> findTaskByStaffId(int staffId) {
+        return dao.findTaskByStaffId(staffId);
     }
 
     public int addTask(CleaningTask cleaningTask) {
@@ -41,14 +41,6 @@ public class CleaningTaskService {
 
     public int deleteTask(int taskId) {
         return dao.deleteTask(taskId);
-    }
-
-    public int deleteTasks(int... taskIds) {
-        int sum = 0;
-        for (int i = 0; i < taskIds.length; i++) {
-            sum += dao.deleteTask(taskIds[i]);
-        }
-        return sum;
     }
 
     public int addScore(int taskId, int score) {

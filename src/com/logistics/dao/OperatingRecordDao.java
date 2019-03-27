@@ -13,6 +13,21 @@ import java.util.List;
  */
 public interface OperatingRecordDao {
     /**
+     * 查询所有的使用记录
+     *
+     * @return
+     */
+    List<OperatingRecord> getAllRecord();
+
+    /**
+     * 查询所有使用记录的分页
+     *
+     * @param pageBean
+     * @return
+     */
+    List<OperatingRecord> getAllRecordByPage(PageBean pageBean);
+
+    /**
      * 通过记录ID查找
      *
      * @param recordId
@@ -27,21 +42,6 @@ public interface OperatingRecordDao {
      * @return
      */
     List<OperatingRecord> findRecordByStaffId(int staffId);
-
-    /**
-     * 查询所有的使用记录
-     *
-     * @return
-     */
-    List<OperatingRecord> findAllRecord();
-
-    /**
-     * 查询所有使用记录的分页
-     *
-     * @param pageBean
-     * @return
-     */
-    List<OperatingRecord> findAllRecordByPage(PageBean pageBean);
 
     /**
      * 添加使用记录

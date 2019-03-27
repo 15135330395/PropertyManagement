@@ -16,20 +16,20 @@ import java.util.List;
 public class GuardRotaService {
     private GuardRotaDao dao = new GuardRotaDaoImpl();
 
-    public GuardRota findRotaByRotaId(int rotaId) {
-        return dao.findRotaByRotaId(rotaId);
-    }
-
-    public List<GuardRota> findRotaByStaffId(int staffId) {
-        return dao.findRotaByStaffId(staffId);
-    }
-
     public List<GuardRota> getAllRota() {
         return dao.getAllRota();
     }
 
     public List<GuardRota> getAllRotaByPage(PageBean pageBean) {
         return dao.getAllRotaByPage(pageBean);
+    }
+
+    public GuardRota findRotaByRotaId(int rotaId) {
+        return dao.findRotaByRotaId(rotaId);
+    }
+
+    public List<GuardRota> findRotaByStaffId(int staffId) {
+        return dao.findRotaByStaffId(staffId);
     }
 
     public int addRota(GuardRota guardRota) {
@@ -42,14 +42,6 @@ public class GuardRotaService {
 
     public int deleteRota(int rotaId) {
         return dao.deleteRota(rotaId);
-    }
-
-    public int deleteRotas(int... rotaIds) {
-        int sum = 0;
-        for (int i = 0; i < rotaIds.length; i++) {
-            sum += dao.deleteRota(rotaIds[i]);
-        }
-        return sum;
     }
 
     public int clockIn(int rotaId, Date clockInTime) {

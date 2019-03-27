@@ -21,34 +21,6 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
     private QueryRunner queryRunner = new QueryRunner();
 
     @Override
-    public CleaningTask findTaskByTaskId(int taskId) {
-        String sql = "select * from cleaning_task where task_id = ?";
-        try {
-            CleaningTask query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(CleaningTask.class), taskId);
-            return query;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
-        }
-        return null;
-    }
-
-    @Override
-    public List<CleaningTask> findTaskByStaffId(int staffId) {
-        String sql = "select * from cleaning_task where staff_id = ?";
-        try {
-            List<CleaningTask> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CleaningTask.class), staffId);
-            return query;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
-        }
-        return null;
-    }
-
-    @Override
     public List<CleaningTask> getAllTask() {
         String sql = "select * from cleaning_task";
         try {
@@ -77,9 +49,37 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
     }
 
     @Override
+    public CleaningTask findTaskByTaskId(int taskId) {
+        String sql = "select * from cleaning_task where task_id = ?";
+        try {
+            CleaningTask query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(CleaningTask.class), taskId);
+            return query;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return null;
+    }
+
+    @Override
+    public List<CleaningTask> findTaskByStaffId(int staffId) {
+        String sql = "select * from cleaning_task where staff_id = ?";
+        try {
+            List<CleaningTask> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CleaningTask.class), staffId);
+            return query;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtil.close();
+        }
+        return null;
+    }
+
+    @Override
     public int addTask(CleaningTask cleaningTask) {
-        String sql = "insert into cleaning_task (task_type,task_start,task_end,staff_id,completion) values (?,?,?,?,?)";
-        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskStart(), cleaningTask.getTaskEnd(), cleaningTask.getStaffId(), cleaningTask.isCompletion()};
+        String sql = "insert into cleaning_task (task_type,task_start,task_end,task_area,staff_id,completion) values (?,?,?,?,?,0)";
+        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskStart(), cleaningTask.getTaskEnd(), cleaningTask.getTaskArea(), cleaningTask.getStaffId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
@@ -93,8 +93,8 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
 
     @Override
     public int updateTask(CleaningTask cleaningTask) {
-        String sql = "update cleaning_task set task_type=?,task_start=?,task_end=?,staff_id=?,completion=? where task_id = ?";
-        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskStart(), cleaningTask.getTaskEnd(), cleaningTask.getStaffId(), cleaningTask.isCompletion(), cleaningTask.getTaskId()};
+        String sql = "update cleaning_task set task_type=?,task_start=?,task_end=?,task_area=?,staff_id=?,completion=? where task_id = ?";
+        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskStart(), cleaningTask.getTaskEnd(), cleaningTask.getTaskArea(), cleaningTask.getStaffId(), cleaningTask.isCompletion(), cleaningTask.getTaskId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;

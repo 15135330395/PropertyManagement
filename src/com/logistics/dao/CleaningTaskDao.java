@@ -11,21 +11,6 @@ import java.util.List;
  * @CreateTime 2019-03-26 19:11
  */
 public interface CleaningTaskDao {
-    /**
-     * 通过任务ID查找
-     *
-     * @param taskId
-     * @return
-     */
-    CleaningTask findTaskByTaskId(int taskId);
-
-    /**
-     * 通过员工ID查找
-     *
-     * @param staffId
-     * @return
-     */
-    List<CleaningTask> findTaskByStaffId(int staffId);
 
     /**
      * 查询所有的保洁任务
@@ -42,6 +27,21 @@ public interface CleaningTaskDao {
      */
     List<CleaningTask> getAllTaskByPage(PageBean pageBean);
 
+    /**
+     * 通过任务ID查找
+     *
+     * @param taskId
+     * @return
+     */
+    CleaningTask findTaskByTaskId(int taskId);
+
+    /**
+     * 通过员工ID查找
+     *
+     * @param staffId
+     * @return
+     */
+    List<CleaningTask> findTaskByStaffId(int staffId);
 
     /**
      * 添加保洁任务
