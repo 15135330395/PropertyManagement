@@ -1,5 +1,6 @@
 package com.客户关系管理.service;
 
+import com.entity.PageBean;
 import com.客户关系管理.dao.impl.DecorateApplyDaoImpl;
 import com.客户关系管理.entity.DecorateApply;
 

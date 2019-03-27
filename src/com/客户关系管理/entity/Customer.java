@@ -26,7 +26,7 @@ public class Customer {
     // 住户地址
     private String addr;
 
-    public Customer(int id, String name, String customerNature, String phone, String idCard, String car, String pet, String extraDemand, String addr) {
+    public Customer(String name, String customerNature, String phone, String idCard, String car, String pet, String extraDemand, String addr) {
         this.name = name;
         this.customerNature = customerNature;
         this.phone = phone;

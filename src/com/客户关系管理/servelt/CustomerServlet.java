@@ -5,7 +5,6 @@ import com.entity.PageBean;
 import com.utils.JsonUtil;
 import com.客户关系管理.entity.Customer;
 import com.客户关系管理.service.CustomerService;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -62,7 +61,12 @@ public class CustomerServlet extends HttpServlet {
         response.getWriter().print(jsonObject);
     }
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+
+        String id = request.getParameter("id");
+
+        int i = service.delete(Integer.parseInt(id));
+
+        response.getWriter().print(i);
     }
     protected void findByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -81,9 +85,36 @@ public class CustomerServlet extends HttpServlet {
         response.getWriter().print(jsonObject);
     }
     protected void updata(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+
+        String name = request.getParameter("name");
+        String customerNature = request.getParameter("customerNature");
+        String phone = request.getParameter("phone");
+        String idCard = request.getParameter("idCard");
+        String car = request.getParameter("car");
+        String pet = request.getParameter("pet");
+        String extraDemand = request.getParameter("extraDemand");
+        String addr = request.getParameter("addr");
+
+        Customer customer = new Customer(name, customerNature, phone, idCard, car, pet, extraDemand, addr);
+        int i = service.update(customer);
+
+        response.getWriter().print(i);
+
     }
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+
+        String name = request.getParameter("name");
+        String customerNature = request.getParameter("customerNature");
+        String phone = request.getParameter("phone");
+        String idCard = request.getParameter("idCard");
+        String car = request.getParameter("car");
+        String pet = request.getParameter("pet");
+        String extraDemand = request.getParameter("extraDemand");
+        String addr = request.getParameter("addr");
+
+        Customer customer = new Customer(name, customerNature, phone, idCard, car, pet, extraDemand, addr);
+
+        int i = service.add(customer);
+        response.getWriter().print(i);
     }
 }
