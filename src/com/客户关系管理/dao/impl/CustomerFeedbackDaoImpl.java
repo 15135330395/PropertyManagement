@@ -1,9 +1,9 @@
 package com.客户关系管理.dao.impl;
 
+import com.entity.PageBean;
 import com.utils.JdbcUtil;
 import com.客户关系管理.dao.CustomerFeedbackDao;
 import com.客户关系管理.entity.CustomerFeedback;
-import com.客户关系管理.entity.PageBean;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
@@ -26,7 +26,7 @@ public class CustomerFeedbackDaoImpl implements CustomerFeedbackDao {
         String sql = "select * from customer_feedback limit ?,?";
 
         try {
-            List<CustomerFeedback> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CustomerFeedback.class),pageBean.getIndex(),pageBean.getPegeCount());
+            List<CustomerFeedback> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CustomerFeedback.class),pageBean.getIndex(),pageBean.getPageCount());
             return list;
         } catch (SQLException e) {
             e.printStackTrace();

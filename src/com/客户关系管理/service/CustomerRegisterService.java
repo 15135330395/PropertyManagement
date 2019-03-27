@@ -2,7 +2,6 @@ package com.客户关系管理.service;
 
 import com.客户关系管理.dao.impl.CustomerRegisterDaoImpl;
 import com.客户关系管理.entity.CustomerRegister;
-import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 

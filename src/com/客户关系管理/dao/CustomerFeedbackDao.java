@@ -1,7 +1,7 @@
 package com.客户关系管理.dao;
 
+import com.entity.PageBean;
 import com.客户关系管理.entity.CustomerFeedback;
-import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface CustomerFeedbackDao {
 
-    public List<CustomerFeedback> find (PageBean pageBean);
+    public List<CustomerFeedback> find(PageBean pageBean) ;
 
     public int update(CustomerFeedback customerFeedback);
 

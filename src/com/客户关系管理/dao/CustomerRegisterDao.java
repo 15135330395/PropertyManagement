@@ -1,7 +1,7 @@
 package com.客户关系管理.dao;
 
+import com.entity.PageBean;
 import com.客户关系管理.entity.CustomerRegister;
-import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 
