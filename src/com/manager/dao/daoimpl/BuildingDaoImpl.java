@@ -130,4 +130,35 @@ public class BuildingDaoImpl implements BuildingDao {
         }
         return 0;
     }
+
+    @Override
+    public int findBuildingCountByArea(int areaId) {
+        String sql = "select count(*) count from building where area_id=?";
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            Connection connection = JdbcUtil.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,areaId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int count = rs.getInt("count");
+                return count;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtil.close();
+        }
+        return 0;
+    }
 }

@@ -20,4 +20,6 @@ public interface BuildingDao {
 
     public int updateBuilding(Building building);
 
+    public int findBuildingCountByArea(int areaId);
+
 }

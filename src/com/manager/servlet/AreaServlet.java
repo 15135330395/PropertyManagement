@@ -2,6 +2,11 @@ package com.manager.servlet;
 
 import com.alibaba.fastjson.JSONObject;
 import com.entity.PageBean;
+import com.entity.ResultCode;
+import com.manager.dao.AreaDao;
+import com.manager.dao.BuildingDao;
+import com.manager.dao.daoimpl.AreaDaoImpl;
+import com.manager.dao.daoimpl.BuildingDaoImpl;
 import com.manager.entity.Area;
 import com.manager.service.AreaService;
 import com.utils.JsonUtil;
@@ -62,39 +67,39 @@ public class AreaServlet extends HttpServlet {
     }
 
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String typeName = request.getParameter("typeName");
-        NewsTypeDao dao = new NewsTypeDaoImpl();
-        int i = dao.addNewsType(new NewsType(typeName));
+        String areaName = request.getParameter("areaName");
+        AreaDao dao = new AreaDaoImpl();
+        int i = dao.addArea(new Area(areaName));
         response.getWriter().print(i);
     }
     protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String typeId = request.getParameter("typeId");
-        String typeName = request.getParameter("typeName");
-        NewsTypeDao dao = new NewsTypeDaoImpl();
-        int i = dao.updateNewsType(new NewsType(Integer.parseInt(typeId),typeName));
+        String areaId = request.getParameter("areaId");
+        String areaName = request.getParameter("areaName");
+        AreaDao dao = new AreaDaoImpl();
+        int i = dao.updateArea(new Area(Integer.parseInt(areaId),areaName));
         response.getWriter().print(i);
     }
 
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String typeId = request.getParameter("typeId");
-        int id = Integer.parseInt(typeId);
-        NewsDao newsDao = new NewsDaoImpl();
-        int newsCount = newsDao.findNewsCountByType(id);
+        String areaId = request.getParameter("areaId");
+        int id = Integer.parseInt(areaId);
+        BuildingDao buildingDao = new BuildingDaoImpl();
+        int buildingCount = buildingDao.findBuildingCountByArea(id);
         ResultCode resultCode =  new ResultCode();
 
-        if(newsCount==0){
-            NewsTypeDao dao = new NewsTypeDaoImpl();
-            int i = dao.deleteNewsType(id);
+        if(buildingCount==0){
+            AreaDao dao = new AreaDaoImpl();
+            int i = dao.deleteArea(id);
             if(i>0){
                 resultCode.setCode("2001");
-                resultCode.setMessage("新闻类型删除成功");
+                resultCode.setMessage("区域删除成功");
             }else{
                 resultCode.setCode("2002");
-                resultCode.setMessage("新闻类型已删除或不存在");
+                resultCode.setMessage("区域已删除或不存在");
             }
         }else{
             resultCode.setCode("2003");
-            resultCode.setMessage("新闻类型下有新闻不可删除");
+            resultCode.setMessage("区域下有楼宇不可删除");
         }
         String json = JSONObject.toJSONString(resultCode);
         System.out.println(json);
@@ -102,29 +107,29 @@ public class AreaServlet extends HttpServlet {
     }
 
     protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        NewsTypeDao dao = new NewsTypeDaoImpl();
+        AreaDao dao = new AreaDaoImpl();
         String ids = request.getParameter("ids");
         System.out.println(ids);
         String[] id = ids.split(",");
         int sum=0;
-        for (String typeId:id) {
-            int  i = dao.deleteNewsType(Integer.parseInt(typeId));
+        for (String areaId:id) {
+            int  i = dao.deleteArea(Integer.parseInt(areaId));
             sum+=i;
         }
         response.getWriter().print(""+sum);
     }
 
     protected void queryOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        NewsTypeDao dao = new NewsTypeDaoImpl();
+        AreaDao dao = new AreaDaoImpl();
         String id = request.getParameter("id");
-        int typeId=-1;
+        int areaId=-1;
         if(!StringUtil.isEmpty(id)){
-            typeId=Integer.parseInt(id);
+            areaId=Integer.parseInt(id);
         }
-        NewsType type = dao.findTypeById(typeId);
+        Area area = dao.findAreaById(areaId);
 
-        request.setAttribute("type",type);
-        request.getRequestDispatcher("/background/newsType/addType.jsp").forward(request,response);
+        request.setAttribute("area",area);
+        request.getRequestDispatcher("/background/area/addArea.jsp").forward(request,response);
 
     }
 }

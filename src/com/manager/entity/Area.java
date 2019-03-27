@@ -17,6 +17,10 @@ public class Area {
         this.areaName = areaName;
     }
 
+    public Area(String areaName) {
+        this.areaName = areaName;
+    }
+
     public int getAreaId() {
         return areaId;
     }
