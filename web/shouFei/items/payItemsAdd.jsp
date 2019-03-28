@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../commons/info.jsp"%>
+<%@ include file="../../commons/info.jsp"%>
 <html>
 <head>
     <title>收费项目添加</title>
@@ -21,7 +21,6 @@
                 <input type="hidden" name="payId" required  value="${payItemsById.payId}"  autocomplete="off" class="layui-input">
             </div>
         </div>
-
         <div class="layui-form-item">
             <label class="layui-form-label">收费项目名称：</label>
             <div class="layui-input-block">
@@ -92,7 +91,6 @@
             var payType = data.field.payType;
             var billingAccuracy = data.field.billingAccuracy;
             var note = data.field.note;
-
             if(payId!=""){
                 $.ajax({
                     type:"post",

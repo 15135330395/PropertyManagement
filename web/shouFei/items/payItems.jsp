@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../commons/info.jsp"%>
+<%@include file="../../commons/info.jsp"%>
 <html>
 <head>
     <title>收费设置</title>
@@ -38,13 +38,12 @@
     <script type="text/html" id="barDemo">
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-        <a class="layui-btn layui-btn-xs" lay-event="addnorm">添加收费标准</a>
+        <a class="layui-btn layui-btn-xs" lay-event="querynorm">显示收费标准</a>
     </script>
 </div>
 <script>
     layui.use('table', function(){
         var table = layui.table;
-
         table.render({
             elem: '#tab'
             // Servlet 返回一个json字符串
@@ -77,7 +76,7 @@
                         area: ['620px', '540px'],
                         offset: 'auto', //右下角弹出
                         anim: 2,
-                        content: ['<%=request.getContextPath()%>/shouFei/payItemsAdd.jsp', 'no'], //iframe的url，no代表不显示滚动条
+                        content: ['<%=request.getContextPath()%>/shouFei/items/payItemsAdd.jsp', 'no'], //iframe的url，no代表不显示滚动条
                         // end: function(){ //此处用于演示 关闭之后执行
                         //     alert(123)
                         // }
@@ -117,23 +116,23 @@
                     title: "修改信息",
                     closeBtn: 1, //不显示关闭按钮
                     shade: [0],
-                    area: ['620px', '540px'],
+                    area: ['700px', '650px'],
                     offset: 'auto', //右下角弹出
                     anim: 2,
                     content: ['<%=request.getContextPath()%>/PayItemsServlet?action=queryOne&id='+data.payId, 'no'], //iframe的url，no代表不显示滚动条
                 });
             }
-            //添加收费标准，待修改！！！
-            else if(obj.event === 'addnorm'){
+            //查看收费标准
+            else if(obj.event === 'querynorm'){
                 layer.open({
                     type: 2,
-                    title: "修改信息",
+                    title: "收费标准",
                     closeBtn: 1, //不显示关闭按钮
                     shade: [0],
-                    area: ['620px', '540px'],
+                    area: ['1500px', '900px'],
                     offset: 'auto', //右下角弹出
                     anim: 2,
-                    content: ['<%=request.getContextPath()%>/shouFei/payItemsAdd.jsp', 'no'], //iframe的url，no代表不显示滚动条
+                    content: ['<%=request.getContextPath()%>/PayItemsServlet?action=queryList&id='+data.payId, 'no'], //iframe的url，no代表不显示滚动条
                 });
 
             }

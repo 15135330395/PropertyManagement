@@ -18,5 +18,6 @@ public interface PayItemsDao {
     public int updatePayItems(PayItems payItems);
 
     public List<PayItems> queryByPage(PageBean pageBean);
+
     public PayItems findPayItemsById(int id);
 }

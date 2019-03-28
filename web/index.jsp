@@ -12,8 +12,8 @@
   </head>
   <body>
 <%
-  request.getRequestDispatcher("/shouFei/payItems.jsp").forward(request,response);
-    //request.getRequestDispatcher("/shouFei/payItemsAdd.jsp").forward(request,response);
+   request.getRequestDispatcher("/shouFei/items/payItems.jsp").forward(request,response);
+  //request.getRequestDispatcher("/shouFei/norm/payNorm.jsp").forward(request,response);
 %>
   </body>
 </html>

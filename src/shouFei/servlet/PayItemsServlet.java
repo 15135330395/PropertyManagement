@@ -63,7 +63,6 @@ public class PayItemsServlet extends HttpServlet {
     }
 
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //String payId = request.getParameter("payId");
         String payName = request.getParameter("payName");
         String payType = request.getParameter("payType");
         String billingAaccuracy = request.getParameter("billingAaccuracy");
@@ -75,11 +74,13 @@ public class PayItemsServlet extends HttpServlet {
     protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String payId=request.getParameter("payId");
         String payName = request.getParameter("payName");
+        System.out.println("payName"+payName);
         String payType = request.getParameter("payType");
         String billingAccuracy = request.getParameter("billingAccuracy");
         String note = request.getParameter("note");
         int i = service.updatePayItems(new PayItems(Integer.parseInt(payId),payName, payType,billingAccuracy,note));
         response.getWriter().print(i);
+        System.out.println("i"+i);
     }
 
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -117,7 +118,7 @@ public class PayItemsServlet extends HttpServlet {
         }
         PayItems payItemsById = service.findPayItemsById(Integer.parseInt(id));
         request.setAttribute("payItemsById",payItemsById);
-        request.getRequestDispatcher("/shouFei/payItemsAdd.jsp").forward(request,response);
+        request.getRequestDispatcher("/shouFei/items/payItemsAdd.jsp").forward(request,response);
 
     }
 }

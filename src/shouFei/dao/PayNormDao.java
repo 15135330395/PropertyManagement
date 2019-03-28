@@ -1,5 +1,6 @@
 package shouFei.dao;
 
+import shouFei.entity.PageBean;
 import shouFei.entity.PayNorm;
 
 import java.util.List;
@@ -12,10 +13,15 @@ public interface PayNormDao {
 
     public int addPayNorm(PayNorm payNorm);
 
-    public int deletePayNorm(int id);
+    public int deletePayNorm(int NormId);
 
     public int updatePayNorm(PayNorm payNorm);
 
-    public int findPayNormCountById(int id);
+    public PayNorm findPayNormById(int NormId);
 
+    public List<PayNorm> queryByPage(PageBean pageBean);
+
+    public int findPayNormCountById(int normId);
+
+    public List<PayNorm> findSamePayId(int id);
 }
