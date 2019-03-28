@@ -4,6 +4,7 @@ package com.equipment.dao;/*
  * @Description: ReportDao
  */
 
+import com.entity.PageBean;
 import com.equipment.entity.Report;
 
 import java.util.List;
@@ -19,6 +20,8 @@ public interface ReportDao {
 
    public int deleteReportByReportId(int reportId);
 
+   public List<Report> queryPage(PageBean pageBean);
 
+   public Report findReportById(int reportId);
 
 }

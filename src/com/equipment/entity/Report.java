@@ -4,7 +4,8 @@ package com.equipment.entity;/*
  * @Description: Report
  */
 
-import java.sql.Date;
+
+import java.util.Date;
 
 public class Report {
 

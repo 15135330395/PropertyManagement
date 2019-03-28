@@ -4,6 +4,7 @@ package com.equipment.service;/*
  * @Description: ReportService
  */
 
+import com.entity.PageBean;
 import com.equipment.dao.ReportDao;
 import com.equipment.dao.daoImpl.ReportDaoImpl;
 import com.equipment.entity.Report;
@@ -29,5 +30,12 @@ public class ReportService {
         return dao.deleteReportByReportId(reportId);
     }
 
+    public List<Report> queryPage(PageBean pageBean){
+        return dao.queryPage(pageBean);
+    }
+
+    public Report findReportById(int reportId){
+        return dao.findReportById(reportId);
+    }
 
 }

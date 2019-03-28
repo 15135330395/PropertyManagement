@@ -49,25 +49,31 @@ doPost(request,response);
     protected void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Contract> contractList = contractService.findAll();
         request.setAttribute("contractList",contractList);
-        request.getRequestDispatcher("查询页面").forward(request,response);
+        request.getRequestDispatcher("contractList.jsp").forward(request,response);
 
     }
 
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       //添加对象时，如何获取对象，
 
+       Contract contract=new Contract();
+       int i = contractService.addContract(contract);
+       response.getWriter().print(i);
 
     }
 
     protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+     Contract contract=new Contract();
+     int i = contractService.updateContract(contract);
+     response.getWriter().print(i);
 
     }
 
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String contractId = request.getParameter("contractId");
         int i = contractService.deleteContract(Integer.parseInt(contractId));
-        response.getWriter().print(i);  //用$.ajax({ }) 传递数据
+        //用$.ajax({ }) 传递数据
+        response.getWriter().print(i);
 
     }
 }

@@ -124,6 +124,9 @@ public class Contract {
         this.acceptanceResult = acceptanceResult;
     }
 
+    public Contract() {
+    }
+
     @Override
     public String toString() {
         return "Contract{" +
