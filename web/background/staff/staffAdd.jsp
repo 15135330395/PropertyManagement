@@ -91,9 +91,9 @@
         <div class="layui-form-item">
             <label class="layui-form-label">所属部门：</label>
             <div class="layui-input-block">
-                <select name="departmentId" >
+                <input type="hidden" name="departmentId" value="${staff.departmentId}" autocomplete="off" class="layui-input">
+                <%--<select name="" >
                     <option value=""></option>
-                    <option selected value="${staff.departmentId}">${staff.departmentId}</option>
                     <c:forEach items="${typeList}" var="type">
                         <c:if test="${type.typeId == news.typeId}">
                             <option selected value="${type.typeId}">${type.typeName}</option>
@@ -103,7 +103,7 @@
                         </c:if>
 
                     </c:forEach>
-                </select>
+                </select>--%>
             </div>
         </div>
         <div class="layui-form-item">

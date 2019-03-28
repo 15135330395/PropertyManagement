@@ -61,9 +61,10 @@ public class StaffDaoImpl implements StaffDao {
 
     @Override
     public int updateStaff(Staff staff) {
-        String sql="update staff set staff_name=? staff_image=? identity_card=? age=?" +
-                "sex=? address=? phone=? email=? city=? household=? station=? education=? " +
-                "department_id=? salary_id=? security_insurance_id=? join_time=? where staff_id=?";
+        String sql="update staff set staff_name=?, staff_image=? ,identity_card=?, age=?," +
+                "sex=?, address=?, phone=? ,email=?, city=? ,household=?, station=?, education=?, " +
+                "department_id=?, salary_id=? ,security_insurance_id=?, join_time=? where staff_id=?";
+        System.out.println(sql);
         Object[] objs={staff.getStaffName(),staff.getStaffImage(),staff.getIdentityCard(),
                 staff.getAge(),staff.getSex(),staff.getAddress(),staff.getPhone(),staff.getEmail(),staff.getCity(),
                 staff.getHousehold(),staff.getStation(),staff.getEducation(),staff.getDepartmentId(),staff.getStaffId(),

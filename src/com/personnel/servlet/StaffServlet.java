@@ -27,7 +27,6 @@ public class StaffServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         String action = request.getParameter("action");
-        System.out.println(action);
         if ("query".equals(action)) {
             query(request, response);
         } else if ("add".equals(action)) {
@@ -108,7 +107,7 @@ public class StaffServlet extends HttpServlet {
                 Integer.parseInt(salaryId),
                 Integer.parseInt(securityInsuranceId),
                 DateUtil.formatString(joinTime, "yyyy-MM-dd HH:mm:ss"));
-        int i = staffService.addStaff(staff);
+        int i = staffService.updateStaff(staff);
 
         response.getWriter().print(i);
     }
