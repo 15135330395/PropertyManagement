@@ -31,10 +31,11 @@ public class StaffDaoImpl implements StaffDao {
 
     @Override
     public List<Staff> queryStaffPage(PageBean pageBean) {
-        String sql="select *from staff order by staff_id  limit ?,?";
+        String sql="select *  from staff s, department d where s.department_id=d.department_id order by staff_id  limit ?,?";
         try {
-            List<Staff> StaffList = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Staff.class), pageBean.getIndex(), pageBean.getPageCount());
-            return StaffList;
+            List<Staff> staffList = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Staff.class), pageBean.getIndex(), pageBean.getPageCount());
+
+            return staffList;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -43,10 +44,10 @@ public class StaffDaoImpl implements StaffDao {
 
     @Override
     public int addStaff(Staff staff) {
-        String sql="insert into staff (staff_id,staff_name,staff_image,identity_card,age" +
+        String sql="insert into staff (staff_name,staff_image,identity_card,age" +
                 "sex,address,phone,email,city,household,station,education,department_id," +
-                "salary_id,security_insurance_id)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        Object[] objs={staff.getStaffId(),staff.getStaffName(),staff.getStaffImage(),staff.getIdentityCard(),
+                "salary_id,security_insurance_id,join_time)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        Object[] objs={staff.getStaffName(),staff.getStaffImage(),staff.getIdentityCard(),
         staff.getAge(),staff.getSex(),staff.getAddress(),staff.getPhone(),staff.getEmail(),staff.getCity(),
         staff.getHousehold(),staff.getStation(),staff.getEducation(),staff.getDepartmentId(),staff.getStaffId(),staff.getSecurityInsuranceId()};
         try {
@@ -62,11 +63,11 @@ public class StaffDaoImpl implements StaffDao {
     public int updateStaff(Staff staff) {
         String sql="update staff set staff_name=? staff_image=? identity_card=? age=?" +
                 "sex=? address=? phone=? email=? city=? household=? station=? education=? " +
-                "department_id=? salary_id=? security_insurance_id=? where staff_id=?";
+                "department_id=? salary_id=? security_insurance_id=? join_time=? where staff_id=?";
         Object[] objs={staff.getStaffName(),staff.getStaffImage(),staff.getIdentityCard(),
                 staff.getAge(),staff.getSex(),staff.getAddress(),staff.getPhone(),staff.getEmail(),staff.getCity(),
                 staff.getHousehold(),staff.getStation(),staff.getEducation(),staff.getDepartmentId(),staff.getStaffId(),
-                staff.getSecurityInsuranceId(),staff.getStaffId()};
+                staff.getSecurityInsuranceId(),staff.getJoinTime(),staff.getStaffId()};
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, objs);
             return i;

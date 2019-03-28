@@ -13,8 +13,8 @@ import java.sql.SQLException;
  */
 public class GenEntityTool {    
 
-    private String tablename = "staff"; // 表名
-    private String dUrl = "src\\com\\entity\\"; // 文件存储位置
+    private String tablename = "salary"; // 表名
+    private String dUrl = "src\\com\\personnel\\entity\\"; // 文件存储位置
     private String pack = dUrl.substring(dUrl.indexOf("\\")+1, dUrl.length()-1).replace("\\", "."); // 包名    
     private String[] colnames; // 列名数组    
     private String[] colTypes; // 列名类型数组    

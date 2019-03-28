@@ -1,5 +1,7 @@
 package com.entity;
 
+import java.util.Date;
+
 public class Staff {
     //工号
 	private int staffId;
@@ -13,7 +15,7 @@ public class Staff {
 	private int age;
 	private String sex;
 	private String address;
-	private Long phone;
+	private String phone;
 	private String email;
 	//所在城市
 	private String city;
@@ -28,10 +30,33 @@ public class Staff {
 	private int salaryId;
     //社保号
 	private int securityInsuranceId;
+	private Date joinTime;
+	private String departmentName;
+
 	public Staff(){
 	}
 
-    public Staff(int staffId, String staffName, String staffImage, String identityCard, int age, String sex, String address, Long phone, String email, String city, String household, String station, String education, int departmentId, int salaryId, int securityInsuranceId) {
+    public Staff(String staffName, String staffImage, String identityCard, int age, String sex, String address, String phone, String email, String city, String household, String station, String education, int departmentId, int salaryId, int securityInsuranceId, Date joinTime) {
+        this.staffName = staffName;
+        this.staffImage = staffImage;
+        this.identityCard = identityCard;
+        this.age = age;
+        this.sex = sex;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.city = city;
+        this.household = household;
+        this.station = station;
+        this.education = education;
+        this.departmentId = departmentId;
+        this.salaryId = salaryId;
+        this.securityInsuranceId = securityInsuranceId;
+        this.joinTime = joinTime;
+
+    }
+
+    public Staff(int staffId, String staffName, String staffImage, String identityCard, int age, String sex, String address, String phone, String email, String city, String household, String station, String education, int departmentId, int salaryId, int securityInsuranceId, Date joinTime) {
         this.staffId = staffId;
         this.staffName = staffName;
         this.staffImage = staffImage;
@@ -48,6 +73,24 @@ public class Staff {
         this.departmentId = departmentId;
         this.salaryId = salaryId;
         this.securityInsuranceId = securityInsuranceId;
+        this.joinTime = joinTime;
+    }
+
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartment_name(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
+    public Date getJoinTime() {
+        return joinTime;
+    }
+
+    public void setJoin_time(Date joinTime) {
+        this.joinTime = joinTime;
     }
 
     public int getStaffId() {
@@ -78,7 +121,7 @@ public class Staff {
         return address;
     }
 
-    public Long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -142,7 +185,7 @@ public class Staff {
         this.address = address;
     }
 
-    public void setPhone(Long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -177,5 +220,6 @@ public class Staff {
     public void setSecurity_insuranceId(int securityInsuranceId) {
         this.securityInsuranceId = securityInsuranceId;
     }
+
 }
 
