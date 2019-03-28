@@ -46,7 +46,7 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
     }
 
     @Override
-    public OperatingRecord findRecordByRecordId(int recordId) {
+    public OperatingRecord findRecordById(int recordId) {
         String sql = "select * from operating_record where record_id = ?";
         try {
             OperatingRecord query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(OperatingRecord.class), recordId);
@@ -58,21 +58,9 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
     }
 
     @Override
-    public List<OperatingRecord> findRecordByStaffId(int staffId) {
-        String sql = "select * from operating_record where staff_id = ?";
-        try {
-            List<OperatingRecord> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(OperatingRecord.class), staffId);
-            return query;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    @Override
     public int addRecord(OperatingRecord operatingRecord) {
-        String sql = "insert into operating_record (staff_id,equipment_id,borrowing_time) values (?,?,?)";
-        Object[] obj = {operatingRecord.getStaffId(), operatingRecord.getEquipmentName(), operatingRecord.getBorrowingTime()};
+        String sql = "insert into operating_record (staff_name,equipment_name,borrowing_time) values (?,?,?)";
+        Object[] obj = {operatingRecord.getStaffName(), operatingRecord.getEquipmentName(), operatingRecord.getBorrowingTime()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
@@ -84,8 +72,8 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
 
     @Override
     public int updateRecord(OperatingRecord operatingRecord) {
-        String sql = "update operating_record set staff_id=?,equipment_id=?,borrowing_time=?  where record_id = ?";
-        Object[] obj = {operatingRecord.getStaffId(), operatingRecord.getEquipmentName(), operatingRecord.getBorrowingTime(), operatingRecord.getRecordId()};
+        String sql = "update operating_record set staff_name=?,equipment_name=?,borrowing_time=?  where record_id = ?";
+        Object[] obj = {operatingRecord.getStaffName(), operatingRecord.getEquipmentName(), operatingRecord.getBorrowingTime(), operatingRecord.getRecordId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;

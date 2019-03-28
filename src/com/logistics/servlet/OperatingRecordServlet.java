@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.entity.PageBean;
 import com.logistics.entity.OperatingRecord;
 import com.logistics.service.OperatingRecordService;
+import com.utils.DateUtil;
 import com.utils.JsonUtil;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,16 +28,15 @@ public class OperatingRecordServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
         String action = request.getParameter("action");
         if ("getAllRecord".equals(action)) {
             getAllRecord(request, response);
         } else if ("getAllRecordByPage".equals(action)) {
             getAllRecordByPage(request, response);
-        } else if ("findRecordByRecordId".equals(action)) {
-            findRecordByRecordId(request, response);
-        } else if ("findRecordByStaffId".equals(action)) {
-            findRecordByStaffId(request, response);
+        } else if ("findRecordById".equals(action)) {
+            findRecordById(request, response);
         } else if ("addRecord".equals(action)) {
             addRecord(request, response);
         } else if ("editRecord".equals(action)) {
@@ -66,31 +67,46 @@ public class OperatingRecordServlet extends HttpServlet {
         String pageCount = request.getParameter("limit");
         pageBean.setPageCount(Integer.parseInt(pageCount));
         // 总条数
-        int taskCount = service.getAllRecord().size();
-        pageBean.setCount(taskCount);
+        int recordCount = service.getAllRecord().size();
+        pageBean.setCount(recordCount);
         List<OperatingRecord> incidentList = service.getAllRecordByPage(pageBean);
         JSONObject table = JsonUtil.getJsonObject(incidentList, pageBean);
         response.getWriter().print(table);
     }
 
-    private void findRecordByRecordId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    private void findRecordByStaffId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    private void findRecordById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String recordId = request.getParameter("recordId");
+        OperatingRecord record = service.findRecordById(Integer.parseInt(recordId));
+        request.setAttribute("record", record);
+        request.getRequestDispatcher("/logistics/OperatingRecord/OperatingRecordById.jsp").forward(request, response);
     }
 
     private void addRecord(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String staffName = request.getParameter("staffName");
+        String equipmentName = request.getParameter("equipmentName");
+        String borrowingTimeStr = request.getParameter("borrowingTime");
+        Date borrowingTime = DateUtil.formatString(borrowingTimeStr, "yyyy-MM-dd HH:mm:ss");
+        OperatingRecord operatingRecord = new OperatingRecord(staffName, equipmentName, borrowingTime);
+        int i = service.addRecord(operatingRecord);
+        response.getWriter().print(i);
     }
 
     private void editRecord(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String recordId = request.getParameter("recordId");
+        OperatingRecord record = service.findRecordById(Integer.parseInt(recordId));
+        request.setAttribute("record", record);
+        request.getRequestDispatcher("/logistics/OperatingRecord/EditOperatingRecord.jsp").forward(request, response);
     }
 
     private void updateRecord(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String recordId = request.getParameter("recordId");
+        String staffName = request.getParameter("staffName");
+        String equipmentName = request.getParameter("equipmentName");
+        String borrowingTimeStr = request.getParameter("borrowingTime");
+        Date borrowingTime = DateUtil.formatString(borrowingTimeStr, "yyyy-MM-dd HH:mm:ss");
+        OperatingRecord operatingRecord = new OperatingRecord(Integer.parseInt(recordId), staffName, equipmentName, borrowingTime);
+        int i = service.updateRecord(operatingRecord);
+        response.getWriter().print(i);
     }
 
     private void deleteRecord(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

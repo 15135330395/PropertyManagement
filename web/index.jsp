@@ -14,7 +14,8 @@
 <%
     // response.sendRedirect(request.getContextPath() + "/logistics/CleaningTask/CleaningTaskList.jsp");
     // response.sendRedirect(request.getContextPath() + "/logistics/FireIncident/FireIncidentList.jsp");
-    response.sendRedirect(request.getContextPath() + "/logistics/OperatingRecord/OperatingRecordList.jsp");
+    // response.sendRedirect(request.getContextPath() + "/logistics/OperatingRecord/OperatingRecordList.jsp");
+    response.sendRedirect(request.getContextPath() + "/logistics/GuardRota/GuardRotaList.jsp");
 %>
 </body>
 </html>

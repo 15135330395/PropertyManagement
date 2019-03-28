@@ -12,7 +12,7 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>添加消防事故</title>
+    <title>添加操作记录</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -23,47 +23,28 @@
     <form class="layui-form">
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>出动时间
+                <span class="x-red">*</span>借用人员
             </label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input" name="alarmTime" lay-verify="required" id="test1"
-                       placeholder="yyyy-MM-dd HH:mm:ss">
+                <input type="text" class="layui-input" name="staffName" lay-verify="required">
             </div>
         </div>
         <div class="layui-form-item">
-            <label for="incidentLocale" class="layui-form-label">
-                <span class="x-red">*</span>区域
+            <label for="equipmentName" class="layui-form-label">
+                <span class="x-red">*</span>器材名称
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="incidentLocale" name="incidentLocale" required="" lay-verify="required"
+                <input type="text" id="equipmentName" name="equipmentName" required="" lay-verify="required"
                        autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label for="staffNames" class="layui-form-label">
-                <span class="x-red">*</span>员工姓名
+            <label class="layui-form-label">
+                <span class="x-red">*</span>借出时间
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="staffNames" name="staffNames" required="" lay-verify="required"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label for="cause" class="layui-form-label">
-                <span class="x-red">*</span>起因
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="cause" name="cause" required="" lay-verify="required"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label for="loss" class="layui-form-label">
-                <span class="x-red">*</span>损失
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="loss" name="loss" required="" lay-verify="required"
-                       autocomplete="off" class="layui-input">
+                <input type="text" class="layui-input" name="borrowingTime" lay-verify="required"
+                       id="test1" placeholder="yyyy-MM-dd HH:mm:ss">
             </div>
         </div>
 
@@ -87,14 +68,12 @@
             //发异步，把数据提交给Servlet
             $.ajax({
                 type: "post",
-                url: "<%=request.getContextPath()%>/FireIncidentServlet",
+                url: "<%=request.getContextPath()%>/OperatingRecordServlet",
                 data: {
-                    action: "addIncident",
-                    alarmTime: data.field.alarmTime,
-                    incidentLocale: data.field.incidentLocale,
-                    staffNames: data.field.staffNames,
-                    cause: data.field.cause,
-                    loss: data.field.loss
+                    action: "addRecord",
+                    staffName: data.field.staffName,
+                    equipmentName: data.field.equipmentName,
+                    borrowingTime: data.field.borrowingTime,
                 },
                 success: function (msg) {
                     if (msg == 1) {
@@ -120,7 +99,7 @@
         laydate.render({
             elem: '#test1', //指定元素
             type: 'datetime'
-            , min: -7
+            , min: -3
             , max: 0
         });
     });

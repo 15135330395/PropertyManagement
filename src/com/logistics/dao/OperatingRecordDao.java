@@ -33,15 +33,7 @@ public interface OperatingRecordDao {
      * @param recordId
      * @return
      */
-    OperatingRecord findRecordByRecordId(int recordId);
-
-    /**
-     * 通过员工ID查找
-     *
-     * @param staffId
-     * @return
-     */
-    List<OperatingRecord> findRecordByStaffId(int staffId);
+    OperatingRecord findRecordById(int recordId);
 
     /**
      * 添加使用记录

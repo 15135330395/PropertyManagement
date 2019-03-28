@@ -9,14 +9,26 @@ import java.util.Date;
  */
 public class GuardRota {
     private int rotaId;
-    private Date rotaStart;
-    private Date rotaEnd;
+    private String rotaTime;
     private int staffId;
     private String staffName;
     private Date clockIn;
     private Date clockOut;
 
     public GuardRota() {
+    }
+
+    public GuardRota(String rotaTime, int staffId, String staffName) {
+        this.rotaTime = rotaTime;
+        this.staffId = staffId;
+        this.staffName = staffName;
+    }
+
+    public GuardRota(int rotaId, String rotaTime, int staffId, String staffName) {
+        this.rotaId = rotaId;
+        this.rotaTime = rotaTime;
+        this.staffId = staffId;
+        this.staffName = staffName;
     }
 
     public int getRotaId() {
@@ -33,20 +45,12 @@ public class GuardRota {
         this.rotaId = rotaId;
     }
 
-    public Date getRotaStart() {
-        return rotaStart;
+    public String getRotaTime() {
+        return rotaTime;
     }
 
-    public void setRota_start(Date rotaStart) {
-        this.rotaStart = rotaStart;
-    }
-
-    public Date getRotaEnd() {
-        return rotaEnd;
-    }
-
-    public void setRota_end(Date rotaEnd) {
-        this.rotaEnd = rotaEnd;
+    public void setRota_time(String rotaTime) {
+        this.rotaTime = rotaTime;
     }
 
     public int getStaffId() {

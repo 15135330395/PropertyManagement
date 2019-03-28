@@ -9,7 +9,6 @@ import java.util.Date;
  */
 public class OperatingRecord {
     private int recordId;
-    private int staffId;
     private String staffName;
     private String equipmentName;
     private Date borrowingTime;
@@ -18,20 +17,25 @@ public class OperatingRecord {
     public OperatingRecord() {
     }
 
+    public OperatingRecord(String staffName, String equipmentName, Date borrowingTime) {
+        this.staffName = staffName;
+        this.equipmentName = equipmentName;
+        this.borrowingTime = borrowingTime;
+    }
+
+    public OperatingRecord(int recordId, String staffName, String equipmentName, Date borrowingTime) {
+        this.recordId = recordId;
+        this.staffName = staffName;
+        this.equipmentName = equipmentName;
+        this.borrowingTime = borrowingTime;
+    }
+
     public int getRecordId() {
         return recordId;
     }
 
     public void setRecord_id(int recordId) {
         this.recordId = recordId;
-    }
-
-    public int getStaffId() {
-        return staffId;
-    }
-
-    public void setStaff_id(int staffId) {
-        this.staffId = staffId;
     }
 
     public String getStaffName() {

@@ -64,8 +64,8 @@ public class FireIncidentServlet extends HttpServlet {
         String pageCount = request.getParameter("limit");
         pageBean.setPageCount(Integer.parseInt(pageCount));
         // 总条数
-        int taskCount = service.getAllIncident().size();
-        pageBean.setCount(taskCount);
+        int incidentCount = service.getAllIncident().size();
+        pageBean.setCount(incidentCount);
         List<FireIncident> incidentList = service.getAllIncidentByPage(pageBean);
         JSONObject table = JsonUtil.getJsonObject(incidentList, pageBean);
         response.getWriter().print(table);

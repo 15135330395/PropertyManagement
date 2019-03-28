@@ -11,7 +11,7 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>操作记录表</title>
+    <title>保安排班表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -22,7 +22,7 @@
       <span class="layui-breadcrumb">
         <a href="#">首页</a>
         <a>
-          <cite>安保器材操作记录管理</cite></a>
+          <cite>保安排班管理</cite></a>
       </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        href="javascript:location.replace(location.href);" title="刷新">
@@ -31,7 +31,7 @@
 <div class="x-body">
     <div class="layui-row">
         <div class="layui-col-md12 x-so">
-            <input type="text" name="recordId" placeholder="请输入记录编号" autocomplete="off" class="layui-input">
+            <input type="text" name="rotaId" placeholder="请输入排班编号" autocomplete="off" class="layui-input">
             <button class="layui-btn" id="search"><i class="layui-icon">&#xe615;</i></button>
         </div>
     </div>
@@ -40,7 +40,7 @@
 
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
-            <button class="layui-btn" lay-event="addRecord">
+            <button class="layui-btn" lay-event="addRota">
                 <i class="layui-icon"></i>添加
             </button>
             <button class="layui-btn layui-btn-danger" lay-event="delAll">
@@ -53,9 +53,11 @@
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
-    <script type="text/html" id="time">
-        {{ dateFormat(d.borrowingTime) }}
-        {{ dateFormat(d.returnTime) }}
+    <script type="text/html" id="clockIn">
+        {{ d.clockIn==null? '尚未打卡':dateFormat(d.clockIn) }}
+    </script>
+    <script type="text/html" id="clockOut">
+        {{ d.clockOut==null? '尚未打卡':dateFormat(d.clockOut) }}
     </script>
     <script>
         layui.use('table', function () {
@@ -63,24 +65,25 @@
 
             table.render({
                 elem: '#test'
-                , url: '<%=request.getContextPath()%>/OperatingRecordServlet?action=getAllRecordByPage'
+                , url: '<%=request.getContextPath()%>/GuardRotaServlet?action=getAllRotaByPage'
                 , toolbar: '#toolbarDemo'
                 , width: 1200
-                , title: '操作记录表'
+                , title: '保安排班表'
                 , cols: [[
                     {type: 'checkbox', fixed: 'left'}
-                    , {field: 'recordId', title: '编号', fixed: 'left', sort: true}
-                    , {field: 'staffName', title: '借用人员'}
-                    , {field: 'equipmentName', title: '器材名称'}
-                    , {field: 'borrowingTime', title: '借出时间', templet: '#time'}
-                    , {field: 'returnTime', title: '归还时间', templet: '#time'}
+                    , {field: 'rotaId', title: '编号', fixed: 'left', sort: true}
+                    , {field: 'rotaTime', title: '排班时段', width: 315}
+                    , {field: 'staffId', title: '员工编号'}
+                    , {field: 'staffName', title: '员工姓名'}
+                    , {field: 'clockIn', title: '上班打卡', templet: '#clockIn', width: 160}
+                    , {field: 'clockOut', title: '下班打卡', templet: '#clockOut', width: 160}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
                 ]]
                 , page: true
             });
 
             layui.$('#search').on('click', function () {
-                var val = layui.$("*[name='recordId']").val();
+                var val = layui.$("*[name='rotaId']").val();
                 if (val == "") {
                     layer.msg('请输入ID');
                     return;
@@ -90,20 +93,20 @@
                     type: 2,
                     skin: 'layui-layer-rim', // 加上边框
                     area: ['451px', '405px'], // 宽高
-                    content: '<%=request.getContextPath()%>/OperatingRecordServlet?action=findRecordById&recordId=' + val
+                    content: '<%=request.getContextPath()%>/GuardRotaServlet?action=findRotaByRotaId&rotaId=' + val
                 });
             });
 
             //头工具栏事件
             table.on('toolbar(test)', function (obj) {
-                if (obj.event === 'addRecord') {
+                if (obj.event === 'addRota') {
                     layer.open({
-                        title: '添加记录',
+                        title: '添加排班',
                         type: 2,
                         closeBtn: 1,
                         skin: 'layui-layer-rim', // 加上边框
                         area: ['840px', '620px'], // 宽高
-                        content: '<%=request.getContextPath()%>/logistics/OperatingRecord/AddOperatingRecord.jsp'
+                        content: '<%=request.getContextPath()%>/logistics/GuardRota/AddGuardRota.jsp'
                     });
                 } else if (obj.event === 'delAll') {
                     var checkStatus = table.checkStatus(obj.config.id);
@@ -114,16 +117,16 @@
                     }
                     var ids = "";
                     for (var i = 0; i < data.length; i++) {
-                        ids += data[i].recordId;
+                        ids += data[i].rotaId;
                         ids += ","
                     }
                     layer.confirm('确认要删除这些信息吗？', function () {
                         $.ajax({
                             type: "post",
-                            url: "<%=request.getContextPath()%>/OperatingRecordServlet",
+                            url: "<%=request.getContextPath()%>/GuardRotaServlet",
                             data: {
-                                action: "deleteRecords",
-                                incidentIds: "" + ids
+                                action: "deleteRotas",
+                                rotaIds: "" + ids
                             },
                             success: function (msg) {
                                 if (msg > 0) {
@@ -151,10 +154,10 @@
                         //发异步 删除数据
                         $.ajax({
                             type: "post",
-                            url: "<%=request.getContextPath()%>/OperatingRecordServlet",
+                            url: "<%=request.getContextPath()%>/GuardRotaServlet",
                             data: {
-                                action: "deleteRecord",
-                                recordId: data.recordId
+                                action: "deleteRota",
+                                rotaId: data.rotaId
                             },
                             success: function (msg) {
                                 if (msg == 1) {
@@ -171,11 +174,11 @@
                     });
                 } else if (obj.event === 'edit') {
                     layer.open({
-                        title: '任务修改',
+                        title: '排班修改',
                         type: 2,
                         skin: 'layui-layer-rim', // 加上边框
                         area: ['840px', '620px'], // 宽高
-                        content: '<%=request.getContextPath()%>/OperatingRecordServlet?action=editRecord&recordId=' + data.recordId
+                        content: '<%=request.getContextPath()%>/GuardRotaServlet?action=editRota&rotaId=' + data.rotaId
                     });
                 }
             });

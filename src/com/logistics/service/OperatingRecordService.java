@@ -24,12 +24,8 @@ public class OperatingRecordService {
         return dao.getAllRecordByPage(pageBean);
     }
 
-    public OperatingRecord findRecordByRecordId(int recordId) {
-        return dao.findRecordByRecordId(recordId);
-    }
-
-    public List<OperatingRecord> findRecordByStaffId(int staffId) {
-        return dao.findRecordByStaffId(staffId);
+    public OperatingRecord findRecordById(int recordId) {
+        return dao.findRecordById(recordId);
     }
 
     public int addRecord(OperatingRecord operatingRecord) {

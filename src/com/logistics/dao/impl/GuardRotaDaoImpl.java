@@ -71,8 +71,8 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
 
     @Override
     public int addRota(GuardRota guardRota) {
-        String sql = "insert into guard_rota (rota_start,rota_end,staff_id) values (?,?,?)";
-        Object[] obj = {guardRota.getRotaStart(), guardRota.getRotaEnd(), guardRota.getStaffId()};
+        String sql = "insert into guard_rota (rota_time,staff_id) values (?,?)";
+        Object[] obj = {guardRota.getRotaTime(), guardRota.getStaffId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
@@ -84,8 +84,8 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
 
     @Override
     public int updateRota(GuardRota guardRota) {
-        String sql = "update guard_rota set rota_start=?,rota_end=?,staff_id=?,clock_in=null,clock_out=null where rota_id = ?";
-        Object[] obj = {guardRota.getRotaStart(), guardRota.getRotaEnd(), guardRota.getStaffId(), guardRota.getRotaId()};
+        String sql = "update guard_rota set rota_time=?,staff_id=?,clock_in=null,clock_out=null where rota_id = ?";
+        Object[] obj = {guardRota.getRotaTime(), guardRota.getStaffId(), guardRota.getRotaId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;

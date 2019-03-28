@@ -7,12 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!-- css和js的引用封装在info.jsp -->
 <%@ include file="../../info.jsp" %>
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>查询任务</title>
+    <title>查询记录</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -23,34 +24,27 @@
     <form class="layui-form">
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red"></span>任务类型
+                <span class="x-red"></span>借用人员
             </label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input" readonly="readonly" value="${task.taskType}">
+                <input type="text" readonly="readonly" class="layui-input" value="${record.staffName}" >
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red"></span>任务时间
+                <span class="x-red"></span>器材名称
             </label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input" readonly="readonly" value="${task.taskTime}">
+            <div class="layui-input-inline">
+                <input type="text" readonly="readonly" value="${record.equipmentName}" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red"></span>区域
+                <span class="x-red"></span>借出时间
             </label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input" readonly="readonly" value="${task.taskArea}">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">
-                <span class="x-red"></span>员工姓名
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" class="layui-input" readonly="readonly" value="${task.staffName}">
+                <input type="text" class="layui-input" readonly="readonly"
+                       value="<fmt:formatDate value="${record.borrowingTime}" pattern="yyyy-MM-dd HH:mm:ss" />">
             </div>
         </div>
         <div class="layui-form-item">

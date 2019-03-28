@@ -24,7 +24,7 @@
     <form class="layui-form">
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>出动时间
+                <span class="x-red"></span>出动时间
             </label>
             <div class="layui-input-block">
 
@@ -34,7 +34,7 @@
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>区域
+                <span class="x-red"></span>区域
             </label>
             <div class="layui-input-inline">
                 <input type="text" class="layui-input" readonly="readonly" value="${incident.incidentLocale}">
@@ -42,7 +42,7 @@
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>人员
+                <span class="x-red"></span>人员
             </label>
             <div class="layui-input-inline">
                 <input type="text" class="layui-input" readonly="readonly" value="${incident.staffNames}">
@@ -50,7 +50,7 @@
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>起因
+                <span class="x-red"></span>起因
             </label>
             <div class="layui-input-inline">
                 <input type="text" class="layui-input" readonly="readonly" value="${incident.cause}">
@@ -58,7 +58,7 @@
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>损失
+                <span class="x-red"></span>损失
             </label>
             <div class="layui-input-inline">
                 <input type="text" class="layui-input" readonly="readonly" value="${incident.loss}">
