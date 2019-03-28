@@ -40,6 +40,8 @@ public class CleaningTaskServlet extends HttpServlet {
             findTaskByStaffId(request, response);
         } else if ("addTask".equals(action)) {
             addTask(request, response);
+        } else if ("editTask".equals(action)) {
+            editTask(request, response);
         } else if ("updateTask".equals(action)) {
             updateTask(request, response);
         } else if ("deleteTask".equals(action)) {
@@ -74,38 +76,48 @@ public class CleaningTaskServlet extends HttpServlet {
         pageBean.setCount(taskCount);
         List<CleaningTask> taskList = service.getAllTaskByPage(pageBean);
         JSONObject table = JsonUtil.getJsonObject(taskList, pageBean);
-        System.out.println(table);
         response.getWriter().print(table);
     }
 
     private void findTaskByTaskId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String taskId = request.getParameter("taskId");
         CleaningTask task = service.findTaskByTaskId(Integer.parseInt(taskId));
         request.setAttribute("task", task);
-        request.getRequestDispatcher("").forward(request, response);
-
+        request.getRequestDispatcher("/logistics/CleaningTask/CleaningTaskByTaskId.jsp").forward(request, response);
     }
 
     private void findTaskByStaffId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 
     }
 
     private void addTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String taskType = request.getParameter("taskType");
-        String taskStart = request.getParameter("taskStart");
-        Date start = DateUtil.formatString(taskStart, "yyyy-MM-dd HH:mm:ss");
-        String taskEnd = request.getParameter("taskEnd");
-        Date end = DateUtil.formatString(taskEnd, "yyyy-MM-dd HH:mm:ss");
-        String staffId = request.getParameter("staffId");
-        CleaningTask cleaningTask = new CleaningTask(taskType, start, end, Integer.parseInt(staffId));
+        String taskTime = request.getParameter("taskTime");
+        String taskArea = request.getParameter("taskArea");
+        String staffName = request.getParameter("staffName");
+
+        CleaningTask cleaningTask = new CleaningTask(taskType, taskTime, taskArea, Integer.parseInt("4"));
         int i = service.addTask(cleaningTask);
         response.getWriter().print(i);
     }
 
-    private void updateTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void editTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String taskId = request.getParameter("taskId");
+        CleaningTask task = service.findTaskByTaskId(Integer.parseInt(taskId));
+        request.setAttribute("task", task);
+        request.getRequestDispatcher("/logistics/CleaningTask/EditCleaningTask.jsp").forward(request, response);
+    }
 
+    private void updateTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String taskId = request.getParameter("taskId");
+        String taskType = request.getParameter("taskType");
+        String taskTime = request.getParameter("taskTime");
+        String taskArea = request.getParameter("taskArea");
+        String staffName = request.getParameter("staffName");
+        // 通过name查询id
+        CleaningTask cleaningTask = new CleaningTask(Integer.parseInt(taskId), taskType, taskTime, taskArea, Integer.parseInt("4"));
+        int i = service.updateTask(cleaningTask);
+        response.getWriter().print(i);
     }
 
     private void deleteTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

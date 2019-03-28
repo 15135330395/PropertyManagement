@@ -28,8 +28,6 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
             return query;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return null;
     }
@@ -42,8 +40,6 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
             return query;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return null;
     }
@@ -56,8 +52,6 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
             return query;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return null;
     }
@@ -70,38 +64,32 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
             return query;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return null;
     }
 
     @Override
     public int addTask(CleaningTask cleaningTask) {
-        String sql = "insert into cleaning_task (task_type,task_start,task_end,task_area,staff_id,completion) values (?,?,?,?,?,0)";
-        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskStart(), cleaningTask.getTaskEnd(), cleaningTask.getTaskArea(), cleaningTask.getStaffId()};
+        String sql = "insert into cleaning_task (task_type,task_time,task_area,staff_id,completion,score) values (?,?,?,?,0,-1)";
+        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskTime(), cleaningTask.getTaskArea(), cleaningTask.getStaffId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }
 
     @Override
     public int updateTask(CleaningTask cleaningTask) {
-        String sql = "update cleaning_task set task_type=?,task_start=?,task_end=?,task_area=?,staff_id=?,completion=? where task_id = ?";
-        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskStart(), cleaningTask.getTaskEnd(), cleaningTask.getTaskArea(), cleaningTask.getStaffId(), cleaningTask.isCompletion(), cleaningTask.getTaskId()};
+        String sql = "update cleaning_task set task_type=?,task_time=?,task_area=?,staff_id=?,completion=0 where task_id = ?";
+        Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskTime(), cleaningTask.getTaskArea(), cleaningTask.getStaffId(), cleaningTask.getTaskId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }
@@ -114,8 +102,6 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }
@@ -128,8 +114,6 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }
@@ -142,8 +126,6 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }
@@ -156,8 +138,6 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }

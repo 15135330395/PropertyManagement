@@ -13,12 +13,28 @@ public class FireIncident {
     private int incidentId;
     private Date alarmTime;
     private String incidentLocale;
-    private int[] staffId;
-    private String[] staffName;
+    private String staffNames;
     private String cause;
     private String loss;
 
     public FireIncident() {
+    }
+
+    public FireIncident(Date alarmTime, String incidentLocale, String staffNames, String cause, String loss) {
+        this.alarmTime = alarmTime;
+        this.incidentLocale = incidentLocale;
+        this.staffNames = staffNames;
+        this.cause = cause;
+        this.loss = loss;
+    }
+
+    public FireIncident(int incidentId, Date alarmTime, String incidentLocale, String staffNames, String cause, String loss) {
+        this.incidentId = incidentId;
+        this.alarmTime = alarmTime;
+        this.incidentLocale = incidentLocale;
+        this.staffNames = staffNames;
+        this.cause = cause;
+        this.loss = loss;
     }
 
     public int getIncidentId() {
@@ -45,20 +61,12 @@ public class FireIncident {
         this.incidentLocale = incidentLocale;
     }
 
-    public int[] getStaffId() {
-        return staffId;
+    public String getStaffNames() {
+        return staffNames;
     }
 
-    public void setStaff_id(int[] staffId) {
-        this.staffId = staffId;
-    }
-
-    public String[] getStaffName() {
-        return staffName;
-    }
-
-    public void setStaff_name(String[] staffName) {
-        this.staffName = staffName;
+    public void setStaff_names(String staffNames) {
+        this.staffNames = staffNames;
     }
 
     public String getCause() {
@@ -76,4 +84,5 @@ public class FireIncident {
     public void setLoss(String loss) {
         this.loss = loss;
     }
+
 }

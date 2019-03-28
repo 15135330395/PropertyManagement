@@ -29,8 +29,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
             return query;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return null;
     }
@@ -43,8 +41,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
             return query;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return null;
     }
@@ -57,8 +53,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
             return query;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return null;
     }
@@ -71,8 +65,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
             return query;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return null;
     }
@@ -86,8 +78,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }
@@ -101,8 +91,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }
@@ -115,8 +103,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }
@@ -129,8 +115,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }
@@ -143,8 +127,6 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtil.close();
         }
         return 0;
     }

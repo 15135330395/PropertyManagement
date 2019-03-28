@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="../info.jsp" %>
+<%@ include file="../../info.jsp" %>
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
@@ -30,10 +30,10 @@
 </div>
 <div class="x-body">
     <div class="layui-row">
-        <form class="layui-form layui-col-md12 x-so">
-            <input type="text" id="demoReload" name="id" placeholder="请输入××名称" autocomplete="off" class="layui-input">
-            <button class="layui-btn" data-type="reload"><i class="layui-icon">&#xe615;</i></button>
-        </form>
+        <div class="layui-col-md12 x-so">
+            <input type="text" name="taskId" placeholder="请输入任务编号" autocomplete="off" class="layui-input">
+            <button class="layui-btn" id="search"><i class="layui-icon">&#xe615;</i></button>
+        </div>
     </div>
 
     <table class="layui-hide" id="test" lay-filter="test"></table>
@@ -54,6 +54,14 @@
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
 
+    <script type="text/html" id="switchTpl">
+        <input type="checkbox" name="completion" value="{{d.completion}}" disabled lay-skin="switch" lay-text="已完成|未完成"
+               lay-filter="sexDemo" {{ d.completion== true ? 'checked' : '' }}>
+    </script>
+    <script type="text/html" id="score">
+        {{ d.score== -1 ? '未评分' : d.score }}
+    </script>
+
     <script>
         layui.use('table', function () {
             var table = layui.table;
@@ -62,50 +70,36 @@
                 elem: '#test'
                 , url: '<%=request.getContextPath()%>/CleaningTaskServlet?action=getAllTaskByPage'
                 , toolbar: '#toolbarDemo'
+                , width: 1200
                 , title: '绿化清洁任务表'
                 , cols: [[
                     {type: 'checkbox', fixed: 'left'}
-                    , {field: 'taskId', title: '编号', fixed: 'left', unresize: true, sort: true}
+                    , {field: 'taskId', title: '编号', fixed: 'left', sort: true}
                     , {field: 'taskType', title: '类别'}
-                    , {field: 'taskTime', title: '时段'}
-                    , {field: 'staffId', title: '员工编号', hide}
+                    , {field: 'taskTime', title: '时段', width: 320}
+                    , {field: 'taskArea', title: '区域'}
+                    , {field: 'staffId', title: '员工编号', hide: true}
                     , {field: 'staffName', title: '员工姓名'}
-                    , {field: 'completion', title: '完成状况', templet: '#checkboxTpl'}
-                    , {
-                        field: 'completion',
-                        title: '完成状况',
-                        templet: "<div><span class='layui-btn layui-btn-danger layui-btn-mini'>未完成</span></div>"
-                    }
-                    , {
-                        field: 'completion',
-                        title: '完成状况',
-                        templet: "<div><span class='layui-btn layui-btn-normal layui-btn-mini'>已完成</span></div>"
-                    }
-                    , {field: 'score', title: '评分'}
+                    , {field: 'completion', title: '完成状况', width: 104, templet: '#switchTpl'}
+                    , {field: 'score', title: '评分', templet: '#score'}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
                 ]]
                 , page: true
             });
 
-            var $ = layui.$, active = {
-                reload: function () {
-                    var demoReload = $('#demoReload');
-                    //执行重载
-                    table.reload('testReload', {
-                        page: {
-                            curr: 1 //重新从第 1 页开始
-                        }
-                        , where: {
-                            key: {
-                                id: demoReload.val()
-                            }
-                        }
-                    });
+            layui.$('#search').on('click', function () {
+                var val = layui.$("*[name='taskId']").val();
+                if (val == "") {
+                    layer.msg('请输入ID');
+                    return;
                 }
-            };
-            $('.demoTable .layui-btn').on('click', function () {
-                var type = $(this).data('type');
-                active[type] ? active[type].call(this) : '';
+                layer.open({
+                    title: '查询',
+                    type: 2,
+                    skin: 'layui-layer-rim', // 加上边框
+                    area: ['451px', '350px'], // 宽高
+                    content: '<%=request.getContextPath()%>/CleaningTaskServlet?action=findTaskByTaskId&taskId=' + val
+                });
             });
 
             //头工具栏事件
@@ -116,8 +110,8 @@
                         type: 2,
                         closeBtn: 1,
                         skin: 'layui-layer-rim', // 加上边框
-                        area: ['320px', '280px'], // 宽高
-                        content: '<%=request.getContextPath()%>/logistics/AddCleaningTask.jsp'
+                        area: ['840px', '620px'], // 宽高
+                        content: '<%=request.getContextPath()%>/logistics/CleaningTask/AddCleaningTask.jsp'
                     });
                 } else if (obj.event === 'delAll') {
                     var checkStatus = table.checkStatus(obj.config.id);
@@ -128,7 +122,7 @@
                     }
                     var ids = "";
                     for (var i = 0; i < data.length; i++) {
-                        ids += data[i].typeId
+                        ids += data[i].taskId
                         ids += ","
                     }
                     layer.confirm('确认要删除这些信息吗？', function () {
@@ -137,16 +131,16 @@
                             url: "<%=request.getContextPath()%>/CleaningTaskServlet",
                             data: {
                                 action: "deleteTasks",
-                                typeIds: "" + ids
+                                taskIds: "" + ids
                             },
                             success: function (msg) {
                                 if (msg > 0) {
                                     layer.alert("成功删除" + msg + "条数据", {icon: 6});
                                 } else {
-                                    layer.msg('已被删除或不存在', {icon: 2, time: 2500});
+                                    layer.msg('已被删除或不存在', {icon: 2, time: 2000});
                                 }
                                 // 刷新本页面
-                                setTimeout("location.reload()", 2500)
+                                setTimeout("location.reload()", 2100)
                             },
                             error: function () {
                                 layer.msg("删除异常")
@@ -165,22 +159,18 @@
                         //发异步 删除数据
                         $.ajax({
                             type: "post",
-                            url: "<%=request.getContextPath()%>/NewsTypeServletBg",
+                            url: "<%=request.getContextPath()%>/CleaningTaskServlet",
                             data: {
-                                action: "deleteType",
-                                newsTypeId: data.typeId
+                                action: "deleteTask",
+                                taskId: data.taskId
                             },
-                            success: function (rc) {
-                                var msg = eval("(" + rc + ")");
-                                if (msg.code == "2000") {
-                                    layer.alert("" + msg.message, {icon: 6});
-                                    obj.del();
-                                } else if (msg.code == "2001") {
-                                    layer.msg("" + msg.message, {icon: 2, time: 2000});
-                                    obj.del();
-                                } else if (msg.code == "2002") {
-                                    layer.msg("" + msg.message, {icon: 2, time: 2000});
+                            success: function (msg) {
+                                if (msg == 1) {
+                                    layer.alert("删除成功", {icon: 6});
+                                } else {
+                                    layer.msg("已被删除或不存在", {icon: 2, time: 2000});
                                 }
+                                obj.del();
                             },
                             error: function () {
                                 layer.msg("删除异常")
@@ -189,11 +179,11 @@
                     });
                 } else if (obj.event === 'edit') {
                     layer.open({
-                        title: '新闻类型修改',
+                        title: '任务修改',
                         type: 2,
                         skin: 'layui-layer-rim', // 加上边框
-                        area: ['320px', '280px'], // 宽高
-                        content: '<%=request.getContextPath()%>/NewsTypeServletBg?action=findTypeByTypeId&newsTypeId=' + data.typeId
+                        area: ['840px', '620px'], // 宽高
+                        content: '<%=request.getContextPath()%>/CleaningTaskServlet?action=editTask&taskId=' + data.taskId
                     });
                 }
             });

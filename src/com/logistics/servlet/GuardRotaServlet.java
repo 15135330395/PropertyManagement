@@ -17,6 +17,7 @@ import java.io.IOException;
 @WebServlet(name = "GuardRotaServlet", urlPatterns = "/GuardRotaServlet")
 public class GuardRotaServlet extends HttpServlet {
     private GuardRotaService service = new GuardRotaService();
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -31,6 +32,8 @@ public class GuardRotaServlet extends HttpServlet {
             findRotaByStaffId(request, response);
         } else if ("addRota".equals(action)) {
             addRota(request, response);
+        } else if ("editRota".equals(action)) {
+            editRota(request, response);
         } else if ("updateRota".equals(action)) {
             updateRota(request, response);
         } else if ("deleteRota".equals(action)) {
@@ -61,6 +64,10 @@ public class GuardRotaServlet extends HttpServlet {
     }
 
     private void addRota(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    private void editRota(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 

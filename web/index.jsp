@@ -7,12 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
+</head>
+<body>
 <%
-    response.sendRedirect(request.getContextPath() + "/logistics/tasklist.jsp");
+    // response.sendRedirect(request.getContextPath() + "/logistics/CleaningTask/CleaningTaskList.jsp");
+    // response.sendRedirect(request.getContextPath() + "/logistics/FireIncident/FireIncidentList.jsp");
+    response.sendRedirect(request.getContextPath() + "/logistics/OperatingRecord/OperatingRecordList.jsp");
 %>
-  </body>
+</body>
 </html>

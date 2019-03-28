@@ -10,8 +10,7 @@ import java.util.Date;
 public class CleaningTask {
     private int taskId;
     private String taskType;
-    private Date taskStart;
-    private Date taskEnd;
+    private String taskTime;
     private String taskArea;
     private int staffId;
     private String staffName;
@@ -21,10 +20,18 @@ public class CleaningTask {
     public CleaningTask() {
     }
 
-    public CleaningTask(String taskType, Date taskStart, Date taskEnd, int staffId) {
+    public CleaningTask(String taskType, String taskTime, String taskArea, int staffId) {
         this.taskType = taskType;
-        this.taskStart = taskStart;
-        this.taskEnd = taskEnd;
+        this.taskTime = taskTime;
+        this.taskArea = taskArea;
+        this.staffId = staffId;
+    }
+
+    public CleaningTask(int taskId, String taskType, String taskTime, String taskArea, int staffId) {
+        this.taskId = taskId;
+        this.taskType = taskType;
+        this.taskTime = taskTime;
+        this.taskArea = taskArea;
         this.staffId = staffId;
     }
 
@@ -44,20 +51,12 @@ public class CleaningTask {
         this.taskType = taskType;
     }
 
-    public Date getTaskStart() {
-        return taskStart;
+    public String getTaskTime() {
+        return taskTime;
     }
 
-    public void setTask_start(Date taskStart) {
-        this.taskStart = taskStart;
-    }
-
-    public Date getTaskEnd() {
-        return taskEnd;
-    }
-
-    public void setTask_end(Date taskEnd) {
-        this.taskEnd = taskEnd;
+    public void setTask_time(String taskTime) {
+        this.taskTime = taskTime;
     }
 
     public String getTaskArea() {
