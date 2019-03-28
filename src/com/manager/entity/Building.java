@@ -17,7 +17,20 @@ public class Building {
     public Building() {
     }
 
-    public Building(int buildingId, String buildingName,int staffId,String staffName,int areaId,String areaName) {
+    public Building(String buildingName, int staffId, int areaId) {
+        this.buildingName = buildingName;
+        this.staffId = staffId;
+        this.areaId = areaId;
+    }
+
+    public Building(int buildingId, String buildingName, int staffId, int areaId) {
+        this.buildingId = buildingId;
+        this.buildingName = buildingName;
+        this.staffId = staffId;
+        this.areaId = areaId;
+    }
+
+    public Building(int buildingId, String buildingName, int staffId, String staffName, int areaId, String areaName) {
         this.buildingId = buildingId;
         this.buildingName = buildingName;
         this.staffId = staffId;

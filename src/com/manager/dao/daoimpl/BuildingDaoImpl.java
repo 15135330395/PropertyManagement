@@ -1,5 +1,6 @@
 package com.manager.dao.daoimpl;
 
+import com.entity.PageBean;
 import com.manager.dao.BuildingDao;
 import com.manager.entity.Building;
 import com.utils.JdbcUtil;
@@ -160,5 +161,104 @@ public class BuildingDaoImpl implements BuildingDao {
             JdbcUtil.close();
         }
         return 0;
+    }
+
+    @Override
+    public int getConut() {
+        String sql="select count(*) count from building ";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtil.getConnection();
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                int count = rs.getInt("count");
+                return count;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtil.close();
+        }
+        return 0;
+    }
+
+    @Override
+    public List<Building> queryPageList(PageBean pageBean) {
+        List<Building> list = new ArrayList<>();
+        String sql="select * from building order by building_id limit ?,?";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtil.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,pageBean.getIndex());
+            ps.setInt(2,pageBean.getPageCount());
+            rs = ps.executeQuery();
+            while (rs.next()){
+                int buildingId = rs.getInt("building_id");
+                String buildingName = rs.getString("building_name");
+                int staffId = rs.getInt("staff_id");
+                int areaId = rs.getInt("area_id");
+                Building building =  new Building(buildingId,buildingName,staffId,areaId);
+                list.add(building);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtil.close();
+        }
+        return list;
+    }
+
+    @Override
+    public Building queryOne(int buildingId) {
+        String sql="select * from building  where building_id = ?";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtil.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,buildingId);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                String buildingName = rs.getString("buildingName");
+                int staffId = rs.getInt("staffId");
+                int areaId = rs.getInt("areaId");
+                Building building = new Building(buildingId,buildingName,staffId,areaId);
+
+                return building;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtil.close();
+        }
+        return null;
     }
 }

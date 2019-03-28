@@ -1,5 +1,6 @@
 package com.manager.dao.daoimpl;
 
+import com.entity.PageBean;
 import com.manager.dao.HouseDao;
 import com.manager.entity.House;
 import com.utils.JdbcUtil;
@@ -93,9 +94,9 @@ public class HouseDaoImpl implements HouseDao {
 
     @Override
     public int addHouse(House house) {
-        String sql="insert into property_management.house (building_id,acreage,use,house_type) values (?,?,?,?)";
+        String sql="insert into property_management.house (house_id,building_id,acreage,use,house_type) values (?,?,?,?,?)";
         try {
-            int i = queryRunner.update(JdbcUtil.getConnection(), sql, house.getBuildingId() ,house.getAcreage(),house.getUes(),house.getHouseType());
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql,house.getHouseId(), house.getBuildingId() ,house.getAcreage(),house.getUes(),house.getHouseType());
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -125,5 +126,106 @@ public class HouseDaoImpl implements HouseDao {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public int getConut() {
+        String sql="select count(*) count from house ";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtil.getConnection();
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                int count = rs.getInt("count");
+                return count;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtil.close();
+        }
+        return 0;
+    }
+
+    @Override
+    public List<House> queryPageList(PageBean pageBean) {
+        List<House> list = new ArrayList<>();
+        String sql="select * from house order by house_id limit ?,?";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtil.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,pageBean.getIndex());
+            ps.setInt(2,pageBean.getPageCount());
+            rs = ps.executeQuery();
+            while (rs.next()){
+                int houseId = rs.getInt("building_id");
+                int buildingId = rs.getInt("building_id");
+                String acreage = rs.getString("acreage");
+                String use = rs.getString("use");
+                String houseType = rs.getString("houseType");
+                House house =  new House(houseId,buildingId,acreage,use,houseType);
+                list.add(house);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtil.close();
+        }
+        return list;
+    }
+
+    @Override
+    public House queryOne(int houseId) {
+        String sql="select * from house  where house_id = ?";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtil.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,houseId);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                int buildingId = rs.getInt("buildingId");
+                String acreage = rs.getString("acreage");
+                String use = rs.getString("use");
+                String houseType = rs.getString("houseType");
+                House house = new House(buildingId,buildingId,acreage,use,houseType);
+
+                return house;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtil.close();
+        }
+        return null;
     }
 }

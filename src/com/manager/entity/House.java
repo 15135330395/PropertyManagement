@@ -15,7 +15,14 @@ public class House {
     public House() {
     }
 
-    public House(int houseId,int buildingId, String acreage, String ues, String houseType) {
+    public House(int buildingId, String acreage, String ues, String houseType) {
+        this.buildingId = buildingId;
+        this.acreage = acreage;
+        this.ues = ues;
+        this.houseType = houseType;
+    }
+
+    public House(int houseId, int buildingId, String acreage, String ues, String houseType) {
         this.houseId = houseId;
         this.buildingId = buildingId;
         this.acreage = acreage;

@@ -1,5 +1,6 @@
 package com.manager.dao;
 
+import com.entity.PageBean;
 import com.manager.entity.House;
 
 import java.util.List;
@@ -19,5 +20,11 @@ public interface HouseDao {
     public int deleteHouse(int id);
 
     public int updateHouse(House house);
+
+    public int getConut();
+
+    public List<House> queryPageList(PageBean pageBean);
+
+    public House queryOne(int houseId);
 
 }

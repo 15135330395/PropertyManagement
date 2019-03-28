@@ -1,5 +1,6 @@
 package com.manager.dao;
 
+import com.entity.PageBean;
 import com.manager.entity.Building;
 
 import java.util.List;
@@ -21,5 +22,11 @@ public interface BuildingDao {
     public int updateBuilding(Building building);
 
     public int findBuildingCountByArea(int areaId);
+
+    public int getConut();
+
+    public List<Building> queryPageList(PageBean pageBean);
+
+    public Building queryOne(int buildingId);
 
 }

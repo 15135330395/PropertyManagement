@@ -129,7 +129,7 @@ public class AreaServlet extends HttpServlet {
         Area area = dao.findAreaById(areaId);
 
         request.setAttribute("area",area);
-        request.getRequestDispatcher("/background/area/addArea.jsp").forward(request,response);
+        request.getRequestDispatcher("/background/area/areaAdd.jsp").forward(request,response);
 
     }
 }
