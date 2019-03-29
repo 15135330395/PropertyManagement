@@ -1,0 +1,67 @@
+
+ul,li{
+    list-style: none;margin: 0;padding: 0}
+.left-sidebar{width: 180px;height: 700px;float: left;font-size: 15px;background: #FFF; overflow:scroll;position: relative;display: none;background: snow}
+#l_sidebar li{
+
+    line-height: 36px;
+    font-size: 14px;
+    color: #fff;
+    padding-left: 20px;
+    border: 1px dashed #fff;
+    border-left: none;
+    background: #7D9BBB;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+#l_sidebar li:hover{background: #c7ddef;color: #000;}
+#l_sidebar li span{margin-right: 6px}
+#l_sidebar a{text-decoration: none}
+#l_sidebar h3{
+    padding-left: 14px;
+    margin-top: 44px;margin-bottom: 18px}
+#l_sidebar .jczl_ul1 li{
+    margin-bottom: 1px;
+    padding-left: 34px;
+    height: 30px;
+    line-height: 30px;
+    background: #0c1f28;
+}
+#l_sidebar .jczl_ul1 li:hover{
+    background: #44535A;
+    color: #fff;
+}
+#l_sidebar .jczl_ul1{
+    display: none;
+}
+.topmenu-outer .navbar-center{
+
+    line-height: 50px;
+    margin-left: 30%;
+    font-size: 15px;
+    color: white;
+
+}
+.topmenu-outer .navbar-center span{
+    float: left;
+    line-height: 50px;
+    display: block;
+}
+.topmenu-outer .navbar-center li{
+
+    line-height: 50px;
+}
+#l_sidebar .arrow:before {
+    width: 10px;
+    float: right;
+    display: block;
+    margin-right: 10px;
+    font-size: 16px;
+    font-family: FontAwesome;
+    height: auto;
+    content: "\f104";
+    font-weight: 300;
+    transform:rotate(-90deg);
+}
