@@ -52,11 +52,9 @@ public class BuildingServlet extends HttpServlet {
         pageBean.setCount(dao.getConut());
         // list数据
         List<Building> buildingList = dao.queryPageList(pageBean);
-
         request.setAttribute("buildingList",buildingList);
         request.setAttribute("pageBean",pageBean);
-        request.getRequestDispatcher("/background/building/buildingList.jsp").forward(request,response);
-
+        request.getRequestDispatcher("/manager/background/building/buildingList.jsp").forward(request,response);
     }
     private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String buildingName = request.getParameter("buildingName");
@@ -105,7 +103,7 @@ public class BuildingServlet extends HttpServlet {
         Building building = dao.queryOne(buildingId);
 
         request.setAttribute("building",building);
-        request.getRequestDispatcher("/background/building/buildingupdate.jsp").forward(request,response);
+        request.getRequestDispatcher("/manager/background/building/buildingupdate.jsp").forward(request,response);
 
     }
 

@@ -80,12 +80,12 @@
                     layer.confirm('确认要删除这些信息吗？',function(index) {
                         $.ajax({
                             type: "post",
-                            url: "<%=request.getContextPath()%>/AreaServle",
+                            url: "<%=request.getContextPath()%>/AreaServlet",
                             data: "action=deleteAll&ids=" + ids,
                             success: function (msg) {
                                 if (msg > 0) {
                                     //捉到所有被选中的，发异步进行删除
-                                    layer.msg('成功删除' + msg + '条数据', {icon: 1})
+                                    layer.msg('成功删除' + msg + '条数据', {icon: 1})// 没有显示提示信息
                                 } else {
                                     layer.msg('已删除或不存在!', {icon: 2, time: 1000});
                                 }

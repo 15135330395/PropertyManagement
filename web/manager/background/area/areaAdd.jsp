@@ -58,6 +58,14 @@
                         "areaName":areaName
                     },
                     success:function(msg){
+                        layer.msg("添加成功",{icon:1,time:2000});
+                        // 获得frame索引
+                        var index = parent.layer.getFrameIndex(window.name);
+                        //关闭当前frame
+                        parent.layer.close(index);
+                        window.parent.location.reload();
+                    }
+                    /*success:function(msg){
                         if(msg=="1"){
                             //发异步，把数据提交给java
                             layer.alert("增加成功", {icon: 6},function () {
@@ -70,7 +78,7 @@
                         }else{
                             layer.msg("添加失败")
                         }
-                    }
+                    }*/
                 })
             }else {
                 $.ajax({
@@ -80,7 +88,7 @@
                         "action":"add",
                         "areaName":areaName
                     },
-                    success:function(msgData){
+                    success:function(msg){
                         layer.msg("添加成功",{icon:1,time:2000});
                         // 获得frame索引
                         var index = parent.layer.getFrameIndex(window.name);

@@ -108,6 +108,7 @@ public class AreaServlet extends HttpServlet {
 
     protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AreaDao dao = new AreaDaoImpl();
+        System.out.println("gsgsss");
         String ids = request.getParameter("ids");
         System.out.println(ids);
         String[] id = ids.split(",");

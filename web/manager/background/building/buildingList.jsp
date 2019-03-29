@@ -35,7 +35,7 @@
 <div class="x-body">
     <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-        <button class="layui-btn" onclick="x_admin_show('添加楼宇','<%=request.getContextPath()%>/background/building/buildingList.jsp')"><i class="layui-icon"></i>添加</button>
+        <button class="layui-btn" onclick="x_admin_show('添加楼宇','<%=request.getContextPath()%>/manager/background/building/buildingAdd.jsp')"><i class="layui-icon"></i>添加</button>
         <span class="x-right" style="line-height:40px">共有数据：${pageBean.count} 条</span>
     </xblock>
     <table class="layui-table">
@@ -62,7 +62,7 @@
                 <td>${building.staffId}</td>
                 <td>${building.areaId}</td>
                 <td class="td-manage">
-                    <a title="查看"  onclick="x_admin_show('编辑','<%=request.getContextPath()%>/BuildingServlet?action=queryOne&kid=${building.buildingId}')" href="javascript:;">
+                    <a title="查看"  onclick="x_admin_show('编辑','<%=request.getContextPath()%>/BuildingServlet?action=queryOne&bid=${building.buildingId}')" href="javascript:;">
                         <i class="layui-icon">&#xe63c;</i>
                     </a>
                     <a title="删除" onclick="member_del(this,'${building.buildingId}')" href="javascript:;">

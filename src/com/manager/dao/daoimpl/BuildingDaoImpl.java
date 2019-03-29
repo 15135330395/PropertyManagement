@@ -54,6 +54,7 @@ public class BuildingDaoImpl implements BuildingDao {
             }
             JdbcUtil.close();
         }
+        System.out.println(list);
         return list;
     }
 
@@ -195,8 +196,9 @@ public class BuildingDaoImpl implements BuildingDao {
     @Override
     public List<Building> queryPageList(PageBean pageBean) {
         List<Building> list = new ArrayList<>();
-        String sql="select * from building order by building_id limit ?,?";
-        PreparedStatement ps=null;
+        String sql="select * from building order by area_id limit ?,?";
+//        queryRunner.query(JdbcUtil.getConnection(),sql,new BeanListHandler<>(Building.class),pageBean)
+       PreparedStatement ps=null;
         ResultSet rs = null;
         try {
             Connection connection = JdbcUtil.getConnection();
@@ -210,6 +212,7 @@ public class BuildingDaoImpl implements BuildingDao {
                 int staffId = rs.getInt("staff_id");
                 int areaId = rs.getInt("area_id");
                 Building building =  new Building(buildingId,buildingName,staffId,areaId);
+
                 list.add(building);
             }
         } catch (SQLException e) {
@@ -225,6 +228,7 @@ public class BuildingDaoImpl implements BuildingDao {
             }
             JdbcUtil.close();
         }
+        System.out.println(list);
         return list;
     }
 

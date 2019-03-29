@@ -65,7 +65,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="<%=request.getContextPath()%>/manager/background/building/buildingList.jsp">
+                        <a _href="<%=request.getContextPath()%>/BuildingServlet?action=query">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>楼宇信息</cite>
                         </a>

@@ -86,4 +86,14 @@ public class Building {
     public void setAreaName(String areaName) {
         this.areaName = areaName;
     }
+
+    @Override
+    public String toString() {
+        return "Building{" +
+                "buildingId=" + buildingId +
+                ", buildingName='" + buildingName + '\'' +
+                ", staffId=" + staffId +
+                ", areaId=" + areaId +
+                '}';
+    }
 }

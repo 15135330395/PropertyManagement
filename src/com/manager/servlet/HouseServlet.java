@@ -109,7 +109,7 @@ public class HouseServlet extends HttpServlet {
         House house = dao.queryOne(houseId);
 
         request.setAttribute("house",house);
-        request.getRequestDispatcher("/background/house/houseupdate.jsp").forward(request,response);
+        request.getRequestDispatcher("/manager/background/house/houseupdate.jsp").forward(request,response);
 
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
