@@ -37,7 +37,7 @@ public class PayNormService {
         return pNdao.findPayNormById(NormId);
     }
 
-    public List<PayNorm> findSamePayId(int id) {
-        return pNdao.findSamePayId(id);
-    }
+
+
+
 }

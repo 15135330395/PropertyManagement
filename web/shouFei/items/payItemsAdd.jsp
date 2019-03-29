@@ -32,13 +32,13 @@
             <div class="layui-input-block">
                 <input type="text" name="payType" required
                        lay-verify="required" value="${payItemsById.payType}"
-                       placeholder="请输入收费项目类别" autocomplete="off" class="layui-input">
+                       placeholder="请输入收费项目类别（周期性/临时性/押金性）" autocomplete="off" class="layui-input">
                 <%--<select name="payType" lay-verify="required">--%>
                     <%--<option>请输入收费项目类别</option>--%>
-                    <%--<option>周期性</option>--%>
-                    <%--<option>临时性</option>--%>
-                    <%--<option>押金性</option>--%>
-                    <%--<c:forEach items="${itemsList}" var="items">--%>
+                    <%--&lt;%&ndash;<option>周期性</option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<option>临时性</option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<option>押金性</option>&ndash;%&gt;--%>
+                    <%--<c:forEach items="${payNormList}" var="items">--%>
                         <%--<option value="${items.id}">${items.payType}</option>--%>
                     <%--</c:forEach>--%>
                 <%--</select>--%>
@@ -49,13 +49,13 @@
             <div class="layui-input-block">
                 <input type="text" name="billingAccuracy"
                        required  lay-verify="required" value="${payItemsById.billingAccuracy}"
-                       placeholder="请输入计费精度" autocomplete="off" class="layui-input">
+                       placeholder="请输入计费精度（元/角/分）" autocomplete="off" class="layui-input">
                 <%--<select name="billingAccuracy" lay-verify="required">--%>
                     <%--<option>请输入计费精度</option>--%>
-                    <%--<option>元</option>--%>
-                    <%--<option>角</option>--%>
-                    <%--<option>分</option>--%>
-                    <%--<c:forEach items="${itemsList}" var="items">--%>
+                    <%--&lt;%&ndash;<option>元</option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<option>角</option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<option>分</option>&ndash;%&gt;--%>
+                    <%--<c:forEach items="${payNormList}" var="items">--%>
                         <%--<option value="${items.id}">${items.billingAccuracy}</option>--%>
                     <%--</c:forEach>--%>
                 <%--</select>--%>
@@ -85,7 +85,7 @@
         //监听提交
         form.on('submit(submitSave)', function(data){
            // layer.msg(JSON.stringify(data.field)+"==="+CKEDITOR.instances.content.getData());
-            alert(data.field.payId)
+           // alert(data.field.payId)
             var payId = data.field.payId;
             var payName = data.field.payName;
             var payType = data.field.payType;

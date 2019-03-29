@@ -122,8 +122,7 @@ public class PayNorm {
         this.chargeCycle = chargeCycle;
     }
     //单价*数量
-    public PayNorm(int normId,int payId, String normName, String computeMode, double price, String fillingType, int chargeCycle) {
-        this.normId = normId;
+    public PayNorm(int payId, String normName, String computeMode, double price, String fillingType, int chargeCycle) {
         this.payId = payId;
         this.normName = normName;
         this.computeMode = computeMode;
@@ -132,16 +131,14 @@ public class PayNorm {
         this.chargeCycle = chargeCycle;
     }
     //每户单独输入
-    public PayNorm(int normId,int payId,String normName, String computeMode, int chargeCycle) {
-        this.normId = normId;
+    public PayNorm(int payId,String normName, String computeMode, int chargeCycle) {
         this.payId = payId;
         this.normName = normName;
         this.computeMode = computeMode;
         this.chargeCycle = chargeCycle;
     }
     //固定金额
-    public PayNorm(int normId,int payId, String normName, String computeMode, int closeEnd, int chargeCycle) {
-        this.normId = normId;
+    public PayNorm(int payId, String normName, String computeMode, int closeEnd, int chargeCycle) {
         this.payId = payId;
         this.normName = normName;
         this.computeMode = computeMode;
@@ -149,8 +146,7 @@ public class PayNorm {
         this.chargeCycle = chargeCycle;
     }
     //自定义公式
-    public PayNorm(int normId,int payId, String normName, String computeMode,  String customFormula, int chargeCycle) {
-        this.normId = normId;
+    public PayNorm(int payId, String normName, String computeMode,  String customFormula, int chargeCycle) {
         this.payId = payId;
         this.normName = normName;
         this.computeMode = computeMode;

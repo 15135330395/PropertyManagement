@@ -9,7 +9,7 @@
 <%@ include file="../../commons/info.jsp"%>
 <html>
 <head>
-    <title>收费标准添加</title>
+    <title>抄表录入的添加</title>
 </head>
 <body>
 <div class="layui-container" style="padding: 20px">
@@ -17,57 +17,73 @@
         <div class="layui-form-item">
             <label class="layui-form-label"></label>
             <div class="layui-input-block">
-                <input type="hidden" name="normId" required  value="${payNormById.normId}"  autocomplete="off" class="layui-input">
+                <input type="hidden" name="meterReadingId" required  value="${meterReadingById.meterReadingId}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">payId：</label>
+            <label class="layui-form-label">小区名：</label>
             <div class="layui-input-block">
-                <input type="text" name="payId" required  lay-verify="required" value="${payNormById.payId}" placeholder="请输入payId" autocomplete="off" class="layui-input">
+                <input type="text" name="plotName"  value="${meterReadingById.plotName}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">标准名称：</label>
+            <label class="layui-form-label">房间号：</label>
             <div class="layui-input-block">
-                <input type="text" name="normName" required  lay-verify="required" value="${payNormById.normName}" placeholder="请输入标准名称" autocomplete="off" class="layui-input">
+                <input type="text" name="roomNumber"  value="${meterReadingById.roomNumber}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">金额计算方式：</label>
+            <label class="layui-form-label">收费项目名称：</label>
             <div class="layui-input-block">
-                <input type="text" name="computeMode" required  lay-verify="required" value="${payNormById.computeMode}" placeholder="请输入金额计算方式" autocomplete="off" class="layui-input">
+                <input type="text" name="payName"  value="${meterReadingById.payName}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-        <label class="layui-form-label">单价：</label>
-        <div class="layui-input-block">
-            <input type="text" name="price"  value="${payNormById.price}"  autocomplete="off" class="layui-input">
-        </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">计量方式：</label>
+            <label class="layui-form-label">收费标准名称：</label>
             <div class="layui-input-block">
-                <input type="text" name="fillingType"  value="${payNormById.fillingType}"  autocomplete="off" class="layui-input">
+                <input type="text" name="normName"  value="${meterReadingById.normName}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">固定金额：</label>
+            <label class="layui-form-label">日期：</label>
             <div class="layui-input-block">
-                <input type="text" name="closeEnd" value="${payNormById.closeEnd}"  autocomplete="off" class="layui-input">
+                <input type="text" name="riqi"  value="${meterReadingById.riqi}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">自定义公式：</label>
+            <label class="layui-form-label">单价：</label>
             <div class="layui-input-block">
-                <input type="text" name="customFormula" value="${payNormById.customFormula}"  autocomplete="off" class="layui-input">
+                <input type="text" name="price" value="${meterReadingById.price}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">收费周期：</label>
+            <label class="layui-form-label">起度：</label>
             <div class="layui-input-block">
-                <input type="text" name="chargeCycle" required lay-verify="number" value="${payNormById.chargeCycle}" placeholder="收费周期" autocomplete="off" class="layui-input">
+                <input type="text" name="start" value="${meterReadingById.start}"  autocomplete="off" class="layui-input">
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">止度：</label>
+            <div class="layui-input-block">
+                <input type="text" name="stop"  value="${meterReadingById.stop}" placeholder="收费周期" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">公摊：</label>
+            <div class="layui-input-block">
+                <input type="text" name="pooled"  value="${meterReadingById.pooled}" placeholder="收费周期" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        private int meterReadingId;//抄表id
+        private String plotName;//小区名
+        private String roomNumber;//房间号
+        private String payName;//收费项目名称
+        private String normName;//收费标准名称
+        private Date riqi;//日期
+        private double price;//单价
+        private double start;//起度
+        private double stop;//止度
+        private double pooled;//公摊
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="submitSave">保存</button>
@@ -86,7 +102,7 @@
         var layer = layui.layer;
         //监听提交
         form.on('submit(submitSave)', function(data){
-             //layer.msg(JSON.stringify(data.field));
+            //layer.msg(JSON.stringify(data.field));
             //alert(data.field)
             var normId=data.field.normId;
             var payId=data.field.payId;

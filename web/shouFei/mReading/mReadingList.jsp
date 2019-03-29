@@ -1,15 +1,22 @@
 <%--
   Created by IntelliJ IDEA.
   User: PC
-  Date: 2019/3/28
-  Time: 19:02
+  Date: 2019/3/29
+  Time: 17:10
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: PC
+  Date: 2019/3/26
+  Time: 15:14
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../../commons/info.jsp"%>
 <html>
 <head>
-    <title>通过patId查询收费标准</title>
+    <title>收费标准</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -23,7 +30,7 @@
 <div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="#"><cite>首页</cite></a>
-        <a><cite>收费标准1</cite></a>
+        <a><cite>抄表录入</cite></a>
       </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
@@ -33,8 +40,8 @@
 
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
-            <form action="/shouFei/norm/payNormAdd.jsp" method="get">
-                <button class="layui-btn"><i class="layui-icon"> </i>添加收费标准</button>
+            <form action="" method="get">
+                <button class="layui-btn"><i class="layui-icon"> </i>导入excel表</button>
             </form>
         </div>
     </script>
@@ -49,21 +56,23 @@
         table.render({
             elem: '#tab'
             // Servlet 返回一个json字符串
-            ,url:'<%=request.getContextPath()%>/PayNormServlet?action=queryList'
+            ,url:'<%=request.getContextPath()%>/MeterReadingServlet?action=query'
             ,toolbar: '#toolbarDemo'
-            ,title: '收费标准表'
+            ,title: '抄表录入'
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
-                ,{field:'normId', title:'normId',fixed: 'left'}
-                ,{field:'payId', title:'payId'}
-                ,{field:'normName', title:'标准名称'}
-                ,{field:'computeMode', title:'金额计算方式'}
+                ,{field:'meterReadingId', title:'meterReadingId'}
+                ,{field:'plotName', title:'小区名'}
+                ,{field:'roomNumber', title:'房间号'}
+                ,{field:'payName', title:'收费项目名称'}
+                ,{field:'normName', title:'收费标准名称'}
+                ,{field:'riqi', title:'日期'}
                 ,{field:'price', title:'单价'}
-                ,{field:'fillingType', title:'计量方式'}
-                ,{field:'closeEnd', title:'固定金额'}
-                ,{field:'customFormula', title:'自定义公式'}
-                ,{field:'chargeCycle', title:'收费周期'}
+                ,{field:'start', title:'起度'}
+                ,{field:'stop', title:'止度'}
+                ,{field:'pooled', title:'公摊'}
                 ,{fixed: 'right', title:'操作',toolbar: '#barDemo'}
+                //抄表录入
             ]]
             ,page: true
         });
@@ -77,8 +86,8 @@
                     layer.close(index);
                     $.ajax({
                         type:"post",
-                        url:"<%=request.getContextPath()%>/PayNormServlet",
-                        data:"action=delete&id="+data.normId,
+                        url:"<%=request.getContextPath()%>/MeterReadingServlet",
+                        data:"action=delete&id="+data.meterReadingId,
                         success:function(msg){
                             obj.del();
                             if(msg==0){
@@ -98,7 +107,7 @@
                     area: ['1200px', '700px'],
                     offset: 'auto', //右下角弹出
                     anim: 2,
-                    content: ['<%=request.getContextPath()%>/PayNormServlet?action=queryOne&id='+data.payId, 'no'], //iframe的url，no代表不显示滚动条
+                    content: ['<%=request.getContextPath()%>/MeterReadingServlet?action=queryOne&id='+data.meterReadingId, 'no'], //iframe的url，no代表不显示滚动条
                 });
             }
         });

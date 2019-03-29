@@ -23,5 +23,4 @@ public interface PayNormDao {
 
     public int findPayNormCountById(int normId);
 
-    public List<PayNorm> findSamePayId(int id);
 }

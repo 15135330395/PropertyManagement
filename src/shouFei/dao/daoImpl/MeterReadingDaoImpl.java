@@ -1,0 +1,176 @@
+package shouFei.dao.daoImpl;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import shouFei.dao.MeterReadingDao;
+import shouFei.entity.MeterReading;
+import shouFei.entity.PageBean;
+import shouFei.framewoek.JdbcUtils;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @Acthor:孙琪; date:2019/3/29;
+ */
+public class MeterReadingDaoImpl implements MeterReadingDao {
+    final static String colname="meter_reading_id meterReadingId, plot_name plotName, room_number roomNumber, pay_name payName, norm_name normName, riqi, price, start, stop, pooled";
+    private QueryRunner queryRunner =  new QueryRunner();
+    @Override
+    public List<MeterReading> findAll() {
+        List<MeterReading> list = new ArrayList<>();
+        String sql="select "+colname+" from meter_reading";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MeterReading meterReading =  new MeterReading();
+                int meterReadingId = rs.getInt("meterReadingId");
+                String plotName = rs.getString("plotName");
+                String roomNumber = rs.getString("roomNumber");
+                String payName = rs.getString("payName");
+                String normName=rs.getString("normName");
+                Date riqi = rs.getDate("riqi");
+                Double price = rs.getDouble("price");
+                Double start = rs.getDouble("start");
+                Double stop = rs.getDouble("stop");
+                Double pooled = rs.getDouble("pooled");
+                meterReading.setMeterReadingId(meterReadingId);
+                meterReading.setPlotName(plotName);
+                meterReading.setRoomNumber(roomNumber);
+                meterReading.setPayName(payName);
+                meterReading.setNormName(normName);
+                meterReading.setRiqi(riqi);
+                meterReading.setPrice(price);
+                meterReading.setStart(start);
+                meterReading.setStop(stop);
+                meterReading.setPooled(pooled);
+                list.add(meterReading);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return list;
+    }
+    @Override
+    public List<MeterReading> queryByPage(PageBean pageBean) {
+        List<MeterReading> list = new ArrayList<>();
+        String sql="select "+colname+" from meter_reading limit ?,?";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,pageBean.getIndex());
+            ps.setInt(2,pageBean.getPageCount());
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MeterReading meterReading =  new MeterReading();
+                int meterReadingId = rs.getInt("meterReadingId");
+                String plotName = rs.getString("plotName");
+                String roomNumber = rs.getString("roomNumber");
+                String payName = rs.getString("payName");
+                String normName=rs.getString("normName");
+                Date riqi = rs.getDate("riqi");
+                Double price = rs.getDouble("price");
+                Double start = rs.getDouble("start");
+                Double stop = rs.getDouble("stop");
+                Double pooled = rs.getDouble("pooled");
+                meterReading.setMeterReadingId(meterReadingId);
+                meterReading.setPlotName(plotName);
+                meterReading.setRoomNumber(roomNumber);
+                meterReading.setPayName(payName);
+                meterReading.setNormName(normName);
+                meterReading.setRiqi(riqi);
+                meterReading.setPrice(price);
+                meterReading.setStart(start);
+                meterReading.setStop(stop);
+                meterReading.setPooled(pooled);
+                list.add(meterReading);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return list;
+    }
+
+    @Override
+    public int deleteMeterReading(int id) {
+        String sql="delete from meter_reading where meter_reading_id=? ";
+        try {
+            int i = queryRunner.update(JdbcUtils.getConnection(), sql, id);
+            return  i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
+    public int updateMeterReading(MeterReading meterReading) {
+        String sql="update meter_reading set plot_name=?, room_number=?, pay_name=?, norm_name=?, riqi=?, price=?, start=?, stop=?, pooled=? where meter_reading_id=?";
+        try {
+            int i = queryRunner.update(JdbcUtils.getConnection(), sql, meterReading.getPlotName(),meterReading.getRoomNumber(),meterReading.getPayName(),meterReading.getNormName()
+                    ,meterReading.getRiqi(),meterReading.getPrice(),meterReading.getStart(),
+                    meterReading.getStop(),meterReading.getPooled(),meterReading.getMeterReadingId());
+            return  i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
+    public MeterReading findMeterReadingById(int id) {
+        MeterReading meterReading =  new MeterReading();
+        String sql="select * from meter_reading where meter_reading_id=?";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            queryRunner.query(JdbcUtils.getConnection(),sql,new BeanListHandler<MeterReading>(MeterReading.class),id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return meterReading;
+    }
+
+
+}

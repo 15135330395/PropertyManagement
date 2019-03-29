@@ -1,7 +1,6 @@
 package shouFei.dao.daoImpl;
 
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanListHandler;
 import shouFei.dao.PayNormDao;
 import shouFei.entity.PageBean;
 import shouFei.entity.PayNorm;
@@ -142,61 +141,6 @@ public class PayNormDaoImpl implements PayNormDao {
         return 0;
     }
 
-    @Override
-    public List<PayNorm> findSamePayId(int id) {
-        PayNorm payNorm =  new PayNorm();
-        List<PayNorm> list =  new ArrayList<>();
-        String sql="select * from pay_norm pn where pn.pay_id=?";
-        PreparedStatement ps=null;
-        ResultSet rs = null;
-       // try {
-           // Connection connection = JdbcUtils.getConnection();
-            //ps = connection.prepareStatement(sql);
-//            ps.setInt(1,pageBean.getIndex());
-//            ps.setInt(2,pageBean.getPageCount());
-            //rs = ps.executeQuery();
-//            while (rs.next()){
-//                int normId = rs.getInt("norm_id");
-//                int payId = rs.getInt("pay_id");
-//                String normName = rs.getString("norm_name");
-//                String computeMode = rs.getString("compute_mode");
-//                Double price=rs.getDouble("price");
-//                String fillingType = rs.getString("filling_type");
-//                int closeEnd = rs.getInt("close_end");
-//                String customFormula = rs.getString("custom_formula");
-//                int chargeCycle = rs.getInt("charge_cycle");
-//                payNorm.setNormId(normId);
-//                payNorm.setPayId(payId);
-//                payNorm.setNormName(normName);
-//                payNorm.setComputeMode(computeMode);
-//                payNorm.setPrice(price);
-//                payNorm.setFillingType(fillingType);
-//                payNorm.setCloseEnd(closeEnd);
-//                payNorm.setCustomFormula(customFormula);
-//                payNorm.setChargeCycle(chargeCycle);
-//                list.add(payNorm);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                if(rs!=null)
-//                    rs.close();
-//                if(ps!=null)
-//                    ps.close();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//            JdbcUtils.close();
-//        }
-        List<PayNorm> list1 = null;
-        try {
-            list1 = queryRunner.query(JdbcUtils.getConnection(), sql, new BeanListHandler<>(PayNorm.class), id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return list1;
-    }
 
     @Override
     public PayNorm findPayNormById(int NormId) {

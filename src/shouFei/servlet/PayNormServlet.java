@@ -40,25 +40,10 @@ public class PayNormServlet extends HttpServlet {
         } else if ("queryOne".equals(action)) {
             queryOne(request, response);
         }else if ("queryList".equals(action)) {
-            queryList(request, response);
+            //queryList(request, response);
         }
     }
 
-    private void queryList(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String payId = request.getParameter("id");
-        String pageIndex = request.getParameter("page");
-        PageBean pageBean =  new PageBean();
-        if(!StringUtil.isEmpty(pageIndex)){
-            pageBean.setPageIndex(Integer.parseInt(pageIndex));
-        }
-        String pageCount = request.getParameter("limit");
-        pageBean.setPageCount(Integer.parseInt(pageCount));
-        pageBean.setCount(service.findAll().size());
-        List<PayNorm> samePayIdList = service.findSamePayId(Integer.parseInt(payId));
-        request.setAttribute("samePayIdList",samePayIdList);
-        request.getRequestDispatcher("/shouFei/norm/payNormList.jsp").forward(request,response);
-
-    }
 
     private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String payId = request.getParameter("payId");
