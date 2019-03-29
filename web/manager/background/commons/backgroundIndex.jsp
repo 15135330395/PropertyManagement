@@ -81,7 +81,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="<%=request.getContextPath()%>/manager/background/house/houseList.jsp">
+                        <a _href="<%=request.getContextPath()%>/HouseServlet?action=query">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>房屋信息</cite>
                         </a>

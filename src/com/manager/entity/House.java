@@ -9,24 +9,24 @@ public class House {
     private int houseId;
     private int buildingId;
     private String acreage;
-    private String ues;
+    private String use;
     private String houseType;
 
     public House() {
     }
 
-    public House(int buildingId, String acreage, String ues, String houseType) {
+    public House(int buildingId, String acreage, String use, String houseType) {
         this.buildingId = buildingId;
         this.acreage = acreage;
-        this.ues = ues;
+        this.use = use;
         this.houseType = houseType;
     }
 
-    public House(int houseId, int buildingId, String acreage, String ues, String houseType) {
+    public House(int houseId, int buildingId, String acreage, String use, String houseType) {
         this.houseId = houseId;
         this.buildingId = buildingId;
         this.acreage = acreage;
-        this.ues = ues;
+        this.use = use;
         this.houseType = houseType;
     }
 
@@ -54,12 +54,12 @@ public class House {
         this.acreage = acreage;
     }
 
-    public String getUes() {
-        return ues;
+    public String getUse() {
+        return use;
     }
 
-    public void setUes(String ues) {
-        this.ues = ues;
+    public void setUse(String use) {
+        this.use = use;
     }
 
     public String getHouseType() {

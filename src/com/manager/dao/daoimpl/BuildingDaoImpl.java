@@ -197,7 +197,6 @@ public class BuildingDaoImpl implements BuildingDao {
     public List<Building> queryPageList(PageBean pageBean) {
         List<Building> list = new ArrayList<>();
         String sql="select * from building order by area_id limit ?,?";
-//        queryRunner.query(JdbcUtil.getConnection(),sql,new BeanListHandler<>(Building.class),pageBean)
        PreparedStatement ps=null;
         ResultSet rs = null;
         try {

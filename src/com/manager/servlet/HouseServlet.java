@@ -50,6 +50,7 @@ public class HouseServlet extends HttpServlet {
         pageBean.setPageCount(Integer.parseInt(pageCount));
         // 总条数
         pageBean.setCount(dao.getConut());
+        System.out.println(pageBean.getIndex()+" "+pageBean.getPageCount());
         // list数据
         List<House> houseList = dao.queryPageList(pageBean);
 

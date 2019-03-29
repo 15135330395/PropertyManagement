@@ -56,6 +56,7 @@ public class BuildingServlet extends HttpServlet {
         request.setAttribute("pageBean",pageBean);
         request.getRequestDispatcher("/manager/background/building/buildingList.jsp").forward(request,response);
     }
+
     private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String buildingName = request.getParameter("buildingName");
         String staffId = request.getParameter("staffId");
@@ -66,6 +67,7 @@ public class BuildingServlet extends HttpServlet {
         response.getWriter().print(""+i);
 
     }
+
     private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String buildingId = request.getParameter("buildingId");
         String buildingName = request.getParameter("buildingName");
@@ -75,6 +77,7 @@ public class BuildingServlet extends HttpServlet {
         int i = dao.updateBuilding(building);
         response.getWriter().print(""+i);
     }
+
     private void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String bid = request.getParameter("bid");
         int buildingId=-1;
@@ -84,6 +87,7 @@ public class BuildingServlet extends HttpServlet {
         int  i = dao.deleteBuilding(buildingId);
         response.getWriter().print(""+i);
     }
+
     private void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ids = request.getParameter("ids");
         String[] id = ids.split(",");
@@ -103,7 +107,7 @@ public class BuildingServlet extends HttpServlet {
         Building building = dao.queryOne(buildingId);
 
         request.setAttribute("building",building);
-        request.getRequestDispatcher("/manager/background/building/buildingupdate.jsp").forward(request,response);
+        request.getRequestDispatcher("/manager/background/building/buildingUpdate.jsp").forward(request,response);
 
     }
 

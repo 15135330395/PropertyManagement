@@ -111,7 +111,7 @@
             $.ajax({
                 type:"post",
                 url:"<%=request.getContextPath()%>/BuildingServlet",
-                data:"action=delete&kid="+id,
+                data:"action=delete&bid="+id,
                 success:function(msg){
                     //发异步删除数据
                     $(obj).parents("tr").remove();

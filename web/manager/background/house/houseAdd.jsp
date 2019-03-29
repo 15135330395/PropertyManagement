@@ -91,12 +91,13 @@
 
             $.ajax({
                 type:"post",
-                url:"<%=request.getContextPath()%>/LinkServlet",
+                url:"<%=request.getContextPath()%>/HouseServlet",
                 data:{
                     "action":"add",
-                    "buildingName":buildingName,
-                    "staffId":staffId,
-                    "areaId":areaId,
+                    "buildingId":buildingId,
+                    "acreage":acreage,
+                    "use":use,
+                    "houseType":houseType
                 },
                 success:function(msg){
                     if(msg=="1"){
