@@ -24,7 +24,7 @@ public class Report {
         return reportId;
     }
 
-    public void setReportId(int reportId) {
+    public void setReport_id(int reportId) {
         this.reportId = reportId;
     }
 
@@ -32,7 +32,7 @@ public class Report {
         return reportTitle;
     }
 
-    public void setReportTitle(String reportTitle) {
+    public void setReport_title(String reportTitle) {
         this.reportTitle = reportTitle;
     }
 
@@ -40,7 +40,7 @@ public class Report {
         return reportDate;
     }
 
-    public void setReportDate(Date reportDate) {
+    public void setReport_date(Date reportDate) {
         this.reportDate = reportDate;
     }
 
@@ -48,7 +48,7 @@ public class Report {
         return reportingUnit;
     }
 
-    public void setReportingUnit(String reportingUnit) {
+    public void setReporting_unit(String reportingUnit) {
         this.reportingUnit = reportingUnit;
     }
 
@@ -56,7 +56,7 @@ public class Report {
         return reportContent;
     }
 
-    public void setReportContent(String reportContent) {
+    public void setReport_content(String reportContent) {
         this.reportContent = reportContent;
     }
 
@@ -64,7 +64,7 @@ public class Report {
         return reportCost;
     }
 
-    public void setReportCost(Double reportCost) {
+    public void setReport_cost(Double reportCost) {
         this.reportCost = reportCost;
     }
 
@@ -72,7 +72,7 @@ public class Report {
         return reportName;
     }
 
-    public void setReportName(String reportName) {
+    public void setReport_name(String reportName) {
         this.reportName = reportName;
     }
 
@@ -80,7 +80,7 @@ public class Report {
         return reportPhone;
     }
 
-    public void setReportPhone(int reportPhone) {
+    public void setReport_phone(int reportPhone) {
         this.reportPhone = reportPhone;
     }
 
@@ -96,7 +96,7 @@ public class Report {
         return executiveResult;
     }
 
-    public void setExecutiveResult(String executiveResult) {
+    public void setExecutive_result(String executiveResult) {
         this.executiveResult = executiveResult;
     }
 

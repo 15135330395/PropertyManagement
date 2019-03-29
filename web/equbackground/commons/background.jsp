@@ -139,6 +139,14 @@
                         </a>
                     </li >
                 </ul>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="<%=request.getContextPath()%>/ReportServlet?action=toAdd">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>签报添加</cite>
+                        </a>
+                    </li >
+                </ul>
             </li>
             <li>
                 <a href="javascript:;">

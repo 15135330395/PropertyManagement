@@ -36,17 +36,17 @@
 
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
-            <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
-            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
-            <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+            <button class="layui-btn layui-btn-danger" lay-event="deleteAll"><i class="layui-icon"></i>批量删除</button>
         </div>
     </script>
 
     <script type="text/html" id="barDemo">
-        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
-
+    <script type="text/javascript" id="reportDate">
+        {{ dateFormat(d.reportDate) }}
+    </script>
 
     <%--<script src="//res.layui.com/layui/dist/layui.js" charset="utf-8"></script>
     <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
@@ -65,7 +65,7 @@
                     {type: 'checkbox', fixed: 'left'}  //左边的选择框
                     ,{field:'reportId', title:'ID', width:'10%', fixed: 'left', unresize: true, sort: true} //sort 排序
                     ,{field:'reportTitle', title:'标题', width:'10%', edit: 'text'}
-                    ,{field:'reportDate', title:'日期', width:'10%', edit: 'text'}
+                    ,{field:'reportDate', title:'日期', width:'10%', edit: 'text',templet:'#reportDate'}
                     ,{field:'reportingUnit', title:'呈报单位', width:'10%', edit: 'text'}
                     ,{field:'reportContent', title:'内容', width:'10%', edit: 'text'}
                     ,{field:'reportCost', title:'费用总计', width:'10%', edit: 'text'}
@@ -81,19 +81,36 @@
             //头工具栏事件
             table.on('toolbar(test)', function(obj){
                 var checkStatus = table.checkStatus(obj.config.id);
-                switch(obj.event){
-                    case 'getCheckData':
-                        var data = checkStatus.data;
-                        layer.alert(JSON.stringify(data));
-                        break;
-                    case 'getCheckLength':
-                        var data = checkStatus.data;
-                        layer.msg('选中了：'+ data.length + ' 个');
-                        break;
-                    case 'isAll':
-                        layer.msg(checkStatus.isAll ? '全选': '未全选');
-                        break;
-                };
+               if(obj.event=='deleteAll'){
+               // function  deleteAll() {
+                   alert(123)
+                      var data = checkStatus.data;
+                     layer.alert(JSON.stringify(data));
+                      if(data==""){
+                          layer.msg('请至少选择1条数据');
+                          return;
+                      }
+                      var ids="";
+                      for(var i=0;i<data.length;i++){
+                          ids+=data[i].reportId;
+                          ids+=","
+                      }
+                layer.confirm('确认删除这些信息吗?',function(index){
+                    $.ajax({
+                        type:"post",
+                        url:"<%=request.getContextPath()%>/ReportServlet",
+                        data:"action=deleteAll&ids="+ids,
+                        success: function(msg){
+                            if(msg>0){
+                                layer.msg('删除'+msg+'条数据成功',{icon:1});
+                            }else {
+                                layer.msg('已删除或不存在!',{icon:2,time:1000});
+                            }
+                            location.reload();
+                        }
+                    })
+                })
+               }
             });
 
             //监听行工具事件
@@ -108,24 +125,16 @@
                             url:"<%=request.getContextPath()%>/ReportServlet" ,
                             data: "action=delete&reportId="+data.reportId ,
                             success : function(msg){
-                                /*  新闻分类下有内容无法删除
-
-                                 * */
-
-                                var rc=eval("("+msg+")");/* 转js对象*/
-                                if(rc.code=="2001"){
-                                    layer.msg(rc.message,{icon:1,time:2000} );
+                                /*var rc=eval("("+msg+")");*//* 转js对象*/
+                                if(msg==0){
+                                    layer.msg("签报已删除或不存在",{icon:2,time:2000} );
                                 }else{
-                                    if(rc.code="2002"){
-                                        obj.del();
-                                        layer.msg(rc.message,{icon:1,time:1000});
-                                    }else if(rc.code="2003"){
-                                        layer.msg(rc.message ,{icon:1,time:1000});
-                                    }
+                                     layer.msg("删除成功",{icon:1,time:2000} );
+                                     location.reload();
                                 }
                             }
                         });
-                        layer.close(index);
+                   /*  layer.close(index);*/
                     });
                 } else if(obj.event === 'edit'){
                     layer.open({

@@ -27,7 +27,7 @@ public class ReportDaoImpl implements ReportDao {
        String sql="select * from report ";
         List<Report> list = new ArrayList<>();
         try {
-            list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<Report>(Report.class));
+            list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Report.class));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -51,8 +51,8 @@ public class ReportDaoImpl implements ReportDao {
 
     @Override
     public int updateReportByReportId(Report report) {
-        String sql="update report set (report_title=? , report_date=? , reporting_unit=? , report_content=? , report_cost=? , " +
-                "report_name=? , report_phone=? , instructions=? ,executive_result=?) where report_id=?";
+        String sql="update report set report_title=? , report_date=? , reporting_unit=? , report_content=? , report_cost=? , " +
+                " report_name=? , report_phone=? , instructions=? , executive_result=? where report_id=? ";
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, report.getReportTitle(), report.getReportDate(), report.getReportingUnit(), report.getReportContent(),
                     report.getReportCost(), report.getReportName(), report.getReportPhone(), report.getInstructions(), report.getExecutiveResult(), report.getReportId());
@@ -91,18 +91,16 @@ public class ReportDaoImpl implements ReportDao {
             rs = ps.executeQuery();
             while(rs.next()){
                 Report report=new Report();
-                report.setReportId(rs.getInt("report_id"));
-                report.setReportTitle(rs.getString("report_title"));
-                report.setReportDate(rs.getDate("report_date"));
-                report.setReportingUnit(rs.getString("reporting_unit"));
-                report.setReportContent(rs.getString ("report_content"));
-                report.setReportCost(rs.getDouble("report_cost"));
-                report.setReportName(rs.getString("report_name"));
-                report.setReportPhone(rs.getInt("report_phone"));
+                report.setReport_id(rs.getInt("report_id"));
+                report.setReport_title(rs.getString("report_title"));
+                report.setReport_date(rs.getDate("report_date"));
+                report.setReporting_unit(rs.getString("reporting_unit"));
+                report.setReport_content(rs.getString ("report_content"));
+                report.setReport_cost(rs.getDouble("report_cost"));
+                report.setReport_name(rs.getString("report_name"));
+                report.setReport_phone(rs.getInt("report_phone"));
                 report.setInstructions(rs.getString("instructions"));
-                report.setExecutiveResult(rs.getString("executive_result"));
-
-
+                report.setExecutive_result(rs.getString("executive_result"));
                 list.add(report);
             }
         } catch (SQLException e) {
@@ -121,14 +119,17 @@ public class ReportDaoImpl implements ReportDao {
 
     @Override
     public Report findReportById(int reportId) {
-        String sql="select * from report where report_id=? ";
-       Report report=null;
+        String sql="select * from report where report_id= ? ";
+        Report report=new Report();
         try {
-              report = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<Report>(Report.class), reportId);
-        return report;
+              report = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Report.class), reportId);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return report;
     }
+
+   /* public static void main(String[] args) {
+        new ReportDaoImpl().findReportById(1);
+    }*/
 }

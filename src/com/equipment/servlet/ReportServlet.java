@@ -30,23 +30,26 @@ public class ReportServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        request.setCharacterEncoding("utf-8");
        response.setContentType("text/html;charset=utf-8");
-        System.out.println("ReportServlet...");
 
         String action = request.getParameter("action");
+        System.out.println("ReportServlet..."+action);
         if("query".equals(action)){
             query(request,response);
         }else if("add".equals(action)){
             add(request,response);
         }else if("update".equals(action)){
+//            System.out.println("action="+action);
             update(request,response);
         }else if("delete".equals(action)){
             delete(request,response);
         }else if("queryPage".equals(action)){
-
             queryPage(request,response);
         }else if("queryOneBack".equals(action)){
-             System.out.println("queryOneBack...");
             queryOneBack(request,response);
+        }else if("toAdd".equals(action)){
+            toAdd(request,response);
+        }else if("deleteAll".equals(action)){
+             deleteAll(request,response);
         }
 
 
@@ -66,9 +69,21 @@ doPost(request,response);
     }
 
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      Report report=new Report();
-        int i = reportService.addReport(report);
+        String reportId = request.getParameter("reportId");
+        String reportTitle = request.getParameter("reportTitle");
+        String reportDate = request.getParameter("reportDate");
+//        System.out.println("update...reportDate="+reportDate);
+        String reportingUnit = request.getParameter("reportingUnit");
+        String reportCost =  request.getParameter("reportCost");
+        String reportName = request.getParameter("reportName");
+        String reportPhone = request.getParameter("reportPhone");
+        String instructions = request.getParameter("instructions");
+        String executiveResult = request.getParameter("executiveResult");
+        String reportContent = request.getParameter("reportContent");
+        Report report=new Report(Integer.parseInt(reportId),reportTitle,DateUtil.formatString(reportDate,"yyyy-MM-dd HH:mm:ss") ,reportingUnit,
+                reportContent, Double.parseDouble(reportCost),reportName,Integer.parseInt(reportPhone), instructions,executiveResult);
 
+        int i = reportService.addReport(report);
         response.getWriter().print(i);
 
     }
@@ -76,6 +91,7 @@ doPost(request,response);
         String reportId = request.getParameter("reportId");
         String reportTitle = request.getParameter("reportTitle");
         String reportDate = request.getParameter("reportDate");
+        System.out.println("update...reportDate="+reportDate);
         String reportingUnit = request.getParameter("reportingUnit");
        String reportCost =  request.getParameter("reportCost");
         String reportName = request.getParameter("reportName");
@@ -83,14 +99,11 @@ doPost(request,response);
         String instructions = request.getParameter("instructions");
         String executiveResult = request.getParameter("executiveResult");
         String reportContent = request.getParameter("reportContent");
-        Report report=new Report(Integer.parseInt(reportId),reportTitle,DateUtil.formatString(reportDate,"yyyy-MM-dd HH-mm-ss") ,reportingUnit,
+        Report report=new Report(Integer.parseInt(reportId),reportTitle,DateUtil.formatString(reportDate,"yyyy-MM-dd HH:mm:ss") ,reportingUnit,
                 reportContent, Double.parseDouble(reportCost),reportName,Integer.parseInt(reportPhone), instructions,executiveResult);
+        System.out.println("report="+report);
         int i = reportService.updateReportByReportId(report);
-
-
         System.out.println("i...."+i);
-
-
         response.getWriter().print(i);
 
     }
@@ -112,7 +125,8 @@ doPost(request,response);
         pageBean.setPageCount(Integer.parseInt(pageCount));
 
         List<Report> reportList = reportService.queryPage(pageBean);
-       /* System.out.println(pageBean.getIndex()+" "+pageBean.getPageIndex()+" "+pageBean.getPageCount());*/
+        System.out.println(reportList.get(0).getReportDate());
+
         JSONObject jsonObject= JsonUtil.getJsonObject(reportList,pageBean);
        /* System.out.println(jsonObject);*/
         response.getWriter().print(jsonObject);
@@ -120,10 +134,29 @@ doPost(request,response);
 
     protected void queryOneBack(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String reportId = request.getParameter("reportId");
+        System.out.println("reportId="+reportId);
+
         Report report  = reportService.findReportById(Integer.parseInt(reportId));
-        System.out.println(report);
+
+        System.out.println("queryOneBack..."+report);
         request.setAttribute("report",report);
         request.getRequestDispatcher("/equbackground/report/reportUpdate.jsp").forward(request,response);
 
+    }
+
+    protected void toAdd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        request.getRequestDispatcher("/equbackground/report/reportAdd.jsp").forward(request,response);
+
+    }
+    protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String ids = request.getParameter("ids");
+        String[] idArr = ids.split(",");
+        int sum=0;
+        for(String reportId : idArr){
+            int i = reportService.deleteReportByReportId(Integer.parseInt(reportId));
+            sum+=i;
+        }
+        response.getWriter().print(sum);
     }
 }
