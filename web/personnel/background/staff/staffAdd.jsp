@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="../commons/info.jsp"%>
 <html>
 <head>
@@ -28,7 +29,7 @@
             <div class="layui-upload "align="right" >
                 <button type="button" class="layui-btn layui-btn-sm" id="test2" >上传照片</button>
                 <div class="layui-upload-list">
-                    <img class="layui-upload-img" id="demo1" style="width: 87px;height: 130px;">
+                    <img class="layui-upload-img" id="demo1" style="width: 87px;height: 130px;" src="/${staff.staffImage}">
                     <p id="demoText"></p>
                 </div>
             </div>
@@ -36,11 +37,21 @@
         <div class="layui-form-item">
             <label class="layui-form-label">入职时间：</label>
             <div class="layui-input-inline">
-                <input type="text" name="joinTime" value="${staff.joinTime}"  lay-verify="required" placeholder="请选择入职时间"class="layui-input" id="test1">
+                <input type="text" name="joinTime" value="<fmt:formatDate value="${staff.joinTime}" pattern="yyyy-MM-dd " />"  lay-verify="required" placeholder="请选择入职时间"class="layui-input" id="test1">
             </div>
-            <label class="layui-form-label">家庭住址：</label>
+            <label class="layui-form-label">所属部门：</label>
             <div class="layui-input-inline">
-                <input type="text" name="address" required lay-verify="required" value="${staff.address}"  placeholder="请输入家庭住址" autocomplete="off" class="layui-input">
+                <select name="departmentId" lay-verify="required" value="${staff.departmentId}">
+                    <option value=""></option>
+                    <c:forEach items="${departmentList}" var="list">
+                        <c:if test="${list.departmentId == staff.departmentId}">
+                            <option selected value="${list.departmentId}">${list.departmentName}</option>
+                        </c:if>
+                        <c:if test="${list.departmentId != staff.departmentId}">
+                            <option value="${list.departmentId}">${list.departmentName}</option>
+                        </c:if>
+                    </c:forEach>
+                </select>
             </div>
             <label class="layui-form-label">性别：</label>
             <div class="layui-input-inline">
@@ -83,23 +94,11 @@
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label">所属部门：</label>
-            <div class="layui-input-block">
-                <input type="text" name="departmentId" value="${staff.departmentId}" autocomplete="off" class="layui-input">
-
-            <%--<select name="" >
-                    <option value=""></option>
-                    <c:forEach items="${typeList}" var="type">
-                        <c:if test="${type.typeId == news.typeId}">
-                            <option selected value="${type.typeId}">${type.typeName}</option>
-                        </c:if>
-                        <c:if test="${type.typeId != news.typeId}">
-                            <option value="${type.typeId}">${type.typeName}</option>
-                        </c:if>
-
-                    </c:forEach>
-                </select>--%>
+            <label class="layui-form-label">家庭住址：</label>
+            <div class="layui-input-inline">
+                <input type="text" name="address" required lay-verify="required" value="${staff.address}"  placeholder="请输入家庭住址" autocomplete="off" class="layui-input">
             </div>
+
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">身份证号：</label>
@@ -131,12 +130,11 @@
         var form = layui.form;
         var laydate = layui.laydate;
         var $ = layui.jquery
-            ,upload = layui.upload;
+        var upload = layui.upload;
         //普通图片上传
         var uploadInst = upload.render({
             elem: '#test2'
             ,url: '<%=request.getContextPath()%>/uploadImage'
-
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){

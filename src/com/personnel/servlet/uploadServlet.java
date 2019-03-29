@@ -29,10 +29,9 @@ public class uploadServlet extends HttpServlet {
         savePath.mkdirs();
         String uuid = UUID.randomUUID().toString().replace("-", "");
 
-        Part part = request.getPart("upload");//通过表单file控件(<input type="file" name="upfile">)的名字直接获取Part对象
+        Part part = request.getPart("file");//通过表单file控件(<input type="file" name="upfile">)的名字直接获取Part对象
         //Servlet3没有提供直接获取文件名的方法,需要从请求头中解析出来
         //获取请求头，请求头的格式：form-data; name="file"; filename="snmp4j--api.zip"
-        System.out.println(part);
         String header = part.getHeader("content-disposition");
         //获取文件名
         String fileName ="";

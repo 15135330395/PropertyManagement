@@ -130,7 +130,7 @@
                         area: ['1000px', '700px'],
                         offset: 'auto', //右下角弹出
                         anim: 2,
-                        content: '<%=request.getContextPath()%>/personnel/background/staff/staffAdd.jsp'
+                        content: '<%=request.getContextPath()%>/StaffServlet?action=queryOne'
                     })
                     break;
             };

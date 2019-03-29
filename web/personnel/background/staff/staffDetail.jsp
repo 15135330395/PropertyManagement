@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="../commons/info.jsp"%>
 <html>
 <head>
@@ -40,14 +41,14 @@
         <div class="layui-upload " >
             <label class="layui-form-label">照片：</label>
             <div class="layui-input-inline">
-                <img class="layui-upload-img" id="demo1" style="width: 87px;height: 130px;">
+                <img class="layui-upload-img" id="demo1" style="width: 87px;height: 130px;" src="/${staff.staffImage}">
             </div>
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">入职时间：</label>
         <div class="layui-input-inline">
-            <input readonly type="text" name="joinTime" value="${staff.joinTime}"  lay-verify="required" placeholder="请选择入职时间"class="layui-input" id="test4">
+            <input readonly type="text" name="joinTime" value="<fmt:formatDate value="${staff.joinTime}" pattern="yyyy-MM-dd " />"  lay-verify="required" placeholder="请选择入职时间"class="layui-input" id="test4">
         </div>
         <label class="layui-form-label">家庭住址：</label>
         <div class="layui-input-inline">

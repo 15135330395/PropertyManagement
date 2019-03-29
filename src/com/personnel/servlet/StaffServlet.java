@@ -1,11 +1,15 @@
 package com.personnel.servlet;
 
 import com.alibaba.fastjson.JSONObject;
+import com.entity.Department;
 import com.entity.PageBean;
 import com.entity.Staff;
+import com.manager.dao.DepartmentDao;
+import com.manager.dao.daoimpl.DepartmentDaoImpl;
 import com.personnel.service.StaffService;
 import com.utils.DateUtil;
 import com.utils.JsonUtil;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -136,8 +140,13 @@ public class StaffServlet extends HttpServlet {
 
     protected void queryOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String staffId = request.getParameter("staffId");
-        Staff staff = staffService.queryOne(Integer.parseInt(staffId));
-        request.setAttribute("staff", staff);
+        if (staffId != null) {
+            Staff staff = staffService.queryOne(Integer.parseInt(staffId));
+            request.setAttribute("staff", staff);
+        }
+        DepartmentDao dao=new DepartmentDaoImpl();
+        List<Department> departmentList = dao.findAll();
+        request.setAttribute("departmentList",departmentList);
         request.getRequestDispatcher("/personnel/background/staff/staffAdd.jsp").forward(request, response);
     }
 
