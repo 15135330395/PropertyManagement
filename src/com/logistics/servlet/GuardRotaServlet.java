@@ -93,7 +93,7 @@ public class GuardRotaServlet extends HttpServlet {
         String rotaTime = request.getParameter("rotaTime");
         String staffId = request.getParameter("staffId");
         String staffName = request.getParameter("staffName");
-        GuardRota guardRota = new GuardRota(rotaTime,Integer.parseInt(staffId),staffName);
+        GuardRota guardRota = new GuardRota(rotaTime, Integer.parseInt(staffId), staffName);
         int i = service.addRota(guardRota);
         response.getWriter().print(i);
     }
@@ -133,11 +133,15 @@ public class GuardRotaServlet extends HttpServlet {
     }
 
     private void clockIn(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String rotaId = request.getParameter("rotaId");
+        int i = service.clockIn(Integer.parseInt(rotaId));
+        response.getWriter().print(i);
     }
 
     private void clockOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String rotaId = request.getParameter("rotaId");
+        int i = service.clockOut(Integer.parseInt(rotaId));
+        response.getWriter().print(i);
     }
 
     @Override

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: 15087
-  Date: 2019/3/27
-  Time: 21:39
+  User: Administrator
+  Date: 2019/3/29 0029
+  Time: 15:42
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,7 +11,7 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>操作记录表</title>
+    <title>器材归还表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -22,7 +22,7 @@
       <span class="layui-breadcrumb">
         <a href="#">首页</a>
         <a>
-          <cite>安保器材操作记录管理</cite></a>
+          <cite>器材归还管理</cite></a>
       </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        href="javascript:location.replace(location.href);" title="刷新">
@@ -38,20 +38,8 @@
 
     <table class="layui-hide" id="test" lay-filter="test"></table>
 
-    <script type="text/html" id="toolbarDemo">
-        <div class="layui-btn-container">
-            <button class="layui-btn" lay-event="addRecord">
-                <i class="layui-icon"></i>添加
-            </button>
-            <button class="layui-btn layui-btn-danger" lay-event="delAll">
-                <i class="layui-icon"></i>批量删除
-            </button>
-        </div>
-    </script>
-
     <script type="text/html" id="barDemo">
-        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="return">归还</a>
     </script>
     <script type="text/html" id="borrowingTime">
         {{ dateFormat(d.borrowingTime) }}
@@ -96,88 +84,35 @@
                 });
             });
 
-            //头工具栏事件
-            table.on('toolbar(test)', function (obj) {
-                if (obj.event === 'addRecord') {
-                    layer.open({
-                        title: '添加记录',
-                        type: 2,
-                        closeBtn: 1,
-                        skin: 'layui-layer-rim', // 加上边框
-                        area: ['840px', '620px'], // 宽高
-                        content: '<%=request.getContextPath()%>/logistics/OperatingRecord/AddOperatingRecord.jsp'
-                    });
-                } else if (obj.event === 'delAll') {
-                    var checkStatus = table.checkStatus(obj.config.id);
-                    var data = checkStatus.data;
-                    if (data == "") {
-                        layer.msg('请至少选择1条数据');
-                        return;
-                    }
-                    var ids = "";
-                    for (var i = 0; i < data.length; i++) {
-                        ids += data[i].recordId;
-                        ids += ","
-                    }
-                    layer.confirm('确认要删除这些信息吗？', function () {
-                        $.ajax({
-                            type: "post",
-                            url: "<%=request.getContextPath()%>/OperatingRecordServlet",
-                            data: {
-                                action: "deleteRecords",
-                                incidentIds: "" + ids
-                            },
-                            success: function (msg) {
-                                if (msg > 0) {
-                                    layer.alert("成功删除" + msg + "条数据", {icon: 6});
-                                } else {
-                                    layer.msg('已被删除或不存在', {icon: 2, time: 2000});
-                                }
-                                // 刷新本页面
-                                setTimeout("location.reload()", 2000)
-                            },
-                            error: function () {
-                                layer.msg("删除异常")
-                            }
-                        });
-                    });
-                }
-            });
-
             //监听行工具事件
             table.on('tool(test)', function (obj) {
                 var data = obj.data;
-                if (obj.event === 'del') {
-                    layer.confirm('真的要删除吗？', function (index) {
+                if (obj.event === 'return') {
+                    layer.confirm('确定要归还吗？', function (index) {
                         layer.close(index);
                         //发异步 删除数据
                         $.ajax({
                             type: "post",
                             url: "<%=request.getContextPath()%>/OperatingRecordServlet",
                             data: {
-                                action: "deleteRecord",
+                                action: "returnEquipment",
                                 recordId: data.recordId
                             },
                             success: function (msg) {
                                 if (msg == 1) {
-                                    layer.alert("删除成功", {icon: 6});
-                                } else {
-                                    layer.msg("已被删除或不存在", {icon: 2, time: 2000});
+                                    layer.alert("归还成功", {icon: 6});
+                                } else if (msg == 2) {
+                                    layer.msg("无效 重复归还", {icon: 2, time: 1500});
+                                } else if (msg == 0) {
+                                    layer.msg("归还失败 已被删除或不存在", {icon: 2, time: 1500});
                                 }
-                                obj.del();
+                                // 刷新本页面
+                                setTimeout("location.reload()", 1500)
                             },
                             error: function () {
-                                layer.msg("删除异常")
+                                layer.msg("归还异常")
                             }
                         });
-                    });
-                } else if (obj.event === 'edit') {
-                    layer.open({
-                        title: '任务修改',
-                        type: 2,
-                        skin: 'layui-layer-rim', // 加上边框
-                        area: ['840px', '620px'], // 宽高
-                        content: '<%=request.getContextPath()%>/OperatingRecordServlet?action=editRecord&recordId=' + data.recordId
                     });
                 }
             });
@@ -188,3 +123,4 @@
 
 </body>
 </html>
+

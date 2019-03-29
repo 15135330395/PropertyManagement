@@ -44,11 +44,25 @@ public class GuardRotaService {
         return dao.deleteRota(rotaId);
     }
 
-    public int clockIn(int rotaId, Date clockInTime) {
-        return dao.clockIn(rotaId, clockInTime);
+    public int clockIn(int rotaId) {
+        GuardRota rota = dao.findRotaByRotaId(rotaId);
+        if (rota.getClockIn() == null) {
+            Date clockInTime = new Date();
+            int i = dao.clockIn(rotaId, clockInTime);
+            return i;
+        } else {
+            return 2;
+        }
     }
 
-    public int clockOut(int rotaId, Date clockOutTime) {
-        return dao.clockIn(rotaId, clockOutTime);
+    public int clockOut(int rotaId) {
+        GuardRota rota = dao.findRotaByRotaId(rotaId);
+        if (rota.getClockOut() == null) {
+            Date clockOutTime = new Date();
+            int i = dao.clockOut(rotaId, clockOutTime);
+            return i;
+        } else {
+            return 2;
+        }
     }
 }

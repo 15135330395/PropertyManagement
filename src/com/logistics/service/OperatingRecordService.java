@@ -3,6 +3,7 @@ package com.logistics.service;
 import com.entity.PageBean;
 import com.logistics.dao.OperatingRecordDao;
 import com.logistics.dao.impl.OperatingRecordDaoImpl;
+import com.logistics.entity.GuardRota;
 import com.logistics.entity.OperatingRecord;
 
 import java.util.Date;
@@ -40,7 +41,14 @@ public class OperatingRecordService {
         return dao.deleteRecord(recordId);
     }
 
-    public int returnEquipment(int recordId, Date returnTime) {
-        return dao.returnEquipment(recordId, returnTime);
+    public int returnEquipment(int recordId) {
+        OperatingRecord record = dao.findRecordById(recordId);
+        if (record.getReturnTime() == null) {
+            Date returnTime = new Date();
+            int i = dao.returnEquipment(recordId, returnTime);
+            return i;
+        } else {
+            return 2;
+        }
     }
 }

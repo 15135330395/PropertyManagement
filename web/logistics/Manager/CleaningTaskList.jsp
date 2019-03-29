@@ -53,6 +53,7 @@
         <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="completion" title="完成"><i class="layui-icon">✔</i></a>
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        <a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="score">评分</a>
     </script>
 
     <script type="text/html" id="switchTpl">
@@ -75,7 +76,7 @@
                 , title: '绿化清洁任务表'
                 , cols: [[
                     {type: 'checkbox', fixed: 'left'}
-                    , {field: 'taskId', title: '编号', fixed: 'left', sort: true}
+                    , {field: 'taskId', title: '编号', width: 100, fixed: 'left', sort: true}
                     , {field: 'taskType', title: '类别'}
                     , {field: 'taskTime', title: '时段', width: 320}
                     , {field: 'taskArea', title: '区域'}
@@ -83,7 +84,7 @@
                     , {field: 'staffName', title: '员工姓名'}
                     , {field: 'completion', title: '完成状况', width: 104, templet: '#switchTpl'}
                     , {field: 'score', title: '评分', templet: '#score'}
-                    , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 158}
+                    , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 204}
                 ]]
                 , page: true
             });
@@ -112,7 +113,7 @@
                         closeBtn: 1,
                         skin: 'layui-layer-rim', // 加上边框
                         area: ['840px', '620px'], // 宽高
-                        content: '<%=request.getContextPath()%>/CleaningTaskServlet?action=toAddTask'
+                        content: '<%=request.getContextPath()%>/logistics/CleaningTask/AddCleaningTask.jsp'
                     });
                 } else if (obj.event === 'delAll') {
                     var checkStatus = table.checkStatus(obj.config.id);
@@ -177,6 +178,15 @@
                                 layer.msg("删除异常")
                             }
                         });
+                    });
+                } else if (obj.event === 'score') {
+                    layer.open({
+                        title: '添加评分',
+                        type: 2,
+                        closeBtn: 1,
+                        skin: 'layui-layer-rim', // 加上边框
+                        area: ['320px', '280px'], // 宽高
+                        content: '<%=request.getContextPath()%>/CleaningTaskServlet?action=toAddScore&taskId=' + data.taskId
                     });
                 } else if (obj.event === 'completion') {
                     layer.confirm('确认完成了吗？', function (index) {

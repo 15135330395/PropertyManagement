@@ -72,7 +72,7 @@ public class OperatingRecordDaoImpl implements OperatingRecordDao {
 
     @Override
     public int updateRecord(OperatingRecord operatingRecord) {
-        String sql = "update operating_record set staff_name=?,equipment_name=?,borrowing_time=?  where record_id = ?";
+        String sql = "update operating_record set staff_name=?,equipment_name=?,borrowing_time=?,return_time=null where record_id = ?";
         Object[] obj = {operatingRecord.getStaffName(), operatingRecord.getEquipmentName(), operatingRecord.getBorrowingTime(), operatingRecord.getRecordId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);

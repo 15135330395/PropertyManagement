@@ -43,16 +43,11 @@ public class CleaningTaskService {
         return dao.deleteTask(taskId);
     }
 
+    public int addCompletion(int taskId) {
+        return dao.addCompletion(taskId);
+    }
     public int addScore(int taskId, int score) {
         return dao.addScore(taskId, score);
-    }
-
-    public int updateScore(int taskId, int score) {
-        return dao.updateScore(taskId, score);
-    }
-
-    public int deleteScore(int taskId) {
-        return dao.deleteScore(taskId);
     }
 
 }

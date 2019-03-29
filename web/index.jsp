@@ -12,10 +12,26 @@
 </head>
 <body>
 <%
-    // response.sendRedirect(request.getContextPath() + "/logistics/CleaningTask/CleaningTaskList.jsp");
+    // 主管 - 绿化清洁任务评分管理
+    // response.sendRedirect(request.getContextPath() + "/logistics/Manager/CleaningTaskList.jsp");
+
+    // 绿化清洁任务管理
+    response.sendRedirect(request.getContextPath() + "/logistics/CleaningTask/CleaningTaskList.jsp");
+    // 绿化清洁任务状况
+    // response.sendRedirect(request.getContextPath() + "/logistics/CleaningTask/CleaningTaskCompletion.jsp");
+
+    // 消防事故管理
     // response.sendRedirect(request.getContextPath() + "/logistics/FireIncident/FireIncidentList.jsp");
+
+    // 器材使用记录管理
     // response.sendRedirect(request.getContextPath() + "/logistics/OperatingRecord/OperatingRecordList.jsp");
-    response.sendRedirect(request.getContextPath() + "/logistics/GuardRota/GuardRotaList.jsp");
+    // 器材归还管理
+    // response.sendRedirect(request.getContextPath() + "/logistics/OperatingRecord/ReturnEquipment.jsp");
+
+    // 保安排班管理
+    // response.sendRedirect(request.getContextPath() + "/logistics/GuardRota/GuardRotaList.jsp");
+    // 保安打卡管理
+    // response.sendRedirect(request.getContextPath() + "/logistics/GuardRota/ClockInAndOut.jsp");
 %>
 </body>
 </html>

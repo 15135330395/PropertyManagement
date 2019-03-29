@@ -64,7 +64,7 @@
         </div>
         <div class="layui-form-item">
             <label for="staffName" class="layui-form-label">
-                <span class="x-red">*</span>员工姓名
+                <span class="x-red">*</span>员工编号
             </label>
             <div class="layui-input-inline">
                 <input type="text" id="staffName" name="staffName" value="${task.staffName}" required=""
@@ -72,7 +72,6 @@
                        autocomplete="off" class="layui-input">
             </div>
         </div>
-
         <div class="layui-form-item">
             <label class="layui-form-label">
             </label>
@@ -100,7 +99,7 @@
                     taskType: data.field.taskType,
                     taskTime: data.field.taskTime,
                     taskArea: data.field.taskArea,
-                    staffName: data.field.staffName
+                    staffId: data.field.staffId
                 },
                 success: function (msg) {
                     if (msg == 1) {

@@ -34,7 +34,8 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
 
     @Override
     public List<CleaningTask> getAllTaskByPage(PageBean pageBean) {
-        String sql = "select * from cleaning_task limit ? ,?";
+        String sql = "select c.*,s.staff_name from cleaning_task c,staff s where s.department_id=202 and s.staff_id=c.staff_id limit ? ,?";
+        // String sql = "select * from cleaning_task limit ? ,?";
         try {
             List<CleaningTask> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CleaningTask.class), pageBean.getIndex(), pageBean.getPageCount());
             return query;
@@ -46,7 +47,8 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
 
     @Override
     public CleaningTask findTaskByTaskId(int taskId) {
-        String sql = "select * from cleaning_task where task_id = ?";
+        // String sql = "select * from cleaning_task where task_id=?";
+        String sql = "select c.*,s.staff_name from cleaning_task c,staff s where s.department_id=202 and s.staff_id=c.staff_id and task_id = ?";
         try {
             CleaningTask query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(CleaningTask.class), taskId);
             return query;
@@ -58,7 +60,8 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
 
     @Override
     public List<CleaningTask> findTaskByStaffId(int staffId) {
-        String sql = "select * from cleaning_task where staff_id = ?";
+        // String sql = "select * from cleaning_task where staff_id=?";
+        String sql = "select c.*,s.staff_name from cleaning_task c,staff s where s.department_id=202 and s.staff_id=c.staff_id and staff_id = ?";
         try {
             List<CleaningTask> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CleaningTask.class), staffId);
             return query;
@@ -107,34 +110,22 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
     }
 
     @Override
+    public int addCompletion(int taskId) {
+        String sql = "update cleaning_task set completion=1 where task_id = ?";
+        try {
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql, taskId);
+            return i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
     public int addScore(int taskId, int score) {
         String sql = "update cleaning_task set score=? where task_id = ?";
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, score, taskId);
-            return i;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    @Override
-    public int updateScore(int taskId, int score) {
-        String sql = "update cleaning_task set score=? where task_id = ?";
-        try {
-            int i = queryRunner.update(JdbcUtil.getConnection(), sql, score, taskId);
-            return i;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    @Override
-    public int deleteScore(int taskId) {
-        String sql = "update cleaning_task set score=null where task_id = ?";
-        try {
-            int i = queryRunner.update(JdbcUtil.getConnection(), sql, taskId);
             return i;
         } catch (SQLException e) {
             e.printStackTrace();

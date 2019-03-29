@@ -126,7 +126,9 @@ public class OperatingRecordServlet extends HttpServlet {
     }
 
     private void returnEquipment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String recordId = request.getParameter("recordId");
+        int i = service.returnEquipment(Integer.parseInt(recordId));
+        response.getWriter().print(i);
     }
 
     @Override
