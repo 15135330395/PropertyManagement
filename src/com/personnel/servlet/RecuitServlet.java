@@ -92,7 +92,7 @@ public class RecuitServlet extends HttpServlet {
         String recuitId = request.getParameter("recuitId");
         Recuit recuit = recuitService.queryOne(Integer.parseInt(recuitId));
         request.setAttribute("recuit", recuit);
-        request.getRequestDispatcher("/background/recuit/recuitAdd.jsp").forward(request, response);
+        request.getRequestDispatcher("/personnel/background/recuit/recuitAdd.jsp").forward(request, response);
     }
 
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

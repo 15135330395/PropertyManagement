@@ -115,7 +115,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="<%=request.getContextPath()%>/background/staff/staffList.jsp">
+                        <a _href="<%=request.getContextPath()%>/personnel/background/staff/staffList.jsp">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>员工信息管理</cite>
                         </a>
@@ -130,7 +130,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="<%=request.getContextPath()%>/background/recuit/recuitList.jsp">
+                        <a _href="<%=request.getContextPath()%>/personnel/background/recuit/recuitList.jsp">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>招聘信息管理</cite>
                         </a>

@@ -64,7 +64,7 @@ public class StaffServlet extends HttpServlet {
         Staff staff = staffService.queryOneStaff(Integer.parseInt(staffId));
 
         request.setAttribute("staff", staff);
-        request.getRequestDispatcher("/background/staff/staffDetail.jsp").forward(request, response);
+        request.getRequestDispatcher("/personnel/background/staff/staffDetail.jsp").forward(request, response);
     }
 
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -138,7 +138,7 @@ public class StaffServlet extends HttpServlet {
         String staffId = request.getParameter("staffId");
         Staff staff = staffService.queryOne(Integer.parseInt(staffId));
         request.setAttribute("staff", staff);
-        request.getRequestDispatcher("/background/staff/staffAdd.jsp").forward(request, response);
+        request.getRequestDispatcher("/personnel/background/staff/staffAdd.jsp").forward(request, response);
     }
 
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

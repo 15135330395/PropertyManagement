@@ -12,7 +12,7 @@
   </head>
   <body>
   <%
-      response.sendRedirect(request.getContextPath()+"/background/commons/backgroundIndex.jsp");
+      response.sendRedirect(request.getContextPath()+"/personnel/background/commons/backgroundIndex.jsp");
   %>
   </body>
 </html>
