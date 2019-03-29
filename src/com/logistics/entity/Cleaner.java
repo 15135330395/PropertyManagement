@@ -4,8 +4,9 @@ import com.entity.Staff;
 
 /**
  * @Description 保洁人员
- * @Author
+ * @Author WYR
  * @CreateTime 2019-03-26 8:40
  */
 public class Cleaner extends Staff {
+
 }
