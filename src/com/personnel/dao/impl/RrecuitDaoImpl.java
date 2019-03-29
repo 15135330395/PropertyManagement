@@ -58,7 +58,7 @@ public class RrecuitDaoImpl implements RecuitDao {
 
     @Override
     public int updateRecuit(Recuit recuit) {
-        String sql="update recuit set recuit_position=? recuit_count=? duty=? demand=? basic_salary=? " +
+        String sql="update recuit set recuit_position=?,recuit_count=?,duty=?,demand=?,basic_salary=? " +
                 "where recuit_id=?";
         Object[] objs={recuit.getRecuitPosition(),recuit.getRecuitCount(),recuit.getDuty(),recuit.getDemand(),recuit.getBasicSalary(),recuit.getRecuitId()};
         try {

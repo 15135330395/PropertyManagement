@@ -16,4 +16,6 @@ public interface StaffDao {
     public int updateStaff(Staff staff);
     public int deleteStaff(int staffId);
     public Staff queryOne(int staffId);
+
+    public Staff queryOneStaff(int staffId);
 }

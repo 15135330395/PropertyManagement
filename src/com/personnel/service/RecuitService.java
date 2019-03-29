@@ -1,6 +1,7 @@
 package com.personnel.service;
 
 import com.entity.PageBean;
+import com.entity.Staff;
 import com.personnel.dao.RecuitDao;
 import com.personnel.dao.impl.RrecuitDaoImpl;
 import com.personnel.entity.Recuit;
@@ -19,4 +20,5 @@ public class RecuitService {
     public int updateRecuit(Recuit recuit){return dao.updateRecuit(recuit);}
     public int deleteRecuit(int recuitId){return dao.deleteRecuit(recuitId);}
     public Recuit queryOne(int recuitId){return dao.queryOne(recuitId);}
+
 }

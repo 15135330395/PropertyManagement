@@ -209,7 +209,7 @@ public class Staff {
         this.education = education;
     }
 
-    public void setDepartmentId(int departmentId) {
+    public void setDepartment_id(int departmentId) {
         this.departmentId = departmentId;
     }
 
@@ -217,7 +217,7 @@ public class Staff {
         this.salaryId = salaryId;
     }
 
-    public void setSecurity_insuranceId(int securityInsuranceId) {
+    public void setSecurity_insurance_id(int securityInsuranceId) {
         this.securityInsuranceId = securityInsuranceId;
     }
 

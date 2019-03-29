@@ -34,9 +34,9 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">身份证号：</label>
+            <label class="layui-form-label">入职时间：</label>
             <div class="layui-input-inline">
-                <input type="text" name="identityCard" required lay-verify="identity" value="${staff.identityCard}"  placeholder="请输入身份证" autocomplete="off" class="layui-input">
+                <input type="text" name="joinTime" value="${staff.joinTime}"  lay-verify="required" placeholder="请选择入职时间"class="layui-input" id="test1">
             </div>
             <label class="layui-form-label">家庭住址：</label>
             <div class="layui-input-inline">
@@ -44,18 +44,12 @@
             </div>
             <label class="layui-form-label">性别：</label>
             <div class="layui-input-inline">
-                <c:if test="${staff.sex=='男'}">
-                    <input type="radio" name="sex"  value="${staff.sex}" title="男" checked  >
-                </c:if>
-                <c:if test="${staff.sex!='男'}">
-                    <input type="radio" name="sex"  value="${staff.sex}" title="男"   >
-                </c:if>
-                <c:if test="${staff.sex=='女'}">
-                    <input type="radio" name="sex"  value="${staff.sex}" title="女" checked  >
-                </c:if>
-                <c:if test="${staff.sex!='女'}">
-                    <input type="radio" name="sex"  value="${staff.sex}" title="女"   >
-                </c:if>
+
+                    <input type="radio" name="sex"  value="男" title="男" <c:if test="${staff.sex=='男'}">checked="checked"  </c:if> >
+
+
+                    <input type="radio" name="sex"  value="女" title="女"<c:if test="${staff.sex=='女'}"> checked="checked"  </c:if> >
+
             </div>
         </div>
         <div class="layui-form-item">
@@ -91,8 +85,9 @@
         <div class="layui-form-item">
             <label class="layui-form-label">所属部门：</label>
             <div class="layui-input-block">
-                <input type="hidden" name="departmentId" value="${staff.departmentId}" autocomplete="off" class="layui-input">
-                <%--<select name="" >
+                <input type="text" name="departmentId" value="${staff.departmentId}" autocomplete="off" class="layui-input">
+
+            <%--<select name="" >
                     <option value=""></option>
                     <c:forEach items="${typeList}" var="type">
                         <c:if test="${type.typeId == news.typeId}">
@@ -107,9 +102,9 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">入职时间：</label>
+            <label class="layui-form-label">身份证号：</label>
             <div class="layui-input-inline">
-                <input type="text" name="joinTime" value="${staff.joinTime}"  lay-verify="required" placeholder="请选择入职时间"class="layui-input" id="test1">
+                <input type="text" name="identityCard" required lay-verify="identity" value="${staff.identityCard}"  placeholder="请输入身份证" autocomplete="off" class="layui-input">
             </div>
             <label class="layui-form-label">社保号：</label>
             <div class="layui-input-inline">
@@ -166,6 +161,7 @@
         });
         //监听提交
         form.on('submit(submitSave)', function(data){
+
             var staffId = data.field.staffId;
             var staffName = data.field.staffName;
             var identityCard = data.field.identityCard;
@@ -181,7 +177,7 @@
             var salaryId = data.field.salaryId;
             var securityInsuranceId = data.field.securityInsuranceId;
             var joinTime = data.field.joinTime;
-
+            var education = data.field.education;
 
 
             if(staffId!=""){
@@ -204,7 +200,8 @@
                         "departmentId":departmentId,
                         "salaryId":salaryId,
                         "securityInsuranceId":securityInsuranceId,
-                        "joinTime":joinTime
+                        "joinTime":joinTime,
+                        "education":education
                     },
                     success:function(msgData){
                         layer.msg("修改成功",{icon:1,time:1000});
@@ -218,7 +215,7 @@
             }else {
                 $.ajax({
                     type:"post",
-                    url:"NewsServlet",
+                    url:"StaffServlet",
                     data:{
                         "action":"add",
                         "staffName":staffName,
@@ -234,7 +231,8 @@
                         "departmentId":departmentId,
                         "salaryId":salaryId,
                         "securityInsuranceId":securityInsuranceId,
-                        "joinTime":joinTime
+                        "joinTime":joinTime,
+                        "education":education
                     },
                     success:function(msgData){
                         layer.msg("添加成功",{icon:1,time:1000});
@@ -245,6 +243,7 @@
 
             return false;
         });
+
         laydate.render({
             elem: '#test1', //指定元素
             type:'datetime'

@@ -5,6 +5,7 @@ package com.personnel.entity;
  */
 public class Kpi {
 	private int kpiId;
+    private int staffId;
 	private String staffName;
 	private String departmentName;
 //	评价内容
@@ -16,13 +17,23 @@ public class Kpi {
 	public Kpi(){
 	}
 
-    public Kpi(int kpiId, String staffName, String departmentName, String evaluateContent, String evaluatePerson, int evaluateGrade) {
+
+
+    public Kpi(int kpiId, int staffId, String staffName, String departmentName, String evaluateContent, String evaluatePerson, int evaluateGrade) {
         this.kpiId = kpiId;
+        this.staffId = staffId;
         this.staffName = staffName;
         this.departmentName = departmentName;
         this.evaluateContent = evaluateContent;
         this.evaluatePerson = evaluatePerson;
         this.evaluateGrade = evaluateGrade;
+    }
+    public int getStaffId() {
+        return staffId;
+    }
+
+    public void setStaff_id(int staffId) {
+        this.staffId = staffId;
     }
 
     public int getKpiId() {

@@ -49,7 +49,7 @@ public class StaffDaoImpl implements StaffDao {
                 "salary_id,security_insurance_id,join_time)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         Object[] objs={staff.getStaffName(),staff.getStaffImage(),staff.getIdentityCard(),
         staff.getAge(),staff.getSex(),staff.getAddress(),staff.getPhone(),staff.getEmail(),staff.getCity(),
-        staff.getHousehold(),staff.getStation(),staff.getEducation(),staff.getDepartmentId(),staff.getStaffId(),staff.getSecurityInsuranceId()};
+        staff.getHousehold(),staff.getStation(),staff.getEducation(),staff.getDepartmentId(),staff.getSalaryId(),staff.getSecurityInsuranceId()};
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, objs);
             return i;
@@ -61,13 +61,13 @@ public class StaffDaoImpl implements StaffDao {
 
     @Override
     public int updateStaff(Staff staff) {
+
         String sql="update staff set staff_name=?, staff_image=? ,identity_card=?, age=?," +
                 "sex=?, address=?, phone=? ,email=?, city=? ,household=?, station=?, education=?, " +
                 "department_id=?, salary_id=? ,security_insurance_id=?, join_time=? where staff_id=?";
-        System.out.println(sql);
         Object[] objs={staff.getStaffName(),staff.getStaffImage(),staff.getIdentityCard(),
                 staff.getAge(),staff.getSex(),staff.getAddress(),staff.getPhone(),staff.getEmail(),staff.getCity(),
-                staff.getHousehold(),staff.getStation(),staff.getEducation(),staff.getDepartmentId(),staff.getStaffId(),
+                staff.getHousehold(),staff.getStation(),staff.getEducation(),staff.getDepartmentId(),staff.getSalaryId(),
                 staff.getSecurityInsuranceId(),staff.getJoinTime(),staff.getStaffId()};
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, objs);
@@ -93,6 +93,18 @@ public class StaffDaoImpl implements StaffDao {
     @Override
     public Staff queryOne(int staffId) {
         String sql="select * from staff  where staff_id=?";
+        try {
+            Staff staff = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Staff.class), staffId);
+            return staff;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public Staff queryOneStaff(int staffId) {
+        String sql="select *  from staff s, department d where s.department_id=d.department_id and staff_id=? order by staff_id  ";
         try {
             Staff staff = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Staff.class), staffId);
             return staff;

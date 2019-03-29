@@ -7,7 +7,7 @@ public class Attendance {
 	private int attendanceId;
 	private int staffId;
 	private String staffName;
-	private int departmentId;
+	private String departmentName;
 //	应工作天数
 	private int workDay;
 //	实际出勤天数
@@ -23,11 +23,11 @@ public class Attendance {
 	public Attendance(){
 	}
 
-    public Attendance(int attendanceId, int staffId, String staffName, int departmentId, int workDay, int actualAttendance, int sickLeave, int affairLeave, int onduty, int abnormal) {
+    public Attendance(int attendanceId, int staffId, String staffName, String departmentName, int workDay, int actualAttendance, int sickLeave, int affairLeave, int onduty, int abnormal) {
         this.attendanceId = attendanceId;
         this.staffId = staffId;
         this.staffName = staffName;
-        this.departmentId = departmentId;
+        this.departmentName = departmentName;
         this.workDay = workDay;
         this.actualAttendance = actualAttendance;
         this.sickLeave = sickLeave;
@@ -37,7 +37,12 @@ public class Attendance {
     }
 
     public int getActualAttendance() {
-        return workDay-sickLeave-affairLeave+onduty-abnormal;
+
+	    return workDay-sickLeave-affairLeave+onduty-abnormal;
+    }
+
+    public void setActualAttendance(int actualAttendance) {
+        this.actualAttendance = actualAttendance;
     }
 
     public int getAttendanceId() {
@@ -64,12 +69,12 @@ public class Attendance {
         this.staffName = staffName;
     }
 
-    public int getDepartmentId() {
-        return departmentId;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setDepartment_id(int departmentId) {
-        this.departmentId = departmentId;
+    public void setDepartment_name(String departmentName) {
+        this.departmentName = departmentName;
     }
 
     public int getWorkDay() {

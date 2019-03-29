@@ -7,8 +7,6 @@ public class Interview {
 	private int interviewId;
 //	面试申请人
 	private String applyName;
-	private String applySex;
-	private int applyAge;
 //	申请岗位
 	private String applyPosition;
 	private String departmentName;
@@ -19,11 +17,10 @@ public class Interview {
 	public Interview(){
 	}
 
-    public Interview(int interviewId, String applyName, String applySex, int applyAge, String applyPosition, String departmentName, String interviewer, boolean offer) {
+    public Interview(int interviewId, String applyName,  String applyPosition, String departmentName, String interviewer, boolean offer) {
         this.interviewId = interviewId;
         this.applyName = applyName;
-        this.applySex = applySex;
-        this.applyAge = applyAge;
+
         this.applyPosition = applyPosition;
         this.departmentName = departmentName;
         this.interviewer = interviewer;
@@ -44,22 +41,6 @@ public class Interview {
 
     public void setApply_name(String applyName) {
         this.applyName = applyName;
-    }
-
-    public String getApplySex() {
-        return applySex;
-    }
-
-    public void setApply_sex(String applySex) {
-        this.applySex = applySex;
-    }
-
-    public int getApplyAge() {
-        return applyAge;
-    }
-
-    public void setApply_age(int applyAge) {
-        this.applyAge = applyAge;
     }
 
     public String getApplyPosition() {

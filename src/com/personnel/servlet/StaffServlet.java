@@ -27,8 +27,8 @@ public class StaffServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         String action = request.getParameter("action");
-        if ("query".equals(action)) {
-            query(request, response);
+        if ("queryDetail".equals(action)) {
+            queryDetail(request, response);
         } else if ("add".equals(action)) {
             add(request, response);
         } else if ("update".equals(action)) {
@@ -39,15 +39,32 @@ public class StaffServlet extends HttpServlet {
             queryOne(request, response);
         } else if ("queryPage".equals(action)) {
             queryPage(request, response);
+        }else if ("deleteAll".equals(action)) {
+            deleteAll(request, response);
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
+    protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String ids = request.getParameter("ids");
+        System.out.println("ids"+ids);
+        String[] array = ids.split(",");
+        int sum=0;
+        for (String staffId: array) {
+            int i = staffService.deleteStaff(Integer.parseInt(staffId));
+            sum+=i;
+        }
+        response.getWriter().print(sum);
+    }
 
-    protected void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void queryDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String staffId = request.getParameter("staffId");
+        Staff staff = staffService.queryOneStaff(Integer.parseInt(staffId));
 
+        request.setAttribute("staff", staff);
+        request.getRequestDispatcher("/background/staff/staffDetail.jsp").forward(request, response);
     }
 
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -55,6 +72,7 @@ public class StaffServlet extends HttpServlet {
         String identityCard = request.getParameter("identityCard");
         String age = request.getParameter("age");
         String sex = request.getParameter("sex");
+
         String address = request.getParameter("address");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
@@ -76,6 +94,7 @@ public class StaffServlet extends HttpServlet {
                 Integer.parseInt(salaryId),
                 Integer.parseInt(securityInsuranceId),
                 DateUtil.formatString(joinTime, "yyyy-MM-dd HH:mm:ss"));
+
         int i = staffService.addStaff(staff);
         response.getWriter().print(i);
     }
@@ -86,6 +105,8 @@ public class StaffServlet extends HttpServlet {
         String identityCard = request.getParameter("identityCard");
         String age = request.getParameter("age");
         String sex = request.getParameter("sex");
+
+
         String address = request.getParameter("address");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
@@ -107,6 +128,7 @@ public class StaffServlet extends HttpServlet {
                 Integer.parseInt(salaryId),
                 Integer.parseInt(securityInsuranceId),
                 DateUtil.formatString(joinTime, "yyyy-MM-dd HH:mm:ss"));
+
         int i = staffService.updateStaff(staff);
 
         response.getWriter().print(i);

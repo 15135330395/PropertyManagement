@@ -31,6 +31,14 @@ public class Recuit {
     public Recuit(){
     }
 
+    public Recuit(String recuitPosition, int recuitCount, String duty, String demand, double basicSalary) {
+        this.recuitPosition = recuitPosition;
+        this.recuitCount = recuitCount;
+        this.duty = duty;
+        this.demand = demand;
+        this.basicSalary = basicSalary;
+    }
+
     public int getRecuitId() {
         return recuitId;
     }

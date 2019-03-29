@@ -120,25 +120,19 @@
                             <cite>员工信息管理</cite>
                         </a>
                     </li >
-                    <li>
-                        <a _href="<%=request.getContextPath()%>/NewsServlet?action=toadd">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>员工基本信息详情</cite>
-                        </a>
-                    </li >
                 </ul>
             </li>
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe723;</i>
-                    <cite>分类管理</cite>
+                    <cite>招聘管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="cate.html">
+                        <a _href="<%=request.getContextPath()%>/background/recuit/recuitList.jsp">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>多级分类</cite>
+                            <cite>招聘信息管理</cite>
                         </a>
                     </li >
                 </ul>
