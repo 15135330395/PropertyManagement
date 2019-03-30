@@ -13,7 +13,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.beans.IndexedPropertyChangeEvent;
 import java.io.IOException;
 import java.util.List;
 
@@ -96,7 +95,7 @@ public class CleaningTaskServlet extends HttpServlet {
 
     private void toAddTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Cleaner> cleanerList = cleanerService.getAllCleaner();
-        request.setAttribute("cleanerList",cleanerList);
+        request.setAttribute("cleanerList", cleanerList);
         request.getRequestDispatcher("/logistics/CleaningTask/AddCleaningTask.jsp").forward(request, response);
     }
 
@@ -114,6 +113,9 @@ public class CleaningTaskServlet extends HttpServlet {
         String taskId = request.getParameter("taskId");
         CleaningTask task = service.findTaskByTaskId(Integer.parseInt(taskId));
         request.setAttribute("task", task);
+
+        List<Cleaner> cleanerList = cleanerService.getAllCleaner();
+        request.setAttribute("cleanerList", cleanerList);
         request.getRequestDispatcher("/logistics/CleaningTask/EditCleaningTask.jsp").forward(request, response);
     }
 

@@ -12,7 +12,7 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>添加任务</title>
+    <title>修改排班</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -27,7 +27,8 @@
                 <span class="x-red">*</span>排班编号
             </label>
             <div class="layui-input-block">
-                <input type="text" class="layui-input" readonly="readonly" name="rotaId" lay-verify="required" value="${rota.rotaId}">
+                <input type="text" class="layui-input" readonly="readonly" name="rotaId" lay-verify="required"
+                       value="${rota.rotaId}">
             </div>
         </div>
         <div class="layui-form-item">
@@ -35,27 +36,25 @@
                 <span class="x-red">*</span>排班时段
             </label>
             <div class="layui-input-block">
-                <input type="text" class="layui-input" name="rotaTime" lay-verify="required" id="test1" value="${rota.rotaTime}"
+                <input type="text" class="layui-input" name="rotaTime" lay-verify="required" id="test1"
+                       value="${rota.rotaTime}"
                        placeholder="yyyy-MM-dd HH:mm:ss">
             </div>
         </div>
         <div class="layui-form-item">
-            <label for="staffName" class="layui-form-label">
-                <span class="x-red">*</span>员工编号
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="staffId" name="staffId" required="" value="${rota.staffId}" lay-verify="required"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label for="staffName" class="layui-form-label">
+            <label for="staffId" class="layui-form-label">
                 <span class="x-red">*</span>员工姓名
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="staffName" name="staffName" required="" value="${rota.staffName}" lay-verify="required"
-                       autocomplete="off" class="layui-input">
+                <select id="staffId" name="staffId" lay-verify="required" lay-search="">
+                    <option value=""></option>
+                    <c:forEach items="${guardList}" var="guard">
+                        <option value="${guard.staffId}"
+                                <c:if test="${guard.staffId==rota.staffId}">selected=""</c:if> >${guard.staffName}</option>
+                    </c:forEach>
+                </select>
             </div>
+
         </div>
 
         <div class="layui-form-item">
@@ -84,7 +83,6 @@
                     rotaId: data.field.rotaId,
                     rotaTime: data.field.rotaTime,
                     staffId: data.field.staffId,
-                    staffName: data.field.staffName
                 },
                 success: function (msg) {
                     if (msg == 1) {

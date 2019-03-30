@@ -86,7 +86,7 @@ public class CleaningTaskDaoImpl implements CleaningTaskDao {
 
     @Override
     public int updateTask(CleaningTask cleaningTask) {
-        String sql = "update cleaning_task set task_type=?,task_time=?,task_area=?,staff_id=?,completion=0 where task_id = ?";
+        String sql = "update cleaning_task set task_type=?,task_time=?,task_area=?,staff_id=?,completion=0,score=-1 where task_id = ?";
         Object[] obj = {cleaningTask.getTaskType(), cleaningTask.getTaskTime(), cleaningTask.getTaskArea(), cleaningTask.getStaffId(), cleaningTask.getTaskId()};
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, obj);

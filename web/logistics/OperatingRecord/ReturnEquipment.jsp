@@ -18,6 +18,7 @@
           content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
 
 </head>
+<body>
 <div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="#">首页</a>
@@ -119,7 +120,6 @@
         });
     </script>
 </div>
-<body>
 
 </body>
 </html>

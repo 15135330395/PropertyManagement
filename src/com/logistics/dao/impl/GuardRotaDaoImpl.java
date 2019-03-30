@@ -35,7 +35,8 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
 
     @Override
     public List<GuardRota> getAllRotaByPage(PageBean pageBean) {
-        String sql = "select * from guard_rota limit ? ,?";
+        String sql = "select g.*,s.staff_name from guard_rota g,staff s where s.department_id=201 and s.staff_id=g.staff_id limit ? ,?";
+        // String sql = "select * from guard_rota limit ? ,?";
         try {
             List<GuardRota> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(GuardRota.class), pageBean.getIndex(), pageBean.getPageCount());
             return query;
@@ -47,7 +48,8 @@ public class GuardRotaDaoImpl implements GuardRotaDao {
 
     @Override
     public GuardRota findRotaByRotaId(int rotaId) {
-        String sql = "select * from guard_rota where rota_id = ?";
+        String sql = "select g.*,s.staff_name from guard_rota g,staff s where s.department_id=201 and s.staff_id=g.staff_id and rota_id = ?";
+        // String sql = "select * from guard_rota where rota_id = ?";
         try {
             GuardRota query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(GuardRota.class), rotaId);
             return query;

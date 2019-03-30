@@ -3,9 +3,9 @@ package com.logistics.servlet;
 import com.alibaba.fastjson.JSONObject;
 import com.entity.PageBean;
 import com.logistics.entity.GuardRota;
-import com.logistics.entity.OperatingRecord;
+import com.logistics.entity.SecurityGuard;
 import com.logistics.service.GuardRotaService;
-import com.utils.DateUtil;
+import com.logistics.service.SecurityGuardService;
 import com.utils.JsonUtil;
 
 import javax.servlet.ServletException;
@@ -25,6 +25,7 @@ import java.util.List;
 @WebServlet(name = "GuardRotaServlet", urlPatterns = "/GuardRotaServlet")
 public class GuardRotaServlet extends HttpServlet {
     private GuardRotaService service = new GuardRotaService();
+    private SecurityGuardService securityGuardService = new SecurityGuardService();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,6 +40,8 @@ public class GuardRotaServlet extends HttpServlet {
             findRotaByRotaId(request, response);
         } else if ("findRotaByStaffId".equals(action)) {
             findRotaByStaffId(request, response);
+        } else if ("toAddRota".equals(action)) {
+            toAddRota(request, response);
         } else if ("addRota".equals(action)) {
             addRota(request, response);
         } else if ("editRota".equals(action)) {
@@ -89,11 +92,16 @@ public class GuardRotaServlet extends HttpServlet {
 
     }
 
+    private void toAddRota(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<SecurityGuard> guardList = securityGuardService.getAllGuard();
+        request.setAttribute("guardList", guardList);
+        request.getRequestDispatcher("/logistics/GuardRota/AddGuardRota.jsp").forward(request, response);
+    }
+
     private void addRota(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String rotaTime = request.getParameter("rotaTime");
         String staffId = request.getParameter("staffId");
-        String staffName = request.getParameter("staffName");
-        GuardRota guardRota = new GuardRota(rotaTime, Integer.parseInt(staffId), staffName);
+        GuardRota guardRota = new GuardRota(rotaTime, Integer.parseInt(staffId));
         int i = service.addRota(guardRota);
         response.getWriter().print(i);
     }
@@ -102,6 +110,10 @@ public class GuardRotaServlet extends HttpServlet {
         String rotaId = request.getParameter("rotaId");
         GuardRota rota = service.findRotaByRotaId(Integer.parseInt(rotaId));
         request.setAttribute("rota", rota);
+
+        List<SecurityGuard> guardList = securityGuardService.getAllGuard();
+        request.setAttribute("guardList", guardList);
+
         request.getRequestDispatcher("/logistics/GuardRota/EditGuardRota.jsp").forward(request, response);
 
     }
