@@ -18,10 +18,9 @@ public class GuardRota {
     public GuardRota() {
     }
 
-    public GuardRota(String rotaTime, int staffId, String staffName) {
+    public GuardRota(String rotaTime, int staffId) {
         this.rotaTime = rotaTime;
         this.staffId = staffId;
-        this.staffName = staffName;
     }
 
     public GuardRota(int rotaId, String rotaTime, int staffId, String staffName) {

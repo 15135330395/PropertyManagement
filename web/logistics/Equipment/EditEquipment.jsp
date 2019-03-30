@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 15087
-  Date: 2019/3/20
-  Time: 20:42
+  Date: 2019/3/30
+  Time: 23:34
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -23,57 +23,34 @@
     <form class="layui-form">
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>任务编号
+                <span class="x-red"></span>器材编号
             </label>
             <div class="layui-input-inline">
-                <input type="text" readonly="readonly" class="layui-input" value="${task.taskId}" name="taskId">
+                <input type="text" class="layui-input" name="equipmentId" readonly="readonly" value="${equipment.equipmentId}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>任务类型
+                <span class="x-red"></span>器材类型
             </label>
             <div class="layui-input-inline">
-                <select name="taskType" lay-verify="required" lay-search="">
-                    <option value=""></option>
-                    <option value="日常保洁" <c:if test="${task.taskType=='日常保洁'}">selected=""</c:if>>日常保洁</option>
-                    <option value="日常绿化" <c:if test="${task.taskType=='日常绿化'}">selected=""</c:if>>日常绿化</option>
-                    <option value="定期保洁" <c:if test="${task.taskType=='定期保洁'}">selected=""</c:if>>定期保洁</option>
-                    <option value="定期绿化" <c:if test="${task.taskType=='定期绿化'}">selected=""</c:if>>定期绿化</option>
-                </select>
+                <input type="text" class="layui-input" readonly="readonly" value="${equipment.equipmentType}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>任务时间
-            </label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input" value="${task.taskTime}" name="taskTime" id="test1"
-                       placeholder="yyyy-MM-dd HH:mm">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label for="taskArea" class="layui-form-label">
-                <span class="x-red">*</span>区域
+                <span class="x-red">*</span>器材名称
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="taskArea" name="taskArea" value="${task.taskArea}" required=""
-                       lay-verify="required"
-                       autocomplete="off" class="layui-input">
+                <input type="text" class="layui-input" name="equipmentName" value="${equipment.equipmentName}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>员工姓名
+                <span class="x-red">*</span>数量
             </label>
             <div class="layui-input-inline">
-                <select id="staffId" name="staffId" lay-verify="required" lay-search="">
-                    <option value=""></option>
-                    <c:forEach items="${cleanerList}" var="cleaner">
-                        <option value="${cleaner.staffId}"
-                                <c:if test="${cleaner.staffId==task.staffId}">selected=""</c:if> >${cleaner.staffName}</option>
-                    </c:forEach>
-                </select>
+                <input type="text" class="layui-input" name="amount" value="${equipment.amount}">
             </div>
         </div>
         <div class="layui-form-item">
@@ -86,24 +63,21 @@
     </form>
 </div>
 <script>
-    layui.use(['form', 'layer', 'laydate'], function () {
+    layui.use(['form', 'layer'], function () {
         $ = layui.jquery;
         var form = layui.form
             , layer = layui.layer
-            , laydate = layui.laydate;
         //监听提交
         form.on('submit(update)', function (data) {
             //发异步，把数据提交给Servlet
             $.ajax({
                 type: "post",
-                url: "<%=request.getContextPath()%>/CleaningTaskServlet",
+                url: "<%=request.getContextPath()%>/EquipmentServlet",
                 data: {
-                    action: "updateTask",
-                    taskId: data.field.taskId,
-                    taskType: data.field.taskType,
-                    taskTime: data.field.taskTime,
-                    taskArea: data.field.taskArea,
-                    staffId: data.field.staffId
+                    action: "updateEquipment",
+                    equipmentId: data.field.equipmentId,
+                    equipmentName: data.field.equipmentName,
+                    amount: data.field.amount
                 },
                 success: function (msg) {
                     if (msg == 1) {
@@ -124,14 +98,6 @@
                 }
             });
             return false;
-        });
-
-        laydate.render({
-            elem: '#test1', //指定元素
-            type: 'datetime'
-            , min: 0
-            , max: 30
-            , range: true
         });
     });
 </script>

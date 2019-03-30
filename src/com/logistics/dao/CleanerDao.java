@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface CleanerDao {
     /**
-     * 获得所有的Cleaner
+     * 查询所有的Cleaner
      * @return
      */
    List<Cleaner> getAllCleaner();

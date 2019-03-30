@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 15087
-  Date: 2019/3/20
-  Time: 20:42
+  Date: 2019/3/30
+  Time: 23:19
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,7 +12,7 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>添加任务</title>
+    <title>添加消防器材</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -23,48 +23,20 @@
     <form class="layui-form">
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>任务类型
+                <span class="x-red">*</span>器材名称
             </label>
             <div class="layui-input-inline">
-                <select name="taskType" lay-verify="required" lay-search="">
-                    <option value=""></option>
-                    <option value="日常保洁">日常保洁</option>
-                    <option value="日常绿化">日常绿化</option>
-                    <option value="定期保洁">定期保洁</option>
-                    <option value="定期绿化">定期绿化</option>
-                </select>
+                <input type="text" id="equipmentName" name="equipmentName" required="" lay-verify="required"
+                       autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>任务时间
-            </label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input" name="taskTime" lay-verify="required" id="test1"
-                       placeholder="yyyy-MM-dd HH:mm">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label for="taskArea" class="layui-form-label">
-                <span class="x-red">*</span>区域
+                <span class="x-red">*</span>数量
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="taskArea" name="taskArea" required="" lay-verify="required"
+                <input type="text" id="amount" name="amount" required="" lay-verify="required"
                        autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="staffId" class="layui-form-label">
-                <span class="x-red">*</span>员工姓名
-            </label>
-            <div class="layui-input-inline">
-                <select id="staffId" name="staffId" lay-verify="required" lay-search="">
-                    <option value=""></option>
-                    <c:forEach items="${cleanerList}" var="cleaner">
-                        <option value="${cleaner.staffId}">${cleaner.staffName}</option>
-                    </c:forEach>
-                </select>
             </div>
         </div>
 
@@ -88,13 +60,11 @@
             //发异步，把数据提交给Servlet
             $.ajax({
                 type: "post",
-                url: "<%=request.getContextPath()%>/CleaningTaskServlet",
+                url: "<%=request.getContextPath()%>/EquipmentServlet",
                 data: {
-                    action: "addTask",
-                    taskType: data.field.taskType,
-                    taskTime: data.field.taskTime,
-                    taskArea: data.field.taskArea,
-                    staffId: data.field.staffId
+                    action: "addSecurityEquipment",
+                    equipmentName: data.field.equipmentName,
+                    amount: data.field.amount
                 },
                 success: function (msg) {
                     if (msg == 1) {
@@ -116,15 +86,8 @@
             });
             return false;
         });
-
-        laydate.render({
-            elem: '#test1', //指定元素
-            type: 'datetime'
-            , min: 0
-            , max: 30
-            , range: true
-        });
     });
 </script>
 </body>
 </html>
+

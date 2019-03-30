@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 15087
-  Date: 2019/3/27
-  Time: 21:39
+  Date: 2019/3/30
+  Time: 17:05
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,7 +11,7 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>消防事故表</title>
+    <title>消防器材管理表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -23,7 +23,7 @@
       <span class="layui-breadcrumb">
         <a href="#">首页</a>
         <a>
-          <cite>绿化清洁任务管理</cite></a>
+          <cite>消防器材管理</cite></a>
       </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        href="javascript:location.replace(location.href);" title="刷新">
@@ -32,7 +32,7 @@
 <div class="x-body">
     <div class="layui-row">
         <div class="layui-col-md12 x-so">
-            <input type="text" name="incidentId" placeholder="请输入事故编号" autocomplete="off" class="layui-input">
+            <input type="text" name="equipmentId" placeholder="请输入器材编号" autocomplete="off" class="layui-input">
             <button class="layui-btn" id="search"><i class="layui-icon">&#xe615;</i></button>
         </div>
     </div>
@@ -54,34 +54,28 @@
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
-    <script type="text/html" id="alarmTime">
-        {{ dateFormat(d.alarmTime) }}
-    </script>
     <script>
         layui.use('table', function () {
             var table = layui.table;
 
             table.render({
                 elem: '#test'
-                , url: '<%=request.getContextPath()%>/FireIncidentServlet?action=getAllIncidentByPage'
+                , url: '<%=request.getContextPath()%>/EquipmentServlet?action=getAllFireFightingEquipmentByPage'
                 , toolbar: '#toolbarDemo'
                 , width: 1200
-                , title: '消防事故表'
+                , title: '消防器材管理表'
                 , cols: [[
                     {type: 'checkbox', fixed: 'left'}
-                    , {field: 'incidentId', title: '编号', fixed: 'left', sort: true}
-                    , {field: 'alarmTime', title: '出动时间', templet: '#alarmTime'}
-                    , {field: 'incidentLocale', title: '地点'}
-                    , {field: 'staffNames', title: '人员'}
-                    , {field: 'cause', title: '起因'}
-                    , {field: 'loss', title: '损失'}
+                    , {field: 'equipmentId', title: '器材编号', fixed: 'left', sort: true}
+                    , {field: 'equipmentName', title: '器材名称'}
+                    , {field: 'amount', title: '数量', sort: true}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
                 ]]
                 , page: true
             });
 
             layui.$('#search').on('click', function () {
-                var val = layui.$("*[name='incidentId']").val();
+                var val = layui.$("*[name='equipmentId']").val();
                 if (val == "") {
                     layer.msg('请输入ID');
                     return;
@@ -91,7 +85,7 @@
                     type: 2,
                     skin: 'layui-layer-rim', // 加上边框
                     area: ['451px', '405px'], // 宽高
-                    content: '<%=request.getContextPath()%>/FireIncidentServlet?action=findIncidentById&incidentId=' + val
+                    content: '<%=request.getContextPath()%>/EquipmentServlet?action=findEquipmentById&equipmentId=' + val
                 });
             });
 
@@ -99,12 +93,12 @@
             table.on('toolbar(test)', function (obj) {
                 if (obj.event === 'add') {
                     layer.open({
-                        title: '添加任务',
+                        title: '添加消防器材',
                         type: 2,
                         closeBtn: 1,
                         skin: 'layui-layer-rim', // 加上边框
-                        area: ['840px', '620px'], // 宽高
-                        content: '<%=request.getContextPath()%>/logistics/FireIncident/AddFireIncident.jsp'
+                        area: ['451px', '405px'], // 宽高
+                        content: '<%=request.getContextPath()%>/logistics/Equipment/addFireFightingEquipment.jsp'
                     });
                 } else if (obj.event === 'delAll') {
                     var checkStatus = table.checkStatus(obj.config.id);
@@ -115,16 +109,16 @@
                     }
                     var ids = "";
                     for (var i = 0; i < data.length; i++) {
-                        ids += data[i].incidentId
+                        ids += data[i].equipmentId;
                         ids += ","
                     }
                     layer.confirm('确认要删除这些信息吗？', function () {
                         $.ajax({
                             type: "post",
-                            url: "<%=request.getContextPath()%>/FireIncidentServlet",
+                            url: "<%=request.getContextPath()%>/EquipmentServlet",
                             data: {
-                                action: "deleteIncidents",
-                                incidentIds: "" + ids
+                                action: "deleteEquipments",
+                                equipmentIds: "" + ids
                             },
                             success: function (msg) {
                                 if (msg > 0) {
@@ -152,10 +146,10 @@
                         //发异步 删除数据
                         $.ajax({
                             type: "post",
-                            url: "<%=request.getContextPath()%>/FireIncidentServlet",
+                            url: "<%=request.getContextPath()%>/EquipmentServlet",
                             data: {
-                                action: "deleteIncident",
-                                incidentId: data.incidentId
+                                action: "deleteEquipment",
+                                equipmentId: data.equipmentId
                             },
                             success: function (msg) {
                                 if (msg == 1) {
@@ -172,11 +166,11 @@
                     });
                 } else if (obj.event === 'edit') {
                     layer.open({
-                        title: '任务修改',
+                        title: '器材修改',
                         type: 2,
                         skin: 'layui-layer-rim', // 加上边框
-                        area: ['840px', '620px'], // 宽高
-                        content: '<%=request.getContextPath()%>/FireIncidentServlet?action=editIncident&incidentId=' + data.incidentId
+                        area: ['451px', '405px'], // 宽高
+                        content: '<%=request.getContextPath()%>/EquipmentServlet?action=editEquipment&equipmentId=' + data.equipmentId
                     });
                 }
             });
@@ -186,3 +180,4 @@
 
 </body>
 </html>
+

@@ -14,14 +14,18 @@
 <%
     // 主管 - 绿化清洁任务评分管理
     // response.sendRedirect(request.getContextPath() + "/logistics/Manager/CleaningTaskList.jsp");
+    // 后勤部职员管理
+    // response.sendRedirect(request.getContextPath() + "/logistics/Manager/LogisticsStaffList.jsp");
 
     // 绿化清洁任务管理
-    response.sendRedirect(request.getContextPath() + "/logistics/CleaningTask/CleaningTaskList.jsp");
+    // response.sendRedirect(request.getContextPath() + "/logistics/CleaningTask/CleaningTaskList.jsp");
     // 绿化清洁任务状况
     // response.sendRedirect(request.getContextPath() + "/logistics/CleaningTask/CleaningTaskCompletion.jsp");
 
     // 消防事故管理
     // response.sendRedirect(request.getContextPath() + "/logistics/FireIncident/FireIncidentList.jsp");
+    // 消防器材管理
+    // response.sendRedirect(request.getContextPath() + "/logistics/Equipment/FireFightingEquipmentList.jsp");
 
     // 器材使用记录管理
     // response.sendRedirect(request.getContextPath() + "/logistics/OperatingRecord/OperatingRecordList.jsp");
@@ -32,6 +36,8 @@
     // response.sendRedirect(request.getContextPath() + "/logistics/GuardRota/GuardRotaList.jsp");
     // 保安打卡管理
     // response.sendRedirect(request.getContextPath() + "/logistics/GuardRota/ClockInAndOut.jsp");
+    // 安保器材管理
+    // response.sendRedirect(request.getContextPath() + "/logistics/Equipment/SecurityGuardEquipmentList.jsp");
 %>
 </body>
 </html>

@@ -9,8 +9,10 @@ import com.entity.Equipment;
  */
 public class FireFightingEquipment extends Equipment {
     public FireFightingEquipment() {
-        super();
-        this.setEquipmentType("消防");
+    }
+
+    public FireFightingEquipment(String equipmentName, String amount) {
+        super(equipmentName,amount);
     }
 }
 

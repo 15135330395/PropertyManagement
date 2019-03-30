@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 15087
-  Date: 2019/3/20
-  Time: 20:42
+  Date: 2019/3/30
+  Time: 22:58
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,7 +12,7 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>查询任务</title>
+    <title>查询器材</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -23,34 +23,34 @@
     <form class="layui-form">
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red"></span>任务类型
+                <span class="x-red"></span>器材编号
             </label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input" readonly="readonly" value="${task.taskType}">
+                <input type="text" class="layui-input" readonly="readonly" value="${equipment.equipmentId}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red"></span>任务时间
+                <span class="x-red"></span>器材类型
             </label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input" readonly="readonly" value="${task.taskTime}">
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" readonly="readonly" value="${equipment.equipmentType}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red"></span>区域
+                <span class="x-red"></span>器材名称
             </label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input" readonly="readonly" value="${task.taskArea}">
+                <input type="text" class="layui-input" readonly="readonly" value="${equipment.equipmentName}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red"></span>员工姓名
+                <span class="x-red"></span>数量
             </label>
             <div class="layui-input-inline">
-                <input type="text" readonly="readonly" value="${task.staffName}" required="" class="layui-input">
+                <input type="text" class="layui-input" readonly="readonly" value="${equipment.amount}">
             </div>
         </div>
         <div class="layui-form-item">
@@ -76,4 +76,3 @@
 </script>
 </body>
 </html>
-

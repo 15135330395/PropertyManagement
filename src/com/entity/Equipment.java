@@ -9,15 +9,27 @@ public class Equipment {
     private int equipmentId;
     private String equipmentType;
     private String equipmentName;
+    private String amount;
 
     public Equipment() {
+    }
+
+    public Equipment(String equipmentName, String amount) {
+        this.equipmentName = equipmentName;
+        this.amount = amount;
+    }
+
+    public Equipment(int equipmentId, String equipmentName, String amount) {
+        this.equipmentId = equipmentId;
+        this.equipmentName = equipmentName;
+        this.amount = amount;
     }
 
     public int getEquipmentId() {
         return equipmentId;
     }
 
-    public void setEquipmentId(int equipmentId) {
+    public void setEquipment_id(int equipmentId) {
         this.equipmentId = equipmentId;
     }
 
@@ -25,7 +37,7 @@ public class Equipment {
         return equipmentType;
     }
 
-    public void setEquipmentType(String equipmentType) {
+    public void setEquipment_type(String equipmentType) {
         this.equipmentType = equipmentType;
     }
 
@@ -33,8 +45,15 @@ public class Equipment {
         return equipmentName;
     }
 
-    public void setEquipmentName(String equipmentName) {
+    public void setEquipment_name(String equipmentName) {
         this.equipmentName = equipmentName;
     }
 
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
 }

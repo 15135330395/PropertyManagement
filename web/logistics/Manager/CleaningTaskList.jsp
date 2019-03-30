@@ -18,6 +18,7 @@
           content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
 
 </head>
+<body>
 <div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="#">首页</a>
@@ -40,7 +41,7 @@
 
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
-            <button class="layui-btn" lay-event="addTask">
+            <button class="layui-btn" lay-event="add">
                 <i class="layui-icon"></i>添加
             </button>
             <button class="layui-btn layui-btn-danger" lay-event="delAll">
@@ -106,7 +107,7 @@
 
             //头工具栏事件
             table.on('toolbar(test)', function (obj) {
-                if (obj.event === 'addTask') {
+                if (obj.event === 'add') {
                     layer.open({
                         title: '添加任务',
                         type: 2,
@@ -224,7 +225,6 @@
         });
     </script>
 </div>
-<body>
 
 </body>
 </html>

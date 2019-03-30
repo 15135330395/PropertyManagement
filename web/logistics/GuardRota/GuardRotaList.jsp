@@ -18,6 +18,7 @@
           content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
 
 </head>
+<body>
 <div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="#">首页</a>
@@ -40,7 +41,7 @@
 
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
-            <button class="layui-btn" lay-event="addRota">
+            <button class="layui-btn" lay-event="add">
                 <i class="layui-icon"></i>添加
             </button>
             <button class="layui-btn layui-btn-danger" lay-event="delAll">
@@ -73,7 +74,7 @@
                     {type: 'checkbox', fixed: 'left'}
                     , {field: 'rotaId', title: '编号', fixed: 'left', sort: true}
                     , {field: 'rotaTime', title: '排班时段', width: 315}
-                    , {field: 'staffId', title: '员工编号'}
+                    , {field: 'staffId', title: '员工编号',hide:true, sort: true}
                     , {field: 'staffName', title: '员工姓名'}
                     , {field: 'clockIn', title: '上班打卡', templet: '#clockIn', width: 160}
                     , {field: 'clockOut', title: '下班打卡', templet: '#clockOut', width: 160}
@@ -99,14 +100,14 @@
 
             //头工具栏事件
             table.on('toolbar(test)', function (obj) {
-                if (obj.event === 'addRota') {
+                if (obj.event === 'add') {
                     layer.open({
                         title: '添加排班',
                         type: 2,
                         closeBtn: 1,
                         skin: 'layui-layer-rim', // 加上边框
                         area: ['840px', '620px'], // 宽高
-                        content: '<%=request.getContextPath()%>/logistics/GuardRota/AddGuardRota.jsp'
+                        content: '<%=request.getContextPath()%>/GuardRotaServlet?action=toAddRota'
                     });
                 } else if (obj.event === 'delAll') {
                     var checkStatus = table.checkStatus(obj.config.id);
@@ -185,7 +186,6 @@
         });
     </script>
 </div>
-<body>
 
 </body>
 </html>

@@ -12,7 +12,7 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>添加任务</title>
+    <title>修改员工</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -23,43 +23,10 @@
     <form class="layui-form">
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>任务编号
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" readonly="readonly" class="layui-input" value="${task.taskId}" name="taskId">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">
-                <span class="x-red">*</span>任务类型
-            </label>
-            <div class="layui-input-inline">
-                <select name="taskType" lay-verify="required" lay-search="">
-                    <option value=""></option>
-                    <option value="日常保洁" <c:if test="${task.taskType=='日常保洁'}">selected=""</c:if>>日常保洁</option>
-                    <option value="日常绿化" <c:if test="${task.taskType=='日常绿化'}">selected=""</c:if>>日常绿化</option>
-                    <option value="定期保洁" <c:if test="${task.taskType=='定期保洁'}">selected=""</c:if>>定期保洁</option>
-                    <option value="定期绿化" <c:if test="${task.taskType=='定期绿化'}">selected=""</c:if>>定期绿化</option>
-                </select>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">
-                <span class="x-red">*</span>任务时间
+                <span class="x-red"></span>员工编号
             </label>
             <div class="layui-input-block">
-                <input type="text" class="layui-input" value="${task.taskTime}" name="taskTime" id="test1"
-                       placeholder="yyyy-MM-dd HH:mm">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label for="taskArea" class="layui-form-label">
-                <span class="x-red">*</span>区域
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="taskArea" name="taskArea" value="${task.taskArea}" required=""
-                       lay-verify="required"
-                       autocomplete="off" class="layui-input">
+                <input type="text" name="staffId" class="layui-input" readonly="readonly" value="${staff.staffId}">
             </div>
         </div>
         <div class="layui-form-item">
@@ -67,15 +34,34 @@
                 <span class="x-red">*</span>员工姓名
             </label>
             <div class="layui-input-inline">
-                <select id="staffId" name="staffId" lay-verify="required" lay-search="">
-                    <option value=""></option>
-                    <c:forEach items="${cleanerList}" var="cleaner">
-                        <option value="${cleaner.staffId}"
-                                <c:if test="${cleaner.staffId==task.staffId}">selected=""</c:if> >${cleaner.staffName}</option>
-                    </c:forEach>
-                </select>
+                <input type="text" name="staffName" class="layui-input" value="${staff.staffName}">
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <span class="x-red"></span>部门名称
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" readonly="readonly" value="${staff.departmentName}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <span class="x-red">*</span>年龄
+            </label>
+            <div class="layui-input-inline">
+                <input type="number" name="age" class="layui-input" lay-verify="number"  value="${staff.age}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <span class="x-red"></span>性别
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" readonly="readonly" class="layui-input" value="${staff.sex}">
+            </div>
+        </div>
+
         <div class="layui-form-item">
             <label class="layui-form-label">
             </label>
@@ -86,24 +72,21 @@
     </form>
 </div>
 <script>
-    layui.use(['form', 'layer', 'laydate'], function () {
+    layui.use(['form', 'layer'], function () {
         $ = layui.jquery;
         var form = layui.form
             , layer = layui.layer
-            , laydate = layui.laydate;
         //监听提交
         form.on('submit(update)', function (data) {
             //发异步，把数据提交给Servlet
             $.ajax({
                 type: "post",
-                url: "<%=request.getContextPath()%>/CleaningTaskServlet",
+                url: "<%=request.getContextPath()%>/LogisticsStaffServlet",
                 data: {
-                    action: "updateTask",
-                    taskId: data.field.taskId,
-                    taskType: data.field.taskType,
-                    taskTime: data.field.taskTime,
-                    taskArea: data.field.taskArea,
-                    staffId: data.field.staffId
+                    action: "updateStaff",
+                    staffId: data.field.staffId,
+                    staffName: data.field.staffName,
+                    age: data.field.age
                 },
                 success: function (msg) {
                     if (msg == 1) {
@@ -124,14 +107,6 @@
                 }
             });
             return false;
-        });
-
-        laydate.render({
-            elem: '#test1', //指定元素
-            type: 'datetime'
-            , min: 0
-            , max: 30
-            , range: true
         });
     });
 </script>

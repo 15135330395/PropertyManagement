@@ -31,21 +31,16 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label for="staffName" class="layui-form-label">
-                <span class="x-red">*</span>员工编号
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="staffId" name="staffId" required="" lay-verify="required"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label for="staffName" class="layui-form-label">
+            <label for="staffId" class="layui-form-label">
                 <span class="x-red">*</span>员工姓名
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="staffName" name="staffName" required="" lay-verify="required"
-                       autocomplete="off" class="layui-input">
+                <select id="staffId" name="staffId" lay-verify="required" lay-search="">
+                    <option value=""></option>
+                    <c:forEach items="${guardList}" var="guard">
+                        <option value="${guard.staffId}">${guard.staffName}</option>
+                    </c:forEach>
+                </select>
             </div>
         </div>
 
@@ -74,7 +69,6 @@
                     action: "addRota",
                     rotaTime: data.field.rotaTime,
                     staffId: data.field.staffId,
-                    staffName: data.field.staffName
                 },
                 success: function (msg) {
                     if (msg == 1) {
