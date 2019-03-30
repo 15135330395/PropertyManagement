@@ -13,7 +13,7 @@ public class Staff {
         return staffId;
     }
 
-    public void setStaffId(int staffId) {
+    public void setStaff_id(int staffId) {
         this.staffId = staffId;
     }
 
@@ -21,7 +21,7 @@ public class Staff {
         return staffName;
     }
 
-    public void setStaffName(String staffName) {
+    public void setStaff_name(String staffName) {
         this.staffName = staffName;
     }
 
