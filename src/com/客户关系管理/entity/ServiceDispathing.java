@@ -56,7 +56,7 @@ public class ServiceDispathing {
         return workerName;
     }
 
-    public void setWorkerName(String workerName) {
+    public void setWorker_name(String workerName) {
         this.workerName = workerName;
     }
 
@@ -64,7 +64,7 @@ public class ServiceDispathing {
         return workerId;
     }
 
-    public void setWorkerId(String workerId) {
+    public void setWorker_id(String workerId) {
         this.workerId = workerId;
     }
 
@@ -72,7 +72,7 @@ public class ServiceDispathing {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStart_time(Date startTime) {
         this.startTime = startTime;
     }
 
@@ -80,7 +80,7 @@ public class ServiceDispathing {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEnd_time(Date endTime) {
         this.endTime = endTime;
     }
 
@@ -96,7 +96,7 @@ public class ServiceDispathing {
         return customerCheck;
     }
 
-    public void setCustomerCheck(String customerCheck) {
+    public void setCustomer_check(String customerCheck) {
         this.customerCheck = customerCheck;
     }
 
@@ -112,7 +112,7 @@ public class ServiceDispathing {
         return serviceCost;
     }
 
-    public void setServiceCost(double serviceCost) {
+    public void setService_cost(double serviceCost) {
         this.serviceCost = serviceCost;
     }
 
@@ -120,7 +120,7 @@ public class ServiceDispathing {
         return materialCost;
     }
 
-    public void setMaterialCost(double materialCost) {
+    public void setMaterial_cost(double materialCost) {
         this.materialCost = materialCost;
     }
 
@@ -128,7 +128,7 @@ public class ServiceDispathing {
         return otherService;
     }
 
-    public void setOtherService(String otherService) {
+    public void setOther_service(String otherService) {
         this.otherService = otherService;
     }
 
@@ -136,7 +136,7 @@ public class ServiceDispathing {
         return sdId;
     }
 
-    public void setSdId(int sdId) {
+    public void setSd_id(int sdId) {
         this.sdId = sdId;
     }
 

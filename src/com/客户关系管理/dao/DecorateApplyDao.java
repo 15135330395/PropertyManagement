@@ -1,5 +1,6 @@
 package com.客户关系管理.dao;
 
+import com.entity.PageBean;
 import com.客户关系管理.entity.DecorateApply;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public interface DecorateApplyDao {
 
-    public List<DecorateApply> find();
+    public List<DecorateApply> find(PageBean pageBean);
 
     public int updata(DecorateApply decorateApply);
 

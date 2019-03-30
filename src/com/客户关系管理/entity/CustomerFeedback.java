@@ -64,7 +64,7 @@ public class CustomerFeedback {
         return feedbackTime;
     }
 
-    public void setFeedbackTime(Date feedbackTime) {
+    public void setFeedback_time(Date feedbackTime) {
         this.feedbackTime = feedbackTime;
     }
 
@@ -72,7 +72,7 @@ public class CustomerFeedback {
         return disposeTime;
     }
 
-    public void setDisposeTime(Date disposeTime) {
+    public void setDispose_time(Date disposeTime) {
         this.disposeTime = disposeTime;
     }
 

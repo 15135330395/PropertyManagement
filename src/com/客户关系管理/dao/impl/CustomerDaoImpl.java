@@ -1,11 +1,12 @@
 package com.客户关系管理.dao.impl;
 
+import com.entity.PageBean;
 import com.utils.JdbcUtil;
 import com.客户关系管理.dao.CustomerDao;
 import com.客户关系管理.entity.Customer;
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -75,13 +76,38 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public Customer findByName(String name) {
+    public List<Customer> findByName(String name, PageBean pageBean) {
 
-        String sql = "SELECT * FROM customer where name like '?%' ";
+        String sql = "SELECT * FROM customer where name like ? limit ?,?";
 
         try {
-            Customer customer = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Customer.class),name);
-            return customer;
+            List<Customer> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Customer.class), name, pageBean.getIndex(), pageBean.getPageCount());
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Customer> queryAll(PageBean pageBean) {
+        String sql = "SELECT * FROM customer limit ?,?";
+        try {
+            List<Customer> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Customer.class),pageBean.getIndex(),pageBean.getPageCount());
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Customer> findName(String name) {
+        String sql = "SELECT * FROM customer where name like ? ";
+
+        try {
+            List<Customer> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Customer.class), name);
+            return list;
         } catch (SQLException e) {
             e.printStackTrace();
         }

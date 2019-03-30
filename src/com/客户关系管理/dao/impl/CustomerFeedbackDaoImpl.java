@@ -1,5 +1,6 @@
 package com.客户关系管理.dao.impl;
 
+import com.entity.PageBean;
 import com.utils.JdbcUtil;
 import com.客户关系管理.dao.CustomerFeedbackDao;
 import com.客户关系管理.entity.CustomerFeedback;
@@ -20,12 +21,12 @@ public class CustomerFeedbackDaoImpl implements CustomerFeedbackDao {
     QueryRunner qr = new QueryRunner();
 
     @Override
-    public List<CustomerFeedback> find() {
+    public List<CustomerFeedback> find(PageBean pageBean) {
 
-        String sql = "select * from customer_feedback";
+        String sql = "select * from customer_feedback limit ?,?";
 
         try {
-            List<CustomerFeedback> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CustomerFeedback.class));
+            List<CustomerFeedback> list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(CustomerFeedback.class),pageBean.getIndex(),pageBean.getPageCount());
             return list;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,7 +1,9 @@
 package com.客户关系管理.service;
 
+import com.entity.PageBean;
 import com.客户关系管理.dao.impl.CustomerDaoImpl;
 import com.客户关系管理.entity.Customer;
+
 import java.util.List;
 
 /**
@@ -37,10 +39,22 @@ public class CustomerService {
         return list;
     }
 
-    public Customer findByName(String addr){
+    public List<Customer> findByName(String addr, PageBean pageBean){
 
-        Customer customer = dao.findByName(addr);
-        return customer;
+        List<Customer> list = dao.findByName(addr, pageBean);
+        return list;
+    }
+
+    public List<Customer> queryAll(PageBean pageBean){
+
+        List<Customer> list = dao.queryAll(pageBean);
+        return list;
+    }
+
+    public List<Customer> findName(String name){
+
+        List<Customer> list = dao.findName(name);
+        return list;
     }
 
 }
