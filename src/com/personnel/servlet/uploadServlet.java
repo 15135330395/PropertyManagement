@@ -40,7 +40,7 @@ public class uploadServlet extends HttpServlet {
             fileName = uuid+"_"+strArr[strArr.length-1];
         }
 
-        System.out.println("fileName:"+fileName);
+//        System.out.println("fileName:"+fileName);
         //把文件写到指定路径
         part.write(savePath+"/"+fileName);
 

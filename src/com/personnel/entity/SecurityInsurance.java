@@ -6,7 +6,9 @@ package com.personnel.entity;
 public class SecurityInsurance {
 //    社保号
 	private int securityInsuranceId;
-	private int staffName;
+
+	private int staffId;
+    private String staffName;
 //	所在城市
 	private String city;
 //	岗位
@@ -30,14 +32,10 @@ public class SecurityInsurance {
 	public SecurityInsurance(){
 	}
 
-    public SecurityInsurance(int securityInsuranceId, int staffName, String city, String station, String education, String household, int endowmentInsurance, int medicalInsurance, int unemploymentInsurance, int employmentInjuryInsurance, int maternityInsurance, int publicHousingFunds) {
+    public SecurityInsurance(int securityInsuranceId,int staffId,int endowmentInsurance, int medicalInsurance, int unemploymentInsurance, int employmentInjuryInsurance, int maternityInsurance, int publicHousingFunds) {
         this.securityInsuranceId = securityInsuranceId;
-        this.staffName = staffName;
-        this.city = city;
-        this.station = station;
-        this.education = education;
-        this.household = household;
-        this.endowmentInsurance = endowmentInsurance;
+        this.staffId = staffId;
+	    this.endowmentInsurance = endowmentInsurance;
         this.medicalInsurance = medicalInsurance;
         this.unemploymentInsurance = unemploymentInsurance;
         this.employmentInjuryInsurance = employmentInjuryInsurance;
@@ -45,19 +43,37 @@ public class SecurityInsurance {
         this.publicHousingFunds = publicHousingFunds;
     }
 
+    public SecurityInsurance(int staffId,int endowmentInsurance, int medicalInsurance, int unemploymentInsurance, int employmentInjuryInsurance, int maternityInsurance, int publicHousingFunds) {
+        this.staffId = staffId;
+	    this.endowmentInsurance = endowmentInsurance;
+        this.medicalInsurance = medicalInsurance;
+        this.unemploymentInsurance = unemploymentInsurance;
+        this.employmentInjuryInsurance = employmentInjuryInsurance;
+        this.maternityInsurance = maternityInsurance;
+        this.publicHousingFunds = publicHousingFunds;
+    }
+
+    public int getStaffId() {
+        return staffId;
+    }
+
+    public void setStaff_id(int staffId) {
+        this.staffId = staffId;
+    }
+
     public int getSecurityInsuranceId() {
         return securityInsuranceId;
     }
 
-    public void setSecurity_insuranceId(int securityInsuranceId) {
+    public void setSecurity_insurance_id(int securityInsuranceId) {
         this.securityInsuranceId = securityInsuranceId;
     }
 
-    public int getStaffName() {
+    public String getStaffName() {
         return staffName;
     }
 
-    public void setStaff_name(int staffName) {
+    public void setStaff_name(String staffName) {
         this.staffName = staffName;
     }
 

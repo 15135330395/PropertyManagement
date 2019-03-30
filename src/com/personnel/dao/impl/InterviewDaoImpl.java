@@ -43,9 +43,9 @@ public class InterviewDaoImpl implements InterviewDao {
 
     @Override
     public int addInterview(Interview interview) {
-        String sql="insert into interview (apply_name,apply_position,department_name,interviewer,offer) " +
-                "values(?,?,?,?,?)";
-        Object[] objs={interview.getApplyName(),interview.getApplyPosition(),interview.getDepartmentName(),interview.getInterviewer(),interview.isOffer()};
+        String sql="insert into interview (apply_name,apply_position,department_name,interviewer) " +
+                "values(?,?,?,?)";
+        Object[] objs={interview.getApplyName(),interview.getApplyPosition(),interview.getDepartmentName(),interview.getInterviewer()};
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, objs);
             return i;
@@ -92,5 +92,17 @@ public class InterviewDaoImpl implements InterviewDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public int addOffer(int interviewId) {
+        String sql="update interview set offer=1 where interview_id=?";
+        try {
+            int i = qr.update(JdbcUtil.getConnection(), sql, interviewId);
+            return i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

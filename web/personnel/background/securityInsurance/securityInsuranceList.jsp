@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2019/3/29 0029
-  Time: 下午 2:23
+  User: Geng xing
+  Date: 2019/3/30
+  Time: 18:50
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../commons/info.jsp"%>
 <html>
 <head>
-    <title>招聘信息</title>
+    <title>社保信息</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -18,7 +18,7 @@
 <div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="#"><cite>首页</cite></a>
-        <a href="#"><cite>招聘信息维护</cite></a>
+        <a href="#"><cite>社保信息维护</cite></a>
       </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
@@ -37,23 +37,44 @@
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
+    <script type="text/html" id="do">
+        {{ d.endowmentInsurance==0?'无':'有'}}
+    </script>
+    <script type="text/html" id="do2">
+        {{ d.medicalInsurance==0?'无':'有'}}
+    </script>
+    <script type="text/html" id="do3">
+        {{d.unemploymentInsurance==0?'无':'有'}}
+    </script>
+    <script type="text/html" id="do4">
+        {{d.employmentInjuryInsurance==0?'无':'有'}}
+    </script>
+    <script type="text/html" id="do5">
+        {{d.maternityInsurance==0?'无':'有'}}
+    </script>
+    <script type="text/html" id="do6">
+        {{d.publicHousingFunds==0?'无':'有'}}
+    </script>
 </div>
 <script>
     layui.use('table', function(){
         var table = layui.table;
         table.render({
             elem: '#test'
-            ,url:'<%=request.getContextPath()%>/RecuitServlet?action=queryPage'
+            ,url:'<%=request.getContextPath()%>/SecurityInsuranceServlet?action=queryPage'
             ,toolbar: '#toolbarDemo'
-            ,title: '招聘信息表'
+            ,title: '社保信息表'
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
-                ,{field:'recuitId', title:'编号', width:'10%', fixed: 'left', unresize: true, sort: true}
-                ,{field:'recuitPosition', title:'招聘岗位', width:'15%',  sort: true}
-                ,{field:'recuitCount', title:'招聘人数', width:'15%',  sort: true}
-                ,{field:'duty', title:'岗位职责', width:'15%'  }
-                ,{field:'demand', title:'任职要求', width:'15%'}
-                ,{field:'basicSalary', title:'基本工资', width:'15%',  sort: true}
+                ,{field:'securityInsuranceId', title:'编号', width:'8%', fixed: 'left', unresize: true, sort: true}
+                ,{field:'staffId', title:'工号', width:'10%', fixed: 'left', unresize: true, sort: true}
+                ,{field:'staffName', title:'员工姓名', width:'12%',sort: true}
+                ,{field:'endowmentInsurance', title:'养老保险', width:'10%',templet:'#do'}
+                ,{field:'medicalInsurance', title:'医疗保险', width:'10%',templet:'#do2'}
+                ,{field:'unemploymentInsurance', title:'失业保险', width:'10%',templet:'#do3'}
+                ,{field:'employmentInjuryInsurance', title:'工伤保险', width:'10%',templet:'#do4'}
+                ,{field:'maternityInsurance', title:'生育保险', width:'10%',templet:'#do5'}
+                ,{field:'publicHousingFunds', title:'住房公积金', width:'10%', sort: true,templet:'#do6'}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
             ]]
             ,page: true
@@ -72,13 +93,13 @@
                     var ids="";
                     if(data.length>0){
                         for (var i=0;i<data.length;i++) {
-                            ids+=data[i].recuitId+","
+                            ids+=data[i].securityInsuranceId+","
                         }
                     }
                     layer.confirm('确认要删除这些信息吗？',function(index){
                         $.ajax({
                             type:"post",
-                            url:"<%=request.getContextPath()%>/RecuitServlet",
+                            url:"<%=request.getContextPath()%>/SecurityInsuranceServlet",
                             data:"action=deleteAll&ids="+ids,
                             success:function (msg) {
                                 $(".layui-form-checked").not('.header').parents('tr').remove();
@@ -101,7 +122,7 @@
                         area: ['1000px', '700px'],
                         offset: 'auto', //右下角弹出
                         anim: 2,
-                        content: '<%=request.getContextPath()%>/personnel/background/recuit/recuitAdd.jsp'
+                        content: '<%=request.getContextPath()%>/SecurityInsuranceServlet?action=queryOne'
                     })
                     break;
             };
@@ -116,8 +137,8 @@
                     layer.close(index);
                     $.ajax({
                         type:"post",
-                        url:"<%=request.getContextPath()%>/RecuitServlet",
-                        data:"action=delete&recuitId="+data.recuitId,
+                        url:"<%=request.getContextPath()%>/SecurityInsuranceServlet",
+                        data:"action=delete&securityInsuranceId="+data.securityInsuranceId,
                         success:function (msg) {
                             obj.del();
                             if(msg==1){
@@ -136,7 +157,7 @@
                     area: ['1000px', '700px'],
                     offset: 'auto', //右下角弹出
                     anim: 2,
-                    content: '<%=request.getContextPath()%>/RecuitServlet?action=queryOne&recuitId='+data.recuitId
+                    content: '<%=request.getContextPath()%>/SecurityInsuranceServlet?action=queryOne&securityInsuranceId='+data.securityInsuranceId
                 })
             }
         });

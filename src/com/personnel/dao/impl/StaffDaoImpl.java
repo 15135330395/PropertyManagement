@@ -44,12 +44,13 @@ public class StaffDaoImpl implements StaffDao {
 
     @Override
     public int addStaff(Staff staff) {
-        String sql="insert into staff (staff_name,staff_image,identity_card,age" +
+        String sql="insert into staff (staff_name,staff_image,identity_card,age," +
                 "sex,address,phone,email,city,household,station,education,department_id," +
                 "salary_id,security_insurance_id,join_time)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         Object[] objs={staff.getStaffName(),staff.getStaffImage(),staff.getIdentityCard(),
         staff.getAge(),staff.getSex(),staff.getAddress(),staff.getPhone(),staff.getEmail(),staff.getCity(),
-        staff.getHousehold(),staff.getStation(),staff.getEducation(),staff.getDepartmentId(),staff.getSalaryId(),staff.getSecurityInsuranceId()};
+        staff.getHousehold(),staff.getStation(),staff.getEducation(),staff.getDepartmentId(),staff.getSalaryId(),
+                staff.getSecurityInsuranceId(),staff.getJoinTime()};
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, objs);
             return i;

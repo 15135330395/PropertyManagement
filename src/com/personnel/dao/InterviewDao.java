@@ -16,4 +16,6 @@ public interface InterviewDao {
     public int updateInterview(Interview interview);
     public int deleteInterview(int interviewId);
     public Interview queryOne(int interviewId);
+
+    public int addOffer(int interviewId);
 }

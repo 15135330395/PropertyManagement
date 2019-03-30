@@ -32,7 +32,7 @@ public class KpiDaoImpl implements KpiDao {
 
     @Override
     public List<Kpi> queryPage(PageBean pageBean) {
-        String sql="select *from kpi order by kpi_id limit ?,?";
+        String sql="select *from kpi k ,staff s where k.staff_id=s.staff_id order by kpi_id limit ?,?";
         try {
             List<Kpi> kpiList = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Kpi.class), pageBean.getIndex(), pageBean.getPageCount());
             return kpiList;
@@ -44,9 +44,9 @@ public class KpiDaoImpl implements KpiDao {
 
     @Override
     public int addKpi(Kpi kpi) {
-        String sql="insert into kpi (staff_id,staff_name,department_name,evaluate_content,evaluate_person,evaluate_grade) " +
-                "values(?,?,?,?,?,?)";
-        Object[] objs={kpi.getStaffId(),kpi.getStaffName(),kpi.getDepartmentName(),kpi.getEvaluateContent(),kpi.getEvaluatePerson(),kpi.getEvaluateGrade()};
+        String sql="insert into kpi (staff_id,evaluate_content,evaluate_person) " +
+                "values(?,?,?)";
+        Object[] objs={kpi.getStaffId(),kpi.getEvaluateContent(),kpi.getEvaluatePerson()};
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, objs);
             return i;
@@ -58,9 +58,9 @@ public class KpiDaoImpl implements KpiDao {
 
     @Override
     public int updateKpi(Kpi kpi) {
-        String sql="update kpi set staff_id=?,staff_name=?,department_name=?,evaluate_content=?,evaluate_person=?,evaluate_grade=? " +
+        String sql="update kpi set staff_id=?,evaluate_content=?,evaluate_person=?,evaluate_grade=? " +
                 "where kpi_id=?";
-        Object[] objs={kpi.getStaffId(),kpi.getStaffName(),kpi.getDepartmentName(),kpi.getEvaluateContent(),kpi.getEvaluatePerson(),kpi.getEvaluateGrade(),kpi.getKpiId()};
+        Object[] objs={kpi.getStaffId(),kpi.getEvaluateContent(),kpi.getEvaluatePerson(),kpi.getEvaluateGrade(),kpi.getKpiId()};
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, objs);
             return i;
@@ -92,5 +92,17 @@ public class KpiDaoImpl implements KpiDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public int addEvaluateGrade(int kpiId, int evaluateGrade) {
+        String sql = "update kpi set evaluate_grade=? where kpi_id = ?";
+        try {
+            int i = qr.update(JdbcUtil.getConnection(), sql, evaluateGrade, kpiId);
+            return i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

@@ -120,6 +120,12 @@
                             <cite>员工信息管理</cite>
                         </a>
                     </li >
+                    <li>
+                        <a _href="<%=request.getContextPath()%>/personnel/background/labourContract/labourContractList.jsp">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>合同信息管理</cite>
+                        </a>
+                    </li >
                 </ul>
             </li>
             <li>
@@ -135,19 +141,25 @@
                             <cite>招聘信息管理</cite>
                         </a>
                     </li >
+                    <li>
+                        <a _href="<%=request.getContextPath()%>/personnel/background/interview/interviewList.jsp">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>面试信息管理</cite>
+                        </a>
+                    </li >
                 </ul>
             </li>
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe723;</i>
-                    <cite>城市联动</cite>
+                    <cite>绩效管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="city.html">
+                        <a _href="<%=request.getContextPath()%>/personnel/background/kpi/kpiList.jsp">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>三级地区联动</cite>
+                            <cite>绩效信息维护</cite>
                         </a>
                     </li >
                 </ul>
@@ -155,32 +167,14 @@
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe726;</i>
-                    <cite>管理员管理</cite>
+                    <cite>社保管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="admin-list.html">
+                        <a _href="<%=request.getContextPath()%>/personnel/background/securityInsurance/securityInsuranceList.jsp">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>管理员列表</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-role.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>角色管理</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-cate.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>权限分类</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-rule.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>权限管理</cite>
+                            <cite>社保信息维护</cite>
                         </a>
                     </li >
                 </ul>

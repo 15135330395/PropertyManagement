@@ -11,7 +11,7 @@
 <%@include file="../commons/info.jsp"%>
 <html>
 <head>
-    <title>编辑信息</title>
+    <title>信息</title>
 </head>
 <body>
 <div class="layui-container" style="padding: 20px">
@@ -234,7 +234,10 @@
                     },
                     success:function(msgData){
                         layer.msg("添加成功",{icon:1,time:1000});
-                        setTimeout("location.reload()",1000)
+                        var index = parent.layer.getFrameIndex(window.name);
+                        //关闭当前frame
+                        setTimeout("parent.layer.close(index)",1000)
+                        setTimeout("window.parent.location.reload()",1000)
                     }
                 })
             }

@@ -53,7 +53,6 @@ public class StaffServlet extends HttpServlet {
     }
     protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ids = request.getParameter("ids");
-        System.out.println("ids"+ids);
         String[] array = ids.split(",");
         int sum=0;
         for (String staffId: array) {
@@ -98,7 +97,6 @@ public class StaffServlet extends HttpServlet {
                 Integer.parseInt(salaryId),
                 Integer.parseInt(securityInsuranceId),
                 DateUtil.formatString(joinTime, "yyyy-MM-dd HH:mm:ss"));
-
         int i = staffService.addStaff(staff);
         response.getWriter().print(i);
     }
@@ -125,7 +123,7 @@ public class StaffServlet extends HttpServlet {
 
 
         String image = (String) request.getSession().getAttribute("image");
-        request.getSession().removeAttribute("image");
+//        request.getSession().removeAttribute("image");
         Staff staff = new Staff(Integer.parseInt(staffId),staffName,image!=null?image:"",identityCard, Integer.parseInt(age),
                 sex, address,phone,email,city,household,station,education,
                 Integer.parseInt(departmentId),

@@ -13,7 +13,7 @@ public class Interview {
 //	面试官
 	private String interviewer;
 //	是否录用
-	private boolean offer;
+	private boolean offer=false;
 	public Interview(){
 	}
 
@@ -25,6 +25,13 @@ public class Interview {
         this.departmentName = departmentName;
         this.interviewer = interviewer;
         this.offer = offer;
+    }
+
+    public Interview(String applyName, String applyPosition, String departmentName, String interviewer) {
+        this.applyName = applyName;
+        this.applyPosition = applyPosition;
+        this.departmentName = departmentName;
+        this.interviewer = interviewer;
     }
 
     public int getInterviewId() {

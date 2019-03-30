@@ -7,7 +7,6 @@ public class Kpi {
 	private int kpiId;
     private int staffId;
 	private String staffName;
-	private String departmentName;
 //	评价内容
 	private String evaluateContent;
 //	评级人
@@ -17,17 +16,47 @@ public class Kpi {
 	public Kpi(){
 	}
 
+    public Kpi(int kpiId,int evaluateGrade) {
+        this.kpiId = kpiId;
+        this.evaluateGrade = evaluateGrade;
+    }
 
-
-    public Kpi(int kpiId, int staffId, String staffName, String departmentName, String evaluateContent, String evaluatePerson, int evaluateGrade) {
+    public Kpi(int kpiId, int staffId, String evaluateContent, String evaluatePerson) {
         this.kpiId = kpiId;
         this.staffId = staffId;
+
+
+        this.evaluateContent = evaluateContent;
+        this.evaluatePerson = evaluatePerson;
+    }
+
+    public Kpi(int staffId, String staffName,  String evaluateContent, String evaluatePerson, int evaluateGrade) {
+        this.staffId = staffId;
         this.staffName = staffName;
-        this.departmentName = departmentName;
+
         this.evaluateContent = evaluateContent;
         this.evaluatePerson = evaluatePerson;
         this.evaluateGrade = evaluateGrade;
     }
+
+    public Kpi(int kpiId, int staffId, String staffName, String evaluateContent, String evaluatePerson, int evaluateGrade) {
+        this.kpiId = kpiId;
+        this.staffId = staffId;
+        this.staffName = staffName;
+
+        this.evaluateContent = evaluateContent;
+        this.evaluatePerson = evaluatePerson;
+        this.evaluateGrade = evaluateGrade;
+    }
+
+    public Kpi(int staffId,  String evaluateContent, String evaluatePerson) {
+        this.staffId = staffId;
+
+        this.evaluateContent = evaluateContent;
+        this.evaluatePerson = evaluatePerson;
+    }
+
+
     public int getStaffId() {
         return staffId;
     }
@@ -52,13 +81,6 @@ public class Kpi {
         this.staffName = staffName;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
-    }
-
-    public void setDepartment_name(String departmentName) {
-        this.departmentName = departmentName;
-    }
 
     public String getEvaluateContent() {
         return evaluateContent;

@@ -16,4 +16,6 @@ public interface KpiDao {
     public int updateKpi(Kpi kpi);
     public int deleteKpi(int kpiId);
     public Kpi queryOne(int kpiId);
+
+    public int addEvaluateGrade(int kpiId, int evaluateGrade);
 }
