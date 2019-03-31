@@ -113,7 +113,6 @@
             <div class="layui-input-inline">
                 <input type="text" name="salaryId" value="${staff.salaryId}"  lay-verify="required" class="layui-input" placeholder="请输入工资号">
             </div>
-
         </div>
 
         <div class="layui-form-item">

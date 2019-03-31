@@ -32,7 +32,7 @@ public class AttendanceDaoImpl implements AttendanceDao {
 
     @Override
     public List<Attendance> queryPage(PageBean pageBean) {
-        String sql="select *from attendance order by attendance_id limit ?,?";
+        String sql="select a.*,s.staff_name,d.department_name from attendance a,staff s,department d where a.department_id=d.department_id and a.staff_id=s.staff_id order by attendance_id limit ?,?";
         try {
             List<Attendance> attendanceList = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Attendance.class), pageBean.getIndex(), pageBean.getPageCount());
             return attendanceList;
@@ -44,11 +44,11 @@ public class AttendanceDaoImpl implements AttendanceDao {
 
     @Override
     public int addAttendance(Attendance attendance) {
-        String sql="insert into attendance (staff_id,staff_name,department_name,work_day," +
-                "actual_attendance,sick_leave,affair_leave,onduty,abnormal) " +
-                "values(?,?,?,?,?,?,?,?,?)";
-        Object[] objs={attendance.getStaffId(),attendance.getStaffName(),attendance.getDepartmentName(),
-        attendance.getWorkDay(),attendance.getActualAttendance(),attendance.getSickLeave(),
+        String sql="insert into attendance (staff_id,department_id,work_day," +
+                "sick_leave,affair_leave,onduty,abnormal) " +
+                "values(?,?,?,?,?,?,?)";
+        Object[] objs={attendance.getStaffId(),attendance.getDepartmentId(),
+        attendance.getWorkDay(),attendance.getSickLeave(),
                 attendance.getAffairLeave(),attendance.getOnduty(),attendance.getAbnormal()};
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, objs);
@@ -61,11 +61,11 @@ public class AttendanceDaoImpl implements AttendanceDao {
 
     @Override
     public int updateAttendance(Attendance attendance) {
-        String sql="update attendance set staff_id=?,staff_name=?,department_name=?,work_day=?,actual_attendance=? " +
+        String sql="update attendance set staff_id=?,department_id=?,work_day=? " +
                 ",sick_leave=?, affair_leave=?,onduty=?,abnormal=? where attendance_id=?";
-        Object[] objs={attendance.getStaffId(),attendance.getStaffName(),attendance.getDepartmentName(),
-                attendance.getWorkDay(),attendance.getActualAttendance(),attendance.getSickLeave(),
-                attendance.getAffairLeave(),attendance.getOnduty(),attendance.getAbnormal(),attendance.getAttendanceId()};
+        Object[] objs={attendance.getStaffId(),attendance.getDepartmentId(),
+                attendance.getWorkDay(),attendance.getSickLeave(),attendance.getAffairLeave(),
+                attendance.getOnduty(),attendance.getAbnormal(),attendance.getAttendanceId()};
         try {
             int i = qr.update(JdbcUtil.getConnection(), sql, objs);
             return i;
@@ -90,7 +90,9 @@ public class AttendanceDaoImpl implements AttendanceDao {
 
     @Override
     public Attendance queryOne(int attendanceId) {
-        String sql="select * from attendance  where attendance_id=?";
+        String sql="select a.*,s.staff_name,d.department_name from attendance a,staff s,department d where " +
+                "a.department_id=d.department_id and a.staff_id=s.staff_id" +
+                " and attendance_id=? ";
         try {
             Attendance attendance = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Attendance.class), attendanceId);
             return attendance;

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Geng xing
-  Date: 2019/3/30
-  Time: 12:46
+  Date: 2019/3/31
+  Time: 22:59
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,26 +10,26 @@
 <%@include file="../commons/info.jsp"%>
 <html>
 <head>
-    <title>信息</title>
+    <title>编辑信息</title>
 </head>
 <body>
 <div class="layui-container" style="padding: 20px">
     <form class="layui-form" action="">
-        <input type="hidden" name="kpiId" value="${kpi.kpiId}" autocomplete="off" class="layui-input">
+        <div class="layui-form-item ">
+            <label class="layui-form-label">编号：</label>
+            <div class="layui-input-inline">
+                <input readonly type="text" name="kpiId" value="${kpi.kpiId}" autocomplete="off" class="layui-input">
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">员工姓名：</label>
             <div class="layui-input-inline">
-                <select name="staffId" lay-verify="required" value="${kpi.staffId}">
-                    <option value=""></option>
-                    <c:forEach items="${staffList}" var="list">
-                        <c:if test="${list.staffId == kpi.staffId}">
-                            <option  selected value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
-                        <c:if test="${list.staffId != kpi.staffId}">
-                            <option value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
+                <input  type="hidden" name="staffId" value="${kpi.staffId}"  lay-verify="required"  autocomplete="off" class="layui-input" >
+                <c:forEach items="${staffList}" var="list">
+                    <c:if test="${list.staffId == kpi.staffId}">
+                        <input readonly type="text"  value="${list.staffName}"  lay-verify="required"  autocomplete="off" class="layui-input" >
+                    </c:if>
+                </c:forEach>
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
@@ -64,30 +64,29 @@
             var staffId = data.field.staffId;
             var evaluatePerson =  data.field.evaluatePerson;
             var evaluateContent =  data.field.evaluateContent;
+
                 $.ajax({
                     type:"post",
                     url:"<%=request.getContextPath()%>/KpiServlet",
                     data:{
-                        "action":"add",
+                        "action":"update",
+                        "kpiId":kpiId,
                         "staffId":staffId,
                         "evaluatePerson":evaluatePerson,
                         "evaluateContent":evaluateContent
                     },
                     success:function(msgData){
-                        layer.msg("添加成功",{icon:1,time:1000});
+                        layer.msg("修改成功",{icon:1,time:1000});
+                        // 获得frame索引
                         var index = parent.layer.getFrameIndex(window.name);
                         //关闭当前frame
                         setTimeout("parent.layer.close(index)",1000)
                         setTimeout("window.parent.location.reload()",1000)
                     }
-
                 })
-
-
             return false;
         });
     });
 </script>
 </body>
 </html>
-

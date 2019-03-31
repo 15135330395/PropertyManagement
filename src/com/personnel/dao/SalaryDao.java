@@ -17,4 +17,6 @@ public interface SalaryDao {
     public int updateSalary(Salary salary);
     public int deleteSalary(int salaryId);
     public Salary queryOne(int salaryId);
+
+    Salary queryOneByStaffId(int staffId);
 }

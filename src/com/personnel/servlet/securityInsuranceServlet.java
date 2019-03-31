@@ -46,6 +46,8 @@ public class securityInsuranceServlet extends HttpServlet {
             queryPage(request, response);
         }else if ("deleteAll".equals(action)) {
             deleteAll(request, response);
+        }else if ("toEdit".equals(action)) {
+            toEdit(request, response);
         }
     }
 
@@ -169,6 +171,16 @@ public class securityInsuranceServlet extends HttpServlet {
         List<Staff> staffList = staffService.findAll();
         request.setAttribute("staffList",staffList);
         request.getRequestDispatcher("/personnel/background/securityInsurance/securityInsuranceAdd.jsp").forward(request, response);
+    }
+    protected void toEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String securityInsuranceId = request.getParameter("securityInsuranceId");
+        if (securityInsuranceId != null) {
+            SecurityInsurance securityInsurance = service.queryOne(Integer.parseInt(securityInsuranceId));
+            request.setAttribute("securityInsurance", securityInsurance);
+        }
+        List<Staff> staffList = staffService.findAll();
+        request.setAttribute("staffList",staffList);
+        request.getRequestDispatcher("/personnel/background/securityInsurance/securityInsuranceEdit.jsp").forward(request, response);
     }
 
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

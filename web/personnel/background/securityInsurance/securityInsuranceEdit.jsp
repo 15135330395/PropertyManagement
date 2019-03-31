@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Geng xing
-  Date: 2019/3/30
-  Time: 18:50
+  Date: 2019/3/31
+  Time: 23:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -16,21 +16,21 @@
 <body>
 <div class="layui-container" style="padding: 20px">
     <form class="layui-form" action="">
-        <input type="hidden" name="securityInsuranceId" value="${securityInsurance.securityInsuranceId}" autocomplete="off" class="layui-input">
+        <div class="layui-form-item ">
+            <label class="layui-form-label">编号：</label>
+            <div class="layui-input-inline">
+                <input readonly type="text" name="securityInsuranceId" value="${securityInsurance.securityInsuranceId}" autocomplete="off" class="layui-input">
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">员工姓名：</label>
             <div class="layui-input-inline">
-                <select name="staffId" lay-verify="required" value="${securityInsurance.staffId}">
-                    <option value=""></option>
-                    <c:forEach items="${staffList}" var="list">
-                        <c:if test="${list.staffId == securityInsurance.staffId}">
-                            <option  selected value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
-                        <c:if test="${list.staffId != securityInsurance.staffId}">
-                            <option value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
+                <input  type="hidden" name="staffId" value="${securityInsurance.staffId}"  lay-verify="required"  autocomplete="off" class="layui-input" >
+                <c:forEach items="${staffList}" var="list">
+                    <c:if test="${list.staffId == securityInsurance.staffId}">
+                        <input readonly type="text"  value="${list.staffName}"  lay-verify="required"  autocomplete="off" class="layui-input" >
+                    </c:if>
+                </c:forEach>
             </div>
         </div>
         <div class="layui-form-item">
@@ -76,11 +76,13 @@
             var maternityInsurance = data.field.maternityInsurance;
             var publicHousingFunds = data.field.publicHousingFunds;
 
+
                 $.ajax({
                     type:"post",
                     url:"<%=request.getContextPath()%>/SecurityInsuranceServlet",
                     data:{
-                        "action":"add",
+                        "action":"update",
+                        "securityInsuranceId":securityInsuranceId,
                         "staffId":staffId,
                         "endowmentInsurance":endowmentInsurance,
                         "medicalInsurance":medicalInsurance,
@@ -90,14 +92,14 @@
                         "publicHousingFunds":publicHousingFunds
                     },
                     success:function(msgData){
-                        layer.msg("添加成功",{icon:1,time:1000});
+                        layer.msg("修改成功",{icon:1,time:1000});
+                        // 获得frame索引
                         var index = parent.layer.getFrameIndex(window.name);
                         //关闭当前frame
                         setTimeout("parent.layer.close(index)",1000)
                         setTimeout("window.parent.location.reload()",1000)
                     }
                 })
-
             return false;
         });
     });

@@ -157,7 +157,7 @@
                     area: ['1000px', '700px'],
                     offset: 'auto', //右下角弹出
                     anim: 2,
-                    content: '<%=request.getContextPath()%>/SecurityInsuranceServlet?action=queryOne&securityInsuranceId='+data.securityInsuranceId
+                    content: '<%=request.getContextPath()%>/SecurityInsuranceServlet?action=toEdit&securityInsuranceId='+data.securityInsuranceId
                 })
             }
         });

@@ -149,7 +149,7 @@
                     area: ['1000px', '700px'],
                     offset: 'auto', //右下角弹出
                     anim: 2,
-                    content: '<%=request.getContextPath()%>/KpiServlet?action=queryOne&kpiId='+data.kpiId
+                    content: '<%=request.getContextPath()%>/KpiServlet?action=toEidt&kpiId='+data.kpiId
                 })
             }
         });

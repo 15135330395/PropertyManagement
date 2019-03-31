@@ -43,6 +43,8 @@ public class KpiServlet extends HttpServlet {
             addEvaluateGrade(request, response);
         }else if ("toaddEvaluateGrade".equals(action)) {
             toaddEvaluateGrade(request, response);
+        }else if ("toEidt".equals(action)) {
+            toEidt(request, response);
         }
 
 
@@ -115,7 +117,17 @@ public class KpiServlet extends HttpServlet {
         request.setAttribute("staffList",staffList);
         request.getRequestDispatcher("/personnel/background/kpi/kpiAdd.jsp").forward(request, response);
     }
-
+    protected void toEidt(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String kpiId = request.getParameter("kpiId");
+        if (kpiId != null) {
+            Kpi kpi = service.queryOne(Integer.parseInt(kpiId));
+            request.setAttribute("kpi", kpi);
+        }
+        StaffService staffService=new StaffService();
+        List<Staff> staffList = staffService.findAll();
+        request.setAttribute("staffList",staffList);
+        request.getRequestDispatcher("/personnel/background/kpi/kpiEdit.jsp").forward(request, response);
+    }
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String kpiId = request.getParameter("kpiId");
         int i = service.deleteKpi(Integer.parseInt(kpiId));
