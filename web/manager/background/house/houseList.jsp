@@ -64,7 +64,7 @@
                 <td>${house.use}</td>
                 <td>${house.houseType}</td>
                 <td class="td-manage">
-                    <a title="查看"  onclick="x_admin_show('编辑','<%=request.getContextPath()%>/HouseServlet?action=queryOne&kid=${house.houseId}')" href="javascript:;">
+                    <a title="查看"  onclick="x_admin_show('编辑','<%=request.getContextPath()%>/HouseServlet?action=queryOne&hid=${house.houseId}')" href="javascript:;">
                         <i class="layui-icon">&#xe63c;</i>
                     </a>
                     <a title="删除" onclick="member_del(this,'${house.houseId}')" href="javascript:;">
@@ -113,7 +113,7 @@
             $.ajax({
                 type:"post",
                 url:"<%=request.getContextPath()%>/HouseServlet",
-                data:"action=delete&kid="+id,
+                data:"action=delete&hid="+id,
                 success:function(msg){
                     //发异步删除数据
                     $(obj).parents("tr").remove();

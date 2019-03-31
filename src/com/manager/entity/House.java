@@ -69,4 +69,15 @@ public class House {
     public void setHouseType(String houseType) {
         this.houseType = houseType;
     }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "houseId=" + houseId +
+                ", buildingId=" + buildingId +
+                ", acreage='" + acreage + '\'' +
+                ", use='" + use + '\'' +
+                ", houseType='" + houseType + '\'' +
+                '}';
+    }
 }

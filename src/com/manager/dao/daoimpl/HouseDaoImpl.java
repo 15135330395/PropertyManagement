@@ -118,9 +118,10 @@ public class HouseDaoImpl implements HouseDao {
 
     @Override
     public int updateHouse(House house) {
-        String sql="update house set house_name=?,acreage=?,use=?,house_type=? where house_id = ?";
+        String sql="update house set house_id = ?, building_id=?,acreage=?,use=?,house_type=? where house_id = ?";
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, house.getBuildingId() ,house.getAcreage(),house.getUse(),house.getHouseType(), house.getHouseId());
+            System.out.println(i);
             return  i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -205,11 +206,11 @@ public class HouseDaoImpl implements HouseDao {
             ps.setInt(1,houseId);
             rs = ps.executeQuery();
             while (rs.next()){
-                int buildingId = rs.getInt("buildingId");
+                int buildingId = rs.getInt("building_id");
                 String acreage = rs.getString("acreage");
                 String use = rs.getString("use");
-                String houseType = rs.getString("houseType");
-                House house = new House(buildingId,buildingId,acreage,use,houseType);
+                String houseType = rs.getString("house_type");
+                House house = new House(houseId,buildingId,acreage,use,houseType);
 
                 return house;
             }

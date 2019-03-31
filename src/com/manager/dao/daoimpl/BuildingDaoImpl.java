@@ -97,7 +97,6 @@ public class BuildingDaoImpl implements BuildingDao {
 
     @Override
     public int addBuilding(Building building) {
-//        System.out.println(building.getBuildingName());
 
         String sql="insert into property_management.building (building_name,staff_id,area_id) values (?,?,?)";
         try {
@@ -242,9 +241,9 @@ public class BuildingDaoImpl implements BuildingDao {
             ps.setInt(1,buildingId);
             rs = ps.executeQuery();
             while (rs.next()){
-                String buildingName = rs.getString("buildingName");
-                int staffId = rs.getInt("staffId");
-                int areaId = rs.getInt("areaId");
+                String buildingName = rs.getString("building_name");
+                int staffId = rs.getInt("staff_id");
+                int areaId = rs.getInt("area_id");
                 Building building = new Building(buildingId,buildingName,staffId,areaId);
 
                 return building;

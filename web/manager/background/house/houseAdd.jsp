@@ -94,6 +94,7 @@
                 url:"<%=request.getContextPath()%>/HouseServlet",
                 data:{
                     "action":"add",
+                    "houseId":houseId,
                     "buildingId":buildingId,
                     "acreage":acreage,
                     "use":use,
