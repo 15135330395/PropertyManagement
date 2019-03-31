@@ -12,9 +12,9 @@
   </head>
   <body>
 <%
-  // request.getRequestDispatcher("/shouFei/items/payItems.jsp").forward(request,response);
+  request.getRequestDispatcher("/shouFei/items/payItems.jsp").forward(request,response);
   //request.getRequestDispatcher("/shouFei/norm/payNorm.jsp").forward(request,response);
-  request.getRequestDispatcher("/shouFei/mReading/mReadingList.jsp").forward(request,response);
+  //request.getRequestDispatcher("/shouFei/mReading/mReadingList.jsp").forward(request,response);
 
 %>
   </body>

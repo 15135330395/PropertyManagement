@@ -1,1 +1,0 @@
-INSERT INTO property_management.meter_reading (meter_reading_id, plot_name, room_number, pay_name, norm_name, riqi, price, start, stop, pooled) VALUES (1, '宏盛花园', '502', '物业费', '固定金额（150）每1月', '2019-03-01', null, null, null, null);

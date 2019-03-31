@@ -1,7 +1,7 @@
 package shouFei.servlet;
 
 import com.alibaba.fastjson.JSONObject;
-import com.chinasofti.myutils.DateUtils;
+import com.utils.DateUtil;
 import shouFei.entity.MeterReading;
 import shouFei.entity.PageBean;
 import shouFei.service.MeterReadingService;
@@ -73,7 +73,7 @@ public class MeterReadingServlet extends HttpServlet {
         String pooled = request.getParameter("pooled");
         try {
             int i = service.updateMeterReading(new MeterReading(Integer.parseInt(meterReadingId),plotName,roomNumber,
-                    payName,normName, DateUtils.stringToDate(riqi,"yyyy-MM-DD"),Double.parseDouble(price),Double.parseDouble(start),Double.parseDouble(stop),Double.parseDouble(pooled)));
+                    payName,normName, DateUtil.formatString(riqi, "yyyy-MM-DD"),Double.parseDouble(price),Double.parseDouble(start),Double.parseDouble(stop),Double.parseDouble(pooled)));
         } catch (Exception e) {
             e.printStackTrace();
         }

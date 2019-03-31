@@ -69,6 +69,53 @@ public class PayNormDaoImpl implements PayNormDao {
         }
         return list;
     }
+    @Override
+    public List<PayNorm> findByPayId() {
+        List<PayNorm> list = new ArrayList<>();
+        String sql="select "+colname+" from pay_norm pn,pay_items pi where pn.pay_id=pi.pay_id";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                PayNorm payNorm =  new PayNorm();
+                int normId = rs.getInt("normId");
+               int payId = rs.getInt("payId");
+                String normName = rs.getString("normName");
+                String computeMode = rs.getString("computeMode");
+                Double price=rs.getDouble("price");
+                String fillingType = rs.getString("fillingType");
+                int closeEnd = rs.getInt("closeEnd");
+                String customFormula = rs.getString("customFormula");
+                int chargeCycle = rs.getInt("chargeCycle");
+                payNorm.setNormId(normId);
+                payNorm.setPayId(payId);
+                payNorm.setNormName(normName);
+                payNorm.setComputeMode(computeMode);
+                payNorm.setPrice(price);
+                payNorm.setFillingType(fillingType);
+                payNorm.setCloseEnd(closeEnd);
+                payNorm.setCustomFormula(customFormula);
+                payNorm.setChargeCycle(chargeCycle);
+                list.add(payNorm);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return list;
+    }
 
     @Override
     public int addPayNorm(PayNorm payNorm) {
