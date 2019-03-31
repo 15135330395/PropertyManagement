@@ -157,7 +157,7 @@ public class CleaningTaskServlet extends HttpServlet {
         String taskId = request.getParameter("taskId");
         CleaningTask task = service.findTaskByTaskId(Integer.parseInt(taskId));
         request.setAttribute("task", task);
-        request.getRequestDispatcher("/logistics/Manager/addScore.jsp").forward(request, response);
+        request.getRequestDispatcher("/logistics/Manager/AddScore.jsp").forward(request, response);
     }
 
     private void addScore(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

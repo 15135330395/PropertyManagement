@@ -6,6 +6,7 @@
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-8.0.15.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jstl.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/fastjson-1.2.51.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-codec-1.12.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -98,7 +98,7 @@
                         closeBtn: 1,
                         skin: 'layui-layer-rim', // 加上边框
                         area: ['451px', '405px'], // 宽高
-                        content: '<%=request.getContextPath()%>/logistics/Equipment/addSecurityGuardEquipment.jsp'
+                        content: '<%=request.getContextPath()%>/logistics/Equipment/AddSecurityGuardEquipment.jsp'
                     });
                 } else if (obj.event === 'delAll') {
                     var checkStatus = table.checkStatus(obj.config.id);

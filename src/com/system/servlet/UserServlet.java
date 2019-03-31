@@ -1,0 +1,93 @@
+package com.system.servlet;
+
+import com.alibaba.fastjson.JSONObject;
+import com.entity.PageBean;
+import com.system.entity.User;
+import com.system.service.UserService;
+import com.utils.JsonUtil;
+import com.utils.MD5Util;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+/**
+ * @Description UserServlet
+ * @Author WYR
+ * @CreateTime 2019-03-31 16:56
+ */
+@WebServlet(name = "UserServlet", urlPatterns = "/UserServlet")
+public class UserServlet extends HttpServlet {
+    private UserService service = new UserService();
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        String action = request.getParameter("action");
+        if ("getAllUserByPage".equals(action)) {
+            PageBean pageBean = new PageBean();
+            // 页码
+            String pageIndex = request.getParameter("page");
+            if (pageIndex != null) {
+                pageBean.setPageIndex(Integer.parseInt(pageIndex));
+            }
+            // 每页条数
+            String pageCount = request.getParameter("limit");
+            pageBean.setPageCount(Integer.parseInt(pageCount));
+            // 总条数
+            int userCount = service.getAllUser().size();
+            pageBean.setCount(userCount);
+            List<User> userList = service.getAllUserByPage(pageBean);
+            JSONObject table = JsonUtil.getJsonObject(userList, pageBean);
+            response.getWriter().print(table);
+        } else if ("addUser".equals(action)) {
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            User user = new User(username, password);
+            int i = service.addUser(user);
+            response.getWriter().print(i);
+        } else if ("editUser".equals(action)) {
+            String userId = request.getParameter("userId");
+            User user = service.findUserById(Integer.parseInt(userId));
+            request.setAttribute("user", user);
+            request.getRequestDispatcher("/SystemManager/User/EditUser.jsp").forward(request, response);
+        } else if ("updateUser".equals(action)) {
+            String userId = request.getParameter("userId");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            User user = new User(Integer.parseInt(userId), username, password);
+            int i = service.updateUser(user);
+            response.getWriter().print(i);
+        } else if ("deleteUser".equals(action)) {
+            String userId = request.getParameter("userId");
+            int i = service.deleteUser(Integer.parseInt(userId));
+            response.getWriter().print(i);
+        } else if ("findUserByUsername".equals(action)) {
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            User user = service.findUserByUsername(username);
+            String str = MD5Util.MD5Test(username + password);
+            if (user == null) {
+                // 用户名不存在
+            } else {
+                if (user.getPassword().equals(str)) {
+                    // 登陆成功
+                } else {
+                    // 密码错误
+                }
+            }
+
+        }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
+    }
+}
+
