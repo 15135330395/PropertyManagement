@@ -1,15 +1,8 @@
-﻿<%--
-  Created by IntelliJ IDEA.
-  User: PC
-  Date: 2019/3/26
-  Time: 15:14
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../../commons/info.jsp"%>
 <html>
 <head>
-    <title>收费标准</title>
+    <title>通过payid查询</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -49,13 +42,13 @@
         table.render({
             elem: '#tab'
             // Servlet 返回一个json字符串
-            ,url:'<%=request.getContextPath()%>/PayNormServlet?action=query'
+            ,url:'<%=request.getContextPath()%>/PayNormServlet?action=queryList'
             ,toolbar: '#toolbarDemo'
             ,title: '收费标准表'
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'normId', title:'normId',fixed: 'left',unresize: true, sort: true}
-                ,{field:'payName', title:'收费项目'}
+                ,{field:'payId', title:'payId'}
                 ,{field:'normName', title:'标准名称'}
                 ,{field:'computeMode', title:'金额计算方式'}
                 ,{field:'price', title:'单价'}

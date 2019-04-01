@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: PC
@@ -21,9 +22,15 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">payId：</label>
+            <label class="layui-form-label">收费项目：</label>
             <div class="layui-input-block">
-                <input type="text" name="payId" required  lay-verify="required" value="${payNormById.payId}" placeholder="请输入payId" autocomplete="off" class="layui-input">
+                <input type="text" name="payName" required  lay-verify="required" value="${payNormById.payName}" placeholder="" autocomplete="off" class="layui-input">
+                <%--<select name="payName" lay-verify="required">--%>
+                    <%--<option value="">请选择</option>--%>
+                    <%--<c:forEach items="${payNormById}" var="Items">--%>
+                        <%--<option value="${Items.payId}">${Items.payName}</option>--%>
+                    <%--</c:forEach>--%>
+                <%--</select>--%>
             </div>
         </div>
         <div class="layui-form-item">
@@ -89,7 +96,7 @@
              //layer.msg(JSON.stringify(data.field));
             //alert(data.field)
             var normId=data.field.normId;
-            var payId=data.field.payId;
+            var payName=data.field.payName;
             var normName=data.field.normName;
             var computeMode=data.field.computeMode;
             var price=data.field.price;
@@ -104,7 +111,7 @@
                     data:{
                         "action":"update",
                         "normId":normId,
-                        "payId":payId,
+                        "payName":payName,
                         "normName":normName,
                         "computeMode":computeMode,
                         "price":price,
@@ -129,7 +136,7 @@
                     data:{
                         "action":"add",
                         "normId":normId,
-                        "payId":payId,
+                        "payName":payName,
                         "normName":normName,
                         "computeMode":computeMode,
                         "price":price,

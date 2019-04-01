@@ -44,6 +44,12 @@ public class PayNormServlet extends HttpServlet {
         }
     }
 
+//    private void queryList(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+//        List<PayNorm> byPayId = service.findByPayId();
+//        request.setAttribute("byPayId",byPayId);
+//        request.getRequestDispatcher("/shouFei/norm/f.jsp").forward(request,response);
+//    }
+
 
     private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String payName = request.getParameter("payName");

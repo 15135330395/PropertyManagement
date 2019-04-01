@@ -16,6 +16,7 @@ public class PayNormService {
     public List<PayNorm> findAll() {
         return pNdao.findAll();
     }
+    //public List<PayNorm> findByPayId(){return pNdao.findByPayId();}
 
     public int addPayNorm(PayNorm payNorm) {
         return pNdao.addPayNorm(payNorm);

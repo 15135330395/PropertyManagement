@@ -132,7 +132,7 @@
                     area: ['1500px', '900px'],
                     offset: 'auto', //右下角弹出
                     anim: 2,
-                    content: ['<%=request.getContextPath()%>/shouFei/norm/payNorm.jsp', 'no'], //iframe的url，no代表不显示滚动条
+                    content: ['<%=request.getContextPath()%>/PayItemsServlet?action=queryList', 'no'], //iframe的url，no代表不显示滚动条
                 });
 
             }

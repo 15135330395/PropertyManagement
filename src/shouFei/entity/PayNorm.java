@@ -7,7 +7,6 @@ public class PayNorm {
     //收费标准
     //与收费项目关联，收费名称直接就是收费项目名称
     private int normId;
-    //private int payName;//收费项目id
     private String payName;//收费项目名称
     private String normName;//收费标准名称
     private String computeMode;//金额计算方式  单价*数量/每户单独输入/固定金额/自定义公式

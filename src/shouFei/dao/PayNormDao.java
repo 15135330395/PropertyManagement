@@ -11,6 +11,8 @@ import java.util.List;
 public interface PayNormDao {
     public List<PayNorm> findAll();
 
+   // List<PayNorm> findByPayId();
+
     public int addPayNorm(PayNorm payNorm);
 
     public int deletePayNorm(int NormId);
