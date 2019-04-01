@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: 15087
-  Date: 2019/3/31
-  Time: 17:58
+  User: Administrator
+  Date: 2019/4/1 0001
+  Time: 14:36
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -25,16 +25,51 @@
             <label class="layui-form-label">
                 <span class="x-red"></span>编号
             </label>
-            <div class="layui-input-inline">
+            <div class="layui-input-block">
                 <input type="text" name="roleId" class="layui-input" readonly="readonly" value="${role.roleId}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>角色名称
+                <span class="x-red"></span>角色名称
             </label>
             <div class="layui-input-inline">
-                <input type="text" name="roleName" class="layui-input" lay-verify="required" value="${role.roleName}">
+                <input type="text" name="roleName" class="layui-input" readonly="readonly" value="${role.roleName}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <span class="x-red">*</span>权限
+            </label>
+            <div class="layui-input-block">
+                <table>
+                    <c:forEach items="${menus}" var="root">
+                        <c:if test="${root.parentId==-1}">
+                            <tr>
+                                <td>
+                                    <h3>${root.menuName}</h3>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="menu" lay-skin="switch" value="${root.menuId}"
+                                           lay-text="ON|OFF" checked="">
+                                </td>
+                            </tr>
+                            <c:forEach items="${menus}" var="menu">
+                                <c:if test="${menu.parentId ==root.menuId}">
+                                    <tr align="center">
+                                        <td>
+                                                ${menu.menuName}
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" name="menu" lay-skin="switch"
+                                                   value="${menu.menuId}" lay-text="ON|OFF">
+                                        </td>
+                                    </tr>
+                                </c:if>
+                            </c:forEach>
+                        </c:if>
+                    </c:forEach>
+                </table>
             </div>
         </div>
         <div class="layui-form-item">
@@ -53,17 +88,27 @@
             , layer = layui.layer
         //监听提交
         form.on('submit(update)', function (data) {
+
+            //获取checkbox[name='menu']的值
+            var arr = new Array();
+            $("input:checkbox[name='menu']:checked").each(function (i) {
+                arr[i] = $(this).val();
+            });
+            data.field.menu = arr.join(",");//将数组合并成字符串
+            alert(data.field.menu);
+
             //发异步，把数据提交给Servlet
             $.ajax({
                 type: "post",
                 url: "<%=request.getContextPath()%>/RoleServlet",
                 data: {
-                    action: "updateRole",
+                    action: "grant",
                     roleId: data.field.roleId,
-                    roleName: data.field.roleName
+                    roleName: data.field.roleName,
+                    menuIds: data.field.menu
                 },
                 success: function (msg) {
-                    if (msg == 1) {
+                    if (msg > 0) {
                         layer.alert("修改成功", {icon: 6}, function () {
                             // 获得frame索引
                             var index = parent.layer.getFrameIndex(window.name);

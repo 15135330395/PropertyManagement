@@ -13,6 +13,11 @@ public class MenuRole {
     public MenuRole() {
     }
 
+    public MenuRole(int menuId, int roleId) {
+        this.menuId = menuId;
+        RoleId = roleId;
+    }
+
     public int getMenuRoleId() {
         return menuRoleId;
     }

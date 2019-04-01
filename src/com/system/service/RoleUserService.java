@@ -18,12 +18,13 @@ public class RoleUserService {
         return dao.getAllRoleUser();
     }
 
-    public int addRoleUser(RoleUser roleUser) {
-        return dao.addRoleUser(roleUser);
+    public RoleUser findRoleUserByUserId(int userId) {
+        return dao.findRoleUserByUserId(userId);
     }
 
-    public int updateRoleUser(RoleUser roleUser) {
-        return dao.updateRoleUser(roleUser);
+    public int addRoleUser(RoleUser roleUser) {
+        dao.deleteByUserId(roleUser.getUserId());
+        return dao.addRoleUser(roleUser);
     }
 
     public int deleteRoleUser(int roleUserId) {

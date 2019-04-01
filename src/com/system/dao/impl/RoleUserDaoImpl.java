@@ -5,6 +5,7 @@ import com.system.entity.Role;
 import com.system.entity.RoleUser;
 import com.utils.JdbcUtil;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.SQLException;
@@ -31,10 +32,22 @@ public class RoleUserDaoImpl implements RoleUserDao {
     }
 
     @Override
+    public RoleUser findRoleUserByUserId(int userId) {
+        String sql = "select * from xtgl_role_user where user_id=?";
+        try {
+            RoleUser query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(RoleUser.class), userId);
+            return query;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
     public int addRoleUser(RoleUser roleUser) {
         String sql = "insert into xtgl_role_user (role_id,user_id) values (?,?)";
         try {
-            int i = queryRunner.update(sql, roleUser.getRoleId(), roleUser.getUserId());
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql, roleUser.getRoleId(), roleUser.getUserId());
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -42,23 +55,24 @@ public class RoleUserDaoImpl implements RoleUserDao {
         return 0;
     }
 
-    @Override
-    public int updateRoleUser(RoleUser roleUser) {
-        String sql = "update xtgl_role_user set role_id=?,user_id=? where role_user_id=?";
-        try {
-            int i = queryRunner.update(JdbcUtil.getConnection(), sql, roleUser.getRoleId(), roleUser.getUserId(), roleUser.getRoleUserId());
-            return i;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
 
     @Override
     public int deleteRoleUser(int roleUserId) {
         String sql = "delete from xtgl_role_user where role_user_id=?";
         try {
             int i = queryRunner.update(JdbcUtil.getConnection(), sql, roleUserId);
+            return i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
+    public int deleteByUserId(int userId) {
+        String sql = "delete from xtgl_role_user where user_id=?";
+        try {
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql, userId);
             return i;
         } catch (SQLException e) {
             e.printStackTrace();

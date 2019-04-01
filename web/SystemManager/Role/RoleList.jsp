@@ -44,6 +44,7 @@
     <script type="text/html" id="barDemo">
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="grant">赋予权限</a>
     </script>
     <script>
         layui.use('table', function () {
@@ -112,6 +113,14 @@
                         skin: 'layui-layer-rim', // 加上边框
                         area: ['451px', '405px'], // 宽高
                         content: '<%=request.getContextPath()%>/RoleServlet?action=editRole&roleId=' + data.roleId
+                    });
+                } else if (obj.event === 'grant') {
+                    layer.open({
+                        title: '赋予权限',
+                        type: 2,
+                        skin: 'layui-layer-rim', // 加上边框
+                        area: [$(window).width() * 0.9 + 'px', $(window).height() * 0.9 + '620px'], // 宽高
+                        content: '<%=request.getContextPath()%>/RoleServlet?action=toGrant&roleId=' + data.roleId
                     });
                 }
             });

@@ -22,7 +22,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllUser() {
-        String sql = "select * from xtgl_user";
+        String sql = "select * from xtgl_user u left join xtgl_role_user ru on u.user_id=ru.user_id left join xtgl_role r on ru.role_id=r.role_id ";
         try {
             List<User> list = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(User.class));
             return list;
@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllUserByPage(PageBean pageBean) {
-        String sql = "select * from xtgl_user limit ?,?";
+        String sql = "select u.*,r.role_name from xtgl_user u left join xtgl_role_user ru on u.user_id=ru.user_id left join xtgl_role r on ru.role_id=r.role_id  limit ?,?";
         try {
             List<User> list = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(User.class), pageBean.getIndex(), pageBean.getPageCount());
             return list;

@@ -13,6 +13,11 @@ public class RoleUser {
     public RoleUser() {
     }
 
+    public RoleUser(int roleId, int userId) {
+        this.roleId = roleId;
+        this.userId = userId;
+    }
+
     public int getRoleUserId() {
         return roleUserId;
     }

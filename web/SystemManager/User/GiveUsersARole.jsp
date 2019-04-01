@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: 15087
-  Date: 2019/3/31
-  Time: 17:58
+  User: Administrator
+  Date: 2019/4/1 0001
+  Time: 16:13
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,7 +12,7 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>修改角色</title>
+    <title>修改用户</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -26,17 +26,29 @@
                 <span class="x-red"></span>编号
             </label>
             <div class="layui-input-inline">
-                <input type="text" name="roleId" class="layui-input" readonly="readonly" value="${role.roleId}">
+                <input type="text" name="userId" class="layui-input" readonly="readonly" value="${user.userId}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">
-                <span class="x-red">*</span>角色名称
+                <span class="x-red"></span>用户名
             </label>
-            <div class="layui-input-inline">
-                <input type="text" name="roleName" class="layui-input" lay-verify="required" value="${role.roleName}">
+            <div class="layui-input-block">
+                <input type="text" name="username" class="layui-input" lay-verify="required" value="${user.username}">
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <span class="x-red">*</span>角色名
+            </label>
+            <div class="layui-input-block">
+                <c:forEach items="${roleList}" var="role">
+                    <input type="radio" name="roleId" lay-skin="primary" value="${role.roleId}" title="${role.roleName}"
+                           lay-verify="required" <c:if test="${roleUser.roleId==role.roleId}">checked=""</c:if>>
+                </c:forEach>
+            </div>
+        </div>
+
         <div class="layui-form-item">
             <label class="layui-form-label">
             </label>
@@ -50,17 +62,17 @@
     layui.use(['form', 'layer'], function () {
         $ = layui.jquery;
         var form = layui.form
-            , layer = layui.layer
+            , layer = layui.layer;
         //监听提交
         form.on('submit(update)', function (data) {
             //发异步，把数据提交给Servlet
             $.ajax({
                 type: "post",
-                url: "<%=request.getContextPath()%>/RoleServlet",
+                url: "<%=request.getContextPath()%>/UserServlet",
                 data: {
-                    action: "updateRole",
-                    roleId: data.field.roleId,
-                    roleName: data.field.roleName
+                    action: "giveUsersARole",
+                    userId: data.field.userId,
+                    roleId: data.field.roleId
                 },
                 success: function (msg) {
                     if (msg == 1) {
@@ -86,3 +98,4 @@
 </script>
 </body>
 </html>
+

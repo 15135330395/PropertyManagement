@@ -19,6 +19,14 @@ public interface RoleUserDao {
     List<RoleUser> getAllRoleUser();
 
     /**
+     * 通过userId查找角色用户的映射表
+     *
+     * @param userId
+     * @return
+     */
+    RoleUser findRoleUserByUserId(int userId);
+
+    /**
      * 添加角色和用户映射表
      *
      * @param roleUser
@@ -27,18 +35,18 @@ public interface RoleUserDao {
     int addRoleUser(RoleUser roleUser);
 
     /**
-     * 修改角色和用户映射表
-     *
-     * @param roleUser
-     * @return
-     */
-    int updateRoleUser(RoleUser roleUser);
-
-    /**
      * 删除添加角色和用户映射表
      *
      * @param roleUserId
      * @return
      */
     int deleteRoleUser(int roleUserId);
+
+    /**
+     * 通过用户删除角色和用户映射表
+     *
+     * @param userId
+     * @return
+     */
+    int deleteByUserId(int userId);
 }

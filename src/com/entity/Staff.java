@@ -187,5 +187,6 @@ public class Staff {
     public void setSecurity_insurance_id(int securityInsuranceId) {
         this.securityInsuranceId = securityInsuranceId;
     }
+
 }
 

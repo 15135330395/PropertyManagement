@@ -16,9 +16,9 @@
     // 角色管理
     // response.sendRedirect(request.getContextPath() + "/SystemManager/Role/RoleList.jsp");
     // 用户管理
-    // response.sendRedirect(request.getContextPath() + "/SystemManager/User/UserList.jsp");
+    response.sendRedirect(request.getContextPath() + "/SystemManager/User/UserList.jsp");
     // 菜单管理
-    response.sendRedirect(request.getContextPath() + "/SystemManager/Menu/MenuList.jsp");
+    // response.sendRedirect(request.getContextPath() + "/SystemManager/Menu/MenuList.jsp");
 
 %>
 </body>

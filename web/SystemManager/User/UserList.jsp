@@ -44,6 +44,7 @@
     <script type="text/html" id="barDemo">
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="giveRole">赋予角色</a>
     </script>
     <script>
         layui.use('table', function () {
@@ -59,7 +60,8 @@
                     {type: 'checkbox', fixed: 'left'}
                     , {field: 'userId', title: '编号', fixed: 'left', sort: true}
                     , {field: 'username', title: '用户名'}
-                    , {field: 'password', title: '密码'}
+                    , {field: 'password', title: '密码', width: 280}
+                    , {field: 'roleName', title: '角色名'}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
                 ]]
                 , page: true
@@ -113,6 +115,14 @@
                         skin: 'layui-layer-rim', // 加上边框
                         area: ['451px', '405px'], // 宽高
                         content: '<%=request.getContextPath()%>/UserServlet?action=editUser&userId=' + data.userId
+                    });
+                } else if (obj.event === 'giveRole') {
+                    layer.open({
+                        title: '赋予角色',
+                        type: 2,
+                        skin: 'layui-layer-rim', // 加上边框
+                        area: ['451px', '405px'], // 宽高
+                        content: '<%=request.getContextPath()%>/UserServlet?action=toRole&userId=' + data.userId
                     });
                 }
             });

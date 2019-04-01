@@ -11,8 +11,9 @@ import java.io.UnsupportedEncodingException;
  */
 public class MD5Util {
     public static void main(String[] args) {
-        String s1 = "root";
-        System.out.println(MD5Test(s1));
+        String s1 = "1";
+        System.out.println(s1+" hashCode()："+s1.hashCode());
+        System.out.println(s1 + "加密后：" + MD5Test(s1));
     }
 
     public static String MD5Test(String str) {

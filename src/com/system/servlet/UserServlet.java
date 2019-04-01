@@ -2,7 +2,11 @@ package com.system.servlet;
 
 import com.alibaba.fastjson.JSONObject;
 import com.entity.PageBean;
+import com.system.entity.Role;
+import com.system.entity.RoleUser;
 import com.system.entity.User;
+import com.system.service.RoleService;
+import com.system.service.RoleUserService;
 import com.system.service.UserService;
 import com.utils.JsonUtil;
 import com.utils.MD5Util;
@@ -13,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -66,6 +71,26 @@ public class UserServlet extends HttpServlet {
         } else if ("deleteUser".equals(action)) {
             String userId = request.getParameter("userId");
             int i = service.deleteUser(Integer.parseInt(userId));
+            response.getWriter().print(i);
+        } else if ("toRole".equals(action)) {
+            String userId = request.getParameter("userId");
+            User user = service.findUserById(Integer.parseInt(userId));
+            request.setAttribute("user", user);
+
+            RoleService roleService = new RoleService();
+            List<Role> roleList = roleService.getAllRole();
+            request.setAttribute("roleList", roleList);
+
+            RoleUserService roleUserService = new RoleUserService();
+            RoleUser roleUser = roleUserService.findRoleUserByUserId(Integer.parseInt(userId));
+            request.setAttribute("roleUser", roleUser);
+
+            request.getRequestDispatcher("/SystemManager/User/GiveUsersARole.jsp").forward(request, response);
+        } else if ("giveUsersARole".equals(action)) {
+            String userId = request.getParameter("userId");
+            String roleId = request.getParameter("roleId");
+            RoleUserService roleUserService = new RoleUserService();
+            int i = roleUserService.addRoleUser(new RoleUser(Integer.parseInt(roleId), Integer.parseInt(userId)));
             response.getWriter().print(i);
         } else if ("findUserByUsername".equals(action)) {
             String username = request.getParameter("username");
