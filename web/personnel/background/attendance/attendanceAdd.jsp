@@ -18,6 +18,23 @@
     <form class="layui-form" action="">
         <input type="hidden" name="attendanceId" value="${attendance.attendanceId}" autocomplete="off" class="layui-input">
         <div class="layui-form-item">
+            <label class="layui-form-label">部门名称</label>
+            <div class="layui-input-block">
+                <select  lay-verify="required" lay-filter="provSel">
+                    <option value=""></option>
+                    <c:forEach items="${lsit}" var="aList">
+                        <option id="area" value="${aList.area_id}">${aList.area_name}</option>
+                    </c:forEach>
+                </select>
+            </div>
+            <label class="layui-form-label">员工姓名</label>
+            <div class="layui-input-block">
+                <select id="build" class="asd" name="build" lay-verify="required">
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">员工姓名：</label>
             <div class="layui-input-inline">
                 <select name="staffId" lay-verify="required" value="${attendance.staffId}">
@@ -126,6 +143,24 @@
                 })
             return false;
         });
+        form.on('select(provSel)', function (data) {
+            $.ajax({
+                url: "<%=request.getContextPath()%>/AddrServlet",
+                dataType: 'json',
+                data: {
+                    action: "queryBuild",
+                    bid: data.value
+                },
+                success: function (result) {
+                    var arr = eval(result);
+                    $.each(arr, function (key, val) {
+                        $(".asd").append("<option id='" + val.building_id + "'>" + val.building_name + "</option>")
+                    });
+                    form.render('select');
+                }
+            });
+        });
+
     });
 </script>
 </body>

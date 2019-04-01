@@ -1,11 +1,13 @@
 package com.personnel.servlet;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.entity.Department;
 import com.entity.PageBean;
 import com.entity.Staff;
 import com.manager.dao.DepartmentDao;
 import com.manager.dao.daoimpl.DepartmentDaoImpl;
+import com.manager.entity.Building;
 import com.personnel.entity.Attendance;
 import com.personnel.entity.Kpi;
 import com.personnel.entity.Salary;
@@ -13,7 +15,9 @@ import com.personnel.entity.SecurityInsurance;
 import com.personnel.service.AttendanceService;
 import com.personnel.service.StaffService;
 import com.utils.DateUtil;
+import com.utils.JdbcUtil;
 import com.utils.JsonUtil;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +25,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
@@ -31,6 +36,7 @@ import java.util.List;
 public class AttendanceServlet extends HttpServlet {
     private AttendanceService service=new AttendanceService();
     private StaffService staffService=new StaffService();
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
@@ -51,11 +57,33 @@ public class AttendanceServlet extends HttpServlet {
             toEdit(request, response);
         }else if ("queryDetail".equals(action)) {
             queryDetail(request, response);
+        }else if ("queryStaff".equals(action)) {
+            queryStaff(request, response);
         }
     }
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }
+    private void queryStaff(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        String departmentId = request.getParameter("departmentId");
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=UTF-8");
+        List<Staff> staffList = staffService.queryStaffByDepartmentId(Integer.parseInt(departmentId));
+            JSONArray jsonArray = new JSONArray();
+            for(int i = 0;i < staffList.size();i++){
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("staffId",staffList.get(i).getStaffId());
+                jsonObject.put("staffName",staffList.get(i).getStaffName());
+                jsonArray.add(jsonObject);
+            }
+        try {
+            response.getWriter().print(jsonArray);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     protected void queryDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String staffId = request.getParameter("staffId");
         Attendance attendance = service.queryOneByStaffId(Integer.parseInt(staffId));
