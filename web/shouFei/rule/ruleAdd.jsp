@@ -9,7 +9,7 @@
 <%@ include file="../../commons/info.jsp"%>
 <html>
 <head>
-    <title>抄表录入的添加</title>
+    <title>常规费用的添加</title>
 </head>
 <body>
 <div class="layui-container" style="padding: 20px">
@@ -17,49 +17,61 @@
         <div class="layui-form-item">
             <label class="layui-form-label"></label>
             <div class="layui-input-block">
-                <input type="hidden" name="meterReadingId" required  value="${meterReadingById.meterReadingId}"  autocomplete="off" class="layui-input">
+                <input type="hidden" name="ruleId" required  value="${ruleById.ruleId}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">小区名：</label>
             <div class="layui-input-block">
-                <input type="text" name="plotName"  value="${meterReadingById.plotName}"  autocomplete="off" class="layui-input">
+                <input type="text" name="plotName"  value="${ruleById.plotName}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">房间号：</label>
             <div class="layui-input-block">
-                <input type="text" name="roomNumber"  value="${meterReadingById.roomNumber}"  autocomplete="off" class="layui-input">
+                <input type="text" name="roomNumber"  value="${ruleById.roomNumber}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">日期：</label>
+            <label class="layui-form-label">收费项目名称：</label>
             <div class="layui-input-block">
-                <input type="text" name="riqi"  value="${meterReadingById.riqi}"  autocomplete="off" class="layui-input" id="test1">
+                <input type="text" name="payName"  value="${ruleById.payName}"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">收费标准名称：</label>
+            <div class="layui-input-block">
+                <input type="text" name="normName"  value="${ruleById.normName}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">单价：</label>
             <div class="layui-input-block">
-                <input type="text" name="price" value="${meterReadingById.price}"  autocomplete="off" class="layui-input">
+                <input type="text" name="price" value="${ruleById.price}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">起度：</label>
+            <label class="layui-form-label">面积：</label>
             <div class="layui-input-block">
-                <input type="text" name="start" value="${meterReadingById.start}"  autocomplete="off" class="layui-input">
+                <input type="text" name="area" value="${ruleById.area}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">止度：</label>
+            <label class="layui-form-label">固定金额：</label>
             <div class="layui-input-block">
-                <input type="text" name="stop"  value="${meterReadingById.stop}" placeholder="" autocomplete="off" class="layui-input">
+                <input type="text" name="closeEnd"  value="${ruleById.closeEnd}" placeholder="" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">公摊：</label>
+            <label class="layui-form-label">日期：</label>
             <div class="layui-input-block">
-                <input type="text" name="pooled"  value="${meterReadingById.pooled}" placeholder="" autocomplete="off" class="layui-input">
+                <input type="text" name="riqi"  value="${ruleById.riqi}"  autocomplete="off" class="layui-input" id="test1">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">停车费：</label>
+            <div class="layui-input-block">
+                <input type="text" name="money2"  value="${ruleById.money2}" placeholder="" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -82,28 +94,32 @@
         form.on('submit(submitSave)', function(data){
             //layer.msg(JSON.stringify(data.field));
             //alert(data.field)
-            var meterReadingId=data.field.meterReadingId;
+            var ruleId=data.field.ruleId;
             var plotName=data.field.plotName;
             var roomNumber=data.field.roomNumber;
-            var riqi=data.field.riqi;
+            var payName=data.field.payName;
+            var normName=data.field.normName;
             var price=data.field.price;
-            var start=data.field.start;
-            var stop=data.field.stop;
-            var pooled=data.field.pooled;
-            if(meterReadingId!=""){
+            var area=data.field.area;
+            var closeEnd=data.field.closeEnd;
+            var riqi=data.field.riqi;
+            var money2=data.field.money2;
+            if(ruleId!=""){
                 $.ajax({
                     type:"post",
-                    url:"<%=request.getContextPath()%>/MeterReadingServlet",
+                    url:"<%=request.getContextPath()%>/RuleServlet",
                     data:{
                         "action":"update",
-                        "meterReadingId":meterReadingId,
+                        "ruleId":ruleId,
                         "plotName":plotName,
                         "roomNumber":roomNumber,
-                        "riqi":riqi,
+                        "payName":payName,
+                        "normName":normName,
                         "price":price,
-                        "start":start,
-                        "stop":stop,
-                        "pooled":pooled
+                        "area":area,
+                        "closeEnd":closeEnd,
+                        "riqi":riqi,
+                        "money2":money2
                     },
                     success:function(msgData){
                         layer.msg("修改成功",{icon:1,time:2000});
@@ -117,17 +133,19 @@
             }else {
                 $.ajax({
                     type:"post",
-                    url:"<%=request.getContextPath()%>/MeterReadingServlet",
+                    url:"<%=request.getContextPath()%>/RuleServlet",
                     data:{
                         "action":"add",
-                        "meterReadingId":meterReadingId,
+                        "ruleId":ruleId,
                         "plotName":plotName,
                         "roomNumber":roomNumber,
-                        "riqi":riqi,
+                        "payName":payName,
+                        "normName":normName,
                         "price":price,
-                        "start":start,
-                        "stop":stop,
-                        "pooled":pooled
+                        "area":area,
+                        "closeEnd":closeEnd,
+                        "riqi":riqi,
+                        "money2":money2
                     },
                     success:function(msgData){
                         layer.msg("添加成功",{icon:1,time:2000});
@@ -136,7 +154,7 @@
                         //关闭当前frame
                         parent.layer.close(index);
                         window.parent.location.reload();
-                       // request.getRequestDispatcher("<%=request.getContextPath()%>/MeterReadingServlet?action=query").forward(request,response);
+                        request.getRequestDispatcher("/shouFei/mReading/mReadingList.jsp").forward(request,response);
                     }
                 })
             }

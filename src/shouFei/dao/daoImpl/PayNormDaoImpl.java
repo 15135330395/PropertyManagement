@@ -18,9 +18,7 @@ import java.util.List;
  */
 public class PayNormDaoImpl implements PayNormDao {
 
-    final static String colname="norm_id normId, pay_name payName, norm_name normName, compute_mode computeMode, "+
-            "price, filling_type fillingType, close_end closeEnd, " +
-            "custom_formula customFormula, charge_cycle chargeCycle";
+    final static String colname="norm_id normId, pay_name payName, norm_name normName, compute_mode computeMode, charge_cycle chargeCycle";
     private QueryRunner queryRunner =  new QueryRunner();
     @Override
     public List<PayNorm> findAll() {
@@ -38,19 +36,11 @@ public class PayNormDaoImpl implements PayNormDao {
                 String payName = rs.getString("payName");
                 String normName = rs.getString("normName");
                 String computeMode = rs.getString("computeMode");
-                Double price=rs.getDouble("price");
-                String fillingType = rs.getString("fillingType");
-                int closeEnd = rs.getInt("closeEnd");
-                String customFormula = rs.getString("customFormula");
                 int chargeCycle = rs.getInt("chargeCycle");
                 payNorm.setNormId(normId);
-                payNorm.setpayName(payName);
+                payNorm.setPayName(payName);
                 payNorm.setNormName(normName);
                 payNorm.setComputeMode(computeMode);
-                payNorm.setPrice(price);
-                payNorm.setFillingType(fillingType);
-                payNorm.setCloseEnd(closeEnd);
-                payNorm.setCustomFormula(customFormula);
                 payNorm.setChargeCycle(chargeCycle);
                 list.add(payNorm);
             }
@@ -72,12 +62,10 @@ public class PayNormDaoImpl implements PayNormDao {
 
     @Override
     public int addPayNorm(PayNorm payNorm) {
-        String sql="insert into pay_norm (pay_name,norm_name,compute_mode,price,filling_type,close_end,custom_formula,charge_cycle) values (?,?,?,?,?,?,?,?)";
+        String sql="insert into pay_norm (pay_name,norm_name,compute_mode,charge_cycle) values (?,?,?,?)";
         try {
             int i = queryRunner.update(JdbcUtils.getConnection(), sql,
-                    payNorm.getpayName(),payNorm.getNormName(),payNorm.getComputeMode(),
-                    payNorm.getPrice(),payNorm.getFillingType(),payNorm.getCloseEnd(),
-                    payNorm.getCustomFormula(),payNorm.getChargeCycle());
+                    payNorm.getPayName(),payNorm.getNormName(),payNorm.getComputeMode(), payNorm.getChargeCycle());
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -100,11 +88,10 @@ public class PayNormDaoImpl implements PayNormDao {
     @Override
     public int updatePayNorm(PayNorm payNorm) {
 
-        String sql="update pay_norm set pay_name=?,norm_name=?,compute_mode=?,price=?,filling_type=?,close_end=?,custom_formula=?,charge_cycle=? where norm_id =?";
+        String sql="update pay_norm set pay_name=?,norm_name=?,compute_mode=?,charge_cycle=? where norm_id =?";
         try {
-            int i = queryRunner.update(JdbcUtils.getConnection(), sql, payNorm.getpayName(),payNorm.getNormName(),payNorm.getComputeMode(),
-                    payNorm.getPrice(),payNorm.getFillingType(),payNorm.getCloseEnd(),
-                    payNorm.getCustomFormula(),payNorm.getChargeCycle(),payNorm.getNormId());
+            int i = queryRunner.update(JdbcUtils.getConnection(), sql, payNorm.getPayName(),payNorm.getNormName(),payNorm.getComputeMode(),
+                    payNorm.getChargeCycle(),payNorm.getNormId());
             return  i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -158,19 +145,11 @@ public class PayNormDaoImpl implements PayNormDao {
                 String payName = rs.getString("pay_name");
                 String normName = rs.getString("norm_name");
                 String computeMode = rs.getString("compute_mode");
-                Double price=rs.getDouble("price");
-                String fillingType = rs.getString("filling_type");
-                int closeEnd = rs.getInt("close_end");
-                String customFormula = rs.getString("custom_formula");
                 int chargeCycle = rs.getInt("charge_cycle");
                 payNorm.setNormId(normId);
-                payNorm.setpayName(payName);
+                payNorm.setPayName(payName);
                 payNorm.setNormName(normName);
                 payNorm.setComputeMode(computeMode);
-                payNorm.setPrice(price);
-                payNorm.setFillingType(fillingType);
-                payNorm.setCloseEnd(closeEnd);
-                payNorm.setCustomFormula(customFormula);
                 payNorm.setChargeCycle(chargeCycle);
             }
         } catch (SQLException e) {
@@ -207,19 +186,11 @@ public class PayNormDaoImpl implements PayNormDao {
                 String payName = rs.getString("pay_name");
                 String normName = rs.getString("norm_name");
                 String computeMode = rs.getString("compute_mode");
-                Double price=rs.getDouble("price");
-                String fillingType = rs.getString("filling_type");
-                int closeEnd = rs.getInt("close_end");
-                String customFormula = rs.getString("custom_formula");
                 int chargeCycle = rs.getInt("charge_cycle");
                 payNorm.setNormId(normId);
-                payNorm.setpayName(payName);
+                payNorm.setPayName(payName);
                 payNorm.setNormName(normName);
                 payNorm.setComputeMode(computeMode);
-                payNorm.setPrice(price);
-                payNorm.setFillingType(fillingType);
-                payNorm.setCloseEnd(closeEnd);
-                payNorm.setCustomFormula(customFormula);
                 payNorm.setChargeCycle(chargeCycle);
                 list.add(payNorm);
             }

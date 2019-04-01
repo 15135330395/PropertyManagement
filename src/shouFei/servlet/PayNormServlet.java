@@ -44,23 +44,14 @@ public class PayNormServlet extends HttpServlet {
         }
     }
 
-//    private void queryList(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-//        List<PayNorm> byPayId = service.findByPayId();
-//        request.setAttribute("byPayId",byPayId);
-//        request.getRequestDispatcher("/shouFei/norm/f.jsp").forward(request,response);
-//    }
 
 
     private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String payName = request.getParameter("payName");
         String normName = request.getParameter("normName");
         String computeMode = request.getParameter("computeMode");
-        String price=request.getParameter("price");
-        String fillingType = request.getParameter("fillingType");
-        String closeEnd = request.getParameter("closeEnd");
-        String customFormula = request.getParameter("customFormula");
         String chargeCycle = request.getParameter("chargeCycle");
-        int i = service.addPayNorm(new PayNorm(payName,normName,computeMode,Double.parseDouble(price),fillingType, Integer.parseInt(closeEnd),customFormula,Integer.parseInt(chargeCycle)));
+        int i = service.addPayNorm(new PayNorm(payName,normName,computeMode,Integer.parseInt(chargeCycle)));
         response.getWriter().print(i);
     }
     private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -68,12 +59,8 @@ public class PayNormServlet extends HttpServlet {
         String payName = request.getParameter("payName");
         String normName = request.getParameter("normName");
         String computeMode = request.getParameter("computeMode");
-        String price=request.getParameter("price");
-        String fillingType = request.getParameter("fillingType");
-        String closeEnd = request.getParameter("closeEnd");
-        String customFormula = request.getParameter("customFormula");
         String chargeCycle = request.getParameter("chargeCycle");
-        int i = service.updatePayNorm(new PayNorm(Integer.parseInt(normId),payName,normName,computeMode,Double.parseDouble(price),fillingType, Integer.parseInt(closeEnd),customFormula,Integer.parseInt(chargeCycle)));
+        int i = service.updatePayNorm(new PayNorm(Integer.parseInt(normId),payName,normName,computeMode,Integer.parseInt(chargeCycle)));
 
     }
     private void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

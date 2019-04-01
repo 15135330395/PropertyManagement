@@ -16,7 +16,7 @@
 <%@include file="../../commons/info.jsp" %>
 <html>
 <head>
-    <title>收费标准</title>
+    <title>常规收费</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -31,7 +31,7 @@
 <div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="#"><cite>首页</cite></a>
-        <a><cite>抄表录入</cite></a>
+        <a><cite>常规收费</cite></a>
       </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        href="javascript:location.replace(location.href);" title="刷新">
@@ -40,21 +40,10 @@
 <div class="x-body">
     <table class="layui-hide" id="tab" lay-filter="test"></table>
 
-    <%--<script type="text/html" id="toolbarDemo">--%>
-    <%--<div class="layui-btn-container">--%>
-    <%--<form action="" method="get">--%>
-    <%--<button class="layui-btn"><i class="layui-icon"> </i>导入excel表</button>--%>
-    <%--</form>--%>
-    <%--<form action="/shouFei/mReading/mReadingAdd.jsp" method="get">--%>
-    <%--<button class="layui-btn"><i class="layui-icon"> </i>添加数据</button>--%>
-    <%--</form>--%>
-    <%--</div>--%>
-    <%--</script>--%>
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
             <a class="layui-btn layui-btn-xs" href="">导入excel表</a>
-            <a class="layui-btn layui-btn-danger layui-btn-xs" href="/shouFei/mReading/mReadingAdd.jsp">添加数据</a>
-            <%--<a class="layui-btn layui-btn-danger layui-btn-xs" href="<%=request.getContextPath()%>/MeterReadingServlet?action=add">添加数据</a>--%>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" href="/shouFei/rule/ruleAdd.jsp">添加数据</a>
         </div>
     </script>
     <script type="text/html" id="barDemo">
@@ -71,19 +60,23 @@
         table.render({
             elem: '#tab'
             // Servlet 返回一个json字符串
-            , url: '<%=request.getContextPath()%>/MeterReadingServlet?action=query'
+            , url: '<%=request.getContextPath()%>/RuleServlet?action=query'
             , toolbar: '#toolbarDemo'
             , title: '抄表录入'
             , cols: [[
                 {type: 'checkbox', fixed: 'left'}
-                , {field: 'meterReadingId', title: 'meterReadingId'}
+                , {field: 'ruleId', title: 'ruleId'}
                 , {field: 'plotName', title: '小区名'}
                 , {field: 'roomNumber', title: '房间号'}
-                , {field: 'riqi', title: '日期', templet: '#loginTime'}
+                , {field: 'payName', title: '收费项目名称'}
+                , {field: 'normName', title: '收费标准名称'}
                 , {field: 'price', title: '单价'}
-                , {field: 'start', title: '起度'}
-                , {field: 'stop', title: '止度'}
-                , {field: 'pooled', title: '公摊'}
+                , {field: 'area', title: '面积'}
+                , {field: 'closeEnd', title: '固定金额'}
+                , {field: 'riqi', title: '日期', templet: '#loginTime'}
+                , {field: 'money', title: '房租'}
+                , {field: 'money1', title: '物业费'}
+                , {field: 'money2', title: '停车费'}
                 , {field: 'moneysum', title: '总金额'}
                 , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
                 //抄表录入
@@ -100,8 +93,8 @@
                     layer.close(index);
                     $.ajax({
                         type: "post",
-                        url: "<%=request.getContextPath()%>/MeterReadingServlet",
-                        data: "action=delete&id=" + data.meterReadingId,
+                        url: "<%=request.getContextPath()%>/RuleServlet",
+                        data: "action=delete&id=" + data.ruleId,
                         success: function (msg) {
                             obj.del();
                             if (msg == 0) {
@@ -121,7 +114,7 @@
                     area: ['1200px', '700px'],
                     offset: 'auto', //右下角弹出
                     anim: 2,
-                    content: ['<%=request.getContextPath()%>/MeterReadingServlet?action=queryOne&id=' + data.meterReadingId, 'no'], //iframe的url，no代表不显示滚动条
+                    content: ['<%=request.getContextPath()%>/RuleServlet?action=queryOne&id=' + data.ruleId, 'no'], //iframe的url，no代表不显示滚动条
                 });
             }
         });

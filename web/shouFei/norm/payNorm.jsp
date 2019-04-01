@@ -58,10 +58,6 @@
                 ,{field:'payName', title:'收费项目'}
                 ,{field:'normName', title:'标准名称'}
                 ,{field:'computeMode', title:'金额计算方式'}
-                ,{field:'price', title:'单价'}
-                ,{field:'fillingType', title:'计量方式'}
-                ,{field:'closeEnd', title:'固定金额'}
-                ,{field:'customFormula', title:'自定义公式'}
                 ,{field:'chargeCycle', title:'收费周期'}
                 ,{fixed: 'right', title:'操作',toolbar: '#barDemo'}
             ]]

@@ -24,13 +24,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">收费项目：</label>
             <div class="layui-input-block">
-                <input type="text" name="payName" required  lay-verify="required" value="${payNormById.payName}" placeholder="" autocomplete="off" class="layui-input">
-                <%--<select name="payName" lay-verify="required">--%>
-                    <%--<option value="">请选择</option>--%>
-                    <%--<c:forEach items="${payNormById}" var="Items">--%>
-                        <%--<option value="${Items.payId}">${Items.payName}</option>--%>
-                    <%--</c:forEach>--%>
-                <%--</select>--%>
+                <input type="text" name="payName" required  lay-verify="required" value="${payNormById.payName}" placeholder="请输入项目名称" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -43,30 +37,6 @@
             <label class="layui-form-label">金额计算方式：</label>
             <div class="layui-input-block">
                 <input type="text" name="computeMode" required  lay-verify="required" value="${payNormById.computeMode}" placeholder="请输入金额计算方式" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-        <label class="layui-form-label">单价：</label>
-        <div class="layui-input-block">
-            <input type="text" name="price"  value="${payNormById.price}"  autocomplete="off" class="layui-input">
-        </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">计量方式：</label>
-            <div class="layui-input-block">
-                <input type="text" name="fillingType"  value="${payNormById.fillingType}"  autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">固定金额：</label>
-            <div class="layui-input-block">
-                <input type="text" name="closeEnd" value="${payNormById.closeEnd}"  autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">自定义公式：</label>
-            <div class="layui-input-block">
-                <input type="text" name="customFormula" value="${payNormById.customFormula}"  autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -99,10 +69,6 @@
             var payName=data.field.payName;
             var normName=data.field.normName;
             var computeMode=data.field.computeMode;
-            var price=data.field.price;
-            var fillingType=data.field.fillingType;
-            var closeEnd=data.field.closeEnd;
-            var customFormula=data.field.customFormula;
             var chargeCycle=data.field.chargeCycle;
             if(normId!=""){
                 $.ajax({
@@ -114,10 +80,6 @@
                         "payName":payName,
                         "normName":normName,
                         "computeMode":computeMode,
-                        "price":price,
-                        "fillingType":fillingType,
-                        "closeEnd":closeEnd,
-                        "customFormula":customFormula,
                         "chargeCycle":chargeCycle
                     },
                     success:function(msgData){
@@ -139,10 +101,6 @@
                         "payName":payName,
                         "normName":normName,
                         "computeMode":computeMode,
-                        "price":price,
-                        "fillingType":fillingType,
-                        "closeEnd":closeEnd,
-                        "customFormula":customFormula,
                         "chargeCycle":chargeCycle
                     },
                     success:function(msgData){

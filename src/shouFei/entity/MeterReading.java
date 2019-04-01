@@ -10,13 +10,13 @@ public class MeterReading {
     private int meterReadingId;//抄表id
     private String plotName;//小区名
     private String roomNumber;//房间号
-    private String payName;//收费项目名称
-    private String normName;//收费标准名称
     private Date riqi;//月份
     private double price;//单价
     private double start;//起度
     private double stop;//止度
     private double pooled;//公摊
+    private double moneysum;//总金额
+
 
     public int getMeterReadingId() {
         return meterReadingId;
@@ -40,22 +40,6 @@ public class MeterReading {
 
     public void setRoomNumber(String roomNumber) {
         this.roomNumber = roomNumber;
-    }
-
-    public String getPayName() {
-        return payName;
-    }
-
-    public void setPayName(String payName) {
-        this.payName = payName;
-    }
-
-    public String getNormName() {
-        return normName;
-    }
-
-    public void setNormName(String normName) {
-        this.normName = normName;
     }
 
     public Date getRiqi() {
@@ -98,26 +82,41 @@ public class MeterReading {
         this.pooled = pooled;
     }
 
+    public double getMoneysum() {
+        return (stop-start)*price+pooled;
+    }
+
+    public void setMoneysum(double moneysum) {
+        this.moneysum = moneysum;
+    }
+
     public MeterReading() {
     }
 
-    public MeterReading(int meterReadingId, String plotName, String roomNumber, String payName, String normName, Date riqi, double price, double start, double stop, double pooled) {
+    public MeterReading(int meterReadingId, String plotName, String roomNumber, Date riqi, double price, double start, double stop, double pooled, double moneysum) {
         this.meterReadingId = meterReadingId;
         this.plotName = plotName;
         this.roomNumber = roomNumber;
-        this.payName = payName;
-        this.normName = normName;
+        this.riqi = riqi;
+        this.price = price;
+        this.start = start;
+        this.stop = stop;
+        this.pooled = pooled;
+        this.moneysum = moneysum;
+    }
+    public MeterReading(int meterReadingId, String plotName, String roomNumber, Date riqi, double price, double start, double stop, double pooled) {
+        this.meterReadingId = meterReadingId;
+        this.plotName = plotName;
+        this.roomNumber = roomNumber;
         this.riqi = riqi;
         this.price = price;
         this.start = start;
         this.stop = stop;
         this.pooled = pooled;
     }
-    public MeterReading( String plotName, String roomNumber, String payName, String normName, Date riqi, double price, double start, double stop, double pooled) {
+    public MeterReading(String plotName, String roomNumber, Date riqi, double price, double start, double stop, double pooled) {
         this.plotName = plotName;
         this.roomNumber = roomNumber;
-        this.payName = payName;
-        this.normName = normName;
         this.riqi = riqi;
         this.price = price;
         this.start = start;
