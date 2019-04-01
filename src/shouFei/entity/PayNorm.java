@@ -7,8 +7,8 @@ public class PayNorm {
     //收费标准
     //与收费项目关联，收费名称直接就是收费项目名称
     private int normId;
-    private int payId;//收费项目id
-    //private String payName;//收费项目名称
+    //private int payName;//收费项目id
+    private String payName;//收费项目名称
     private String normName;//收费标准名称
     private String computeMode;//金额计算方式  单价*数量/每户单独输入/固定金额/自定义公式
     //随着计算方式的不同，下列属性随之改变
@@ -33,12 +33,12 @@ public class PayNorm {
         this.normId = normId;
     }
 
-    public int getPayId() {
-        return payId;
+    public String getpayName() {
+        return payName;
     }
 
-    public void setPayId(int payId) {
-        this.payId = payId;
+    public void setpayName(String payName) {
+        this.payName = payName;
     }
 
     public String getNormName() {
@@ -100,9 +100,9 @@ public class PayNorm {
     public PayNorm() {
     }
 
-    public PayNorm(int normId,int payId, String normName, String computeMode, double price, String fillingType, int closeEnd, String customFormula, int chargeCycle) {
+    public PayNorm(int normId,String payName, String normName, String computeMode, double price, String fillingType, int closeEnd, String customFormula, int chargeCycle) {
         this.normId = normId;
-        this.payId = payId;
+        this.payName = payName;
         this.normName = normName;
         this.computeMode = computeMode;
         this.price = price;
@@ -111,8 +111,8 @@ public class PayNorm {
         this.customFormula = customFormula;
         this.chargeCycle = chargeCycle;
     }
-    public PayNorm(int payId,String normName, String computeMode, double price, String fillingType, int closeEnd, String customFormula, int chargeCycle) {
-        this.payId = payId;
+    public PayNorm(String payName,String normName, String computeMode, double price, String fillingType, int closeEnd, String customFormula, int chargeCycle) {
+        this.payName = payName;
         this.normName = normName;
         this.computeMode = computeMode;
         this.price = price;
@@ -122,8 +122,8 @@ public class PayNorm {
         this.chargeCycle = chargeCycle;
     }
     //单价*数量
-    public PayNorm(int payId, String normName, String computeMode, double price, String fillingType, int chargeCycle) {
-        this.payId = payId;
+    public PayNorm(String payName, String normName, String computeMode, double price, String fillingType, int chargeCycle) {
+        this.payName = payName;
         this.normName = normName;
         this.computeMode = computeMode;
         this.price = price;
@@ -131,23 +131,23 @@ public class PayNorm {
         this.chargeCycle = chargeCycle;
     }
     //每户单独输入
-    public PayNorm(int payId,String normName, String computeMode, int chargeCycle) {
-        this.payId = payId;
+    public PayNorm(String payName,String normName, String computeMode, int chargeCycle) {
+        this.payName = payName;
         this.normName = normName;
         this.computeMode = computeMode;
         this.chargeCycle = chargeCycle;
     }
     //固定金额
-    public PayNorm(int payId, String normName, String computeMode, int closeEnd, int chargeCycle) {
-        this.payId = payId;
+    public PayNorm(String payName, String normName, String computeMode, int closeEnd, int chargeCycle) {
+        this.payName = payName;
         this.normName = normName;
         this.computeMode = computeMode;
         this.closeEnd = closeEnd;
         this.chargeCycle = chargeCycle;
     }
     //自定义公式
-    public PayNorm(int payId, String normName, String computeMode,  String customFormula, int chargeCycle) {
-        this.payId = payId;
+    public PayNorm(String payName, String normName, String computeMode,  String customFormula, int chargeCycle) {
+        this.payName = payName;
         this.normName = normName;
         this.computeMode = computeMode;
         this.customFormula = customFormula;//公式名称
