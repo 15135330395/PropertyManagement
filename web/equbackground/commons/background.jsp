@@ -156,25 +156,19 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="admin-list.html">
+                        <a _href="<%=request.getContextPath()%>/equbackground/equarchives/equarchivesList.jsp">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>设备档案</cite>
                         </a>
                     </li >
                     <li>
-                        <a _href="admin-role.html">
+                        <a _href="<%=request.getContextPath()%>/equbackground/equmaintenance/equmaintenanceList.jsp">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>设备保养计划表</cite>
+                            <cite>设备保养表</cite>
                         </a>
                     </li >
                     <li>
-                        <a _href="admin-cate.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>设备保养记录表</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-rule.html">
+                        <a _href="<%=request.getContextPath()%>/equbackground/equmalfunction/equmalfunctionList.jsp">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>设备故障记录表</cite>
                         </a>

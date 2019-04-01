@@ -6,39 +6,36 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../commons/info.jsp" %>
-
+<%@ include file="../commons/info.jsp"%>
 <html>
 <head>
     <title>新闻分类</title>
-
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 <div class="x-nav">
       <span class="layui-breadcrumb">
-        <a href="">首页</a>
-        <a>
-          <cite>新闻分类维护</cite></a>
+        <a href="#"><cite>首页</cite></a>
+        <a><cite>合同列表维护</cite></a>
       </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
 </div>
 <div class="x-body">
-    <table class="layui-hide" id="tab" lay-filter="test"></table> //头工具栏操纵"test"
+    <table class="layui-hide" id="tab" lay-filter="test"></table>
 
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
-            <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
-            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
-            <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+            <button class="layui-btn layui-btn-danger" lay-event="deleteAll"><i class="layui-icon"></i>批量删除</button>
+            <button class="layui-btn" lay-event="toadd"><i class="layui-icon"></i>添加</button>
         </div>
     </script>
 
@@ -47,113 +44,129 @@
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
 
-
-    <%--<script src="//res.layui.com/layui/dist/layui.js" charset="utf-8"></script>
-    <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
---%>
-    <script>
-        layui.use('table', function(){
-            var table = layui.table;
-
-            table.render({
-                elem: '#tab'
-                //Servlet 返回一个json字符串
-                ,url:'<%=request.getContextPath()%>/ContractServlet?action=query'  //layui中URL：绝对路径和servlet之间没有加/,
-                ,toolbar: '#toolbarDemo'
-                ,title: '合同列表'
-                ,cols: [[
-                    {type: 'checkbox', fixed: 'left'}  //左边的选择框
-                    ,{field:'typeId', title:'ID', width:'20%', fixed: 'left', unresize: true, sort: true} //sort 排序
-                    ,{field:'typeName', title:'分类', width:'60%', edit: 'text'}
-                    ,{field:'typeName', title:'分类', width:'60%', edit: 'text'}
-                    ,{field:'typeName', title:'分类', width:'60%', edit: 'text'}
-                    ,{field:'typeName', title:'分类', width:'60%', edit: 'text'}
-                    ,{field:'typeName', title:'分类', width:'60%', edit: 'text'}
-                    ,{field:'typeName', title:'分类', width:'60%', edit: 'text'}
-                    ,{field:'typeName', title:'分类', width:'60%', edit: 'text'}
-                    ,{field:'typeName', title:'分类', width:'60%', edit: 'text'}
-                    ,{fixed: 'right', title:'操作', toolbar: '#barDemo' }/*删除了width，因为共三列，前两列width:00% 宽度设置的百分比，那么最后一列自动补齐。*/
-                ]]
-                ,page: true  //传入json字符串后，自动分页
-            });
-
-            //头工具栏事件
-            table.on('toolbar(test)', function(obj){
-                var checkStatus = table.checkStatus(obj.config.id);
-                switch(obj.event){
-                    case 'getCheckData':
-                        var data = checkStatus.data;
-                        layer.alert(JSON.stringify(data));
-                        break;
-                    case 'getCheckLength':
-                        var data = checkStatus.data;
-                        layer.msg('选中了：'+ data.length + ' 个');
-                        break;
-                    case 'isAll':
-                        layer.msg(checkStatus.isAll ? '全选': '未全选');
-                        break;
-                };
-            });
-
-            //监听行工具事件
-            table.on('tool(test)', function(obj){
-                var data = obj.data;
-                //console.log(obj)
-                if(obj.event === 'del'){
-                    layer.confirm('真的删除行么', function(index){
-
+   <%-- <script type="text/javascript" id="sigingDate">
+        {{ dateFormat(d.reportDate) }}
+    </script>--%>
+</div>
+</body>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+        table.render({
+            elem: '#tab'
+            // Servlet 返回一个json字符串
+            ,url:'<%=request.getContextPath()%>/ContractServlet?action=queryPage'
+            ,toolbar: '#toolbarDemo'
+            ,title: '合同列表'
+            ,cols: [[
+                {type: 'checkbox', fixed: 'left'}
+                 ,{field:'id', title:'ID', width:'5%', fixed: 'left', unresize: true, sort: true}
+                ,{field:'contractId', title:'合同编号', width:'10%'}
+                ,{field:'contractName', title:'合同名称', width:'10%'}
+                ,{field:'firstParty', title:'甲方', width:'5%'}
+                ,{field:'secondParty', title:'乙方', width:'5%'}
+                ,{field:'sigingDate', title:'签约日期', width:'10%'   }
+                ,{field:'projectLocation', title:'项目位置', width:'10%'}
+                ,{field:'cost', title:'项目报价', width:'5%'}
+                ,{field:'content', title:'合约内容', width:'10%'}
+                ,{field:'supplyChain', title:'供应链选择', width:'10%'}
+                ,{field:'paymentCycle', title:'付款周期', width:'5%'}
+                ,{field:'acceptanceResult', title:'验收结果', width:'5%'}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
+            ]]
+            ,page: true
+        });
+      //头工具栏事件
+        table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+          /*alert(123);*/
+            switch(obj.event){
+                case 'deleteAll':
+                    var data = checkStatus.data;
+                    if(data==""){
+                        layer.msg('请至少选择1条数据');
+                        return;
+                    }
+                    var ids="";
+                    for(var i=0;i<data.length;i++){
+                        ids+=data[i].id
+                        ids+=","
+                    }
+                    layer.confirm('确认要删除这些信息吗？',function(index) {
                         $.ajax({
-                            type:"POST",
-                            url:"<%=request.getContextPath()%>/NewsTypeServlet" ,
-                            data: "action=delete&typeId="+data.typeId ,
-                            success : function(msg){
-                                /*  新闻分类下有内容无法删除
-
-                                 * */
-
-                                var rc=eval("("+msg+")");/* 转js对象*/
-                                if(rc.code=="2001"){
-                                    layer.msg(rc.message,{icon:1,time:2000} );
-                                }else{
-                                    if(rc.code="2002"){
-                                        obj.del();
-                                        layer.msg(rc.message,{icon:1,time:1000});
-                                    }else if(rc.code="2003"){
-                                        layer.msg(rc.message ,{icon:1,time:1000});
-                                    }
+                            type: "post",
+                            url: "<%=request.getContextPath()%>/ContractServlet",
+                            data: "action=deleteAll&ids=" + ids,
+                            success: function (msg) {
+                                if (msg > 0) {
+                                    //捉到所有被选中的，发异步进行删除
+                                    layer.msg('成功删除' + msg + '条数据', {icon: 1})
+                                } else {
+                                    layer.msg('已删除或不存在!', {icon: 2, time: 1000});
                                 }
+                                location.reload();
                             }
                         });
-                        layer.close(index);
+
                     });
-                } else if(obj.event === 'edit'){
+                    break;
+                case 'toadd':
+                    //iframe窗
                     layer.open({
-                        type:2,
-                        skin:'layui-layer-rim',// 加上边框
-                        area: [ '600px','500px'],
-                        content:'http://www.baidu.com'
-                    })
-                }
-            });
+                        type: 2,
+                        title: "添加信息",
+                        closeBtn: 1, //不显示关闭按钮
+                        shade: [0],
+                        area: ['800px', '700px'],
+                        offset: 'auto', //右下角弹出
+                        anim: 2,
+                        content: ['contractAdd.jsp'], //iframe的url，no代表不显示滚动条 , 'no'
+                        end: function(){ //此处用于演示 关闭之后执行
+                            alert(123)
+                        }
+                    });
+                    break;
+            };
         });
-    </script>
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+             /*  console.log("==================");*/
+            var data = obj.data;
+            //console.log(obj)
 
-</div>
+            if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    layer.close(index);
+                    $.ajax({
+                        type:"post",
+                        url:"<%=request.getContextPath()%>/ContractServlet",
+                        data:"action=delete&id="+data.id,
+                        success:function(msg){
+                            obj.del();
+                            if(msg==0){
+                                layer.msg("已被删除或不存在",{icon:2,time:2000});
+                            }else{
+                                layer.msg("删除成功",{icon:1,time:1000});
+                            }
+                        }
+                    });
+                });
+            } else if(obj.event === 'edit'){
+                layer.open({
+                    type: 2,
+                    title: "修改信息",
+                    closeBtn: 1, //不显示关闭按钮
+                    area: ['800px', '700px'],
+                    offset: 'auto', //右下角弹出
+                    anim: 2,
+                    content: ['<%=request.getContextPath()%>/ContractServlet?action=queryOneBack&id='+data.id] //iframe的url，no代表不显示滚动条
 
-
-<%--<script>
-   /*弹出hello world 信息表示成功进入该页面。
-    地址发生改变，有没有获取到数据时，测试
-    可以在转发，进入新的页面，jsp时都弹出信息，打印信息，来测试是否传递成功
-   */
-    layui.use(['layer','form'],function(){
-        var layer=layui.layer
-            ,form=layui.form;
-        layer.msg('Hello World')
-
+                });
+            }
+        });
     });
+</script>
 
-</script>--%>
-
-</body>
 </html>
+
+

@@ -9,12 +9,13 @@
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/equbackground/static/css/font.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/equbackground/static/css/xadmin.css">
+
 <link rel="stylesheet" href="<%=request.getContextPath()%>/equbackground/static/lib/layui/css/layui.css">
-<%--<link rel="stylesheet" href="<%=request.getContextPath()%>/equbackground/static/js/dateFormat.js">--%>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/equbackground/static/css/xadmin.css">
+<%--<link rel="stylesheet" href="<%=request.getContextPath()%>/equbackground/bootstrap/css/bootstrap.css">--%>
 
-<script type="text/javascript" src="<%=request.getContextPath()%>/equbackground/static/js/dateFormat.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/equbackground/static/js/jquery.min.js"></script>
-<script src="<%=request.getContextPath()%>/equbackground/static/lib/layui/layui.js" charset="utf-8"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/equbackground/static/js/xadmin.js"></script>
-
+<script type="text/javascript" src="<%=request.getContextPath()%>/equbackground/static/js/dateFormat.js"></script>
+<%--<script src="<%=request.getContextPath()%>/equbackground/bootstrap/js/bootstrap.min.js"></script>--%>
+<script src="<%=request.getContextPath()%>/equbackground/static/lib/layui/layui.js" charset="utf-8"></script>

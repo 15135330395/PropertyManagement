@@ -11,9 +11,9 @@
 <div class="layui-container" style="padding: 20px">
     <form class="layui-form" action="">
         <div class="layui-form-item">
-            <label class="layui-form-label">编号</label>
+            <label class="layui-form-label"></label>
             <div class="layui-input-block">
-                <input type="text" name="reportId" value="${report.reportId}" autocomplete="off" class="layui-input">
+                <input type="hidden" name="reportId" value="${report.reportId}" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">

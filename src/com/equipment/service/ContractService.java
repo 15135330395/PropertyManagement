@@ -4,6 +4,7 @@ package com.equipment.service;/*
  * @Description: ContractService
  */
 
+import com.entity.PageBean;
 import com.equipment.dao.ContractDao;
 import com.equipment.dao.daoImpl.ContractDaoImpl;
 import com.equipment.entity.Contract;
@@ -27,7 +28,16 @@ public class ContractService {
         return dao.updateContract(contract);
     }
 
-    public int deleteContract(int contractId){
-        return dao.deleteContract(contractId);
+    public int deleteContract(int id){
+        return dao.deleteContract(id);
     }
+
+    public List<Contract> queryPage(PageBean pageBean){
+        return dao.queryPage(pageBean);
+    }
+
+    public Contract findContractById(int id){
+        return dao.findContractById(id);
+    }
+
 }

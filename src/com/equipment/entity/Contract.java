@@ -4,12 +4,13 @@ package com.equipment.entity;/*
  *        合同表
  */
 
-import java.sql.Date;
+
+import java.util.Date;
 
 public class Contract {
 
-
-    private int contractId;
+    private int id;
+    private String contractId;
     private String contractName;
     private String firstParty;
     private String secondParty;
@@ -21,11 +22,19 @@ public class Contract {
     private String paymentCycle;
     private String acceptanceResult;
 
-    public int getContractId() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getContractId() {
         return contractId;
     }
 
-    public void setContractId(int contractId) {
+    public void setContract_id(String contractId) {
         this.contractId = contractId;
     }
 
@@ -33,7 +42,7 @@ public class Contract {
         return contractName;
     }
 
-    public void setContractName(String contractName) {
+    public void setContract_name(String contractName) {
         this.contractName = contractName;
     }
 
@@ -41,7 +50,7 @@ public class Contract {
         return firstParty;
     }
 
-    public void setFirstParty(String firstParty) {
+    public void setFirst_party(String firstParty) {
         this.firstParty = firstParty;
     }
 
@@ -49,7 +58,7 @@ public class Contract {
         return secondParty;
     }
 
-    public void setSecondParty(String secondParty) {
+    public void setSecond_party(String secondParty) {
         this.secondParty = secondParty;
     }
 
@@ -57,7 +66,7 @@ public class Contract {
         return sigingDate;
     }
 
-    public void setSigingDate(Date sigingDate) {
+    public void setSiging_date(Date sigingDate) {
         this.sigingDate = sigingDate;
     }
 
@@ -65,7 +74,7 @@ public class Contract {
         return projectLocation;
     }
 
-    public void setProjectLocation(String projectLocation) {
+    public void setProject_location(String projectLocation) {
         this.projectLocation = projectLocation;
     }
 
@@ -89,7 +98,7 @@ public class Contract {
         return supplyChain;
     }
 
-    public void setSupplyChain(String supplyChain) {
+    public void setSupply_chain(String supplyChain) {
         this.supplyChain = supplyChain;
     }
 
@@ -97,7 +106,7 @@ public class Contract {
         return paymentCycle;
     }
 
-    public void setPaymentCycle(String paymentCycle) {
+    public void setPayment_cycle(String paymentCycle) {
         this.paymentCycle = paymentCycle;
     }
 
@@ -105,12 +114,13 @@ public class Contract {
         return acceptanceResult;
     }
 
-    public void setAcceptanceResult(String acceptanceResult) {
+    public void setAcceptance_result(String acceptanceResult) {
         this.acceptanceResult = acceptanceResult;
     }
 
-    public Contract(int contractId, String contractName, String firstParty, String secondParty, Date sigingDate,
+    public Contract(int id, String contractId, String contractName, String firstParty, String secondParty, Date sigingDate,
                     String projectLocation, double cost, String content, String supplyChain, String paymentCycle, String acceptanceResult) {
+        this.id = id;
         this.contractId = contractId;
         this.contractName = contractName;
         this.firstParty = firstParty;
@@ -130,7 +140,8 @@ public class Contract {
     @Override
     public String toString() {
         return "Contract{" +
-                "contractId=" + contractId +
+                "id=" + id +
+                ", contractId='" + contractId + '\'' +
                 ", contractName='" + contractName + '\'' +
                 ", firstParty='" + firstParty + '\'' +
                 ", secondParty='" + secondParty + '\'' +

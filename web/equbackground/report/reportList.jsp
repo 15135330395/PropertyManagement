@@ -12,31 +12,33 @@
 
 <html>
 <head>
-    <title>新闻分类</title>
+    <title>签报列表</title>
 
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+   <%-- <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-   <%-- <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />--%>
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
+   &lt;%&ndash; <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />&ndash;%&gt;
+    <meta http-equiv="Cache-Control" content="no-siteapp" />--%>
 </head>
 <body>
 <div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="">首页</a>
-        <a>
-          <cite>新闻分类维护</cite></a>
+        <a><cite>签报列表</cite></a>
       </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
 </div>
 <div class="x-body">
     <table class="layui-hide" id="tab" lay-filter="test"></table> <%--头工具栏操纵"test"--%>
-
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
-            <button class="layui-btn layui-btn-danger" lay-event="deleteAll"><i class="layui-icon"></i>批量删除</button>
+<%--            <button class="layui-btn layui-btn-danger" lay-event="deleteAll"><i class="layui-icon"></i>批量删除</button>--%>
+            <button class="layui-btn layui-btn-danger"  lay-event="deleteAll"><i class="layui-icon"></i>批量删除</button>
+            <%--<xblock>
+                <button class="layui-btn layui-btn-danger" onclick="deleteAll()"><i class="layui-icon"></i>批量删除</button>
+                <button class="layui-btn" onclick="x_admin_show('添加用户','./admin-add.html')"><i class="layui-icon"></i>添加</button>
+                <span class="x-right" style="line-height:40px">共有数据：88 条</span>
+            </xblock>--%>
         </div>
     </script>
 
@@ -47,8 +49,9 @@
     <script type="text/javascript" id="reportDate">
         {{ dateFormat(d.reportDate) }}
     </script>
-
-    <%--<script src="//res.layui.com/layui/dist/layui.js" charset="utf-8"></script>
+</div>
+</body>
+<%--<script src="//res.layui.com/layui/dist/layui.js" charset="utf-8"></script>
     <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 --%>
     <script>
@@ -82,8 +85,8 @@
             table.on('toolbar(test)', function(obj){
                 var checkStatus = table.checkStatus(obj.config.id);
                if(obj.event=='deleteAll'){
-               // function  deleteAll() {
-                   alert(123)
+
+                  /* alert(123)*/
                       var data = checkStatus.data;
                      layer.alert(JSON.stringify(data));
                       if(data==""){
@@ -97,20 +100,20 @@
                       }
                 layer.confirm('确认删除这些信息吗?',function(index){
                     $.ajax({
-                        type:"post",
-                        url:"<%=request.getContextPath()%>/ReportServlet",
-                        data:"action=deleteAll&ids="+ids,
+                        type: "post",
+                        url: "<%=request.getContextPath()%>/ReportServlet",
+                        data: "action=deleteAll&ids="+ids,
                         success: function(msg){
                             if(msg>0){
-                                layer.msg('删除'+msg+'条数据成功',{icon:1});
+                                layer.msg('删除'+ msg +'条数据成功',{icon:1,time:2000});
                             }else {
                                 layer.msg('已删除或不存在!',{icon:2,time:1000});
                             }
                             location.reload();
                         }
-                    })
-                })
-               }
+                    });
+                });
+               };
             });
 
             //监听行工具事件
@@ -151,7 +154,7 @@
         });
     </script>
 
-</div>
+
 
 
 <%--<script>
@@ -168,5 +171,5 @@
 
 </script>--%>
 
-</body>
+
 </html>

@@ -4,6 +4,7 @@ package com.equipment.dao;/*
  * @Description: ContractDao
  */
 
+import com.entity.PageBean;
 import com.equipment.entity.Contract;
 
 import java.util.List;
@@ -16,5 +17,10 @@ public interface ContractDao {
 
     public int updateContract(Contract contract);
 
-    public int deleteContract(int contractId);
+    public int deleteContract(int id);
+
+    List<Contract> queryPage(PageBean pageBean);
+
+
+    Contract findContractById(int id);
 }
