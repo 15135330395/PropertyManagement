@@ -6,34 +6,168 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956c5c81-414e-4503-b7aa-b2c1b41e20ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/PropertyManagement.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f9283fef-34ad-4761-99b6-2797f986f02c.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/SystemManager/Role/GrantRole.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/SystemManager/User/GiveUsersARole.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5763eb55-6f1f-41f2-b587-5d6460a4ec5f.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a2568e22-fd81-461b-b480-d8247f7891c5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5606bdb-7ac4-4e6d-baab-5d679238583f.xml" beforeDir="false" />
+    <list default="true" id="956c5c81-414e-4503-b7aa-b2c1b41e20ed" name="Default Changelist" comment="修改文件路径">
+      <change afterPath="$PROJECT_DIR$/web/logistics/info.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entity/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/dao/MenuRoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/dao/MenuRoleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/dao/RoleUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/dao/RoleUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/dao/impl/MenuRoleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/dao/impl/MenuRoleDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/dao/impl/RoleUserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/dao/impl/RoleUserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/entity/MenuRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/entity/MenuRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/entity/RoleUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/entity/RoleUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/service/MenuRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/service/MenuRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/service/RoleUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/service/RoleUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/servlet/RoleServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/servlet/RoleServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/system/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/system/servlet/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/utils/JdbcUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/utils/JdbcUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/utils/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/utils/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/SystemManager/Menu/AddMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Menu/AddMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/SystemManager/Menu/EditMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Menu/EditMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/SystemManager/Menu/MenuList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Menu/MenuList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/SystemManager/Role/AddRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Role/AddRole.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/SystemManager/Role/EditRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Role/EditRole.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/SystemManager/Role/GrantRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Role/GrantRole.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/SystemManager/Role/RoleList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Role/RoleList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/SystemManager/User/AddUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/User/AddUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/SystemManager/User/EditUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/User/EditUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/SystemManager/User/GiveUsersARole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/User/GiveUsersARole.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/SystemManager/User/UserList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/User/UserList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/AddCleaningTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/AddCleaningTask.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskByTaskId.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskByTaskId.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskCompletion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskCompletion.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/EditCleaningTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/EditCleaningTask.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/AddFireFightingEquipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/AddFireFightingEquipment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/AddSecurityGuardEquipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/AddSecurityGuardEquipment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/EditEquipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/EditEquipment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/EquipmentById.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/EquipmentById.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/FireFightingEquipmentList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/FireFightingEquipmentList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/SecurityGuardEquipmentList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/SecurityGuardEquipmentList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/FireIncident/AddFireIncident.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/FireIncident/AddFireIncident.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/FireIncident/EditFireIncident.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/FireIncident/EditFireIncident.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/FireIncident/FireIncidentById.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/FireIncident/FireIncidentById.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/FireIncident/FireIncidentList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/FireIncident/FireIncidentList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/AddGuardRota.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/AddGuardRota.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/ClockInAndOut.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/ClockInAndOut.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/EditGuardRota.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/EditGuardRota.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/GuardRotaByRotaId.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/GuardRotaByRotaId.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/GuardRotaList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/GuardRotaList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/AddScore.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/AddScore.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/CleaningTaskList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/CleaningTaskList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/EditLogisticsStaff.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/EditLogisticsStaff.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/LogisticsStaffById.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/LogisticsStaffById.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/LogisticsStaffList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/LogisticsStaffList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/AddOperatingRecord.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/AddOperatingRecord.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/EditOperatingRecord.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/EditOperatingRecord.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordById.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordById.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/ReturnEquipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/ReturnEquipment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/css/font.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/xadmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/css/xadmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/fonts/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/fonts/iconfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/fonts/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/fonts/iconfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/fonts/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/fonts/iconfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/fonts/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/fonts/iconfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/dateFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/js/dateFormat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/xadmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/js/xadmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/layui.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/layui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/layui.mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/layui.mobile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/code.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/code.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/laydate/default/laydate.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/font/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/font/iconfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/font/iconfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/font/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/font/iconfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/font/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/font/iconfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/0.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/1.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/10.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/10.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/11.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/11.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/12.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/12.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/13.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/13.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/14.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/14.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/15.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/15.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/16.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/16.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/17.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/17.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/18.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/18.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/19.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/19.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/2.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/20.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/20.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/21.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/21.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/22.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/22.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/23.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/23.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/24.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/24.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/25.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/25.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/26.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/26.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/27.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/27.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/28.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/28.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/29.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/29.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/3.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/3.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/30.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/30.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/31.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/31.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/32.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/32.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/33.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/33.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/34.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/34.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/35.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/35.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/36.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/36.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/37.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/37.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/38.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/38.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/39.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/39.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/4.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/4.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/40.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/40.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/41.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/41.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/42.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/42.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/43.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/43.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/44.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/44.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/45.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/45.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/46.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/46.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/47.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/47.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/48.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/48.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/49.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/49.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/5.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/5.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/50.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/50.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/51.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/51.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/52.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/52.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/53.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/53.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/54.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/54.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/55.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/55.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/56.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/56.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/57.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/57.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/58.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/58.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/59.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/59.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/6.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/6.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/60.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/60.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/61.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/61.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/62.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/62.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/63.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/63.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/64.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/64.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/65.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/65.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/66.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/66.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/67.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/67.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/68.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/68.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/69.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/69.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/7.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/7.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/70.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/70.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/71.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/71.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/8.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/8.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/9.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/9.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/colorpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/flow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/laydate.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/laydate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/layedit.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/layedit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/layer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/laypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/laypage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/laytpl.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/mobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/rate.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/rate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/layui.all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/layui.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/layui.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,20 +211,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/system/servlet/UserServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="79" column="56" lean-forward="true" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/SystemManager/User/GiveUsersARole.jsp">
+        <entry file="file://$PROJECT_DIR$/web/logistics/static/css/xadmin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="46" column="87" selection-start-line="46" selection-start-column="87" selection-end-line="46" selection-end-column="87" />
+            <state relative-caret-position="184">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -130,7 +255,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/system/RoleAndUser.java" />
         <option value="$PROJECT_DIR$/src/com/system/RoleUser.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5763eb55-6f1f-41f2-b587-5d6460a4ec5f/console.sql" />
         <option value="$PROJECT_DIR$/src/com/system/Menu.java" />
@@ -181,6 +305,7 @@
         <option value="$PROJECT_DIR$/web/SystemManager/User/GiveUsersARole.jsp" />
         <option value="$PROJECT_DIR$/src/com/system/dao/impl/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/com/system/servlet/UserServlet.java" />
+        <option value="$PROJECT_DIR$/web/logistics/info.jsp" />
       </list>
     </option>
   </component>
@@ -198,11 +323,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="180" />
-    <option name="y" value="58" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="196" />
+    <option name="y" value="59" />
     <option name="width" value="1628" />
-    <option name="height" value="905" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -237,63 +362,20 @@
             <path>
               <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="SystemManager" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="SystemManager" type="462c0819:PsiDirectoryNode" />
-              <item name="Menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="SystemManager" type="462c0819:PsiDirectoryNode" />
-              <item name="Role" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="SystemManager" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -322,9 +404,12 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\Role" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\logistics" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\课程\web\web项目\PropertyManagement\web\logistics\static" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\Menu" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\User" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\logistics\Equipment" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.system.service" />
@@ -332,12 +417,11 @@
       <recent name="com.logistics.dao" />
       <recent name="com.logistics.service" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\Menu" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\User" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\logistics\Equipment" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\logistics\Manager" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\课程\web\web项目\PropertyManagement\web\SystemManager" />
+      <recent name="E:\课程\web\web项目\PropertyManagement\web\logistics" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\Role" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\logistics" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -442,7 +526,7 @@
       <workItem from="1554010077034" duration="762000" />
       <workItem from="1554012525069" duration="20543000" />
       <workItem from="1554080240204" duration="300000" />
-      <workItem from="1554080892833" duration="18217000" />
+      <workItem from="1554080892833" duration="18694000" />
     </task>
     <task id="LOCAL-00001" summary="基本完成了后勤部的页面">
       <created>1553960869050</created>
@@ -458,16 +542,23 @@
       <option name="project" value="LOCAL" />
       <updated>1553961269023</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="基本完成了系统管理员的权限管理">
+      <created>1554110499123</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554110499123</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56493000" />
+    <option name="totallyTimeSpent" value="56970000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="196" y="59" width="1628" height="916" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49794802" visible="true" weight="0.20493563" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49794802" visible="true" weight="0.24550128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" sideWeight="0.502052" side_tool="true" weight="0.24569537" />
       <window_info id="Designer" order="3" />
@@ -475,20 +566,20 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32831737" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" visible="true" weight="0.33944955" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49839056" weight="0.33944955" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49892703" weight="0.27595627" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49785408" weight="0.27522936" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50107294" side_tool="true" weight="0.33944955" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50160944" side_tool="true" weight="0.33944955" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.6352459" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.32968536" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.32968536" />
+      <window_info anchor="bottom" id="Messages" order="15" visible="true" weight="0.3920765" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Database" order="1" weight="0.20386267" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -577,68 +668,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="基本完成了后勤部的页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="基本完成了后勤部的页面" />
+    <MESSAGE value="基本完成了系统管理员的权限管理" />
+    <MESSAGE value="修改文件路径" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改文件路径" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/Menu/EditMenu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="85" column="46" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/servlet/MenuServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="61" column="8" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/entity/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/service/MenuService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/dao/impl/MenuDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="75" column="34" lean-forward="true" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/Menu/MenuList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="65" column="28" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/User/AddUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="82" column="20" lean-forward="true" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/utils/JdbcUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -691,13 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/equipment">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -718,9 +745,6 @@
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/system/entity/MenuRole.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -743,11 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/AddCleaningTask.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskList.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -755,7 +774,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/xadmin.js">
+    <entry file="file://$PROJECT_DIR$/web/logistics/static/js/xadmin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="176" column="32" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="32" />
@@ -811,13 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -945,17 +957,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/servlet/UserServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/SystemManager/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="79" column="56" lean-forward="true" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+        <state relative-caret-position="168">
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logistics/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logistics/info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/SystemManager/User/GiveUsersARole.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="46" column="87" selection-start-line="46" selection-start-column="87" selection-end-line="46" selection-end-column="87" />
+        <state relative-caret-position="523">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/system/servlet/UserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="79" column="56" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/AddCleaningTask.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskByTaskId.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logistics/Equipment/AddFireFightingEquipment.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logistics/Equipment/EquipmentById.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logistics/OperatingRecord/AddOperatingRecord.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordById.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logistics/static/css/xadmin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
         </state>
       </provider>
     </entry>

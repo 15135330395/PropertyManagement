@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!-- css和js的引用封装在info.jsp -->
-<%@ include file="../../info.jsp" %>
+<%@ include file="../info.jsp" %>
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">

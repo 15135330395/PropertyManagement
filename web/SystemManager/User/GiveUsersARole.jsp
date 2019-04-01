@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- css和js的引用封装在info.jsp -->
-<%@ include file="../../info.jsp" %>
+<%@ include file="../../logistics/info.jsp" %>
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
