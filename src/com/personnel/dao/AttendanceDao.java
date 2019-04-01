@@ -2,6 +2,7 @@ package com.personnel.dao;
 
 import com.entity.PageBean;
 import com.personnel.entity.Attendance;
+import com.personnel.entity.Salary;
 
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface AttendanceDao {
     public int updateAttendance(Attendance attendance);
     public int deleteAttendance(int attendanceId);
     public Attendance queryOne(int attendanceId);
+
+    Attendance queryOneByStaffId(int staffId);
 }

@@ -64,15 +64,6 @@ public class securityInsuranceServlet extends HttpServlet {
         }
         response.getWriter().print(sum);
     }
-
-    protected void queryDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String securityInsuranceId = request.getParameter("securityInsuranceId");
-        SecurityInsurance securityInsurance = service.queryOne(Integer.parseInt(securityInsuranceId));
-
-        request.setAttribute("securityInsurance", securityInsurance);
-        request.getRequestDispatcher("/personnel/background/securityInsurance/securityInsuranceDetail.jsp").forward(request, response);
-    }
-
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String staffId = request.getParameter("staffId");
         String endowmentInsurance = request.getParameter("endowmentInsurance");
@@ -171,6 +162,16 @@ public class securityInsuranceServlet extends HttpServlet {
         List<Staff> staffList = staffService.findAll();
         request.setAttribute("staffList",staffList);
         request.getRequestDispatcher("/personnel/background/securityInsurance/securityInsuranceAdd.jsp").forward(request, response);
+    }
+    protected void queryDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String staffId = request.getParameter("staffId");
+        if (staffId != null) {
+            SecurityInsurance securityInsurance = service.queryOneByStaffId(Integer.parseInt(staffId));
+            request.setAttribute("securityInsurance", securityInsurance);
+        }
+        List<Staff> staffList = staffService.findAll();
+        request.setAttribute("staffList",staffList);
+        request.getRequestDispatcher("/personnel/background/securityInsurance/securityInsuranceDetail.jsp").forward(request, response);
     }
     protected void toEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String securityInsuranceId = request.getParameter("securityInsuranceId");

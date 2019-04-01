@@ -4,6 +4,7 @@ import com.entity.PageBean;
 import com.personnel.dao.AttendanceDao;
 import com.personnel.dao.impl.AttendanceDaoImpl;
 import com.personnel.entity.Attendance;
+import com.personnel.entity.Salary;
 
 import java.util.List;
 
@@ -19,4 +20,8 @@ public class AttendanceService {
     public int updateAttendance(Attendance attendance){return dao.updateAttendance(attendance);}
     public int deleteAttendance(int attendanceId){return dao.deleteAttendance(attendanceId);}
     public Attendance queryOne(int attendanceId){return dao.queryOne(attendanceId);}
+
+    public Attendance queryOneByStaffId(int staffId) {
+        return dao.queryOneByStaffId(staffId);
+    }
 }

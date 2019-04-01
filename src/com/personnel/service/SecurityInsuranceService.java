@@ -19,4 +19,8 @@ public class SecurityInsuranceService {
     public int updateSecurityInsurance(SecurityInsurance securityInsurance){return dao.updateSecurityInsurance(securityInsurance);}
     public int deleteSecurityInsurance(int securityInsuranceId){return dao.deleteSecurityInsurance(securityInsuranceId);}
     public SecurityInsurance queryOne(int securityInsuranceId){return dao.queryOne(securityInsuranceId);}
+
+    public SecurityInsurance queryOneByStaffId(int staffId) {
+        return dao.queryOneByStaffId(staffId);
+    }
 }

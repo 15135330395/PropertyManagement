@@ -69,7 +69,7 @@ public class Salary {
         this.securityInsuranceId = securityInsuranceId;
     }
     public double getPay() {
-        return (basicSalary/workDay)*(workDay-sickLeave-affairLeave+onduty-abnormal);
+        return basicSalary+getBonuses()-getInsurance()+getOndutyPay()-getAbnormalPay()-getLeavePay();
     }
 
     public void setPay(double pay) {
@@ -277,5 +277,7 @@ public class Salary {
     public void setAbnormal(int abnormal) {
         this.abnormal = abnormal;
     }
+
+
 }
 

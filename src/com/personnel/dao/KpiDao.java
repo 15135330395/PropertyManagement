@@ -18,4 +18,6 @@ public interface KpiDao {
     public Kpi queryOne(int kpiId);
 
     public int addEvaluateGrade(int kpiId, int evaluateGrade);
+
+    Kpi queryOneByStaffId(int staffId);
 }

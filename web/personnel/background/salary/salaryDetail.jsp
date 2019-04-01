@@ -39,36 +39,36 @@
     <div class="layui-form-item">
         <label class="layui-form-label">基本工资：</label>
         <div class="layui-input-inline">
-            <input readonly type="text" name="basicSalary" required value="${salary.basicSalary}"  lay-verify="required" autocomplete="off" class="layui-input">
+            <input readonly type="text" name="basicSalary" required value="<fmt:formatNumber value="${salary.basicSalary}" type="currency" pattern="￥.00"/>"  lay-verify="required" autocomplete="off" class="layui-input">
         </div>
         <label class="layui-form-label">绩效奖金：</label>
         <div class="layui-input-inline">
-            <input readonly type="number" name="bonuses" required value="${salary.bonuses}"  lay-verify="required"  autocomplete="off" class="layui-input">
+            <input readonly type="text" name="bonuses" required value="<fmt:formatNumber value="${salary.bonuses}" type="currency" pattern="￥.00"/>"  lay-verify="required"  autocomplete="off" class="layui-input">
         </div>
         <label class="layui-form-label">五险一金：</label>
         <div class="layui-input-inline">
-            <input readonly type="text" name="insurance" value="${salary.insurance}"   lay-verify="required" class="layui-input" id="test4">
+            <input readonly type="text" name="insurance" value="<fmt:formatNumber value="${salary.insurance}" type="currency" pattern="￥.00"/>"   lay-verify="required" class="layui-input" id="test4">
         </div>
     </div>
     <div class="layui-form-item">
 
-        <label class="layui-form-label">请假：</label>
+        <label class="layui-form-label">请假扣除：</label>
         <div class="layui-input-inline">
-            <input readonly type="text" name="leavePay"  value="${salary.leavePay}"   autocomplete="off" class="layui-input">
+            <input readonly type="text" name="leavePay"  value="<fmt:formatNumber value="${salary.leavePay}" type="currency" pattern="￥.00"/>"   autocomplete="off" class="layui-input">
         </div>
         <label class="layui-form-label">旷工费：</label>
         <div class="layui-input-inline">
-            <input readonly type="text" name="abnormalPay" required lay-verify="required" value="${salary.abnormalPay}"   autocomplete="off" class="layui-input">
+            <input readonly type="text" name="abnormalPay" required lay-verify="required" value="<fmt:formatNumber value="${salary.abnormalPay}" type="currency" pattern="￥.00"/>"   autocomplete="off" class="layui-input">
         </div>
         <label class="layui-form-label">加班费：</label>
         <div class="layui-input-inline">
-            <input readonly type="text" name="ondutyPay" required lay-verify="required" value="${salary.ondutyPay}"   autocomplete="off" class="layui-input">
+            <input readonly type="text" name="ondutyPay" required lay-verify="required" value="<fmt:formatNumber value="${salary.ondutyPay}" type="currency" pattern="￥.00"/>"   autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">考勤：</label>
+        <label class="layui-form-label">实发工资：</label>
         <div class="layui-input-inline">
-            <input readonly type="text" name="actualAttendance" required lay-verify="required" value="${salary.actualAttendance}"  placeholder="请输入所在城市" autocomplete="off" class="layui-input">
+            <input readonly type="text" name="pay" required lay-verify="required" value="<fmt:formatNumber value="${salary.pay}" type="currency" pattern="￥.00"/>"   autocomplete="off" class="layui-input">
         </div>
     </div>
 </div>

@@ -66,7 +66,6 @@
     layui.use(['laydate','form','upload'], function(){
         var form = layui.form;
         var laydate = layui.laydate;
-
         //监听提交
         form.on('submit(submitSave)', function(data){
             var salaryId = data.field.salaryId;

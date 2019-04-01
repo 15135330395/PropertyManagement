@@ -17,4 +17,6 @@ public interface SecurityInsuranceDao {
     public int updateSecurityInsurance(SecurityInsurance securityInsurance);
     public int deleteSecurityInsurance(int securityInsuranceId);
     public SecurityInsurance queryOne(int securityInsuranceId);
+
+    SecurityInsurance queryOneByStaffId(int staffId);
 }

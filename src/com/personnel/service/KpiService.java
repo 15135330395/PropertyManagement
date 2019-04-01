@@ -23,4 +23,8 @@ public class KpiService {
     public int addEvaluateGrade(int kpiId, int evaluateGrade) {
         return dao.addEvaluateGrade(kpiId,evaluateGrade);
     }
+
+    public Kpi queryOneByStaffId(int staffId) {
+        return dao.queryOneByStaffId(staffId);
+    }
 }

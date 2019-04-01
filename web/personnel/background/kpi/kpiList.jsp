@@ -25,6 +25,12 @@
 </div>
 
 <div class="x-body">
+    <div class="layui-row">
+        <div class="layui-col-md12 x-so">
+            <input type="text" name="staffId" placeholder="请输入工号" autocomplete="off" class="layui-input">
+            <button class="layui-btn" id="search"><i class="layui-icon">&#xe615;</i></button>
+        </div>
+    </div>
     <table class="layui-hide" id="test" lay-filter="test"></table>
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
@@ -61,6 +67,20 @@
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:'12%'}
             ]]
             ,page: true
+        });
+        layui.$('#search').on('click', function () {
+            var val = layui.$("*[name='staffId']").val();
+            if (val == "") {
+                layer.msg('请输入ID');
+                return;
+            }
+            layer.open({
+                title: '查询',
+                type: 2,
+                skin: 'layui-layer-rim', // 加上边框
+                area: ['1000px', '700px'], // 宽高
+                content: '<%=request.getContextPath()%>/KpiServlet?action=queryDetail&staffId=' + val
+            });
         });
         //头工具栏事件
         table.on('toolbar(test)', function(obj){

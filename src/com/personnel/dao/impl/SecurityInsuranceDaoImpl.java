@@ -105,4 +105,17 @@ public class SecurityInsuranceDaoImpl implements SecurityInsuranceDao {
         }
         return null;
     }
+
+    @Override
+    public SecurityInsurance queryOneByStaffId(int staffId) {
+        String sql="select i.* ,s.staff_name ,s.station,s.education,s.city,s.household from staff s, security_insurance i " +
+                "where s.staff_id=i.staff_id and i.staff_id=?";
+        try {
+            SecurityInsurance securityInsurance = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(SecurityInsurance.class), staffId);
+            return securityInsurance;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

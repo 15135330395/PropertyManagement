@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../commons/info.jsp"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>薪资信息</title>
@@ -44,10 +45,29 @@
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
-    <script type="text/html" id="pay1">
-        {{ d.pay==0?'2000':'3000' }}
+    <script type="text/html" id="pay">
+        {{ d.pay.toFixed(2)}}
+    </script>
+    <script type="text/html" id="leavePay">
+        {{ d.leavePay.toFixed(2)}}
+    </script>
+    <script type="text/html" id="basicSalary">
+        {{ d.basicSalary.toFixed(2)}}
+    </script>
+    <script type="text/html" id="bonuses">
+        {{ d.bonuses.toFixed(2)}}
+    </script>
+    <script type="text/html" id="insurance">
+        {{ d.insurance.toFixed(2)}}
+    </script>
+    <script type="text/html" id="abnormalPay">
+        {{ d.abnormalPay.toFixed(2)}}
+    </script>
+    <script type="text/html" id="ondutyPay">
+        {{ d.ondutyPay.toFixed(2)}}
     </script>
 </div>
+
 <script>
     layui.use('table', function(){
         var table = layui.table;
@@ -61,14 +81,13 @@
                 ,{field:'salaryId', title:'编号', width:'7%', fixed: 'left', unresize: true, sort: true}
                 ,{field:'staffId', title:'工号', width:'7%', fixed: 'left', unresize: true, sort: true}
                 ,{field:'staffName', title:'员工姓名', width:'8%',  sort: true}
-                ,{field:'basicSalary', title:'基本工资', width:'9%',  sort: true}
-                ,{field:'bonuses', title:'绩效奖金', width:'9%',  sort: true}
-                ,{field:'insurance', title:'五险一金', width:'9%', sort: true}
-                ,{field:'ondutyPay', title:'加班费', width:'8%'}
-                ,{field:'abnormalPay', title:'旷工费', width:'8%'}
-                ,{field:'leavePay', title:'请假费', width:'8%'}
-                ,{field:'actualAttendance', title:'考勤', width:'8%', sort: true}
-                ,{field:'pay', title:'实发工资', width:'8%', sort: true,temple:'#pay1'}
+                ,{field:'basicSalary', title:'基本工资', width:'9%',  sort: true,templet:'#basicSalary'}
+                ,{field:'bonuses', title:'绩效奖金', width:'9%',  sort: true,templet:'#bonuses'}
+                ,{field:'insurance', title:'五险一金', width:'9%', sort: true,templet:'#insurance'}
+                ,{field:'ondutyPay', title:'加班费', width:'8%',templet:'#ondutyPay'}
+                ,{field:'abnormalPay', title:'旷工费', width:'8%',templet:'#abnormalPay'}
+                ,{field:'leavePay', title:'请假费', width:'8%',templet:'#leavePay'}
+                ,{field:'pay', title:'实发工资', width:'8%', sort: true,templet:'#pay'}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
             ]]
             ,page: true

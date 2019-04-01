@@ -4,6 +4,7 @@ import com.entity.PageBean;
 import com.personnel.dao.AttendanceDao;
 import com.personnel.entity.Attendance;
 import com.personnel.entity.Recuit;
+import com.personnel.entity.Salary;
 import com.utils.JdbcUtil;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -96,6 +97,20 @@ public class AttendanceDaoImpl implements AttendanceDao {
         try {
             Attendance attendance = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Attendance.class), attendanceId);
             return attendance;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public Attendance queryOneByStaffId(int staffId) {
+        String sql="select a.*,s.staff_name,d.department_name from attendance a,staff s,department d where " +
+                "a.department_id=d.department_id and a.staff_id=s.staff_id" +
+                " and a.staff_id=? ";
+        try {
+            Attendance attendance1 = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Attendance.class), staffId);
+            return attendance1;
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -84,7 +84,7 @@ public class KpiDaoImpl implements KpiDao {
 
     @Override
     public Kpi queryOne(int kpiId) {
-        String sql="select * from kpi  where kpi_id=?";
+        String sql="select k.* ,s.staff_name from kpi k,staff s where  s.staff_id=k.staff_id and k.kpi_id=?";
         try {
             Kpi kpi = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Kpi.class), kpiId);
             return kpi;
@@ -104,5 +104,17 @@ public class KpiDaoImpl implements KpiDao {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public Kpi queryOneByStaffId(int staffId) {
+        String sql="select k.* ,s.staff_name from kpi k,staff s where  s.staff_id=k.staff_id and k.staff_id=?";
+        try {
+            Kpi kpi = qr.query(JdbcUtil.getConnection(), sql, new BeanHandler<>(Kpi.class), staffId);
+            return kpi;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

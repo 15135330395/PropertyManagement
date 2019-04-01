@@ -7,6 +7,9 @@ import com.entity.Staff;
 import com.manager.dao.DepartmentDao;
 import com.manager.dao.daoimpl.DepartmentDaoImpl;
 import com.personnel.entity.Attendance;
+import com.personnel.entity.Kpi;
+import com.personnel.entity.Salary;
+import com.personnel.entity.SecurityInsurance;
 import com.personnel.service.AttendanceService;
 import com.personnel.service.StaffService;
 import com.utils.DateUtil;
@@ -46,11 +49,25 @@ public class AttendanceServlet extends HttpServlet {
             queryPage(request, response);
         }else if ("toEdit".equals(action)) {
             toEdit(request, response);
+        }else if ("queryDetail".equals(action)) {
+            queryDetail(request, response);
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
+    }
+    protected void queryDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String staffId = request.getParameter("staffId");
+        Attendance attendance = service.queryOneByStaffId(Integer.parseInt(staffId));
+        DepartmentDao dao=new DepartmentDaoImpl();
+        List<Department> departmentList = dao.findAll();
+
+        request.setAttribute("departmentList",departmentList);
+        List<Staff> staffList = staffService.findAll();
+        request.setAttribute("attendance",attendance);
+        request.setAttribute("staffList",staffList);
+        request.getRequestDispatcher("/personnel/background/attendance/attendanceDetail.jsp").forward(request, response);
     }
     protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ids = request.getParameter("ids");
