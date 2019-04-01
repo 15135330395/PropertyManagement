@@ -17,17 +17,7 @@ public class StaffService {
     public List<Staff> findAll(){return dao.findAll();}
     public List<Staff> queryStaffPage(PageBean pageBean){return dao.queryStaffPage(pageBean);}
     public int addStaff(Staff staff){
-//        int id=0;
-//        Date date = new Date(System.currentTimeMillis());
-//        int year = date.getYear();
-//        int month = date.getMonth()+1;
-//        int day = date.getDate();
-//        String str = ""+year+month+day;
-//
-//        id=Integer.parseInt(str);
-//        System.out.println(id);
-//
-//        staff.setStaff_id(id);
+
         return dao.addStaff(staff);
     }
     public int updateStaff(Staff staff){return dao.updateStaff(staff);}
@@ -36,5 +26,9 @@ public class StaffService {
 
     public Staff queryOneStaff(int staffId) {
         return dao.queryOneStaff(staffId);
+    }
+
+    public List<Staff> queryStaffByDepartmentId(int departmentId) {
+        return dao.queryStaffByDepartmentId(departmentId);
     }
 }

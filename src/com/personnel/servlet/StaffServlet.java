@@ -45,9 +45,16 @@ public class StaffServlet extends HttpServlet {
             queryPage(request, response);
         }else if ("deleteAll".equals(action)) {
             deleteAll(request, response);
+        }else if ("queryStaffByDepartmentId".equals(action)) {
+            queryStaffByDepartmentId(request, response);
         }
     }
-
+    protected void queryStaffByDepartmentId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String departmentId = request.getParameter("departmentId");
+        List<Staff> staffList = staffService.queryStaffByDepartmentId(Integer.parseInt(departmentId));
+        request.setAttribute("staffList", staffList);
+       request.getRequestDispatcher("/personnel/background/staff/staffPartList.jsp").forward(request, response);
+    }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
@@ -165,5 +172,4 @@ public class StaffServlet extends HttpServlet {
         JSONObject jsonObject = JsonUtil.getJsonObject(staffList, pageBean);
         response.getWriter().print(jsonObject);
     }
-
 }

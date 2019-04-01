@@ -18,4 +18,5 @@ public interface StaffDao {
     public Staff queryOne(int staffId);
 
     public Staff queryOneStaff(int staffId);
+    public List<Staff> queryStaffByDepartmentId(int departmentId);
 }

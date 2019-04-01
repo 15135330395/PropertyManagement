@@ -26,9 +26,13 @@
 
 <div class="x-body">
     <div class="layui-row">
-        <div class="layui-col-md12 x-so">
+        <div class="layui-col-md2 x-so">
             <input type="text" name="staffId" placeholder="请输入工号" autocomplete="off" class="layui-input">
             <button class="layui-btn" id="search"><i class="layui-icon">&#xe615;</i></button>
+        </div>
+        <div class="layui-col-md2 x-so">
+            <input type="text" name="departmentId" placeholder="请输入部门编号" autocomplete="off" class="layui-input">
+            <button class="layui-btn" id="searchList"><i class="layui-icon">&#xe615;</i></button>
         </div>
     </div>
     <table class="layui-hide" id="test" lay-filter="test"></table>
@@ -66,6 +70,20 @@
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
             ]]
             ,page: true
+        });
+        layui.$('#searchList').on('click', function () {
+            var val = layui.$("*[name='departmentId']").val();
+            if (val == "") {
+                layer.msg('请输入ID');
+                return;
+            }
+            layer.open({
+                title: '查询',
+                type: 2,
+                skin: 'layui-layer-rim', // 加上边框
+                area: ['1000px', '700px'], // 宽高
+                content: '<%=request.getContextPath()%>/StaffServlet?action=queryStaffByDepartmentId&departmentId=' + val
+            });
         });
         layui.$('#search').on('click', function () {
             var val = layui.$("*[name='staffId']").val();

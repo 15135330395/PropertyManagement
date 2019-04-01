@@ -79,6 +79,7 @@
                 <input type="number" name="abnormal" required lay-verify="required" value="${attendance.abnormal}"  placeholder="请输入旷工天数" autocomplete="off" class="layui-input">
             </div>
         </div>
+
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="submitSave">保存</button>

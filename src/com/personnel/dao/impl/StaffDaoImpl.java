@@ -114,4 +114,17 @@ public class StaffDaoImpl implements StaffDao {
         }
         return null;
     }
+
+    @Override
+    public List<Staff> queryStaffByDepartmentId(int departmentId) {
+        String sql="select *  from staff s, department d where s.department_id=d.department_id and s.department_id=? order by staff_id";
+
+        try {
+            List<Staff> staffList = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Staff.class),departmentId);
+            return  staffList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

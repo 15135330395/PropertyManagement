@@ -53,7 +53,6 @@ public class AttendanceServlet extends HttpServlet {
             queryDetail(request, response);
         }
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }
@@ -157,9 +156,9 @@ public class AttendanceServlet extends HttpServlet {
         request.setAttribute("departmentList",departmentList);
         List<Staff> staffList = staffService.findAll();
         request.setAttribute("staffList",staffList);
+
         request.getRequestDispatcher("/personnel/background/attendance/attendanceEdit.jsp").forward(request, response);
     }
-
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String attendanceId = request.getParameter("attendanceId");
         int i = service.deleteAttendance(Integer.parseInt(attendanceId));
