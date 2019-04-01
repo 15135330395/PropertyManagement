@@ -31,65 +31,14 @@
 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
     <h3><span class="pull-left">Messages</span><a href="javascript:void(0);" class="pull-right" id="closeRight"><i class="icon-close"></i></a></h3>
     <div class="slimscroll">
-        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar2.png" alt=""><span>Michael Lewis<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar3.png" alt=""><span>John Doe<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar4.png" alt=""><span>Emma Green<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar5.png" alt=""><span>Nick Doe<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar2.png" alt=""><span>Michael Lewis<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar3.png" alt=""><span>John Doe<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar4.png" alt=""><span>Emma Green<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar5.png" alt=""><span>Nick Doe<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar2.png" alt=""><span>张三<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar3.png" alt=""><span>李四<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar4.png" alt=""><span>王五<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar5.png" alt=""><span>赵六<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar2.png" alt=""><span>冯七<small>Nice to meet you</small></span></a>
     </div>
 </nav>
-<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
-    <h3><span class="pull-left">Michael Lewis</span> <a href="javascript:void(0);" class="pull-right" id="closeRight2"><i class="fa fa-angle-right"></i></a></h3>
-    <div class="slimscroll chat">
-        <div class="chat-item chat-item-left">
-            <div class="chat-image">
-                <img src="login/images/avatar2.png" alt="">
-            </div>
-            <div class="chat-message">
-                Duis aute irure dolor?
-            </div>
-        </div>
-        <div class="chat-item chat-item-right">
-            <div class="chat-message">
-                Lorem ipsum dolor sit amet, dapibus quis, laoreet et.
-            </div>
-        </div>
-        <div class="chat-item chat-item-left">
-            <div class="chat-image">
-                <img src="login/images/avatar2.png" alt="">
-            </div>
-            <div class="chat-message">
-                Ut ullamcorper, ligula.
-            </div>
-        </div>
-        <div class="chat-item chat-item-right">
-            <div class="chat-message">
-                In hac habitasse platea dict umst. ligula eu tempor eu id tincidunt.
-            </div>
-        </div>
-        <div class="chat-item chat-item-left">
-            <div class="chat-image">
-                <img src="login/images/avatar2.png" alt="">
-            </div>
-            <div class="chat-message">
-                Curabitur pretium?
-            </div>
-        </div>
-        <div class="chat-item chat-item-right">
-            <div class="chat-message">
-                Etiam tempor. Ut tempor! ull amcorper.
-            </div>
-        </div>
-    </div>
-    <div class="chat-write">
-        <form class="form-horizontal" action="javascript:void(0);">
-            <input type="text" class="form-control" placeholder="Say something">
-        </form>
-    </div>
-</nav>
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2"></nav>
 <form class="search-form" action="#" method="GET">
     <div class="input-group">
         <input type="text" name="search" class="form-control search-input" placeholder="Type something...">
@@ -388,27 +337,17 @@
                         <li><a href="lock-screen.html">酬薪管理</a></li>
                     </ul>
                 </li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pointer"></span><p>Maps</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pointer"></span><p>地图</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="maps-google.html">Google Maps</a></li>
-                        <li><a href="maps-vector.html">Vector Maps</a></li>
+                        <li><a href="maps-google.html">Google 地图</a></li>
+                        <li><a href="maps-vector.html">Vector 地图</a></li>
                     </ul>
                 </li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-present"></span><p>Extra</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-present"></span><p>错误信息</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="404.html">404 Page</a></li>
-                        <li><a href="500.html">500 Page</a></li>
-                        <li><a href="invoice.html">Invoice</a></li>
-                        <li><a href="calendar.html">Calendar</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="todo.html">Todo</a></li>
-                        <li><a href="pricing-tables.html">Pricing Tables</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="timeline.html">Timeline</a></li>
-                        <li><a href="search.html">Search Results</a></li>
-                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="404.jsp">404 页面</a></li>
+                        <li><a href="500.jsp">500 页面</a></li>
+
                     </ul>
                 </li>
                 <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-energy"></span><p>Levels</p><span class="arrow"></span></a>
@@ -452,54 +391,9 @@
 
     </div><!-- Page Inner -->
 </main><!-- Page Content -->
-<nav class="cd-nav-container" id="cd-nav">
-    <header>
-        <h3>LAYERS</h3>
-    </header>
-    <div class="col-md-6 demo-block demo-selected demo-active">
-        <p>Dark<br>Design</p>
-    </div>
-    <div class="col-md-6 demo-block">
-        <a href="../admin2/index.html"><p>Light<br>Design</p></a>
-    </div>
-    <div class="col-md-6 demo-block demo-coming-soon">
-        <p>Horizontal<br>(Coming)</p>
-    </div>
-    <div class="col-md-6 demo-block demo-coming-soon">
-        <p>Material<br>(Coming)</p>
-    </div>
-    <div class="col-md-6 demo-block demo-coming-soon">
-        <p>Coming<br>Soon</p>
-    </div>
-    <div class="col-md-6 demo-block demo-coming-soon">
-        <p>Coming<br>Soon</p>
-    </div>
-</nav>
-<div class="cd-overlay"></div>
 
-<!-- Javascripts -->
-<script src="login/plugins/jquery/jquery-3.1.0.min.js"></script>
-<script src="login/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="login/plugins/pace-master/pace.min.js"></script>
-<script src="login/plugins/jquery-blockui/jquery.blockui.js"></script>
-<script src="login/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="login/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="login/plugins/switchery/switchery.min.js"></script>
-<script src="login/plugins/uniform/js/jquery.uniform.standalone.js"></script>
-<script src="login/plugins/offcanvasmenueffects/js/classie.js"></script>
-<script src="login/plugins/waves/waves.min.js"></script>
-<script src="login/plugins/3d-bold-navigation/js/main.js"></script>
-<script src="login/plugins/waypoints/jquery.waypoints.min.js"></script>
-<script src="login/plugins/toastr/toastr.min.js"></script>
-<script src="login/plugins/flot/jquery.flot.min.js"></script>
-<script src="login/plugins/flot/jquery.flot.time.min.js"></script>
-<script src="login/plugins/flot/jquery.flot.symbol.min.js"></script>
-<script src="login/plugins/flot/jquery.flot.resize.min.js"></script>
-<script src="login/plugins/flot/jquery.flot.tooltip.min.js"></script>
-<script src="login/plugins/curvedlines/curvedLines.js"></script>
-<script src="login/plugins/chartjs/Chart.bundle.min.js"></script>
-<script src="login/js/layers.min.js"></script>
-<script src="login/js/pages/dashboard.js"></script>
+
+<jsp:include page="bottom.jsp"></jsp:include>
 
 </body>
 </html>

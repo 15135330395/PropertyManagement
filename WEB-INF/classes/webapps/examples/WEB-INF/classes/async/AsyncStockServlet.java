@@ -21,7 +21,6 @@ import async.Stockticker.TickListener;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 
-import javax.servlet.*;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
