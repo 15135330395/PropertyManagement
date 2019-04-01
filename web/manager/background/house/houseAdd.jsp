@@ -49,11 +49,14 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label for="use" class="layui-form-label">
+            <label for="purpose" class="layui-form-label">
                 <span class="x-red">*</span>用途
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="use" name="use" required="" lay-verify="required"
+                <input type="radio" name="purpose" value="居住" title="居住">
+                <input type="radio" name="purpose" value="办公" title="办公">
+                <input type="radio" name="purpose" value="商用" title="商用(注明行业)：">
+                <input type="text" id="purpose" name="purpose" required="" lay-verify="required"
                        autocomplete="off" class="layui-input">
             </div>
         </div>
@@ -86,7 +89,7 @@
             var houseId=data.field.houseId;
             var buildingId=data.field.buildingId;
             var acreage=data.field.acreage;
-            var use=data.field.use;
+            var purpose=data.field.purpose;
             var houseType=data.field.houseType;
 
             $.ajax({
@@ -97,7 +100,7 @@
                     "houseId":houseId,
                     "buildingId":buildingId,
                     "acreage":acreage,
-                    "use":use,
+                    "purpose":purpose,
                     "houseType":houseType
                 },
                 success:function(msg){

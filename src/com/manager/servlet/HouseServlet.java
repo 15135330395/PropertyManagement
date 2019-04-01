@@ -50,7 +50,6 @@ public class HouseServlet extends HttpServlet {
         pageBean.setPageCount(Integer.parseInt(pageCount));
         // 总条数
         pageBean.setCount(dao.getConut());
-//        System.out.println(pageBean.getIndex()+" "+pageBean.getPageCount());
         // list数据
         List<House> houseList = dao.queryPageList(pageBean);
         request.setAttribute("houseList",houseList);
@@ -62,13 +61,11 @@ public class HouseServlet extends HttpServlet {
         String houseId = request.getParameter("houseId");
         String buildingId = request.getParameter("buildingId");
         String acreage = request.getParameter("acreage");
-        String use = request.getParameter("use");
+        String purpose = request.getParameter("purpose");
         String houseType = request.getParameter("houseType");
 
-        House house = new House(Integer.parseInt(houseId),Integer.parseInt(buildingId),acreage,use,houseType);
-        System.out.println(house);
+        House house = new House(Integer.parseInt(houseId),Integer.parseInt(buildingId),acreage,purpose,houseType);
         int i = dao.addHouse(house);
-//        System.out.println(i);
         response.getWriter().print(""+i);
 
     }
@@ -76,9 +73,9 @@ public class HouseServlet extends HttpServlet {
         String houseId = request.getParameter("houseId");
         String buildingId = request.getParameter("buildingId");
         String acreage = request.getParameter("acreage");
-        String use = request.getParameter("use");
+        String purpose = request.getParameter("purpose");
         String houseType = request.getParameter("houseType");
-        House house = new House(Integer.parseInt(houseId),Integer.parseInt(buildingId),acreage,use,houseType);
+        House house = new House(Integer.parseInt(houseId),Integer.parseInt(buildingId),acreage,purpose,houseType);
         int i = dao.updateHouse(house);
         response.getWriter().print(""+i);
     }

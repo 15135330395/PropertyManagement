@@ -9,24 +9,24 @@ public class House {
     private int houseId;
     private int buildingId;
     private String acreage;
-    private String use;
+    private String purpose;
     private String houseType;
 
     public House() {
     }
 
-    public House(int buildingId, String acreage, String use, String houseType) {
+    public House(int buildingId, String acreage, String purpose, String houseType) {
         this.buildingId = buildingId;
         this.acreage = acreage;
-        this.use = use;
+        this.purpose = purpose;
         this.houseType = houseType;
     }
 
-    public House(int houseId, int buildingId, String acreage, String use, String houseType) {
+    public House(int houseId, int buildingId, String acreage, String purpose, String houseType) {
         this.houseId = houseId;
         this.buildingId = buildingId;
         this.acreage = acreage;
-        this.use = use;
+        this.purpose = purpose;
         this.houseType = houseType;
     }
 
@@ -54,12 +54,12 @@ public class House {
         this.acreage = acreage;
     }
 
-    public String getUse() {
-        return use;
+    public String getPurpose() {
+        return purpose;
     }
 
-    public void setUse(String use) {
-        this.use = use;
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
     }
 
     public String getHouseType() {
@@ -76,7 +76,7 @@ public class House {
                 "houseId=" + houseId +
                 ", buildingId=" + buildingId +
                 ", acreage='" + acreage + '\'' +
-                ", use='" + use + '\'' +
+                ", use='" + purpose + '\'' +
                 ", houseType='" + houseType + '\'' +
                 '}';
     }

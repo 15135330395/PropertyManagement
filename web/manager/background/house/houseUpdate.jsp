@@ -23,10 +23,10 @@
     <form class="layui-form">
         <div class="layui-form-item">
             <label for="houseId" class="layui-form-label">
-                <span class="x-red">*</span>房屋编号
+                <span class="x-red"></span>
             </label>
             <div class="layui-input-inline">
-                <input value="${house.houseId}" type="number" id="houseId" name="houseId" required="" lay-verify="number"
+                <input value="${house.houseId}" type="hidden" id="houseId" name="houseId" required="" lay-verify=""
                        autocomplete="off" class="layui-input">
             </div>
         </div>
@@ -49,11 +49,11 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label for="use" class="layui-form-label">
+            <label for="purpose" class="layui-form-label">
                 <span class="x-red">*</span>用途
             </label>
             <div class="layui-input-inline">
-                <input value="${house.use}" type="text" id="use" name="use" required="" lay-verify="required"
+                <input value="${house.purpose}" type="text" id="purpose" name="purpose" required="" lay-verify="required"
                        autocomplete="off" class="layui-input">
             </div>
         </div>
@@ -87,7 +87,7 @@
             var houseId=data.field.houseId;
             var buildingId=data.field.buildingId;
             var acreage=data.field.acreage;
-            var use=data.field.use;
+            var purpose=data.field.purpose;
             var houseType=data.field.houseType;
             console.log(data)
             $.ajax({
@@ -98,7 +98,7 @@
                     "houseId":houseId,
                     "buildingId":buildingId,
                     "acreage":acreage,
-                    "use":use,
+                    "purpose":purpose,
                     "houseType":houseType,
                 },
                 success:function(msg){

@@ -54,7 +54,6 @@ public class BuildingDaoImpl implements BuildingDao {
             }
             JdbcUtil.close();
         }
-        System.out.println(list);
         return list;
     }
 
@@ -226,7 +225,6 @@ public class BuildingDaoImpl implements BuildingDao {
             }
             JdbcUtil.close();
         }
-        System.out.println(list);
         return list;
     }
 

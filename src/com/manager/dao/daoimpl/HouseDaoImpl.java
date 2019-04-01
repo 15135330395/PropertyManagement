@@ -37,7 +37,7 @@ public class HouseDaoImpl implements HouseDao {
                 house.setHouseId(rs.getInt("house_id"));
                 house.setBuildingId(rs.getInt("building_id"));
                 house.setAcreage(rs.getString("acreage"));
-                house.setUse(rs.getString("use"));
+                house.setPurpose(rs.getString("purpose"));
                 house.setHouseType(rs.getString("house_type"));
                 list.add(house);
             }
@@ -73,7 +73,7 @@ public class HouseDaoImpl implements HouseDao {
                 house.setHouseId(rs.getInt("house_id"));
                 house.setBuildingId(rs.getInt("building_id"));
                 house.setAcreage(rs.getString("acreage"));
-                house.setUse(rs.getString("use"));
+                house.setPurpose(rs.getString("purpose"));
                 house.setHouseType(rs.getString("house_type"));
             }
         } catch (SQLException e) {
@@ -94,9 +94,9 @@ public class HouseDaoImpl implements HouseDao {
 
     @Override
     public int addHouse(House house) {
-        String sql="insert into property_management.house (house_id,building_id,acreage,use,house_type) values (?,?,?,?,?)";
+        String sql="insert into property_management.house (house_id,building_id,acreage,purpose,house_type) values (?,?,?,?,?)";
         try {
-            int i = queryRunner.update(JdbcUtil.getConnection(), sql,house.getHouseId(), house.getBuildingId() ,house.getAcreage(),house.getUse(),house.getHouseType());
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql,house.getHouseId(), house.getBuildingId() ,house.getAcreage(),house.getPurpose(),house.getHouseType());
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -118,10 +118,9 @@ public class HouseDaoImpl implements HouseDao {
 
     @Override
     public int updateHouse(House house) {
-        String sql="update house set house_id = ?, building_id=?,acreage=?,use=?,house_type=? where house_id = ?";
+        String sql="update house set building_id=?,acreage=?,purpose=?,house_type=? where house_id = ?";
         try {
-            int i = queryRunner.update(JdbcUtil.getConnection(), sql, house.getBuildingId() ,house.getAcreage(),house.getUse(),house.getHouseType(), house.getHouseId());
-            System.out.println(i);
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql, house.getBuildingId() ,house.getAcreage(),house.getPurpose(),house.getHouseType(), house.getHouseId());
             return  i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -174,9 +173,9 @@ public class HouseDaoImpl implements HouseDao {
                 int houseId = rs.getInt("house_id");
                 int buildingId = rs.getInt("building_id");
                 String acreage = rs.getString("acreage");
-                String use = rs.getString("use");
+                String purpose = rs.getString("purpose");
                 String houseType = rs.getString("house_type");
-                House house =  new House(houseId,buildingId,acreage,use,houseType);
+                House house =  new House(houseId,buildingId,acreage,purpose,houseType);
                 list.add(house);
             }
         } catch (SQLException e) {
@@ -208,9 +207,9 @@ public class HouseDaoImpl implements HouseDao {
             while (rs.next()){
                 int buildingId = rs.getInt("building_id");
                 String acreage = rs.getString("acreage");
-                String use = rs.getString("use");
+                String purpose = rs.getString("purpose");
                 String houseType = rs.getString("house_type");
-                House house = new House(houseId,buildingId,acreage,use,houseType);
+                House house = new House(houseId,buildingId,acreage,purpose,houseType);
 
                 return house;
             }

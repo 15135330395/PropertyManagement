@@ -107,7 +107,6 @@ public class BuildingServlet extends HttpServlet {
         Building building = dao.queryOne(buildingId);
 
         request.setAttribute("building",building);
-        System.out.println(building.toString());
         request.getRequestDispatcher("/manager/background/building/buildingUpdate.jsp").forward(request,response);
 
     }

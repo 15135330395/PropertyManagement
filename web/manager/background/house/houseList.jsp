@@ -61,7 +61,7 @@
                 <td>${house.houseId}</td>
                 <td>${house.buildingId}</td>
                 <td>${house.acreage}</td>
-                <td>${house.use}</td>
+                <td>${house.purpose}</td>
                 <td>${house.houseType}</td>
                 <td class="td-manage">
                     <a title="查看"  onclick="x_admin_show('编辑','<%=request.getContextPath()%>/HouseServlet?action=queryOne&hid=${house.houseId}')" href="javascript:;">
@@ -78,7 +78,9 @@
     </table>
     <div class="page">
         <div>
-            <a class="prev" href="">&lt;&lt;</a>
+            <c:if test="${pageBean.pageIndex!=1}">
+                <a class="prev" href="<%=request.getContextPath()%>/HouseServlet?action=query&pageIndex=${pageBean.pageIndex-1}">&lt;&lt;</a>
+            </c:if>
             <c:forEach var="i" begin="1" end="${pageBean.pages}" step="1">
                 <c:if test="${i==pageBean.pageIndex}">
                     <span class="current">${i}</span>
@@ -87,7 +89,9 @@
                     <a class="num" href="<%=request.getContextPath()%>/HouseServlet?action=query&pageIndex=${i}">${i}</a>
                 </c:if>
             </c:forEach>
-            <a class="next" href="">&gt;&gt;</a>
+            <c:if test="${pageBean.pageIndex < pageBean.pages}">
+                <a class="next" href="<%=request.getContextPath()%>/HouseServlet?action=query&pageIndex=${pageBean.pageIndex+1}">&gt;&gt;</a>
+            </c:if>
         </div>
     </div>
 
