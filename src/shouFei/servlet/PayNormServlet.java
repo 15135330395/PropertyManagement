@@ -92,12 +92,10 @@ public class PayNormServlet extends HttpServlet {
     private void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = request.getParameter("page");
         String limit = request.getParameter("limit");
-
         PageBean pageBean = new PageBean();
         pageBean.setPageIndex(Integer.parseInt(page));
         pageBean.setPageCount(Integer.parseInt(limit));
         pageBean.setCount(service.findAll().size());
-
         List<PayNorm> payNormList = service.queryByPage(pageBean);
         JSONObject array = JsonUtil.getJsonObject(payNormList, pageBean);
         response.getWriter().print(array);

@@ -15,7 +15,10 @@
   // request.getRequestDispatcher("/shouFei/items/payItems.jsp").forward(request,response);
   //request.getRequestDispatcher("/shouFei/norm/payNorm.jsp").forward(request,response);
   request.getRequestDispatcher("/shouFei/mReading/mReadingList.jsp").forward(request,response);
-
+    //request.getRequestDispatcher("/shouFei/pay/payList.jsp").forward(request,response);
+   //request.getRequestDispatcher("/shouFei/receipt/receiptList.jsp").forward(request,response);
 %>
+ <%--<ifram src="http://localhost:8080/ReportServer?WorkBook1.cpt" width="1000px" height="1000px"></ifram>--%>
+  <%--把帆软？后面的复制过来--%>
   </body>
 </html>

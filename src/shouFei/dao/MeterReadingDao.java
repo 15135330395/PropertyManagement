@@ -14,4 +14,5 @@ public interface MeterReadingDao {
     public int deleteMeterReading(int id);
     public int updateMeterReading(MeterReading meterReading);
     public MeterReading findMeterReadingById(int id);
+    public int addMeterReading(MeterReading meterReading);
 }

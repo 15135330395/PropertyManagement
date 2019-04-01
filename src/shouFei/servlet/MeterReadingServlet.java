@@ -1,10 +1,10 @@
 package shouFei.servlet;
 
 import com.alibaba.fastjson.JSONObject;
-import com.chinasofti.myutils.DateUtils;
 import shouFei.entity.MeterReading;
 import shouFei.entity.PageBean;
 import shouFei.service.MeterReadingService;
+import shouFei.util.DateUtil;
 import shouFei.util.JsonUtil;
 import shouFei.util.StringUtil;
 
@@ -35,8 +35,30 @@ public class MeterReadingServlet extends HttpServlet {
             delete(request, response);
         }else if ("queryOne".equals(action)) {
             queryOne(request, response);
+        } else if ("add".equals(action)) {
+            try {
+                add(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
+    }
+
+    private void add(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String plotName = request.getParameter("plotName");
+        String roomNumber = request.getParameter("roomNumber");
+        String payName = request.getParameter("payName");
+        String normName = request.getParameter("normName");
+        String riqi = request.getParameter("riqi");
+        String price = request.getParameter("price");
+        String start = request.getParameter("start");
+        String stop = request.getParameter("stop");
+        String pooled = request.getParameter("pooled");
+
+        int i = service.addMeterReading(new MeterReading(plotName,roomNumber,
+                payName,normName, DateUtil.formatString(riqi,"yyyy-MM-dd"),Double.parseDouble(price),Double.parseDouble(start),Double.parseDouble(stop),Double.parseDouble(pooled)));
+        response.getWriter().print(i);
     }
 
     private void queryOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -73,7 +95,7 @@ public class MeterReadingServlet extends HttpServlet {
         String pooled = request.getParameter("pooled");
         try {
             int i = service.updateMeterReading(new MeterReading(Integer.parseInt(meterReadingId),plotName,roomNumber,
-                    payName,normName, DateUtils.stringToDate(riqi,"yyyy-MM-DD"),Double.parseDouble(price),Double.parseDouble(start),Double.parseDouble(stop),Double.parseDouble(pooled)));
+                    payName,normName, DateUtil.formatString(riqi, "yyyy-MM-dd"),Double.parseDouble(price),Double.parseDouble(start),Double.parseDouble(stop),Double.parseDouble(pooled)));
         } catch (Exception e) {
             e.printStackTrace();
         }

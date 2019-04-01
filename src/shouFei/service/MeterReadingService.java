@@ -18,6 +18,7 @@ public class MeterReadingService {
     }
 
     public List<MeterReading> queryByPage(PageBean pageBean) {
+
         return dao.queryByPage(pageBean);
     }
 
@@ -27,10 +28,17 @@ public class MeterReadingService {
     }
 
     public int updateMeterReading(MeterReading meterReading) {
+
         return dao.updateMeterReading(meterReading);
     }
 
     public MeterReading findMeterReadingById(int id) {
+
         return dao.findMeterReadingById(id);
+    }
+
+    public int addMeterReading(MeterReading meterReading) {
+
+        return dao.addMeterReading(meterReading);
     }
 }

@@ -47,7 +47,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">日期：</label>
             <div class="layui-input-block">
-                <input type="text" name="riqi"  value="${meterReadingById.riqi}"  autocomplete="off" class="layui-input">
+                <input type="text" name="riqi"  value="${meterReadingById.riqi}"  autocomplete="off" class="layui-input" id="test1">
             </div>
         </div>
         <div class="layui-form-item">
@@ -65,25 +65,15 @@
         <div class="layui-form-item">
             <label class="layui-form-label">止度：</label>
             <div class="layui-input-block">
-                <input type="text" name="stop"  value="${meterReadingById.stop}" placeholder="收费周期" autocomplete="off" class="layui-input">
+                <input type="text" name="stop"  value="${meterReadingById.stop}" placeholder="" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">公摊：</label>
             <div class="layui-input-block">
-                <input type="text" name="pooled"  value="${meterReadingById.pooled}" placeholder="收费周期" autocomplete="off" class="layui-input">
+                <input type="text" name="pooled"  value="${meterReadingById.pooled}" placeholder="" autocomplete="off" class="layui-input">
             </div>
         </div>
-        private int meterReadingId;//抄表id
-        private String plotName;//小区名
-        private String roomNumber;//房间号
-        private String payName;//收费项目名称
-        private String normName;//收费标准名称
-        private Date riqi;//日期
-        private double price;//单价
-        private double start;//起度
-        private double stop;//止度
-        private double pooled;//公摊
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="submitSave">保存</button>
@@ -104,30 +94,32 @@
         form.on('submit(submitSave)', function(data){
             //layer.msg(JSON.stringify(data.field));
             //alert(data.field)
-            var normId=data.field.normId;
-            var payId=data.field.payId;
+            var meterReadingId=data.field.meterReadingId;
+            var plotName=data.field.plotName;
+            var roomNumber=data.field.roomNumber;
+            var payName=data.field.payName;
             var normName=data.field.normName;
-            var computeMode=data.field.computeMode;
+            var riqi=data.field.riqi;
             var price=data.field.price;
-            var fillingType=data.field.fillingType;
-            var closeEnd=data.field.closeEnd;
-            var customFormula=data.field.customFormula;
-            var chargeCycle=data.field.chargeCycle;
-            if(normId!=""){
+            var start=data.field.start;
+            var stop=data.field.stop;
+            var pooled=data.field.pooled;
+            if(meterReadingId!=""){
                 $.ajax({
                     type:"post",
-                    url:"<%=request.getContextPath()%>/PayNormServlet",
+                    url:"<%=request.getContextPath()%>/MeterReadingServlet",
                     data:{
                         "action":"update",
-                        "normId":normId,
-                        "payId":payId,
+                        "meterReadingId":meterReadingId,
+                        "plotName":plotName,
+                        "roomNumber":roomNumber,
+                        "payName":payName,
                         "normName":normName,
-                        "computeMode":computeMode,
+                        "riqi":riqi,
                         "price":price,
-                        "fillingType":fillingType,
-                        "closeEnd":closeEnd,
-                        "customFormula":customFormula,
-                        "chargeCycle":chargeCycle
+                        "start":start,
+                        "stop":stop,
+                        "pooled":pooled
                     },
                     success:function(msgData){
                         layer.msg("修改成功",{icon:1,time:2000});
@@ -141,18 +133,19 @@
             }else {
                 $.ajax({
                     type:"post",
-                    url:"<%=request.getContextPath()%>/PayNormServlet",
+                    url:"<%=request.getContextPath()%>/MeterReadingServlet",
                     data:{
                         "action":"add",
-                        "normId":normId,
-                        "payId":payId,
+                        "meterReadingId":meterReadingId,
+                        "plotName":plotName,
+                        "roomNumber":roomNumber,
+                        "payName":payName,
                         "normName":normName,
-                        "computeMode":computeMode,
+                        "riqi":riqi,
                         "price":price,
-                        "fillingType":fillingType,
-                        "closeEnd":closeEnd,
-                        "customFormula":customFormula,
-                        "chargeCycle":chargeCycle
+                        "start":start,
+                        "stop":stop,
+                        "pooled":pooled
                     },
                     success:function(msgData){
                         layer.msg("添加成功",{icon:1,time:2000});
@@ -161,11 +154,15 @@
                         //关闭当前frame
                         parent.layer.close(index);
                         window.parent.location.reload();
-                        request.getRequestDispatcher("/shouFei/norm/payNorm.jsp").forward(request,response);
+                        request.getRequestDispatcher("/shouFei/mReading/mReadingList.jsp").forward(request,response);
                     }
                 })
             }
             return false;
+        });
+        laydate.render({
+            elem: '#test1', //指定元素
+            type:'date'
         });
     });
 </script>

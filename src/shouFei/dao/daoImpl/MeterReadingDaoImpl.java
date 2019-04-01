@@ -1,7 +1,6 @@
 package shouFei.dao.daoImpl;
 
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanListHandler;
 import shouFei.dao.MeterReadingDao;
 import shouFei.entity.MeterReading;
 import shouFei.entity.PageBean;
@@ -151,11 +150,38 @@ public class MeterReadingDaoImpl implements MeterReadingDao {
     @Override
     public MeterReading findMeterReadingById(int id) {
         MeterReading meterReading =  new MeterReading();
-        String sql="select * from meter_reading where meter_reading_id=?";
+       // String sql="select * from meter_reading where meter_reading_id=?";
+        String sql="select "+colname+" from meter_reading where meter_reading_id=?";
         PreparedStatement ps=null;
         ResultSet rs = null;
         try {
-            queryRunner.query(JdbcUtils.getConnection(),sql,new BeanListHandler<MeterReading>(MeterReading.class),id);
+            //queryRunner.query(JdbcUtils.getConnection(),sql,new BeanListHandler<MeterReading>(MeterReading.class),id);
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,id);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                int meterReadingId = rs.getInt("meterReadingId");
+                String plotName = rs.getString("plotName");
+                String roomNumber = rs.getString("roomNumber");
+                String payName = rs.getString("payName");
+                String normName=rs.getString("normName");
+                Date riqi = rs.getDate("riqi");
+                Double price = rs.getDouble("price");
+                Double start = rs.getDouble("start");
+                Double stop = rs.getDouble("stop");
+                Double pooled = rs.getDouble("pooled");
+                meterReading.setMeterReadingId(meterReadingId);
+                meterReading.setPlotName(plotName);
+                meterReading.setRoomNumber(roomNumber);
+                meterReading.setPayName(payName);
+                meterReading.setNormName(normName);
+                meterReading.setRiqi(riqi);
+                meterReading.setPrice(price);
+                meterReading.setStart(start);
+                meterReading.setStop(stop);
+                meterReading.setPooled(pooled);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -170,6 +196,22 @@ public class MeterReadingDaoImpl implements MeterReadingDao {
             JdbcUtils.close();
         }
         return meterReading;
+    }
+
+    @Override
+    public int addMeterReading(MeterReading meterReading) {
+        String sql="insert into meter_reading (plot_name,room_number,pay_name,norm_name,riqi,price,start,stop,pooled) values (?,?,?,?,?,?,?,?,?)";
+        try {
+            int i = queryRunner.update(JdbcUtils.getConnection(), sql,
+                    meterReading.getPlotName(),meterReading.getRoomNumber(),
+                    meterReading.getPayName(),meterReading.getNormName(),
+                    meterReading.getRiqi(),meterReading.getPrice(),
+                    meterReading.getStart(),meterReading.getStop(),meterReading.getPooled());
+            return i;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
 

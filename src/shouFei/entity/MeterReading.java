@@ -113,4 +113,15 @@ public class MeterReading {
         this.stop = stop;
         this.pooled = pooled;
     }
+    public MeterReading( String plotName, String roomNumber, String payName, String normName, Date riqi, double price, double start, double stop, double pooled) {
+        this.plotName = plotName;
+        this.roomNumber = roomNumber;
+        this.payName = payName;
+        this.normName = normName;
+        this.riqi = riqi;
+        this.price = price;
+        this.start = start;
+        this.stop = stop;
+        this.pooled = pooled;
+    }
 }
