@@ -22,14 +22,15 @@
         <div class="main_left"></div>
         <div class="main_right">
             <div class="right_title">用户登录</div>
-            <form action="">
+            <form action="Back-stage.jsp" method="post">
+                <span style="color: red;margin-left: 50px;font-size: 14px"><%=request.getAttribute("msg")==null?"":request.getAttribute("msg")%></span>
                 <div class="username">
                     <img src="login/img/username.png" alt="">
-                    <input id="username" type="text" placeholder="请输入用户名">
+                    <input id="username" name="username" type="text" placeholder="请输入用户名">
                 </div>
                 <div class="password">
                     <img src="login/img/password.png" alt="">
-                    <input id="password" type="password" placeholder="请输入密码">
+                    <input id="password" name="password" type="password" placeholder="请输入密码">
                 </div>
                 <div class="code">
                     <img src="login/img/code.png" alt="">
@@ -39,7 +40,6 @@
                     </div>
                 </div>
                 <input class="yes_login" type="submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录">
-                <div class="yes_login"><a href="Back-stage.jsp">登&nbsp;&nbsp;&nbsp;&nbsp;录</a></div>
             </form>
         </div>
     </div>

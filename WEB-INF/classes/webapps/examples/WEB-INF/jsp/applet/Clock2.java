@@ -16,7 +16,9 @@
 */
 
 import java.applet.Applet;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;

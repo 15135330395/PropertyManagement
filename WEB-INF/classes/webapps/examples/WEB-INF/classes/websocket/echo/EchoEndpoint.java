@@ -16,9 +16,14 @@
  */
 package websocket.echo;
 
-import javax.websocket.*;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+
+import javax.websocket.Endpoint;
+import javax.websocket.EndpointConfig;
+import javax.websocket.MessageHandler;
+import javax.websocket.RemoteEndpoint;
+import javax.websocket.Session;
 
 public class EchoEndpoint extends Endpoint {
 

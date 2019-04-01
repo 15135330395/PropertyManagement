@@ -16,11 +16,20 @@
 */
 package compressionFilters;
 
-import javax.servlet.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.StringTokenizer;
+
+import javax.servlet.FilterChain;
+import javax.servlet.GenericFilter;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.*;
 
 /**
  * Implementation of <code>javax.servlet.Filter</code> used to compress

@@ -18,13 +18,14 @@
 
 package jsp2.examples.simpletag;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.DynamicAttributes;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * SimpleTag handler that echoes all its attributes

@@ -18,36 +18,15 @@
     <meta name="description" content="Admin Dashboard Template" />
     <meta name="keywords" content="admin,dashboard" />
     <meta name="author" content="Lizards" />
+<jsp:include page="js_ys_biao.jsp"></jsp:include>
 
-    <!-- Styles -->
-    <link href="login/plugins/pace-master/themes/blue/pace-theme-flash.css" rel="stylesheet"/>
-    <link href="login/plugins/uniform/css/default.css" rel="stylesheet"/>
-    <link href="login/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="login/plugins/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-    <link href="login/plugins/line-icons/simple-line-icons.css" rel="stylesheet" type="text/css"/>
-    <link href="login/plugins/offcanvasmenueffects/css/menu_cornerbox.css" rel="stylesheet" type="text/css"/>
-    <link href="login/plugins/waves/waves.min.css" rel="stylesheet" type="text/css"/>
-    <link href="login/plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css"/>
-    <link href="login/plugins/3d-bold-navigation/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="login/plugins/slidepushmenus/css/component.css" rel="stylesheet" type="text/css"/>
-    <link href="login/plugins/weather-icons-master/css/weather-icons.min.css" rel="stylesheet" type="text/css"/>
-    <link href="login/plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
-    <link type="text/css" href="login/css/one.css" rel="stylesheet">
-    <link href="login/css/layers.min.css" rel="stylesheet" type="text/css"/>
-    <link href="login/css/layers/dark-layer.css" class="theme-color" rel="stylesheet" type="text/css"/>
-    <link href="login/css/custom.css" rel="stylesheet" type="text/css"/>
-    <script src="login/plugins/3d-bold-navigation/js/modernizr.js"></script>
-    <script type="text/javascript" src="login/js/One.js"></script>
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
     <style>
 
     </style>
 
 </head>
 <body class="compact-menu">
+<jsp:include page="main.jsp"></jsp:include>
 <div class="overlay"></div>
 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
     <h3><span class="pull-left">Messages</span><a href="javascript:void(0);" class="pull-right" id="closeRight"><i class="icon-close"></i></a></h3>
@@ -209,7 +188,7 @@
                         </li>
                     </ul>
 
-                    <ul id="time" class="nav navbar-nav navbar-center">
+                    <ul id="time" class="nav navbar-nav navbar-center visible-lg visible-md">
                         <%--<li>2019</li>
                         <li>年</li>
                         <li>03</li>
@@ -323,7 +302,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <span class="user-name">Nick<i class="fa fa-angle-down"></i></span>
-                                <img class="img-circle avatar" src="login/images/avatar1.png" width="40" height="40" alt="">
+                                <img class="img-circle avatar" src="login/images/avatar1.png" style="width:40px;height:40px" alt="">
+                                <%--<img src="login/images/avatar1.png" style="" alt="">--%>
                             </a>
                             <ul class="dropdown-menu dropdown-list" role="menu">
                                 <li role="presentation"><a href="profile.html"><i class="icon-user"></i>Profile</a></li>
@@ -348,85 +328,64 @@
         <div class="page-sidebar-inner slimscroll">
             <ul class="menu accordion-menu">
                 <li class="active"><a href="javascript://" class="waves-effect waves-button waves-classic"><span class="menu-icon icon-home"></span><p>主页</p><span class="active-page"></span></a></li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>组织架构</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>基础管理</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>部门管理</p></a></li>
-                        <li><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>人事部</p></a></li>
+                        <li><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>基础资料</p></a></li>
+                        <li><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>系统维护</p></a></li>
+                        <li><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>房产管理</p></a></li>
+
                     </ul>
                 </li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-envelope-open"></span><p>信箱</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button">
+                    <span class="menu-icon icon-envelope-open"></span><p>协同办公</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="inbox.html">收件箱</a></li>
-                        <li><a href="message-view.html">查看消息</a></li>
-                        <li><a href="compose.html">写邮件</a></li>
+                        <li><a href="inbox.html">我的工作台</a></li>
+                        <li><a href="message-view.html">流程管理</a></li>
+                        <li><a href="compose.html">资源管理</a></li>
+                        <li><a href="compose.html">消息中心</a></li>
                     </ul>
                 </li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-puzzle"></span><p>UI Kits</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-puzzle"></span><p>客户关系管理</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="ui-alerts.html">警报</a></li>
-                        <li><a href="ui-buttons.html">按钮</a></li>
-                        <li><a href="ui-icons.html">图标</a></li>
-                        <li><a href="ui-typography.html">排版</a></li>
-                        <li><a href="ui-notifications.html">通知</a></li>
-                        <li><a href="ui-grid.html">网格</a></li>
-                        <li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
-                        <li><a href="ui-modals.html">Modals</a></li>
-                        <li><a href="ui-panels.html">面板</a></li>
-                        <li><a href="ui-progress.html">进度条</a></li>
-                        <li><a href="ui-sliders.html">滑块</a></li>
-                        <li><a href="ui-nestable.html">嵌套</a></li>
-                        <li><a href="ui-tree-view.html">视图</a></li>
+                        <li><a href="ui-alerts.html">客户管理</a></li>
+                        <li><a href="ui-buttons.html">客服管理</a></li>
+                        <li><a href="ui-icons.html">短信平台</a></li>
+                        <li><a href="ui-typography.html">邮件平台</a></li>
                     </ul>
                 </li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-layers"></span><p>Layouts</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-layers"></span><p>收费管理</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="layout-blank.html">空白页</a></li>
-                        <li><a href="layout-boxed.html">装箱页</a></li>
-                        <li><a href="layout-horizontal-menu.html">水平菜单</a></li>
-                        <li><a href="layout-horizontal-menu-boxed.html">Boxed &amp; Horizontal Menu</a></li>
-                        <li><a href="layout-horizontal-menu-minimal.html">水平菜单最小</a></li>
-                        <li><a href="layout-fixed-sidebar.html">固定边栏</a></li>
-                        <li><a href="layout-fixed-header.html">固定标头</a></li>
-                        <li><a href="layout-collapsed-sidebar.html">折叠的提要栏</a></li>
-                        <li><a href="layout-menu-alt.html">菜单ALT</a></li>
-                        <li><a href="layout-hover-menu.html">悬停菜单</a></li>
+                        <li><a href="layout-blank.html">收费管理</a></li>
+                        <li><a href="layout-boxed.html">费用报表</a></li>
                     </ul>
                 </li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-grid"></span><p>Tables</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-grid"></span><p>租赁管理</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="table-static.html">静态表</a></li>
-                        <li><a href="table-responsive.html">响应表</a></li>
-                        <li><a href="table-data.html">数据表</a></li>
+                        <li><a href="table-static.html">租赁管理</a></li>
                     </ul>
                 </li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pencil"></span><p>Forms</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pencil"></span><p>物料管理</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="form-elements.html">形式元素</a></li>
-                        <li><a href="form-wizard.html">表单向导</a></li>
-                        <li><a href="form-upload.html">文件上传</a></li>
-                        <li><a href="form-image-crop.html">图像作物</a></li>
-                        <li><a href="form-image-zoom.html">图像缩放</a></li>
-                        <li><a href="form-select2.html">选择2</a></li>
-                        <li><a href="form-x-editable.html">X-editable</a></li>
+                        <li><a href="form-elements.html">仓库管理</a></li>
+                        <li><a href="form-wizard.html">采购管理</a></li>
                     </ul>
                 </li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pie-chart"></span><p>Charts</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pie-chart"></span><p>工程管理</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="charts-sparkline.html">Sparkline</a></li>
-                        <li><a href="charts-rickshaw.html">Rickshaw</a></li>
-                        <li><a href="charts-morris.html">Morris</a></li>
-                        <li><a href="charts-flotchart.html">Flotchart</a></li>
-                        <li><a href="charts-chartjs.html">Chart.js</a></li>
+                        <li><a href="charts-sparkline.html">合同管理</a></li>
+                        <li><a href="charts-rickshaw.html">签报管理</a></li>
+                        <li><a href="charts-morris.html">设备管理</a></li>
                     </ul>
                 </li>
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-power"></span><p>Login</p><span class="arrow"></span></a>
+                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-power"></span><p>人事管理</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li><a href="login.html">Login Form</a></li>
-                        <li><a href="login-alt.html">Login Alt</a></li>
-                        <li><a href="register.html">Register Form</a></li>
-                        <li><a href="register-alt.html">Register Alt</a></li>
-                        <li><a href="forgot.html">Forgot Password</a></li>
-                        <li><a href="lock-screen.html">Lock Screen</a></li>
+                        <li><a href="login.html">人事档案</a></li>
+                        <li><a href="login-alt.html">招聘管理</a></li>
+                        <li><a href="register.html">合同管理</a></li>
+                        <li><a href="register-alt.html">考勤管理</a></li>
+                        <li><a href="forgot.html">绩效管理</a></li>
+                        <li><a href="lock-screen.html">社保管理</a></li>
+                        <li><a href="lock-screen.html">酬薪管理</a></li>
                     </ul>
                 </li>
                 <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pointer"></span><p>Maps</p><span class="arrow"></span></a>
@@ -471,174 +430,22 @@
         </div><!-- Page Sidebar Inner -->
     </div><!-- Page Sidebar -->
 
-    <div id="l_sidebar" class="left-sidebar">
-        <div class="user_tab user_tab_left" id="user_tab_left_1">
-            <h3 class="user_tab-title">首&nbsp;&nbsp;&nbsp;&nbsp;页</h3>
-            <ul>
-                <a href="Back-stage.jsp" target="table"><li class="tab_onclick"><span>后台首页</span></li></a>
-                <a href="Backstage_login.jsp"><li><span>退出后台</span></li></a>
-                <a href="../../WEB-INF/index.jsp" target="_blank" target="table" ><li><span>前台首页</span></li></a>
-            </ul>
-        </div>
-        <div class="user_tab user_tab_left" id="user_tab_left_2">
-            <h3 class="user_tab-title">基础管理</h3>
-
-            <ul class="accordion-menu">
-                <li class="droplink" style="margin-bottom: 2px"><span class="menu-icon icon-user"></span>基础资料<span class="arrow"></span></li>
-                    <ul class="jczl_ul1"  style="display: block">
-                        <li><span class="menu-icon icon-user"></span>组织机构</li>
-                        <li><span class="menu-icon icon-user"></span>辅助资料</li>
-                        <li><span class="menu-icon icon-user"></span>基础资料自定义</li>
-                    </ul>
-
-                <li class="droplink"><span class="menu-icon icon-user"></span>系统维护<span class="arrow"></span></li>
-                    <ul class="jczl_ul1">
-                        <li><span class="menu-icon icon-user"></span>权限管理</li>
-                        <li><span class="menu-icon icon-user"></span>系统参数</li>
-                        <li><span class="menu-icon icon-user"></span>上机日志</li>
-                        <li><span class="menu-icon icon-user"></span>数据导入</li>
-                    </ul>
-
-                <li><span class="menu-icon icon-user"></span>房产管理</li>
-            </ul>
-        </div>
-        <div class="user_tab user_tab_left" id="user_tab_left_3">
-            <h3 class="user_tab-title">协同办公</h3>
-            <ul>
-                <li class="droplink">我的工作台<span class="arrow"></span></li>
-                <ul class="jczl_ul1">
-                    <li><span class="menu-icon icon-user"></span>消息中心</li>
-                    <li><span class="menu-icon icon-user"></span>单位通告</li>
-                    <li><span class="menu-icon icon-user"></span>日程安排</li>
-                </ul>
-                <li  class="droplink">流程管理<span class="arrow"></span></li>
-                <ul class="jczl_ul1">
-                    <li><span class="menu-icon icon-user"></span>工作流管理</li>
-                </ul>
-               <li><span>资源管理</span></li>
-                <li><span>消息中心</span></li>
-            </ul>
-        </div>
-        <div class="user_tab user_tab_left" id="user_tab_left_4">
-            <h3 class="user_tab-title">客户关系管理</h3>
-            <ul>
-                <li class="droplink">客户管理<span class="arrow"></span></li>
-                <ul class="jczl_ul1">
-                    <li><span class="menu-icon icon-user"></span>客户资料</li>
-                    <li><span class="menu-icon icon-user"></span>入伙登记</li>
-                </ul>
-                <li class="droplink">客服管理<span class="arrow"></span></li>
-                <ul class="jczl_ul1">
-                    <li><span class="menu-icon icon-user"></span>服务派工</li>
-                    <li><span class="menu-icon icon-user"></span>客户信息反馈</li>
-                    <li><span class="menu-icon icon-user"></span>语音服务</li>
-                    <li><span class="menu-icon icon-user"></span>装修申请</li>
-                </ul>
-                <li><span>短信平台</span></li>
-               <li><span>邮件平台</span></li>
-            </ul>
-        </div>
-        <div class="user_tab user_tab_left" id="user_tab_left_5">
-            <h3 class="user_tab-title">收费管理</h3>
-            <ul>
-               <li class="droplink">收费管理<span class="arrow"></span></li>
-                <ul class="jczl_ul1">
-                    <li><span class="menu-icon icon-user"></span>收费项目</li>
-                    <li><span class="menu-icon icon-user"></span>收费时间</li>
-                    <li><span class="menu-icon icon-user"></span>收费标准</li>
-                    <li><span class="menu-icon icon-user"></span>收款管理</li>
-                </ul>
-               <li class="droplink">费用报表<span class="arrow"></span></li>
-                <ul class="jczl_ul1">
-                    <li><span class="menu-icon icon-user"></span>报表种类</li>
-                </ul>
-            </ul>
-        </div>
-        <div class="user_tab user_tab_left" id="user_tab_left_6">
-
-            <h3 class="user_tab-title">租赁管理</h3>
-            <li class="droplink">租赁管理<span class="arrow"></span></li>
-            <ul class="jczl_ul1">
-                <li><span class="menu-icon icon-user"></span>租赁管理</li>
-            </ul>
-        </div>
-        <div class="user_tab user_tab_left" id="user_tab_left_10">
-            <h3 class="user_tab-title">物料管理</h3>
-            <li class="droplink">仓库管理<span class="arrow"></span></li>
-            <ul class="jczl_ul1">
-                <li><span class="menu-icon icon-user"></span>仓库管理</li>
-                <li><span class="menu-icon icon-user"></span>出入库业务类型</li>
-                <li><span class="menu-icon icon-user"></span>出入库管理</li>
-                <li><span class="menu-icon icon-user"></span>报表查询</li>
-            </ul>
-            <li class="droplink">采购管理<span class="arrow"></span></li>
-            <ul class="jczl_ul1">
-                <li><span class="menu-icon icon-user"></span>采购管理</li>
-            </ul>
-        </div>
-        <div class="user_tab user_tab_left" id="user_tab_left_11">
-            <h3 class="user_tab-title">品质管理</h3>
-            <li class="droplink">日常管理<span class="arrow"></span></li>
-            <ul class="jczl_ul1">
-                <li><span class="menu-icon icon-user"></span>工作检查</li>
-                <li><span class="menu-icon icon-user"></span>考核检查</li>
-                <li><span class="menu-icon icon-user"></span>安全检查</li>
-            </ul>
-            <li class="droplink">安保消防<span class="arrow"></span></li>
-            <ul class="jczl_ul1">
-                <li><span class="menu-icon icon-user"></span>保安排班</li>
-                <li><span class="menu-icon icon-user"></span>器材管理</li>
-                <li><span class="menu-icon icon-user"></span>消防管理</li>
-                <li><span class="menu-icon icon-user"></span>事件管理</li>
-            </ul>
-            <li class="droplink">清洁绿化<span class="arrow"></span></li>
-            <ul class="jczl_ul1">
-                <li><span class="menu-icon icon-user"></span>清洁绿化任务</li>
-                <li><span class="menu-icon icon-user"></span>执行情况</li>
-            </ul>
-        </div>
-        <div class="user_tab user_tab_left" id="user_tab_left_12">
-            <h3 class="user_tab-title">工程管理</h3>
-            <li class="droplink">合同管理<span class="arrow"></span></li>
-            <ul class="jczl_ul1">
-                <li><span class="menu-icon icon-user"></span>合同立项</li>
-            </ul>
-            <li class="droplink">签报管理<span class="arrow"></span></li>
-            <ul class="jczl_ul1">
-                <li><span class="menu-icon icon-user"></span>签报管理</li>
-            </ul>
-            <li class="droplink">设备管理<span class="arrow"></span></li>
-            <ul class="jczl_ul1">
-                <li><span class="menu-icon icon-user"></span>设备档案</li>
-                <li><span class="menu-icon icon-user"></span>设备保养计划</li>
-                <li><span class="menu-icon icon-user"></span>设备保养记录</li>
-                <li><span class="menu-icon icon-user"></span>设备故障记录</li>
-            </ul>
-        </div>
-        <div class="user_tab user_tab_left" id="user_tab_left_13">
-            <h3 class="user_tab-title">人事管理</h3>
-            <li><span>人事档案</span></li>
-            <li><span>招聘管理</span></li>
-            <li><span>合同管理</span></li>
-            <li><span>考勤管理</span></li>
-            <li><span>绩效管理</span></li>
-            <li><span>社保管理</span></li>
-            <li><span>酬薪管理</span></li>
-        </div>
-    </div>
-
     <div class="page-inner">
         <div class="page-title">
             <div class="page-breadcrumb">
                 <ol class="breadcrumb">
-                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.jsp">首页</a></li>
                     <li class="active">主页</li>
                 </ol>
             </div>
         </div>
-        <div id="iframeDiv">
-            <iframe id="framecon" src="default.jsp" name="con" style="width:100%;height:700px; border:none;" frameborder="0" onload="SetIframeHeight(this);">IE</iframe>
+
+        <div id="main-wrapper">
+<jsp:include page="default.jsp"></jsp:include>
+            <%--<iframe id="framecon" src="default.jsp" name="con" style="width:100%;height:700px; border:none;" frameborder="0" onload="SetIframeHeight(this);">IE</iframe>--%>
         </div>
+
+
         <div class="page-footer">
             <p class="no-s">Made with <i class="fa fa-heart"></i> by lizards</p>
         </div>
