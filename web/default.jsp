@@ -21,7 +21,7 @@
     <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link href="css/default.css" rel="stylesheet" />
+    <link href="login/css/default.css" rel="stylesheet" />
     <!-- Javascript files -->
     <!-- jQuery -->
     <script src="js/jquery.js" type="text/javascript"></script>
@@ -35,31 +35,31 @@
     <ul>
         <li class="tab-item-1" style="margin-left: 8%">
             <a href="#">
-                <img src="img/index_kj_01.png" />
+                <img src="login/img/index_kj_01.png" />
                 发布文章
             </a>
         </li>
         <li class="tab-item-2">
             <a href="#">
-                <img src="img/index_kj_02.png" />
+                <img src="login/img/index_kj_02.png" />
                 发布产品
             </a>
         </li>
         <li class="tab-item-3">
             <a href="#">
-                <img src="img/index_kj_03.png" />
+                <img src="login/img/index_kj_03.png" />
                 发布单页
             </a>
         </li>
         <li class="tab-item-4">
             <a href="#">
-                <img src="img/index_kj_04.png" />
+                <img src="login/img/index_kj_04.png" />
                 联系我们
             </a>
         </li>
         <li class="tab-item-5" style="margin: 0">
             <a href="#">
-                <img src="img/index_kj_05.png" />
+                <img src="login/img/index_kj_05.png" />
                 人才招聘
             </a>
         </li>

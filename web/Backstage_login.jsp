@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
-    <link rel="stylesheet" href="css/Backstage.css">
+    <link rel="stylesheet" href="login/css/Backstage.css">
 </head>
 <body>
 <div class="login">
@@ -24,20 +24,21 @@
             <div class="right_title">用户登录</div>
             <form action="">
                 <div class="username">
-                    <img src="img/username.png" alt="">
-                    <input type="text" placeholder="请输入用户名">
+                    <img src="login/img/username.png" alt="">
+                    <input id="username" type="text" placeholder="请输入用户名">
                 </div>
                 <div class="password">
-                    <img src="img/password.png" alt="">
-                    <input type="text" placeholder="请输入密码">
+                    <img src="login/img/password.png" alt="">
+                    <input id="password" type="password" placeholder="请输入密码">
                 </div>
                 <div class="code">
-                    <img src="img/code.png" alt="">
+                    <img src="login/img/code.png" alt="">
                     <input type="text" placeholder="请输入验证码">
                     <div class="code_img">
-                        <img src="img/code_img.png" alt="">
+                        <img src="login/img/code_img.png" alt="">
                     </div>
                 </div>
+                <input class="yes_login" type="submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录">
                 <div class="yes_login"><a href="Back-stage.jsp">登&nbsp;&nbsp;&nbsp;&nbsp;录</a></div>
             </form>
         </div>

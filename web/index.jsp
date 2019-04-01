@@ -12,13 +12,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
     <title>天能物业管理</title>
-    <link rel="stylesheet" href="css/Reception/index.css" type="text/css">
+    <link rel="stylesheet" href="login/css/Reception/index.css" type="text/css">
 
 
-    <script type="text/javascript" src="js/Reception/jquery.js"></script>
-    <script type="text/javascript" src="js/Reception/global.js"></script>
-    <script type="text/javascript" src="js/Reception/hm.js"></script>
-    <script type="text/javascript" src="js/Reception/script.js"></script>
+    <script type="text/javascript" src="login/js/Reception/jquery.js"></script>
+    <script type="text/javascript" src="login/js/Reception/global.js"></script>
+    <script type="text/javascript" src="login/js/Reception/hm.js"></script>
+    <script type="text/javascript" src="login/js/Reception/script.js"></script>
 
 
 
@@ -29,7 +29,7 @@
     <div class="top_gang">
         <div class="tou_zj">
             <div class="hy">
-                <img src="img/Reception/tou_tb_03.png">
+                <img src="login/img/Reception/tou_tb_03.png">
                 <span>欢迎来到太原天能物业管理有限公司</span>
             </div>
             <div class="soucang">
@@ -40,7 +40,7 @@
     </div>
     <div class="top_main">
         <div class="top_logo">
-            <a href='../../.idea/web'><img src="img/Reception/logo.png"></a>
+            <a href='../../.idea/web'><img src="login/img/Reception/logo.png"></a>
         </div>
         <!--导航-->
         <div class="daohang">
@@ -150,18 +150,18 @@
         <div class="ck-slide">
             <ul class="ck-slide-wrapper">
                 <li>
-                    <a href="javascript:"><img src="img/Reception/datu_02.jpg" alt=""></a>
+                    <a href="javascript:"><img src="login/img/Reception/datu_02.jpg" alt=""></a>
                 </li>
                 <li style="display:none">
-                    <a href="javascript:"><img src="img/Reception/datu_1_03.jpg" alt=""></a>
+                    <a href="javascript:"><img src="login/img/Reception/datu_1_03.jpg" alt=""></a>
                 </li>
                 <li style="display:none">
-                    <a href="javascript:"><img src="img/Reception/datu_02.jpg" alt=""></a>
+                    <a href="javascript:"><img src="login/img/Reception/datu_02.jpg" alt=""></a>
                 </li>
             </ul>
             <div id="baanner_jt">
-                <a href="javascript:;" class="ctrl-slide ck-prev" style="background: url('img/Reception/arrow-left.png') #000 50% no-repeat;">上一张</a>
-                <a href="javascript:;" class="ctrl-slide ck-next" style="background: url('img/Reception/arrow-right.png') #000 50% no-repeat;">下一张</a>
+                <a href="javascript:;" class="ctrl-slide ck-prev" style="background: url('login/img/Reception/arrow-left.png') #000 50% no-repeat;">上一张</a>
+                <a href="javascript:;" class="ctrl-slide ck-next" style="background: url('login/img/Reception/arrow-right.png') #000 50% no-repeat;">下一张</a>
             </div>
             <div class="ck-slidebox">
                 <div class="slideWrap">
@@ -198,35 +198,35 @@
                 <div id="demoo1">
                     <ul>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_03.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_03.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_05.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_05.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_07.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_07.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_03.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_03.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_05.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_05.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_07.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_07.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_03.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_03.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_05.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_05.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                     </ul>
@@ -234,31 +234,31 @@
                 <div id="demoo2">
                     <ul>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_03.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_03.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_05.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_05.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_07.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_07.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_03.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_03.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_05.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_05.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_07.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_07.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                         <li class="xiangmu_1">
-                            <a href="#"><img src="img/Reception/xiangmu_03.jpg"></a>
+                            <a href="#"><img src="login/img/Reception/xiangmu_03.jpg"></a>
                             <a href="#"><h4>达博圆</h4></a><span>电力职工医院项目外观，项目外观。</span>
                         </li>
                     </ul>
@@ -304,7 +304,7 @@
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;贵州天能物业管理有限公司（原贵阳天能物业管理中心，于2014年8月25日正式更名）始建于1998年，注册资金300万，属于二级物业管理注册资质的集体企业，是目前贵阳市物业管理行业实力较强的物业公司之一，第三个道小区及市政项目。<a href="#">[详情]</a></span>
             </div>
             <div class="women_1_a">
-                <a href="about.html"><img src="img/Reception/guanyv_03.jpg"></a>
+                <a href="about.html"><img src="login/img/Reception/guanyv_03.jpg"></a>
             </div>
         </div>
         <div class="women_2">
@@ -312,14 +312,14 @@
                 <p>企业文化</p>
                 <span>
 					<ul class="liebiao">
-						<li><img src="img/Reception/dian_03.png">质量方针：科学管理、优质服务、文明环境、顾客满意、持续发展.</li>
-						<li><img src="img/Reception/dian_03.png">企业精神：开拓、求实、创新.</li>
-						<li><img src="img/Reception/dian_03.png">服务宗旨：宾客至上，服务第一.</li>
+						<li><img src="login/img/Reception/dian_03.png">质量方针：科学管理、优质服务、文明环境、顾客满意、持续发展.</li>
+						<li><img src="login/img/Reception/dian_03.png">企业精神：开拓、求实、创新.</li>
+						<li><img src="login/img/Reception/dian_03.png">服务宗旨：宾客至上，服务第一.</li>
 					</ul>
 				</span>
             </div>
             <div class="women_1_a">
-                <a href="#"><img src="img/Reception/guanyv_05.jpg"></a>
+                <a href="#"><img src="login/img/Reception/guanyv_05.jpg"></a>
             </div>
         </div>
         <div class="women_1">
@@ -327,17 +327,17 @@
                 <p>发展历程</p>
                 <span>
 					<ul class="liebiao">
-						<li><img src="img/Reception/dian_03.png">2016年国家计委、建委批示在贵州..</li>
-						<li><img src="img/Reception/dian_03.png">2015年组赴绵开始筹建工作..</li>
-						<li><img src="img/Reception/dian_03.png">2014完成了由仿制到试制改进的任.</li>
-						<li><img src="img/Reception/dian_03.png">2013年工厂经国家正式验收合格..</li>
-						<li><img src="img/Reception/dian_03.png">2012年工业学大庆”先进企业...</li>
+						<li><img src="login/img/Reception/dian_03.png">2016年国家计委、建委批示在贵州..</li>
+						<li><img src="login/img/Reception/dian_03.png">2015年组赴绵开始筹建工作..</li>
+						<li><img src="login/img/Reception/dian_03.png">2014完成了由仿制到试制改进的任.</li>
+						<li><img src="login/img/Reception/dian_03.png">2013年工厂经国家正式验收合格..</li>
+						<li><img src="login/img/Reception/dian_03.png">2012年工业学大庆”先进企业...</li>
 						<li><a href="#">更多>></a></li>
 					</ul>
 				</span>
             </div>
             <div class="women_1_a">
-                <a href="#"><img src="img/Reception/guanyv_09.jpg"></a>
+                <a href="#"><img src="login/img/Reception/guanyv_09.jpg"></a>
             </div>
         </div>
         <div class="women_2">
@@ -346,7 +346,7 @@
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;匆忙中，就要与2015年挥手作别。在这辞旧迎新之际，我很高兴能代表贵阳天能物业管理中心向在各个岗位上辛勤工作的广大员，工致以节日的问候，祝大家在新的一年里工作顺利，心想事成！</span>
             </div>
             <div class="women_1_a">
-                <a href="#"><img src="img/Reception/guanyv_10.jpg"></a>
+                <a href="#"><img src="login/img/Reception/guanyv_10.jpg"></a>
             </div>
         </div>
     </div>
@@ -365,7 +365,7 @@
             <ul style="display:block">
                 <div class="news">
                     <div class="xinwen_tu">
-                        <a class=xinwen_img href="#"><img src="img/Reception/xw_03.jpg"></a>
+                        <a class=xinwen_img href="#"><img src="login/img/Reception/xw_03.jpg"></a>
                         <dl class="xinwen_wz">
                             <dt><a href="#">公司质量体系内审员安全巡查</a><span>2016-10-10</span></dt>
                             <dd>为帮助各获证企业掌握体系认证标准要求，使企业的管理体...</dd>
@@ -411,7 +411,7 @@
             <ul>
                 <div class="news">
                     <div class="xinwen_tu">
-                        <a class=xinwen_img href="#"><img src="img/Reception/xiangmu_07.jpg"></a>
+                        <a class=xinwen_img href="#"><img src="login/img/Reception/xiangmu_07.jpg"></a>
                         <dl class="xinwen_wz">
                             <dt><a href="#">公司质量体系内审员安全巡查</a><span>2016-10-10</span></dt>
                             <dd>为帮助各获证企业掌握体系认证标准要求，使企业的管理体...</dd>
@@ -457,7 +457,7 @@
             <ul>
                 <div class="news">
                     <div class="xinwen_tu">
-                        <a class=xinwen_img href="#"><img src="img/Reception/xiangmu_05.jpg"></a>
+                        <a class=xinwen_img href="#"><img src="login/img/Reception/xiangmu_05.jpg"></a>
                         <dl class="xinwen_wz">
                             <dt><a href="#">公司开展2016年度通讯员培训</a><span>2016-10-10</span></dt>
                             <dd>为帮助各获证企业掌握体系认证标准要求，使企业的管理体...</dd>
@@ -506,13 +506,13 @@
                 <a href="#">更多+</a>
             </div>
             <ul class="gonggao_lb">
-                <li><img src="img/Reception/tb_03.png"><a href="#">物业管理风险与危机防范</a></li>
-                <li><img src="img/Reception/tb_03.png"><a href="#">贵州省物业管理协</a></li>
-                <li><img src="img/Reception/tb_03.png"><a href="#">贵阳市物业管理协会2015年</a></li>
-                <li><img src="img/Reception/tb_03.png"><a href="#">为了行业的尊严</a></li>
-                <li><img src="img/Reception/tb_03.png"><a href="#">中国物业管理协会第四次会员代表</a></li>
-                <li><img src="img/Reception/tb_03.png"><a href="#">物业管理风险与危机防范</a></li>
-                <li><img src="img/Reception/tb_03.png"><a href="#">《物业管理行业发展报告》正式发行</a></li>
+                <li><img src="login/img/Reception/tb_03.png"><a href="#">物业管理风险与危机防范</a></li>
+                <li><img src="login/img/Reception/tb_03.png"><a href="#">贵州省物业管理协</a></li>
+                <li><img src="login/img/Reception/tb_03.png"><a href="#">贵阳市物业管理协会2015年</a></li>
+                <li><img src="login/img/Reception/tb_03.png"><a href="#">为了行业的尊严</a></li>
+                <li><img src="login/img/Reception/tb_03.png"><a href="#">中国物业管理协会第四次会员代表</a></li>
+                <li><img src="login/img/Reception/tb_03.png"><a href="#">物业管理风险与危机防范</a></li>
+                <li><img src="login/img/Reception/tb_03.png"><a href="#">《物业管理行业发展报告》正式发行</a></li>
             </ul>
         </div>
     </div>
@@ -544,9 +544,9 @@
                 电 话：0851-85594612   传 真：0851-85594612<br></p>
             <ul>
                 <li><span>分享到：</span></li>
-                <li><a href="http://connect.qq.com/widget/shareqq/index.html?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-sqq-1-12217-9737f6f9e09dfaf5d3fd14d775bfee85&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&desc=&summary=&site=baidu" target="_black"><img src="img/Reception/dibu_06.png"></a></li>
-                <li><a href="http://service.weibo.com/share/share.php" target="_black"><img src="img/Reception/dibu_08.png"></a></li>
-                <li><a href="http://widget.renren.com/dialog/share?resourceUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&srcUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&description=" target="_black"><img src="img/Reception/dibu_10.png"></a></li>
+                <li><a href="http://connect.qq.com/widget/shareqq/index.html?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-sqq-1-12217-9737f6f9e09dfaf5d3fd14d775bfee85&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&desc=&summary=&site=baidu" target="_black"><img src="login/img/Reception/dibu_06.png"></a></li>
+                <li><a href="http://service.weibo.com/share/share.php" target="_black"><img src="login/img/Reception/dibu_08.png"></a></li>
+                <li><a href="http://widget.renren.com/dialog/share?resourceUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&srcUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&description=" target="_black"><img src="login/img/Reception/dibu_10.png"></a></li>
             </ul>
         </div>
         <div class="dibu_you">
@@ -557,7 +557,7 @@
                 <li><a href="#">意见反馈&nbsp;&nbsp;</a>｜</li>
                 <li><a href="#">联系我们</a></li>
             </ul>
-            <img class="dibu_logo" src="img/Reception/dibu_03.png">
+            <img class="dibu_logo" src="login/img/Reception/dibu_03.png">
         </div>
     </div>
 </div>

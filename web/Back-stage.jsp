@@ -20,24 +20,24 @@
     <meta name="author" content="Lizards" />
 
     <!-- Styles -->
-    <link href="plugins/pace-master/themes/blue/pace-theme-flash.css" rel="stylesheet"/>
-    <link href="plugins/uniform/css/default.css" rel="stylesheet"/>
-    <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/line-icons/simple-line-icons.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/offcanvasmenueffects/css/menu_cornerbox.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/waves/waves.min.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/3d-bold-navigation/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/slidepushmenus/css/component.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/weather-icons-master/css/weather-icons.min.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
-    <link type="text/css"  href="../login/css/one.css"  rel="stylesheet">
-    <link href="css/layers.min.css" rel="stylesheet" type="text/css"/>
-    <link href="css/layers/dark-layer.css" class="theme-color" rel="stylesheet" type="text/css"/>
-    <link href="css/custom.css" rel="stylesheet" type="text/css"/>
-    <script src="plugins/3d-bold-navigation/js/modernizr.js"></script>
-    <script type="text/javascript" src="js/One.js"></script>
+    <link href="login/plugins/pace-master/themes/blue/pace-theme-flash.css" rel="stylesheet"/>
+    <link href="login/plugins/uniform/css/default.css" rel="stylesheet"/>
+    <link href="login/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="login/plugins/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="login/plugins/line-icons/simple-line-icons.css" rel="stylesheet" type="text/css"/>
+    <link href="login/plugins/offcanvasmenueffects/css/menu_cornerbox.css" rel="stylesheet" type="text/css"/>
+    <link href="login/plugins/waves/waves.min.css" rel="stylesheet" type="text/css"/>
+    <link href="login/plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css"/>
+    <link href="login/plugins/3d-bold-navigation/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="login/plugins/slidepushmenus/css/component.css" rel="stylesheet" type="text/css"/>
+    <link href="login/plugins/weather-icons-master/css/weather-icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="login/plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
+    <link type="text/css" href="login/css/one.css" rel="stylesheet">
+    <link href="login/css/layers.min.css" rel="stylesheet" type="text/css"/>
+    <link href="login/css/layers/dark-layer.css" class="theme-color" rel="stylesheet" type="text/css"/>
+    <link href="login/css/custom.css" rel="stylesheet" type="text/css"/>
+    <script src="login/plugins/3d-bold-navigation/js/modernizr.js"></script>
+    <script type="text/javascript" src="login/js/One.js"></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -52,14 +52,14 @@
 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
     <h3><span class="pull-left">Messages</span><a href="javascript:void(0);" class="pull-right" id="closeRight"><i class="icon-close"></i></a></h3>
     <div class="slimscroll">
-        <a href="javascript:void(0);" class="showRight2"><img src="images/avatar2.png" alt=""><span>Michael Lewis<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="images/avatar3.png" alt=""><span>John Doe<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="images/avatar4.png" alt=""><span>Emma Green<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="images/avatar5.png" alt=""><span>Nick Doe<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="images/avatar2.png" alt=""><span>Michael Lewis<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="images/avatar3.png" alt=""><span>John Doe<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="images/avatar4.png" alt=""><span>Emma Green<small>Nice to meet you</small></span></a>
-        <a href="javascript:void(0);" class="showRight2"><img src="images/avatar5.png" alt=""><span>Nick Doe<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar2.png" alt=""><span>Michael Lewis<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar3.png" alt=""><span>John Doe<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar4.png" alt=""><span>Emma Green<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar5.png" alt=""><span>Nick Doe<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar2.png" alt=""><span>Michael Lewis<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar3.png" alt=""><span>John Doe<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar4.png" alt=""><span>Emma Green<small>Nice to meet you</small></span></a>
+        <a href="javascript:void(0);" class="showRight2"><img src="login/images/avatar5.png" alt=""><span>Nick Doe<small>Nice to meet you</small></span></a>
     </div>
 </nav>
 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
@@ -67,7 +67,7 @@
     <div class="slimscroll chat">
         <div class="chat-item chat-item-left">
             <div class="chat-image">
-                <img src="images/avatar2.png" alt="">
+                <img src="login/images/avatar2.png" alt="">
             </div>
             <div class="chat-message">
                 Duis aute irure dolor?
@@ -80,7 +80,7 @@
         </div>
         <div class="chat-item chat-item-left">
             <div class="chat-image">
-                <img src="images/avatar2.png" alt="">
+                <img src="login/images/avatar2.png" alt="">
             </div>
             <div class="chat-message">
                 Ut ullamcorper, ligula.
@@ -93,7 +93,7 @@
         </div>
         <div class="chat-item chat-item-left">
             <div class="chat-image">
-                <img src="images/avatar2.png" alt="">
+                <img src="login/images/avatar2.png" alt="">
             </div>
             <div class="chat-message">
                 Curabitur pretium?
@@ -323,7 +323,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <span class="user-name">Nick<i class="fa fa-angle-down"></i></span>
-                                <img class="img-circle avatar" src="images/avatar1.png" width="40" height="40" alt="">
+                                <img class="img-circle avatar" src="login/images/avatar1.png" width="40" height="40" alt="">
                             </a>
                             <ul class="dropdown-menu dropdown-list" role="menu">
                                 <li role="presentation"><a href="profile.html"><i class="icon-user"></i>Profile</a></li>
@@ -477,7 +477,7 @@
             <ul>
                 <a href="Back-stage.jsp" target="table"><li class="tab_onclick"><span>后台首页</span></li></a>
                 <a href="Backstage_login.jsp"><li><span>退出后台</span></li></a>
-                <a href="index.jsp" target="_blank" target="table" ><li><span>前台首页</span></li></a>
+                <a href="../../WEB-INF/index.jsp" target="_blank" target="table" ><li><span>前台首页</span></li></a>
             </ul>
         </div>
         <div class="user_tab user_tab_left" id="user_tab_left_2">
@@ -671,28 +671,28 @@
 <div class="cd-overlay"></div>
 
 <!-- Javascripts -->
-<script src="plugins/jquery/jquery-3.1.0.min.js"></script>
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="plugins/pace-master/pace.min.js"></script>
-<script src="plugins/jquery-blockui/jquery.blockui.js"></script>
-<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="plugins/switchery/switchery.min.js"></script>
-<script src="plugins/uniform/js/jquery.uniform.standalone.js"></script>
-<script src="plugins/offcanvasmenueffects/js/classie.js"></script>
-<script src="plugins/waves/waves.min.js"></script>
-<script src="plugins/3d-bold-navigation/js/main.js"></script>
-<script src="plugins/waypoints/jquery.waypoints.min.js"></script>
-<script src="plugins/toastr/toastr.min.js"></script>
-<script src="plugins/flot/jquery.flot.min.js"></script>
-<script src="plugins/flot/jquery.flot.time.min.js"></script>
-<script src="plugins/flot/jquery.flot.symbol.min.js"></script>
-<script src="plugins/flot/jquery.flot.resize.min.js"></script>
-<script src="plugins/flot/jquery.flot.tooltip.min.js"></script>
-<script src="plugins/curvedlines/curvedLines.js"></script>
-<script src="plugins/chartjs/Chart.bundle.min.js"></script>
-<script src="js/layers.min.js"></script>
-<script src="js/pages/dashboard.js"></script>
+<script src="login/plugins/jquery/jquery-3.1.0.min.js"></script>
+<script src="login/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="login/plugins/pace-master/pace.min.js"></script>
+<script src="login/plugins/jquery-blockui/jquery.blockui.js"></script>
+<script src="login/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="login/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="login/plugins/switchery/switchery.min.js"></script>
+<script src="login/plugins/uniform/js/jquery.uniform.standalone.js"></script>
+<script src="login/plugins/offcanvasmenueffects/js/classie.js"></script>
+<script src="login/plugins/waves/waves.min.js"></script>
+<script src="login/plugins/3d-bold-navigation/js/main.js"></script>
+<script src="login/plugins/waypoints/jquery.waypoints.min.js"></script>
+<script src="login/plugins/toastr/toastr.min.js"></script>
+<script src="login/plugins/flot/jquery.flot.min.js"></script>
+<script src="login/plugins/flot/jquery.flot.time.min.js"></script>
+<script src="login/plugins/flot/jquery.flot.symbol.min.js"></script>
+<script src="login/plugins/flot/jquery.flot.resize.min.js"></script>
+<script src="login/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="login/plugins/curvedlines/curvedLines.js"></script>
+<script src="login/plugins/chartjs/Chart.bundle.min.js"></script>
+<script src="login/js/layers.min.js"></script>
+<script src="login/js/pages/dashboard.js"></script>
 
 </body>
 </html>
