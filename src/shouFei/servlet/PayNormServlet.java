@@ -41,6 +41,8 @@ public class PayNormServlet extends HttpServlet {
             queryOne(request, response);
         }else if ("queryList".equals(action)) {
             //queryList(request, response);
+        }else if("findOne".equals(action)){
+            findOne(request,response);
         }
     }
 
@@ -92,6 +94,17 @@ public class PayNormServlet extends HttpServlet {
         List<PayNorm> payNormList = service.queryByPage(pageBean);
         JSONObject array = JsonUtil.getJsonObject(payNormList, pageBean);
         response.getWriter().print(array);
+    }
+    protected void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("payName");
+        String payName=name;
+        List<PayNorm> payNorms = service.queryOne(payName);
+        request.getSession().setAttribute("payNorms",payNorms);
+        if (!payName.isEmpty()){
+            response.getWriter().print(1);
+        }else{
+            response.getWriter().print(0);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

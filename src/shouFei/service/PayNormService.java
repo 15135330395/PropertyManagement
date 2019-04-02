@@ -37,6 +37,9 @@ public class PayNormService {
     public PayNorm findPayNormById(int NormId) {
         return pNdao.findPayNormById(NormId);
     }
+    public List<PayNorm> queryOne(String name){
+        return pNdao.queryOne(name);
+    }
 
 
 

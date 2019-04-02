@@ -38,7 +38,48 @@
     <script type="text/html" id="barDemo">
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-        <a class="layui-btn layui-btn-xs" lay-event="querynorm">显示收费标准</a>
+    </script>
+    <%--查询项目名称--%>
+    <form action="" method="post" class="layui-form layui-form-pane">
+        <div class="layui-form-item">
+            <label for="payName" class="layui-form-label">
+                <span class="x-red">*</span>
+            </label>
+            <div class="layui-input-inline">
+                <input type="tel" id="payName" name="payName" required="" lay-verify="required"
+                       autocomplete="off" class="layui-input">
+            </div>
+            <button class="layui-btn" lay-submit="" lay-filter="findOne"><b>搜索收费项目名称</b></button>
+        </div>
+    </form>
+    <script>
+        layui.use(['form','layer'], function(){
+            $ = layui.jquery;
+            var form = layui.form
+                ,layer = layui.layer;
+
+            //搜索按钮监听提交
+            form.on('submit(findOne)', function(data){
+                console.log(data);
+                $.ajax({
+                    type:"post",
+                    url:"<%=request.getContextPath()%>/PayNormServlet?action=findOne",
+                    data:"payName="+data.field.payName,
+                    success:function(msg){
+                        if(msg==1){
+                            //发异步，把数据提交给php
+                            layer.alert("查询成功", {icon: 6},function () {
+                                location.href='<%=request.getContextPath()%>/shouFei/norm/queryByPayId.jsp'
+                            });
+                        }else{
+                            layer.alert("查询失败")
+                            layer.msg(JSON.stringify(data.field));
+                        }
+                    }
+                })
+                return false;
+            });
+        });
     </script>
 </div>
 <script>
@@ -76,14 +117,14 @@
                         area: ['800px', '650px'],
                         offset: 'auto', //右下角弹出
                         anim: 2,
-                        content: ['<%=request.getContextPath()%>/shouFei/items/payItemsAdd.jsp', 'no'], //iframe的url，no代表不显示滚动条
-                        // end: function(){ //此处用于演示 关闭之后执行
-                        //     alert(123)
-                        // }
+                        //iframe的url，no代表不显示滚动条
+                        content: ['<%=request.getContextPath()%>/shouFei/items/payItemsAdd.jsp', 'no'],
                     });
                     break;
             };
         });
+
+
         //监听行工具事件
         table.on('tool(test)', function(obj){
             var data = obj.data;
@@ -97,8 +138,6 @@
                         url:"<%=request.getContextPath()%>/PayItemsServlet",
                         data:"action=delete&payId="+data.payId,
                         success:function(msg){
-                           // console.log(msg);
-                            //alert(msg)
                             var rc = eval("("+msg+")");
                             if(rc.code=="2003"){
                                 layer.msg(rc.message,{icon:2,time:2000});
@@ -123,19 +162,19 @@
                 });
             }
             //查看收费标准
-            else if(obj.event === 'querynorm'){
-                layer.open({
-                    type: 2,
-                    title: "收费标准",
-                    closeBtn: 1, //不显示关闭按钮
-                    shade: [0],
-                    area: ['1500px', '900px'],
-                    offset: 'auto', //右下角弹出
-                    anim: 2,
-                    content: ['<%=request.getContextPath()%>/PayItemsServlet?action=queryList', 'no'], //iframe的url，no代表不显示滚动条
-                });
+            <%--else if(obj.event === 'querynorm'){--%>
+                <%--layer.open({--%>
+                    <%--type: 2,--%>
+                    <%--title: "收费标准",--%>
+                    <%--closeBtn: 1, //不显示关闭按钮--%>
+                    <%--shade: [0],--%>
+                    <%--area: ['1500px', '900px'],--%>
+                    <%--offset: 'auto', //右下角弹出--%>
+                    <%--anim: 2,--%>
+                    <%--content: ['<%=request.getContextPath()%>/shouFei/norm/payNorm.jsp', 'no'], //iframe的url，no代表不显示滚动条--%>
+                <%--});--%>
 
-            }
+            <%--}--%>
         });
     });
 </script>

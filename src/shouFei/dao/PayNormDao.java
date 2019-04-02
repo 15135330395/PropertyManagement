@@ -24,5 +24,6 @@ public interface PayNormDao {
     public List<PayNorm> queryByPage(PageBean pageBean);
 
     public int findPayNormCountById(int normId);
+    public List<PayNorm> queryOne(String payName);
 
 }
