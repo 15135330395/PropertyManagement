@@ -37,7 +37,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">入职时间：</label>
             <div class="layui-input-inline">
-                <input type="text" name="joinTime" value="<fmt:formatDate value="${staff.joinTime}" pattern="yyyy-MM-dd " />"  lay-verify="required" placeholder="请选择入职时间"class="layui-input" id="test1">
+                <input type="text" name="joinTime"  value="${staff.joinTime}"  lay-verify="required" placeholder="请选择入职时间"class="layui-input" id="test1">
             </div>
             <label class="layui-form-label">所属部门：</label>
             <div class="layui-input-inline">

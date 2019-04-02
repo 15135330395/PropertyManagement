@@ -103,7 +103,8 @@ public class StaffServlet extends HttpServlet {
                 Integer.parseInt(departmentId),
                 Integer.parseInt(salaryId),
                 Integer.parseInt(securityInsuranceId),
-                DateUtil.formatString(joinTime, "yyyy-MM-dd HH:mm:ss"));
+                DateUtil.formatString(joinTime, "yyyy-MM-dd "));
+        System.out.println(staff.getJoinTime()+"123");
         int i = staffService.addStaff(staff);
         response.getWriter().print(i);
     }
