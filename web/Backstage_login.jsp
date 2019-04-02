@@ -22,7 +22,7 @@
         <div class="main_left"></div>
         <div class="main_right">
             <div class="right_title">用户登录</div>
-            <form action="#" method="post"  onsubmit="return false">
+            <form action="#" method="post" onsubmit="return false">
                 <div class="username">
                     <img src="login/img/username.png" alt="">
                     <input id="username" type="text" placeholder="请输入用户名">
@@ -38,7 +38,7 @@
                         <img src="login/img/code_img.png" alt="">
                     </div>
                 </div>
-                <input class="yes_login" type="submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录">
+                <input class="yes_login" type="button" id="login" value="登&nbsp;&nbsp;&nbsp;&nbsp;录">
             </form>
         </div>
     </div>
@@ -49,10 +49,9 @@
     </div>
 </div>
 <script>
-    $('form').submit(function () {
+    $('#login').click(function () {
         var username = $('#username').val();
         var password = $('#password').val();
-        alert(username + " " + password)
         $.ajax({
             type: "POST",//方法类型
             url: "<%=request.getContextPath()%>/UserServlet",//url
@@ -62,16 +61,15 @@
                 password: password
             },
             success: function (result) {
-                alert("Test");
                 if (result == 200) {
                     alert("SUCCESS");
                     window.location.href = "<%=request.getContextPath()%>/Back-stage.jsp";
                 } else if (result == 201) {
                     alert("密码错误");
-                    // window.location.reload()
+                    window.location.reload()
                 } else if (result == 202) {
                     alert("用户名不存在");
-                    // window.location.reload()
+                    window.location.reload()
                 }
             },
             error: function () {
