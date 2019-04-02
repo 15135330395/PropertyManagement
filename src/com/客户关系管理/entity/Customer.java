@@ -2,8 +2,9 @@ package com.客户关系管理.entity;
 
 /**
  * @author：Ganlan；
- * @date：2019-03-25；
+ * @date：2019-03-28；
  */
+
 
 public class Customer {
 
@@ -21,28 +22,25 @@ public class Customer {
     private String car = "无";
     // 宠物
     private String pet = "无";
-    // 特别需求等信息
-    private String extraDemand = "无";
     // 住户地址
     private String addr;
 
-    public Customer(String name, String customerNature, String phone, String idCard, String car, String pet, String extraDemand, String addr) {
+    public Customer(String name, String customerNature, String phone, String idCard, String car, String pet, String addr) {
         this.name = name;
         this.customerNature = customerNature;
         this.phone = phone;
         this.idCard = idCard;
         this.car = car;
         this.pet = pet;
-        this.extraDemand = extraDemand;
         this.addr = addr;
     }
 
-    public String getAddr() {
-        return addr;
+    public int getId() {
+        return id;
     }
 
-    public void setAddr(String addr) {
-        this.addr = addr;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -93,19 +91,28 @@ public class Customer {
         this.pet = pet;
     }
 
-    public String getExtraDemand() {
-        return extraDemand;
+    public String getAddr() {
+        return addr;
     }
 
-    public void setExtraDemand(String extraDemand) {
-        this.extraDemand = extraDemand;
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
 
-    public int getId() {
-        return id;
+    public Customer() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", customerNature='" + customerNature + '\'' +
+                ", phone='" + phone + '\'' +
+                ", idCard='" + idCard + '\'' +
+                ", car='" + car + '\'' +
+                ", pet='" + pet + '\'' +
+                ", addr='" + addr + '\'' +
+                '}';
     }
 }

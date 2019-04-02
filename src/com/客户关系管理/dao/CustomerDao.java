@@ -1,7 +1,8 @@
 package com.客户关系管理.dao;
 
-import com.entity.PageBean;
+
 import com.客户关系管理.entity.Customer;
+import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 
@@ -19,5 +20,5 @@ public interface CustomerDao {
     public List<Customer> findByName(String name, PageBean pageBean);
     public List<Customer> queryAll(PageBean pageBean);
     public List<Customer> findName(String name);
-
+    public Customer queryOne(String id);
 }

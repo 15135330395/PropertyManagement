@@ -1,7 +1,8 @@
 package com.客户关系管理.dao;
 
-import com.entity.PageBean;
+
 import com.客户关系管理.entity.DecorateApply;
+import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 
@@ -15,6 +16,11 @@ public interface DecorateApplyDao {
 
     public List<DecorateApply> find(PageBean pageBean);
 
-    public int updata(DecorateApply decorateApply);
+    public int updata(int id , String state);
 
+    public List<DecorateApply> findAll();
+
+    public DecorateApply findById(int id);
+
+    public List<DecorateApply> findByName(String name);
 }

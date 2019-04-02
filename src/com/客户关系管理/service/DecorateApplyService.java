@@ -1,8 +1,9 @@
 package com.客户关系管理.service;
 
-import com.entity.PageBean;
+
 import com.客户关系管理.dao.impl.DecorateApplyDaoImpl;
 import com.客户关系管理.entity.DecorateApply;
+import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 
@@ -23,10 +24,27 @@ public class DecorateApplyService {
         return decorateApplies;
     }
 
-    public int updata(DecorateApply decorateApply){
+    public int updata(int id , String state){
 
-        int i = dao.updata(decorateApply);
+        int i = dao.updata(id,state);
         return i;
     }
 
+
+    public List<DecorateApply> findAll() {
+        List<DecorateApply> list = dao.findAll();
+        return list;
+    }
+
+    public DecorateApply findById(int id){
+
+        DecorateApply decorateApply = dao.findById(id);
+        return decorateApply;
+    }
+
+    public List<DecorateApply> findByName(String name) {
+
+        List<DecorateApply> list = dao.findByName(name);
+        return list;
+    }
 }

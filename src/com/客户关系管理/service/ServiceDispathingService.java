@@ -1,7 +1,11 @@
 package com.客户关系管理.service;
 
+
 import com.客户关系管理.dao.impl.ServiceDispathingDaoImpl;
+import com.客户关系管理.entity.PageBean;
 import com.客户关系管理.entity.ServiceDispathing;
+
+import java.util.List;
 
 /**
  * @author：Ganlan；
@@ -25,10 +29,28 @@ public class ServiceDispathingService {
         return i;
     }
 
-    public int add(ServiceDispathing serviceDispathing){
+    public int add(String name,String addr,String feedback,String cphone){
 
-        int i = dao.add(serviceDispathing);
+        int i = dao.add(name,addr,feedback,cphone);
         return i;
     }
 
+    public List<ServiceDispathing> findAll(){
+
+        List<ServiceDispathing> list = dao.findAll();
+        return list;
+    }
+
+    public List<ServiceDispathing> queryAll(PageBean pageBean) {
+
+        List<ServiceDispathing> serviceDispathings = dao.queryAll(pageBean);
+
+        return serviceDispathings;
+    }
+
+    public List<ServiceDispathing> findByName(String name) {
+
+        List<ServiceDispathing> dispathingList = dao.findByName(name);
+        return dispathingList;
+    }
 }

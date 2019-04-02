@@ -11,6 +11,8 @@ public class ServiceDispathing {
 
     //派工单编号
     private int sdId;
+//    客户姓名
+    private String cname;
     //派工地址
     private String addr;
     //派工事由
@@ -23,8 +25,10 @@ public class ServiceDispathing {
     private Date startTime;
     // 装修结束时间
     private Date endTime;
-    // 联系方式
+    // 客户联系方式
     private String phone;
+    // 客户联系方式
+    private String wphone;
     // 客户验收
     private String customerCheck;
     // 物料领用记录
@@ -36,8 +40,9 @@ public class ServiceDispathing {
     // 其他增加服务项目
     private String otherService;
 
-    public ServiceDispathing(int sdId, String addr, String things, String workerName, String workerId, Date startTime, Date endTime, String phone, String customerCheck, String material, double serviceCost, double materialCost, String otherService) {
+    public ServiceDispathing(int sdId,String cname, String addr, String things, String workerName, String workerId, Date startTime, Date endTime, String phone, String customerCheck, String material, double serviceCost, double materialCost, String otherService) {
         this.sdId = sdId;
+        this.cname = cname;
         this.addr = addr;
         this.things = things;
         this.workerName = workerName;
@@ -88,7 +93,7 @@ public class ServiceDispathing {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setC_phone(String phone) {
         this.phone = phone;
     }
 
@@ -154,5 +159,44 @@ public class ServiceDispathing {
 
     public void setThings(String things) {
         this.things = things;
+    }
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setC_name(String cname) {
+        this.cname = cname;
+    }
+
+    public ServiceDispathing() {
+    }
+
+    public String getWphone() {
+        return wphone;
+    }
+
+    public void setWphone(String wphone) {
+        this.wphone = wphone;
+    }
+
+    @Override
+    public String toString() {
+        return "ServiceDispathing{" +
+                "sdId=" + sdId +
+                ", cname='" + cname + '\'' +
+                ", addr='" + addr + '\'' +
+                ", things='" + things + '\'' +
+                ", workerName='" + workerName + '\'' +
+                ", workerId='" + workerId + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", phone='" + phone + '\'' +
+                ", customerCheck='" + customerCheck + '\'' +
+                ", material='" + material + '\'' +
+                ", serviceCost=" + serviceCost +
+                ", materialCost=" + materialCost +
+                ", otherService='" + otherService + '\'' +
+                '}';
     }
 }

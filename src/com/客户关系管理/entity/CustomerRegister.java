@@ -9,6 +9,7 @@ import java.util.Date;
 
 public class CustomerRegister {
 
+
     // 登记ID
     private int id;
     // 客户姓名
@@ -20,18 +21,25 @@ public class CustomerRegister {
     // 联系方式
     private String phone;
     // 证件号码
-    private String idCard;
+    private String addr;
     // 验收情况
     private String checkAccept;
     // 钥匙发放情况
     private String keyState;
 
-    public CustomerRegister(int id, String name, Date startTime, Date endTime, String phone, String idCard, String checkAccept, String keyState) {
+    public CustomerRegister( String name, Date startTime, String phone, String addr, String checkAccept, String keyState) {
         this.name = name;
         this.startTime = startTime;
-        this.endTime = endTime;
         this.phone = phone;
-        this.idCard = idCard;
+        this.addr = addr;
+        this.checkAccept = checkAccept;
+        this.keyState = keyState;
+    }
+
+    public CustomerRegister( String name, String phone, String addr, String checkAccept, String keyState) {
+        this.name = name;
+        this.phone = phone;
+        this.addr = addr;
         this.checkAccept = checkAccept;
         this.keyState = keyState;
     }
@@ -68,14 +76,6 @@ public class CustomerRegister {
         this.phone = phone;
     }
 
-    public String getIdCard() {
-        return idCard;
-    }
-
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
-    }
-
     public String getCheckAccept() {
         return checkAccept;
     }
@@ -98,5 +98,29 @@ public class CustomerRegister {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public CustomerRegister() {
+    }
+
+    public String getAddr() {
+        return addr;
+    }
+
+    public void setAddr(String addr) {
+        this.addr = addr;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerRegister{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", startTime=" + startTime +
+                ", phone='" + phone + '\'' +
+                ", addr='" + addr + '\'' +
+                ", checkAccept='" + checkAccept + '\'' +
+                ", keyState='" + keyState + '\'' +
+                '}';
     }
 }

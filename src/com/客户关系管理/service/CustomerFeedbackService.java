@@ -1,8 +1,9 @@
 package com.客户关系管理.service;
 
-import com.entity.PageBean;
+
 import com.客户关系管理.dao.impl.CustomerFeedbackDaoImpl;
 import com.客户关系管理.entity.CustomerFeedback;
+import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 
@@ -22,9 +23,27 @@ public class CustomerFeedbackService {
         return list;
     }
 
-    public int update(CustomerFeedback customerFeedback){
+    public int update(int id ,String state){
 
-        int i = dao.update(customerFeedback);
+        int i = dao.update(id,state);
         return i;
+    }
+
+    public List<CustomerFeedback> findAll(){
+
+        List<CustomerFeedback> list = dao.findAll();
+        return list;
+    }
+
+    public CustomerFeedback findByid(int id) {
+
+        CustomerFeedback customerFeedback = dao.findById(id);
+        return customerFeedback;
+    }
+
+    public List<CustomerFeedback> findByName(String name) {
+
+        List<CustomerFeedback> list = dao.findByName(name);
+        return list;
     }
 }

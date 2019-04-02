@@ -1,8 +1,9 @@
 package com.客户关系管理.service;
 
-import com.entity.PageBean;
+
 import com.客户关系管理.dao.impl.CustomerDaoImpl;
 import com.客户关系管理.entity.Customer;
+import com.客户关系管理.entity.PageBean;
 
 import java.util.List;
 
@@ -57,4 +58,9 @@ public class CustomerService {
         return list;
     }
 
+    public Customer queryOne(String id) {
+
+        Customer customer = dao.queryOne(id);
+        return customer;
+    }
 }

@@ -23,8 +23,8 @@ public class CustomerFeedback {
     private Date disposeTime;
     // 反馈内容
     private String feedback;
-    // 处理方式
-    private String dispose;
+    // 状态
+    private String dispose = "未处理";
 
     public CustomerFeedback(int id,String name, String addr, String phone, Date feedbackTime, Date disposeTime, String feedback, String dispose) {
         this.name = name;
@@ -98,5 +98,23 @@ public class CustomerFeedback {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public CustomerFeedback() {
+    }
+
+
+    @Override
+    public String toString() {
+        return "CustomerFeedback{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", addr='" + addr + '\'' +
+                ", phone='" + phone + '\'' +
+                ", feedbackTime=" + feedbackTime +
+                ", disposeTime=" + disposeTime +
+                ", feedback='" + feedback + '\'' +
+                ", dispose='" + dispose + '\'' +
+                '}';
     }
 }
