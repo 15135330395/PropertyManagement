@@ -161,6 +161,7 @@
                     content: ['<%=request.getContextPath()%>/PayItemsServlet?action=queryOne&id='+data.payId, 'no'], //iframe的url，no代表不显示滚动条
                 });
             }
+<<<<<<< Updated upstream
             //查看收费标准
             <%--else if(obj.event === 'querynorm'){--%>
                 <%--layer.open({--%>
@@ -175,6 +176,8 @@
                 <%--});--%>
 
             <%--}--%>
+=======
+>>>>>>> Stashed changes
         });
     });
 </script>

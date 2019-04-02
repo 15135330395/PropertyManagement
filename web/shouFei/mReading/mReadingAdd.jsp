@@ -136,7 +136,6 @@
                         //关闭当前frame
                         parent.layer.close(index);
                         window.parent.location.reload();
-                       // request.getRequestDispatcher("<%=request.getContextPath()%>/MeterReadingServlet?action=query").forward(request,response);
                     }
                 })
             }

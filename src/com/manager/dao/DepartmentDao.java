@@ -1,7 +1,8 @@
 package com.manager.dao;
 
-import com.entity.Department;
+
 import com.entity.PageBean;
+import com.manager.entity.Department;
 
 import java.util.List;
 

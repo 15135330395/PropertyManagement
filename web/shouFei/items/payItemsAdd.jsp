@@ -50,15 +50,6 @@
                 <input type="text" name="billingAccuracy"
                        required  lay-verify="required" value="${payItemsById.billingAccuracy}"
                        placeholder="请输入计费精度（元/角/分）" autocomplete="off" class="layui-input">
-                <%--<select name="billingAccuracy" lay-verify="required">--%>
-                    <%--<option>请输入计费精度</option>--%>
-                    <%--&lt;%&ndash;<option>元</option>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<option>角</option>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<option>分</option>&ndash;%&gt;--%>
-                    <%--<c:forEach items="${payNormList}" var="items">--%>
-                        <%--<option value="${items.id}">${items.billingAccuracy}</option>--%>
-                    <%--</c:forEach>--%>
-                <%--</select>--%>
             </div>
         </div>
         <div class="layui-form-item">

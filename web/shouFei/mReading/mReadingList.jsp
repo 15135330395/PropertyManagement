@@ -39,17 +39,6 @@
 </div>
 <div class="x-body">
     <table class="layui-hide" id="tab" lay-filter="test"></table>
-
-    <%--<script type="text/html" id="toolbarDemo">--%>
-    <%--<div class="layui-btn-container">--%>
-    <%--<form action="" method="get">--%>
-    <%--<button class="layui-btn"><i class="layui-icon"> </i>导入excel表</button>--%>
-    <%--</form>--%>
-    <%--<form action="/shouFei/mReading/mReadingAdd.jsp" method="get">--%>
-    <%--<button class="layui-btn"><i class="layui-icon"> </i>添加数据</button>--%>
-    <%--</form>--%>
-    <%--</div>--%>
-    <%--</script>--%>
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
             <a class="layui-btn layui-btn-xs" href="">导入excel表</a>

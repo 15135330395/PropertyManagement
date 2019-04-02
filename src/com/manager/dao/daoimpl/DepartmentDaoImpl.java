@@ -1,8 +1,9 @@
 package com.manager.dao.daoimpl;
 
-import com.entity.Department;
+
 import com.entity.PageBean;
 import com.manager.dao.DepartmentDao;
+import com.manager.entity.Department;
 import com.utils.JdbcUtil;
 import org.apache.commons.dbutils.QueryRunner;
 
