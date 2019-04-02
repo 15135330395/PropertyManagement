@@ -69,24 +69,61 @@
                 <input type="text" name="cost" value="${contract.cost}" lay-verify="required" placeholder="请输入金额" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item">
+        <%--<div class="layui-form-item">
             <label class="layui-form-label">供应链：</label>
             <div class="layui-input-inline">
                 <input type="text" name="supplyChain" value="${contract.supplyChain}" lay-verify="required" class="layui-input"  >
             </div>
+        </div>--%>
+        <div class="layui-form-item">
+            <label class="layui-form-label">供应商：</label>
+            <div class="layui-input-block">
+                <select name="supplyChain" lay-verify="required">
+                    <option value=""></option>
+                    <option value="恒大">恒大</option>
+                    <option value="万科">万科</option>
+                    <option value="腾讯">腾讯</option>
+                    <option value="百度">百度</option>
+                    <option value="阿里">阿里</option>
+
+                </select>
+            </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">付款周期：</label>
+            <div class="layui-input-block">
+                <select name="paymentCycle" lay-verify="required">
+                    <option value=""></option>
+                    <option value="一次付清">一次付清</option>
+                    <option value="每月一次，两年付清">每月一次，两年付清</option>
+                    <option value="半年一次，一年付清">半年一次，一年付清</option>
+                    <option value="其它">其它</option>
+                </select>
+            </div>
+        </div>
+        <%--<div class="layui-form-item">
             <label class="layui-form-label">付款周期：</label>
             <div class="layui-input-inline">
                 <input type="text" name="paymentCycle" value="${contract.paymentCycle}" lay-verify="required" class="layui-input">
             </div>
-        </div>
+        </div>--%>
         <div class="layui-form-item">
+            <label class="layui-form-label">验收结果：</label>
+            <div class="layui-input-block">
+                <select name="acceptanceResult" lay-verify="required">
+                    <option value=""></option>
+                    <option value="验收合格">验收合格</option>
+                    <option value="部分不合格">部分不合格</option>
+                    <option value="全部不合格">全部不合格</option>
+                </select>
+            </div>
+        </div>
+       <%-- <div class="layui-form-item">
             <label class="layui-form-label">验收结果：</label>
             <div class="layui-input-inline">
                 <input type="text" name="acceptanceResult" value="${contract.acceptanceResult}" lay-verify="required" class="layui-input">
             </div>
-        </div>
+        </div>--%>
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">合同内容：</label>
             <div class="layui-input-block">

@@ -16,7 +16,7 @@ public class Report {
     private String reportContent;
     private Double reportCost;
     private String reportName;
-    private int reportPhone;
+    private String reportPhone;
     private String instructions;
     private String executiveResult;
 
@@ -76,12 +76,12 @@ public class Report {
         this.reportName = reportName;
     }
 
-    public int getReportPhone() {
+    public String getReportPhone() {
         return reportPhone;
     }
 
-    public void setReport_phone(int reportPhone) {
-        this.reportPhone = reportPhone;
+    public void setReport_phone(String reportPhone) {
+    this.reportPhone = reportPhone;
     }
 
     public String getInstructions() {
@@ -101,7 +101,7 @@ public class Report {
     }
 
     public Report(int reportId, String reportTitle, Date reportDate, String reportingUnit, String reportContent, Double reportCost,
-                  String reportName, int reportPhone, String instructions, String executiveResult) {
+                  String reportName, String reportPhone, String instructions, String executiveResult) {
         this.reportId = reportId;
         this.reportTitle = reportTitle;
         this.reportDate = reportDate;
@@ -114,6 +114,17 @@ public class Report {
         this.executiveResult = executiveResult;
     }
 
+    public Report(String reportTitle, Date reportDate, String reportingUnit, String reportContent, Double reportCost, String reportName, String reportPhone, String instructions, String executiveResult) {
+        this.reportTitle = reportTitle;
+        this.reportDate = reportDate;
+        this.reportingUnit = reportingUnit;
+        this.reportContent = reportContent;
+        this.reportCost = reportCost;
+        this.reportName = reportName;
+        this.reportPhone = reportPhone;
+        this.instructions = instructions;
+        this.executiveResult = executiveResult;
+    }
 
     public Report() {
     }

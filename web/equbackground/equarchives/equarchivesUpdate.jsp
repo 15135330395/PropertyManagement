@@ -51,8 +51,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">登记日期：</label>
             <div class="layui-input-inline">
-                <input type="text" name="recordate"
-                       value="<fmt:formatDate value="${equarchives.recordDate}" pattern="yyyy-MM-dd HH:mm:ss "></fmt:formatDate>"
+                <input  name="recordDate"
+                       value="<fmt:formatDate value="${equarchives.recordDate}" pattern="yyyy-MM-dd HH:mm:ss " />"
                        lay-verify="required" class="layui-input" id="test1">
             </div>
         </div>
@@ -128,7 +128,7 @@
         });
         laydate.render({
             elem: '#test1', //指定元素
-            type:'datetime'
+            type:'date'
         });
     });
 </script>

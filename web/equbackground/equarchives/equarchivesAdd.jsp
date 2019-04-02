@@ -19,12 +19,12 @@
 <body>
 <div class="layui-container" style="padding: 20px">
     <form class="layui-form" action="">
-        <div class="layui-form-item">
+        <%--<div class="layui-form-item">
             <label class="layui-form-label">ID：</label>
             <div class="layui-input-block">
-                <input type="text" name="id" required  lay-verify="required"  autocomplete="off" class="layui-input">
+                <input type="hidden" name="id" required  lay-verify="required"  autocomplete="off" class="layui-input">
             </div>
-        </div>
+        </div>--%>
         <div class="layui-form-item">
             <label class="layui-form-label">档案编号</label>
             <div class="layui-input-block">
@@ -52,7 +52,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">登记日期：</label>
             <div class="layui-input-inline">
-                <input type="datetime" name="recordate" lay-verify="required" class="layui-input" id="test1">
+                <input name="recordDate" lay-verify="required" class="layui-input" id="test1">
             </div>
         </div>
         <div class="layui-form-item">
@@ -95,7 +95,7 @@
             var ename = data.field.ename;
             var eno = data.field.eno;
             var department = data.field.department;
-            var recordate = data.field.recordDate;
+            var recordDate = data.field.recordDate;
             var manufacturer = data.field.manufacturer;
             var price = data.field.price;
             var place = data.field.place;
@@ -110,7 +110,7 @@
                     "ename": ename,
                     "eno": eno,
                     "department": department,
-                    "recordate": recordate,
+                    "recordDate": recordDate,
                     "manufacturer": manufacturer,
                     "price": price,
                     "place": place
@@ -129,7 +129,7 @@
         });
         laydate.render({
             elem: '#test1', //指定元素
-            type:'datetime'
+            type:'date'
         });
     });
 </script>

@@ -134,6 +134,20 @@ public class Contract {
         this.acceptanceResult = acceptanceResult;
     }
 
+    public Contract(String contractId, String contractName, String firstParty, String secondParty, Date sigingDate, String projectLocation, double cost, String content, String supplyChain, String paymentCycle, String acceptanceResult) {
+        this.contractId = contractId;
+        this.contractName = contractName;
+        this.firstParty = firstParty;
+        this.secondParty = secondParty;
+        this.sigingDate = sigingDate;
+        this.projectLocation = projectLocation;
+        this.cost = cost;
+        this.content = content;
+        this.supplyChain = supplyChain;
+        this.paymentCycle = paymentCycle;
+        this.acceptanceResult = acceptanceResult;
+    }
+
     public Contract() {
     }
 

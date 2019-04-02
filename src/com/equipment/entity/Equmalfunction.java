@@ -100,6 +100,17 @@ public class Equmalfunction {
         this.rejection = rejection;
     }
 
+    public Equmalfunction(String ename, String eno, Date mdate, String handler, String installdetail, String operation, String maintenance, String rejection) {
+        this.ename = ename;
+        this.eno = eno;
+        this.mdate = mdate;
+        this.handler = handler;
+        this.installdetail = installdetail;
+        this.operation = operation;
+        this.maintenance = maintenance;
+        this.rejection = rejection;
+    }
+
     public Equmalfunction() {
     }
 

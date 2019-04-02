@@ -99,7 +99,7 @@ public class EqumalfunctionServlet extends HttpServlet {
         String maintenance = request.getParameter("maintenance");
         String rejection = request.getParameter("rejection");
 
-        Equmalfunction equmalfunction=new Equmalfunction(Integer.parseInt(mid),ename,eno, DateUtil.formatString(mdate,"yyyy-MM-dd HH:mm:ss"),handler,installdetail,operation,maintenance,rejection);
+        Equmalfunction equmalfunction=new Equmalfunction(ename,eno, DateUtil.formatString(mdate,"yyyy-MM-dd HH:mm:ss"),handler,installdetail,operation,maintenance,rejection);
         int i = eService.add(equmalfunction);
         response.getWriter().print(i);
 

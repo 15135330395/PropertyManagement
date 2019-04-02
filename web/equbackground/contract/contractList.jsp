@@ -16,8 +16,8 @@
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
-    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+   <!-- <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>-->
     <![endif]-->
 </head>
 <body>
@@ -44,9 +44,9 @@
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
 
-   <%-- <script type="text/javascript" id="sigingDate">
-        {{ dateFormat(d.reportDate) }}
-    </script>--%>
+    <script type="text/javascript" id="sigingDate">
+        {{ dateFormat(d.sigingDate ) }}
+    </script>
 </div>
 </body>
 <script>
@@ -61,16 +61,16 @@
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                  ,{field:'id', title:'ID', width:'5%', fixed: 'left', unresize: true, sort: true}
-                ,{field:'contractId', title:'合同编号', width:'10%'}
+                ,{field:'contractId', title:'合同编号', width:'5%'}
                 ,{field:'contractName', title:'合同名称', width:'10%'}
                 ,{field:'firstParty', title:'甲方', width:'5%'}
                 ,{field:'secondParty', title:'乙方', width:'5%'}
-                ,{field:'sigingDate', title:'签约日期', width:'10%'   }
+                ,{field:'sigingDate', title:'签约日期', width:'10%' , templet: '#sigingDate' }
                 ,{field:'projectLocation', title:'项目位置', width:'10%'}
                 ,{field:'cost', title:'项目报价', width:'5%'}
                 ,{field:'content', title:'合约内容', width:'10%'}
-                ,{field:'supplyChain', title:'供应链选择', width:'10%'}
-                ,{field:'paymentCycle', title:'付款周期', width:'5%'}
+                ,{field:'supplyChain', title:'供应链选择', width:'5%'}
+                ,{field:'paymentCycle', title:'付款周期', width:'10%'}
                 ,{field:'acceptanceResult', title:'验收结果', width:'5%'}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
             ]]
@@ -104,7 +104,7 @@
                                 } else {
                                     layer.msg('已删除或不存在!', {icon: 2, time: 1000});
                                 }
-                                location.reload();
+                                setTimeout("location.reload()",3000);
                             }
                         });
 
@@ -121,9 +121,9 @@
                         offset: 'auto', //右下角弹出
                         anim: 2,
                         content: ['contractAdd.jsp'], //iframe的url，no代表不显示滚动条 , 'no'
-                        end: function(){ //此处用于演示 关闭之后执行
+                       /* end: function(){ //此处用于演示 关闭之后执行
                             alert(123)
-                        }
+                        }*/
                     });
                     break;
             };

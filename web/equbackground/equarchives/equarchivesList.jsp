@@ -43,9 +43,9 @@
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
 
-    <%-- <script type="text/javascript" id="sigingDate">
-         {{ dateFormat(d.reportDate) }}
-     </script>--%>
+     <script type="text/javascript" id="recordDate">
+         {{ dateFormat2(d.recordDate) }}
+     </script>
 </div>
 </body>
 <script>
@@ -64,7 +64,7 @@
                 ,{field:'ename', title:'设备名称', width:'10%'}
                 ,{field:'eno', title:'设备编号', width:'5%'}
                 ,{field:'department', title:'使用部门', width:'5%'}
-                ,{field:'recordate', title:'登记日期', width:'10%'   }
+                ,{field:'recordDate', title:'登记日期', width:'10%', templet:'#recordDate'   }
                 ,{field:'manufacturer', title:'生产厂家', width:'10%'}
                 ,{field:'price', title:'设备价格', width:'5%'}
                 ,{field:'place', title:'区域', width:'10%'}
@@ -96,11 +96,11 @@
                             success: function (msg) {
                                 if (msg > 0) {
                                     //捉到所有被选中的，发异步进行删除
-                                    layer.msg('成功删除' + msg + '条数据', {icon: 1})
+                                    layer.msg('成功删除' + msg + '条数据', {icon: 1,time:2000})
                                 } else {
                                     layer.msg('已删除或不存在!', {icon: 2, time: 1000});
                                 }
-                                location.reload();
+                                setTimeout("location.reload()",3000);
                             }
                         });
 

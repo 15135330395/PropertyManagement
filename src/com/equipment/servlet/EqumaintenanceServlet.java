@@ -96,7 +96,7 @@ public class EqumaintenanceServlet extends HttpServlet {
         String edate = request.getParameter("edate");
         String material = request.getParameter("material");
         String number = request.getParameter("number");
-        Equmaintenance equmaintenance=new Equmaintenance(Integer.parseInt(eid),ename,eno, content,charge,DateUtil.formatString(edate,"yyyy-MM-dd HH:mm:ss"),material,Integer.parseInt(number));
+        Equmaintenance equmaintenance=new Equmaintenance(ename,eno, content,charge,DateUtil.formatString(edate,"yyyy-MM-dd HH:mm:ss"),material,Integer.parseInt(number));
         int i = eService.add(equmaintenance);
         response.getWriter().print(i);
 

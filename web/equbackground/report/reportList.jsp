@@ -14,10 +14,10 @@
 <head>
     <title>签报列表</title>
 
-   <%-- <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-   &lt;%&ndash; <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />&ndash;%&gt;
-    <meta http-equiv="Cache-Control" content="no-siteapp" />--%>
+   <%-- <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />--%>
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 </head>
 <body>
 <div class="x-nav">
@@ -32,13 +32,9 @@
     <table class="layui-hide" id="tab" lay-filter="test"></table> <%--头工具栏操纵"test"--%>
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
-<%--            <button class="layui-btn layui-btn-danger" lay-event="deleteAll"><i class="layui-icon"></i>批量删除</button>--%>
+
             <button class="layui-btn layui-btn-danger"  lay-event="deleteAll"><i class="layui-icon"></i>批量删除</button>
-            <%--<xblock>
-                <button class="layui-btn layui-btn-danger" onclick="deleteAll()"><i class="layui-icon"></i>批量删除</button>
-                <button class="layui-btn" onclick="x_admin_show('添加用户','./admin-add.html')"><i class="layui-icon"></i>添加</button>
-                <span class="x-right" style="line-height:40px">共有数据：88 条</span>
-            </xblock>--%>
+
         </div>
     </script>
 
@@ -67,16 +63,16 @@
                 ,cols: [[
                     {type: 'checkbox', fixed: 'left'}  //左边的选择框
                     ,{field:'reportId', title:'ID', width:'10%', fixed: 'left', unresize: true, sort: true} //sort 排序
-                    ,{field:'reportTitle', title:'标题', width:'10%', edit: 'text'}
-                    ,{field:'reportDate', title:'日期', width:'10%', edit: 'text',templet:'#reportDate'}
-                    ,{field:'reportingUnit', title:'呈报单位', width:'10%', edit: 'text'}
-                    ,{field:'reportContent', title:'内容', width:'10%', edit: 'text'}
-                    ,{field:'reportCost', title:'费用总计', width:'10%', edit: 'text'}
-                    ,{field:'reportName', title:'呈报人', width:'10%', edit: 'text'}
-                    ,{field:'reportPhone', title:'联系电话', width:'10%', edit: 'text'}
-                    ,{field:'instructions', title:'批示', width:'5%', edit: 'text'}
-                    ,{field:'executiveResult', title:'执行情况', width:'5%', edit: 'text'}
-                    ,{fixed: 'right', title:'操作', toolbar: '#barDemo' }
+                    ,{field:'reportTitle', title:'标题', width:'10%'}
+                    ,{field:'reportDate', title:'日期', width:'10%' , templet: '#reportDate'}
+                    ,{field:'reportingUnit', title:'呈报单位', width:'10%'}
+                    ,{field:'reportContent', title:'内容', width:'10%'}
+                    ,{field:'reportCost', title:'费用总计', width:'10%'}
+                    ,{field:'reportName', title:'呈报人', width:'10%'}
+                    ,{field:'reportPhone', title:'联系电话', width:'10%'}
+                    ,{field:'instructions', title:'批示', width:'5%'}
+                    ,{field:'executiveResult', title:'执行情况', width:'5%'}
+                    ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
                 ]]
                 ,page: true  //传入json字符串后，自动分页
             });
@@ -109,7 +105,7 @@
                             }else {
                                 layer.msg('已删除或不存在!',{icon:2,time:1000});
                             }
-                            location.reload();
+                            setTimeout("location.reload()",3000);
                         }
                     });
                 });

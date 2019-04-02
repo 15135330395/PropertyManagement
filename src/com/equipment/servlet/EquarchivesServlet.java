@@ -99,7 +99,7 @@ doPost(request,response);
         String manufacturer = request.getParameter("manufacturer");
         String price = request.getParameter("price");
         String place = request.getParameter("place");
-        Equarchives equarchives=new Equarchives(Integer.parseInt(id),ano,ename,eno,department, DateUtil.formatString(recordDate,"yyyy-MM-dd"),
+        Equarchives equarchives=new Equarchives(ano,ename,eno,department, DateUtil.formatString(recordDate,"yyyy-MM-dd"),
                 manufacturer,Double.parseDouble(price),place);
         int i = equarchivesService.add(equarchives);
         response.getWriter().print(i);

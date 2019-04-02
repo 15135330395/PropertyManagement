@@ -5,7 +5,7 @@
   Time: 1:05
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -19,9 +19,9 @@
 <div class="layui-container" style="padding: 20px">
     <form class="layui-form" action="">
         <div class="layui-form-item">
-            <label class="layui-form-label">ID：</label>
+            <label class="layui-form-label"></label>
             <div class="layui-input-block">
-                <input type="text" name="id" required  lay-verify="required"  autocomplete="off" class="layui-input">
+                <input type="hidden" name="id" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -39,19 +39,19 @@
         <div class="layui-form-item">
             <label class="layui-form-label">甲方：</label>
             <div class="layui-input-inline">
-                <input type="text" name="firstParty" required lay-verify="required" placeholder="请输入甲方名称" autocomplete="off" class="layui-input">
+                <input type="text" name="firstParty" lay-verify="required" placeholder="请输入甲方名称" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">乙方：</label>
             <div class="layui-input-inline">
-                <input type="text" name="secondParty" required lay-verify="required" placeholder="请输入乙方名称" autocomplete="off" class="layui-input">
+                <input type="text" name="secondParty" lay-verify="required" placeholder="请输入乙方名称" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">签约日期：</label>
             <div class="layui-input-inline">
-                <input type="datetime" name="sigingDate" lay-verify="required" class="layui-input" id="test1">
+                <input name="sigingDate" lay-verify="required" class="layui-input" id="test1">
             </div>
         </div>
         <div class="layui-form-item">
@@ -66,24 +66,45 @@
                 <input type="text" name="cost" required lay-verify="required"  autocomplete="off" class="layui-input">
             </div>
         </div>
+
         <div class="layui-form-item">
-            <label class="layui-form-label">供应链：</label>
-            <div class="layui-input-inline">
-                <input type="text" name="supplyChain" lay-verify="required" class="layui-input"  >
+            <label class="layui-form-label">供应商：</label>
+            <div class="layui-input-block">
+                <select name="supplyChain" lay-verify="required">
+                    <option value=""></option>
+                    <option value="恒大">恒大</option>
+                    <option value="万科">万科</option>
+                    <option value="腾讯">腾讯</option>
+                    <option value="百度">百度</option>
+                    <option value="阿里">阿里</option>
+                </select>
             </div>
         </div>
+
         <div class="layui-form-item">
             <label class="layui-form-label">付款周期：</label>
-            <div class="layui-input-inline">
-                <input type="text" name="paymentCycle" lay-verify="required" class="layui-input">
+            <div class="layui-input-block">
+                <select name="paymentCycle" lay-verify="required">
+                    <option value=""></option>
+                    <option value="一次付清">一次付清</option>
+                    <option value="每月一次，两年付清">每月一次，两年付清</option>
+                    <option value="半年一次，一年付清">半年一次，一年付清</option>
+
+                </select>
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">验收结果：</label>
-            <div class="layui-input-inline">
-                <input type="text" name="acceptanceResult" lay-verify="required" class="layui-input">
+            <div class="layui-input-block">
+                <select name="acceptanceResult" lay-verify="required">
+                    <option value=""></option>
+                    <option value="验收合格">验收合格</option>
+                    <option value="部分不合格">部分不合格</option>
+                    <option value="全部不合格">全部不合格</option>
+                </select>
             </div>
         </div>
+
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">合同内容：</label>
             <div class="layui-input-block">
@@ -105,7 +126,7 @@
         var laydate = layui.laydate;
         //监听提交
         form.on('submit(submitSave)', function(data){
-            layer.msg(JSON.stringify(data.field)+"==="+CKEDITOR.instances.content.getData());
+           layer.msg(JSON.stringify(data.field)+"==="+CKEDITOR.instances.content.getData());
             var id = data.field.id;
             var contractId = data.field.contractId;
             var contractName = data.field.contractName;

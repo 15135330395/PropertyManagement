@@ -12,9 +12,6 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +74,19 @@ public class ReportDaoImpl implements ReportDao {
         return 0;
     }
 @Override
+
+public List<Report> queryPage(PageBean pageBean) {
+    String sql = "select * from report order by report_date desc limit ?,?";
+    List<Report> list=new ArrayList<>();
+    try {
+        list = qr.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(Report.class),pageBean.getIndex(),pageBean.getPageCount());
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }return list;
+}
+
+/*    @Override
     public List<Report> queryPage(PageBean pageBean){
         String sql="select * from report order by report_date desc limit ?,?";
         List<Report> list=new ArrayList<>();
@@ -87,7 +97,7 @@ public class ReportDaoImpl implements ReportDao {
              ps = connection.prepareStatement(sql);
             ps.setInt(1,pageBean.getIndex());
             ps.setInt(2,pageBean.getPageCount());
-           /** ps.executeQuery()，在预处理语句后面，执行顺序*/
+            ps.executeQuery();  //在预处理语句后面，执行顺序
             rs = ps.executeQuery();
             while(rs.next()){
                 Report report=new Report();
@@ -101,6 +111,7 @@ public class ReportDaoImpl implements ReportDao {
                 report.setReport_phone(rs.getInt("report_phone"));
                 report.setInstructions(rs.getString("instructions"));
                 report.setExecutive_result(rs.getString("executive_result"));
+                System.out.println(report.getReportDate());
                 list.add(report);
             }
         } catch (SQLException e) {
@@ -115,8 +126,7 @@ public class ReportDaoImpl implements ReportDao {
             JdbcUtil.close();
         }
         return list;
-    }
-
+    }*/
     @Override
     public Report findReportById(int reportId) {
         String sql="select * from report where report_id= ? ";

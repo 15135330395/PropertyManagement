@@ -18,12 +18,12 @@
 <body>
 <div class="layui-container" style="padding: 20px">
     <form class="layui-form" action="">
-        <div class="layui-form-item">
+        <%--<div class="layui-form-item">
             <label class="layui-form-label">ID：</label>
             <div class="layui-input-block">
-                <input type="text" name="eid" required  lay-verify="required"  autocomplete="off" class="layui-input">
+                <input type="hidden" name="eid" required  lay-verify="required"  autocomplete="off" class="layui-input">
             </div>
-        </div>
+        </div>--%>
         <div class="layui-form-item">
             <label class="layui-form-label">设备名称</label>
             <div class="layui-input-block">
@@ -45,7 +45,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">保养日期：</label>
             <div class="layui-input-inline">
-                <input type="datetime" name="edate" lay-verify="required" class="layui-input" id="test1">
+                <input name="edate" lay-verify="required" class="layui-input" id="test1">
             </div>
         </div>
         <div class="layui-form-item">

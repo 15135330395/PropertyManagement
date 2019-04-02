@@ -19,33 +19,33 @@
 <div class="layui-container" style="padding: 20px">
     <form class="layui-form" action="">
         <div class="layui-form-item">
-            <label class="layui-form-label">编号</label>
-            <div class="layui-input-block">
-                <input type="text" name="reportId" autocomplete="off" class="layui-input">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-inline">
+                <input type="hidden" name="reportId" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">签报标题：</label>
-            <div class="layui-input-block">
+            <div class="layui-input-inline">
                 <input type="text" name="reportTitle" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">签报日期：</label>
             <div class="layui-input-inline">
-                <input type="text" name="reportDate" lay-verify="required" class="layui-input" id="test1">
+                <input  name="reportDate" lay-verify="required" class="layui-input" id="test1">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">呈报单位：</label>
             <div class="layui-input-inline">
-                <input type="text" name="reportingUnit" required lay-verify="required" placeholder="请输入呈报单位" autocomplete="off" class="layui-input">
+                <input type="text" name="reportingUnit" lay-verify="required" placeholder="请输入呈报单位" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">费用：</label>
             <div class="layui-input-inline">
-                <input type="text" name="reportCost" required lay-verify="required" placeholder="请输入费用" autocomplete="off" class="layui-input">
+                <input type="text" name="reportCost" lay-verify="required" placeholder="请输入费用" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -57,21 +57,33 @@
         <div class="layui-form-item">
             <label class="layui-form-label">联系电话：</label>
             <div class="layui-input-inline">
-                <input type="text" name="reportPhone" required lay-verify="required" placeholder="请输入联系电话" autocomplete="off" class="layui-input">
+                <input type="tel" name="reportPhone" lay-verify="required|phone" placeholder="请输入联系电话" autocomplete="off" class="layui-input">
             </div>
         </div>
+
         <div class="layui-form-item">
             <label class="layui-form-label">领导批示：</label>
             <div class="layui-input-inline">
-                <input type="text" name="instructions" lay-verify="required" class="layui-input"  >
+                <select name="instructions" lay-verify=" ">
+                    <option value=""></option>
+                    <option value="同意">同意</option>
+                    <option value="不同意">不同意</option>
+
+                </select>
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">执行情况：</label>
             <div class="layui-input-inline">
-                <input type="text" name="executiveResult" lay-verify="required" class="layui-input">
+                <select name="executiveResult" lay-verify=" ">
+                    <option value=""></option>
+                    <option value="已执行">已执行</option>
+                    <option value="未执行">未执行</option>
+
+                </select>
             </div>
         </div>
+
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">签报内容：</label>
             <div class="layui-input-block">

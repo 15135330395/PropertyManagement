@@ -38,8 +38,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">发生故障日期：</label>
             <div class="layui-input-inline">
-                <input type="text" name="mdate" required lay-verify="required" id="test1" autocomplete="off" class="layui-input"
-                  <fmt:formatDate value="${equmalfunction.mdate}" pattern="yyyy-MM-dd HH:mm:ss"/>>
+                <input name="mdate" required lay-verify="required" id="test1" autocomplete="off" class="layui-input"
+                  <fmt:formatDate value="${equmalfunction.mdate}" pattern="yyyy-MM-dd HH:mm:ss"/> >
             </div>
         </div>
         <div class="layui-form-item">

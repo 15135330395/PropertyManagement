@@ -60,7 +60,7 @@ public class Equarchives {
         return recordDate;
     }
 
-    public void setRecordDate(Date recordDate) {
+    public void setRecord_date(Date recordDate) {
         this.recordDate = recordDate;
     }
 
@@ -93,6 +93,17 @@ public class Equarchives {
 
     public Equarchives(int id, String ano, String ename, String eno, String department, Date recordDate, String manufacturer, Double price, String place) {
         this.id = id;
+        this.ano = ano;
+        this.ename = ename;
+        this.eno = eno;
+        this.department = department;
+        this.recordDate = recordDate;
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.place = place;
+    }
+
+    public Equarchives(String ano, String ename, String eno, String department, Date recordDate, String manufacturer, Double price, String place) {
         this.ano = ano;
         this.ename = ename;
         this.eno = eno;

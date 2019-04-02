@@ -9,7 +9,6 @@ import com.utils.JsonUtil;
 import com.utils.StringUtil;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +22,7 @@ import java.util.List;
  * @Description: ${NAME}
  */
 
-@WebServlet(name = "ContractServlet",urlPatterns = "/ContractServlet" ,initParams = {@WebInitParam(name="pageCount",value="10")})
+@WebServlet(name = "ContractServlet",urlPatterns = "/ContractServlet")
 public class ContractServlet extends HttpServlet {
     ContractService contractService=new ContractService();
 
@@ -78,18 +77,21 @@ doPost(request,response);
         String firstParty = request.getParameter("firstParty");
         String secondParty = request.getParameter("secondParty");
         String sigingDate =  request.getParameter("sigingDate");
-        System.out.println("update...sigingDate="+sigingDate);
+        System.out.println("add...sigingDate="+sigingDate);
         String projectLocation = request.getParameter("projectLocation");
         String cost = request.getParameter("cost");
         String content = request.getParameter("content");
         String supplyChain = request.getParameter("supplyChain");
         String paymentCycle = request.getParameter("paymentCycle");
         String acceptanceResult = request.getParameter("acceptanceResult");
-        Contract contract=new Contract(Integer.parseInt(id),contractId,contractName, firstParty,secondParty,
+        Contract contract=new Contract(contractId,contractName, firstParty,secondParty,
                 DateUtil.formatString(sigingDate,"yyyy-MM-dd HH:mm:ss") ,projectLocation,
                 Double.parseDouble(cost),content,supplyChain, paymentCycle, acceptanceResult);
         System.out.println("contract===="+contract);
        int i = contractService.addContract(contract);
+        System.out.println(i);
+
+
        response.getWriter().print(i);
 
     }

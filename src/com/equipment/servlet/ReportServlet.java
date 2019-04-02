@@ -32,10 +32,11 @@ public class ReportServlet extends HttpServlet {
        response.setContentType("text/html;charset=utf-8");
 
         String action = request.getParameter("action");
-        System.out.println("ReportServlet..."+action);
+//        System.out.println("ReportServlet..."+action);
         if("query".equals(action)){
             query(request,response);
         }else if("add".equals(action)){
+            System.out.println("ReportServlet..."+action);
             add(request,response);
         }else if("update".equals(action)){
 //            System.out.println("action="+action);
@@ -69,10 +70,11 @@ doPost(request,response);
     }
 
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String reportId = request.getParameter("reportId");
         String reportTitle = request.getParameter("reportTitle");
         String reportDate = request.getParameter("reportDate");
-//        System.out.println("update...reportDate="+reportDate);
+        System.out.println("add...reportDate="+reportDate);
         String reportingUnit = request.getParameter("reportingUnit");
         String reportCost =  request.getParameter("reportCost");
         String reportName = request.getParameter("reportName");
@@ -80,10 +82,12 @@ doPost(request,response);
         String instructions = request.getParameter("instructions");
         String executiveResult = request.getParameter("executiveResult");
         String reportContent = request.getParameter("reportContent");
-        Report report=new Report(Integer.parseInt(reportId),reportTitle,DateUtil.formatString(reportDate,"yyyy-MM-dd HH:mm:ss") ,reportingUnit,
-                reportContent, Double.parseDouble(reportCost),reportName,Integer.parseInt(reportPhone), instructions,executiveResult);
-
+        System.out.println("......."+reportId);
+        Report report=new Report(reportTitle,DateUtil.formatString(reportDate,"yyyy-MM-dd HH:mm:ss") ,reportingUnit,
+                reportContent, Double.parseDouble(reportCost),reportName,reportPhone,instructions,executiveResult);
+        System.out.println(report);
         int i = reportService.addReport(report);
+
         response.getWriter().print(i);
 
     }
@@ -100,7 +104,7 @@ doPost(request,response);
         String executiveResult = request.getParameter("executiveResult");
         String reportContent = request.getParameter("reportContent");
         Report report=new Report(Integer.parseInt(reportId),reportTitle,DateUtil.formatString(reportDate,"yyyy-MM-dd HH:mm:ss") ,reportingUnit,
-                reportContent, Double.parseDouble(reportCost),reportName,Integer.parseInt(reportPhone), instructions,executiveResult);
+                reportContent, Double.parseDouble(reportCost),reportName, reportPhone , instructions,executiveResult);
         System.out.println("report="+report);
         int i = reportService.updateReportByReportId(report);
         System.out.println("i...."+i);

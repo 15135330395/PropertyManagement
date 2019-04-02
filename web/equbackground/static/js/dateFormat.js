@@ -40,3 +40,6 @@
     function dateFormat(value) {
         return value ? new Date(value).format("yyyy-MM-dd hh:mm:ss") : "";
     }
+    function dateFormat2(value) {
+        return value ? new Date(value).format("yyyy-MM-dd") : "";
+    }

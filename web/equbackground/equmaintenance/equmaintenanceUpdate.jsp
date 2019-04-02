@@ -47,7 +47,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">登记日期：</label>
             <div class="layui-input-inline">
-                <input type="text" name="edate"
+                <input name="edate"
                        value="<fmt:formatDate value="${equmaintenance.edate}" pattern="yyyy-MM-dd HH:mm:ss "></fmt:formatDate>"
                        lay-verify="required" class="layui-input" id="test1">
             </div>

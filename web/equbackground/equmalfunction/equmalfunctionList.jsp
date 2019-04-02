@@ -44,9 +44,9 @@
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
 
-    <%-- <script type="text/javascript" id="sigingDate">
-         {{ dateFormat(d.reportDate) }}
-     </script>--%>
+    <script type="text/javascript" id="mdate">
+        {{ dateFormat(d.mdate) }}
+    </script>
 </div>
 </body>
 <script>
@@ -63,7 +63,7 @@
                 ,{field:'mid', title:'ID', width:'5%', fixed: 'left', unresize: true, sort: true}
                 ,{field:'ename', title:'设备名称', width:'10%'}
                 ,{field:'eno', title:'设备编号', width:'10%'}
-                ,{field:'mdate', title:'发生故障日期', width:'10%'}
+                ,{field:'mdate', title:'发生故障日期', width:'10%',templet:'#mdate'}
                 ,{field:'handler', title:'处理人', width:'10%'}
                 ,{field:'installdetail', title:'安装详情', width:'10%'   }
                 ,{field:'operation', title:'运行情况', width:'10%'}
@@ -101,7 +101,7 @@
                                 } else {
                                     layer.msg('已删除或不存在!', {icon: 2, time: 1000});
                                 }
-                                location.reload();
+                                setTimeout("location.reload()",3000);
                             }
                         });
 

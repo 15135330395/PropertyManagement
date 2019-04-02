@@ -93,6 +93,16 @@ public class Equmaintenance {
     public Equmaintenance() {
     }
 
+    public Equmaintenance(String ename, String eno, String content, String charge, Date edate, String material, int number) {
+        this.ename = ename;
+        this.eno = eno;
+        this.content = content;
+        this.charge = charge;
+        this.edate = edate;
+        this.material = material;
+        this.number = number;
+    }
+
     @Override
     public String toString() {
         return "Equmaintenance{" +
