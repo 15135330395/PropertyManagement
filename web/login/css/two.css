@@ -1,0 +1,23 @@
+#active{
+    height: 700px;
+    overflow: hidden;
+}
+#active #ul1{
+    margin-top: 46px;
+    padding-left: 16px;
+}
+#active .accordion-menu li{
+    padding-left: 20px;
+    height: 40px;line-height: 40px;border-bottom: 1px solid;
+    cursor: pointer;
+}
+#active .left-sidebar {
+    width: 180px;
+    height: 700px;
+    float: left;
+    font-size: 15px;
+    background: #FFF;
+    position: relative;
+    display: none;
+    background: snow
+}

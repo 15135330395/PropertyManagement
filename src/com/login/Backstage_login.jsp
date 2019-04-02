@@ -6,7 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
@@ -23,13 +24,14 @@
         <div class="main_right">
             <div class="right_title">用户登录</div>
             <form>
+                <span style="color: red;margin-left: 50px;font-size: 14px"><%=request.getAttribute("msg") == null ? "" : request.getAttribute("msg")%></span>
                 <div class="username">
                     <img src="login/img/username.png" alt="">
-                    <input id="username" type="text" placeholder="请输入用户名">
+                    <input id="username" name="username" type="text" placeholder="请输入用户名">
                 </div>
                 <div class="password">
                     <img src="login/img/password.png" alt="">
-                    <input id="password" type="password" placeholder="请输入密码">
+                    <input id="password" name="password" type="password" placeholder="请输入密码">
                 </div>
                 <div class="code">
                     <img src="login/img/code.png" alt="">
@@ -61,16 +63,15 @@
                 password: password
             },
             success: function (result) {
-                alert("Test");
-                if (result == 200) {
+                if (result == "200") {
                     alert("SUCCESS");
                     window.location.href = "<%=request.getContextPath()%>/Back-stage.jsp";
-                } else if (result == 201) {
+                } else if (result == "201") {
                     alert("密码错误");
-                    // window.location.reload()
-                } else if (result == 202) {
+                    window.location.reload()
+                } else if (result == "202") {
                     alert("用户名不存在");
-                    // window.location.reload()
+                    window.location.reload()
                 }
             },
             error: function () {
