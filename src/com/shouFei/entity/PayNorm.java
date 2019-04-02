@@ -1,4 +1,4 @@
-package shouFei.entity;
+package com.shouFei.entity;
 
 /**
  * @Acthor:孙琪; date:2019/3/26;

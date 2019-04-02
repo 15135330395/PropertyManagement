@@ -69,11 +69,11 @@
                 , {field: 'plotName', title: '小区名'}
                 , {field: 'roomNumber', title: '房间号'}
                 , {field: 'riqi', title: '日期', templet: '#loginTime'}
-                , {field: 'price', title: '单价'}
+                , {field: 'price', title: '单价(元)'}
                 , {field: 'start', title: '起度'}
                 , {field: 'stop', title: '止度'}
-                , {field: 'pooled', title: '公摊'}
-                , {field: 'moneysum', title: '总金额'}
+                , {field: 'pooled', title: '公摊(元)'}
+                , {field: 'moneysum', title: '总金额(元)'}
                 , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
                 //抄表录入
             ]]

@@ -4,7 +4,7 @@ import com.shouFei.dao.MeterReadingDao;
 import com.entity.PageBean;
 import com.utils.JdbcUtil;
 import org.apache.commons.dbutils.QueryRunner;
-import shouFei.entity.MeterReading;
+import com.shouFei.entity.MeterReading;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

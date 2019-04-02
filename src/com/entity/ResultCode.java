@@ -1,8 +1,7 @@
 package com.entity;
 
 /**
- * @author haoyu
- * @create 2019-03-27 22:23
+ * @Acthor:孙琪; date:2019/4/2;
  */
 public class ResultCode {
     private String code;

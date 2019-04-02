@@ -3,7 +3,7 @@ package com.shouFei.servlet;
 import com.alibaba.fastjson.JSONObject;
 import com.shouFei.service.MeterReadingService;
 import com.utils.JsonUtil;
-import shouFei.entity.MeterReading;
+import com.shouFei.entity.MeterReading;
 import com.entity.PageBean;
 
 import com.utils.DateUtil;

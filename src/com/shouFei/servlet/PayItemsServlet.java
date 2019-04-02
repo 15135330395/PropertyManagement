@@ -1,13 +1,13 @@
 package com.shouFei.servlet;
 
 import com.alibaba.fastjson.JSONObject;
+import com.entity.ResultCode;
 import com.shouFei.service.PayItemsService;
 import com.utils.JsonUtil;
 import com.shouFei.dao.PayNormDao;
 import com.shouFei.dao.daoImpl.PayNormDaoImpl;
 import com.entity.PageBean;
-import shouFei.entity.PayItems;
-import shouFei.entity.ResultCode;
+import com.shouFei.entity.PayItems;
 
 import com.utils.StringUtil;
 
@@ -66,33 +66,33 @@ public class PayItemsServlet extends HttpServlet {
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String payName = request.getParameter("payName");
         String payType = request.getParameter("payType");
-        String billingAaccuracy = request.getParameter("billingAaccuracy");
+        String billingAccuracy = request.getParameter("billingAccuracy");
         String note = request.getParameter("note");
-        int i = service.addPayItems(new PayItems(payName,payType,billingAaccuracy,note));
+        int i = service.addPayItems(new PayItems(payName,payType,billingAccuracy,note));
         response.getWriter().print(i);
     }
 
     protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String payId=request.getParameter("payId");
         String payName = request.getParameter("payName");
-        System.out.println("payName"+payName);
         String payType = request.getParameter("payType");
         String billingAccuracy = request.getParameter("billingAccuracy");
         String note = request.getParameter("note");
         int i = service.updatePayItems(new PayItems(Integer.parseInt(payId),payName, payType,billingAccuracy,note));
         response.getWriter().print(i);
-        System.out.println("i"+i);
     }
 
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String payId=request.getParameter("payId");
-        System.out.println(payId);
         int id = Integer.parseInt(payId);
+        System.out.println(id);
         PayNormDao pNdao=new PayNormDaoImpl();
         int payNormCount = pNdao.findPayNormCountById(id);
-       ResultCode resultCode =  new ResultCode();
+        System.out.println(payNormCount);
+        ResultCode resultCode =  new ResultCode();
         if(payNormCount==0){
             int i = service.deletePayItems(id);
+            System.out.println(i);
             if(i>0){
                 resultCode.setCode("2001");
                 resultCode.setMessage("收费项目删除成功");
@@ -105,7 +105,6 @@ public class PayItemsServlet extends HttpServlet {
             resultCode.setMessage("收费项目下有收费标准不可删除");
         }
         String json = JSONObject.toJSONString(resultCode);
-        //System.out.println(json);
         response.getWriter().print(json);
     }
 

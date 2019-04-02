@@ -32,16 +32,7 @@
             <div class="layui-input-block">
                 <input type="text" name="payType" required
                        lay-verify="required" value="${payItemsById.payType}"
-                       placeholder="请输入收费项目类别（周期性/临时性/押金性）" autocomplete="off" class="layui-input">
-                <%--<select name="payType" lay-verify="required">--%>
-                    <%--<option>请输入收费项目类别</option>--%>
-                    <%--&lt;%&ndash;<option>周期性</option>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<option>临时性</option>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<option>押金性</option>&ndash;%&gt;--%>
-                    <%--<c:forEach items="${payNormList}" var="items">--%>
-                        <%--<option value="${items.id}">${items.payType}</option>--%>
-                    <%--</c:forEach>--%>
-                <%--</select>--%>
+                       placeholder="请输入收费项目类别" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -49,7 +40,7 @@
             <div class="layui-input-block">
                 <input type="text" name="billingAccuracy"
                        required  lay-verify="required" value="${payItemsById.billingAccuracy}"
-                       placeholder="请输入计费精度（元/角/分）" autocomplete="off" class="layui-input">
+                       placeholder="请输入计费精度" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">

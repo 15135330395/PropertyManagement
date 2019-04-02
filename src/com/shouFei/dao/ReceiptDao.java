@@ -1,7 +1,7 @@
 package com.shouFei.dao;
 
 import com.entity.PageBean;
-import shouFei.entity.Receipt;
+import com.shouFei.entity.Receipt;
 
 import java.util.List;
 

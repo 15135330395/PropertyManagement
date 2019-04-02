@@ -3,7 +3,7 @@ package com.shouFei.service;
 import com.shouFei.dao.PayNormDao;
 import com.shouFei.dao.daoImpl.PayNormDaoImpl;
 import com.entity.PageBean;
-import shouFei.entity.PayNorm;
+import com.shouFei.entity.PayNorm;
 
 import java.util.List;
 
@@ -16,7 +16,6 @@ public class PayNormService {
     public List<PayNorm> findAll() {
         return pNdao.findAll();
     }
-    //public List<PayNorm> findByPayId(){return pNdao.findByPayId();}
 
     public int addPayNorm(PayNorm payNorm) {
         return pNdao.addPayNorm(payNorm);
@@ -37,6 +36,7 @@ public class PayNormService {
     public PayNorm findPayNormById(int NormId) {
         return pNdao.findPayNormById(NormId);
     }
+
     public List<PayNorm> queryOne(String name){
         return pNdao.queryOne(name);
     }

@@ -5,7 +5,7 @@ import com.utils.JdbcUtil;
 import com.shouFei.dao.PayDao;
 import com.entity.PageBean;
 import org.apache.commons.dbutils.QueryRunner;
-import shouFei.entity.Pay;
+import com.shouFei.entity.Pay;
 
 
 import java.sql.Connection;

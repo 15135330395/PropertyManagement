@@ -1,7 +1,7 @@
 package com.shouFei.dao;
 
 import com.entity.PageBean;
-import shouFei.entity.PayItems;
+import com.shouFei.entity.PayItems;
 
 import java.util.List;
 

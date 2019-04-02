@@ -3,7 +3,7 @@ package com.shouFei.service;
 import com.shouFei.dao.ReceiptDao;
 import com.shouFei.dao.daoImpl.ReceiptDaoImpl;
 import com.entity.PageBean;
-import shouFei.entity.Receipt;
+import com.shouFei.entity.Receipt;
 
 import java.util.List;
 

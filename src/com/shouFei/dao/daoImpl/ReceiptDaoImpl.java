@@ -5,7 +5,7 @@ import com.utils.JdbcUtil;
 import org.apache.commons.dbutils.QueryRunner;
 import com.shouFei.dao.ReceiptDao;
 import com.entity.PageBean;
-import shouFei.entity.Receipt;
+import com.shouFei.entity.Receipt;
 
 
 import java.sql.Connection;

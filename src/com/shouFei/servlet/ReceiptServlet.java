@@ -2,6 +2,7 @@ package com.shouFei.servlet;
 
 import com.alibaba.fastjson.JSONObject;
 import com.entity.PageBean;
+import com.shouFei.entity.Receipt;
 import com.shouFei.service.ReceiptService;
 import com.utils.JsonUtil;
 
@@ -47,7 +48,7 @@ public class ReceiptServlet extends HttpServlet {
         String payName = request.getParameter("payName");
         String transactor = request.getParameter("transactor");
         String shijian = request.getParameter("shijian");
-        int i = service.addReceipt(new shouFei.entity.Receipt(department,Integer.parseInt(staffId),staffName,Double.parseDouble(monery),payName,transactor, DateUtil.formatString(shijian,"yyyy-MM-dd")));
+        int i = service.addReceipt(new Receipt(department,Integer.parseInt(staffId),staffName,Double.parseDouble(monery),payName,transactor, DateUtil.formatString(shijian,"yyyy-MM-dd")));
         response.getWriter().print(i);
     }
     private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +60,7 @@ public class ReceiptServlet extends HttpServlet {
         String payName = request.getParameter("payName");
         String transactor = request.getParameter("transactor");
         String shijian = request.getParameter("shijian");
-        int i = service.updateReceipt(new shouFei.entity.Receipt(Integer.parseInt(rid),department,Integer.parseInt(staffId),staffName,Double.parseDouble(monery), payName,transactor, DateUtil.formatString(shijian,"yyyy-MM-dd")));
+        int i = service.updateReceipt(new Receipt(Integer.parseInt(rid),department,Integer.parseInt(staffId),staffName,Double.parseDouble(monery), payName,transactor, DateUtil.formatString(shijian,"yyyy-MM-dd")));
         response.getWriter().print(i);
 
     }
@@ -78,7 +79,7 @@ public class ReceiptServlet extends HttpServlet {
         if(!StringUtil.isEmpty(id)){
             pid=Integer.parseInt(id);
         }
-        shouFei.entity.Receipt receiptById = service.findReceiptById(Integer.parseInt(id));
+        Receipt receiptById = service.findReceiptById(Integer.parseInt(id));
         request.setAttribute("receiptById",receiptById);
         request.getRequestDispatcher("/shouFei/receipt/receiptAdd.jsp").forward(request,response);
     }
@@ -91,7 +92,7 @@ public class ReceiptServlet extends HttpServlet {
         pageBean.setPageCount(Integer.parseInt(limit));
         pageBean.setCount(service.findAll().size());
 
-        List<shouFei.entity.Receipt> ReceiptList = service.queryByPage(pageBean);
+        List<Receipt> ReceiptList = service.queryByPage(pageBean);
         JSONObject array = JsonUtil.getJsonObject(ReceiptList, pageBean);
         response.getWriter().print(array);
     }

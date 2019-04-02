@@ -1,6 +1,6 @@
 package com.shouFei.dao;
 
-import shouFei.entity.MeterReading;
+import com.shouFei.entity.MeterReading;
 import com.entity.PageBean;
 
 import java.util.List;

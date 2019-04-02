@@ -2,8 +2,9 @@ package com.shouFei.service;
 
 import com.shouFei.dao.MeterReadingDao;
 import com.shouFei.dao.daoImpl.MeterReadingDaoImpl;
-import shouFei.entity.MeterReading;
+
 import com.entity.PageBean;
+import com.shouFei.entity.MeterReading;
 
 import java.util.List;
 
@@ -11,9 +12,9 @@ import java.util.List;
  * @Acthor:孙琪; date:2019/3/29;
  */
 public class MeterReadingService {
-    private MeterReadingDao dao = new MeterReadingDaoImpl();
+    MeterReadingDao dao=new MeterReadingDaoImpl();
 
-    public List<MeterReading> findAll() {
+    public List<MeterReading> findAll(){
         return dao.findAll();
     }
 

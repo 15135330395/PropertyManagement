@@ -63,7 +63,9 @@
         </div>
     </form>
 </div>
-
+<form action="/shouFei/receipt/receiptList.jsp" method="post">
+    <button>返回<<</button>
+</form>
 
 <script>
     //Demo

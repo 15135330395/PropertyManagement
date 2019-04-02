@@ -5,7 +5,7 @@ import com.utils.JdbcUtil;
 import org.apache.commons.dbutils.QueryRunner;
 import com.shouFei.dao.PayItemsDao;
 import com.entity.PageBean;
-import shouFei.entity.PayItems;
+import com.shouFei.entity.PayItems;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,30 +18,30 @@ import java.util.List;
  * @Acthor:孙琪; date:2019/3/26;
  */
 public class PayItemsDaoImpl implements PayItemsDao {
+    final static String colname="pay_id payId,pay_name payName,pay_type payType,billing_accuracy billingAccuracy,note";
     private QueryRunner queryRunner =  new QueryRunner();
     @Override
     public List<PayItems> findAll() {
         List<PayItems> list = new ArrayList<>();
-        String sql="select * from pay_items";
+        //String sql="select * from pay_items";
+        String sql="select "+colname+" from pay_items";
         PreparedStatement ps=null;
         ResultSet rs = null;
-        //下面try那些可以省略了
-        // List<PayItems> query = queryRunner.query(JdbcUtil.getConnection(), sql, new BeanListHandler<>(PayItems.class));
         try {
             Connection connection = JdbcUtil.getConnection();
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()){
                 PayItems payItems =  new PayItems();
-                int payId = rs.getInt("pay_id");
-                String payName = rs.getString("pay_name");
-                String payType = rs.getString("pay_type");
-                String billingAccuracyl=rs.getString("billing_accuracy");
+                int payId = rs.getInt("payId");
+                String payName = rs.getString("payName");
+                String payType = rs.getString("payType");
+                String billingAccuracy=rs.getString("billingAccuracy");
                 String note = rs.getString("note");
                 payItems.setPayId(payId);
                 payItems.setPayName(payName);
                 payItems.setPayType(payType);
-                payItems.setBillingAccuracy(billingAccuracyl);
+                payItems.setBillingAccuracy(billingAccuracy);
                 payItems.setNote(note);
                 list.add(payItems);
             }
@@ -102,8 +102,8 @@ public class PayItemsDaoImpl implements PayItemsDao {
     @Override
     public List<PayItems> queryByPage(PageBean pageBean) {
         List<PayItems> list = new ArrayList<>();
-
-        String sql="select * from pay_items limit ?,?  ";
+        String sql="select "+colname+" from pay_items limit ?,?";
+        //String sql="select * from pay_items limit ?,?  ";
         PreparedStatement ps=null;
         ResultSet rs = null;
         try {
@@ -114,15 +114,15 @@ public class PayItemsDaoImpl implements PayItemsDao {
             rs = ps.executeQuery();
             while (rs.next()) {
                 PayItems payItems =  new PayItems();
-                int payId = rs.getInt("pay_id");
-                String payName = rs.getString("pay_name");
-                String payType = rs.getString("pay_type");
-                String billingAccuracyl=rs.getString("billing_accuracy");
+                int payId = rs.getInt("payId");
+                String payName = rs.getString("payName");
+                String payType = rs.getString("payType");
+                String billingAccuracy=rs.getString("billingAccuracy");
                 String note = rs.getString("note");
                 payItems.setPayId(payId);
                 payItems.setPayName(payName);
                 payItems.setPayType(payType);
-                payItems.setBillingAccuracy(billingAccuracyl);
+                payItems.setBillingAccuracy(billingAccuracy);
                 payItems.setNote(note);
                 list.add(payItems);
             }
@@ -144,7 +144,8 @@ public class PayItemsDaoImpl implements PayItemsDao {
     @Override
     public PayItems findPayItemsById(int id) {
         PayItems payItems =  new PayItems();
-        String sql="select * from pay_items where pay_id=?";
+        //String sql="select * from pay_items where pay_id=?";
+        String sql="select "+colname+" from pay_items where pay_id=?";
         PreparedStatement ps=null;
         ResultSet rs = null;
         try {
@@ -153,15 +154,15 @@ public class PayItemsDaoImpl implements PayItemsDao {
             ps.setInt(1,id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                int payId = rs.getInt("pay_id");
-                String payName = rs.getString("pay_name");
-                String payType = rs.getString("pay_type");
-                String billingAccuracyl=rs.getString("billing_accuracy");
+                int payId = rs.getInt("payId");
+                String payName = rs.getString("payName");
+                String payType = rs.getString("payType");
+                String billingAccuracy=rs.getString("billingAccuracy");
                 String note = rs.getString("note");
                 payItems.setPayId(payId);
                 payItems.setPayName(payName);
                 payItems.setPayType(payType);
-                payItems.setBillingAccuracy(billingAccuracyl);
+                payItems.setBillingAccuracy(billingAccuracy);
                 payItems.setNote(note);
             }
         } catch (SQLException e) {

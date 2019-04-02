@@ -3,7 +3,7 @@ package com.shouFei.service;
 import com.shouFei.dao.PayDao;
 import com.shouFei.dao.daoImpl.PayDaoImpl;
 import com.entity.PageBean;
-import shouFei.entity.Pay;
+import com.shouFei.entity.Pay;
 
 import java.util.List;
 

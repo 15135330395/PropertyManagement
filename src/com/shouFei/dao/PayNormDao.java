@@ -1,7 +1,7 @@
 package com.shouFei.dao;
 
 import com.entity.PageBean;
-import shouFei.entity.PayNorm;
+import com.shouFei.entity.PayNorm;
 
 import java.util.List;
 

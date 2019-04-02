@@ -3,6 +3,7 @@ package com.shouFei.servlet;
 
 import com.alibaba.fastjson.JSONObject;
 import com.entity.PageBean;
+import com.shouFei.entity.PayNorm;
 import com.shouFei.service.PayItemsService;
 import com.shouFei.service.PayNormService;
 import com.utils.JsonUtil;
@@ -53,7 +54,7 @@ public class PayNormServlet extends HttpServlet {
         String normName = request.getParameter("normName");
         String computeMode = request.getParameter("computeMode");
         String chargeCycle = request.getParameter("chargeCycle");
-        int i = service.addPayNorm(new shouFei.entity.PayNorm(payName,normName,computeMode,Integer.parseInt(chargeCycle)));
+        int i = service.addPayNorm(new PayNorm(payName,normName,computeMode,Integer.parseInt(chargeCycle)));
         response.getWriter().print(i);
     }
     private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -62,7 +63,7 @@ public class PayNormServlet extends HttpServlet {
         String normName = request.getParameter("normName");
         String computeMode = request.getParameter("computeMode");
         String chargeCycle = request.getParameter("chargeCycle");
-        int i = service.updatePayNorm(new shouFei.entity.PayNorm(Integer.parseInt(normId),payName,normName,computeMode,Integer.parseInt(chargeCycle)));
+        int i = service.updatePayNorm(new PayNorm(Integer.parseInt(normId),payName,normName,computeMode,Integer.parseInt(chargeCycle)));
 
     }
     private void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -80,7 +81,7 @@ public class PayNormServlet extends HttpServlet {
         if(!StringUtil.isEmpty(id)){
             normId=Integer.parseInt(id);
         }
-        shouFei.entity.PayNorm payNormById = service.findPayNormById(Integer.parseInt(id));
+        PayNorm payNormById = service.findPayNormById(Integer.parseInt(id));
         request.setAttribute("payNormById",payNormById);
         request.getRequestDispatcher("/shouFei/norm/payNormAdd.jsp").forward(request,response);
     }
@@ -91,14 +92,14 @@ public class PayNormServlet extends HttpServlet {
         pageBean.setPageIndex(Integer.parseInt(page));
         pageBean.setPageCount(Integer.parseInt(limit));
         pageBean.setCount(service.findAll().size());
-        List<shouFei.entity.PayNorm> payNormList = service.queryByPage(pageBean);
+        List<PayNorm> payNormList = service.queryByPage(pageBean);
         JSONObject array = JsonUtil.getJsonObject(payNormList, pageBean);
         response.getWriter().print(array);
     }
     protected void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("payName");
         String payName=name;
-        List<shouFei.entity.PayNorm> payNorms = service.queryOne(payName);
+        List<PayNorm> payNorms = service.queryOne(payName);
         request.getSession().setAttribute("payNorms",payNorms);
         if (!payName.isEmpty()){
             response.getWriter().print(1);

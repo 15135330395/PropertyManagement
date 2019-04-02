@@ -70,14 +70,13 @@
                 , {field: 'roomNumber', title: '房间号'}
                 , {field: 'payName', title: '收费项目名称'}
                 , {field: 'normName', title: '收费标准名称'}
-                , {field: 'price', title: '单价'}
-                , {field: 'area', title: '面积'}
-                , {field: 'closeEnd', title: '固定金额'}
+                , {field: 'price', title: '单价（元）'}
+                , {field: 'area', title: '面积（m^2）'}
+                , {field: 'closeEnd', title: '固定金额（元）'}
                 , {field: 'riqi', title: '日期', templet: '#loginTime'}
-                , {field: 'money', title: '房租'}
-                , {field: 'money1', title: '物业费'}
-                , {field: 'money2', title: '停车费'}
-                , {field: 'moneysum', title: '总金额'}
+                , {field: 'money', title: '房租（元）'}
+                , {field: 'money2', title: '停车费（元）'}
+                , {field: 'moneysum', title: '总金额（元）'}
                 , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
                 //抄表录入
             ]]

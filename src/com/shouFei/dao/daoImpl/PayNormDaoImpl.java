@@ -4,7 +4,7 @@ import com.utils.JdbcUtil;
 import org.apache.commons.dbutils.QueryRunner;
 import com.shouFei.dao.PayNormDao;
 import com.entity.PageBean;
-import shouFei.entity.PayNorm;
+import com.shouFei.entity.PayNorm;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

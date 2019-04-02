@@ -102,7 +102,6 @@
             ]]
             ,page: true
         });
-
 //头工具栏事件
         table.on('toolbar(test)', function(obj){
             var checkStatus = table.checkStatus(obj.config.id);
@@ -123,8 +122,6 @@
                     break;
             };
         });
-
-
         //监听行工具事件
         table.on('tool(test)', function(obj){
             var data = obj.data;
@@ -158,29 +155,11 @@
                     area: ['700px', '650px'],
                     offset: 'auto', //右下角弹出
                     anim: 2,
-                    content: ['<%=request.getContextPath()%>/PayItemsServlet?action=queryOne&id='+data.payId, 'no'], //iframe的url，no代表不显示滚动条
+                    content: ['<%=request.getContextPath()%>/PayItemsServlet?action=queryOne&id='+data.payId, 'no'] //iframe的url，no代表不显示滚动条
                 });
             }
-<<<<<<< Updated upstream
-            //查看收费标准
-            <%--else if(obj.event === 'querynorm'){--%>
-                <%--layer.open({--%>
-                    <%--type: 2,--%>
-                    <%--title: "收费标准",--%>
-                    <%--closeBtn: 1, //不显示关闭按钮--%>
-                    <%--shade: [0],--%>
-                    <%--area: ['1500px', '900px'],--%>
-                    <%--offset: 'auto', //右下角弹出--%>
-                    <%--anim: 2,--%>
-                    <%--content: ['<%=request.getContextPath()%>/shouFei/norm/payNorm.jsp', 'no'], //iframe的url，no代表不显示滚动条--%>
-                <%--});--%>
-
-            <%--}--%>
-=======
->>>>>>> Stashed changes
         });
     });
 </script>
-
 </body>
 </html>

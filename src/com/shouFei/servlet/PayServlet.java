@@ -3,6 +3,7 @@ package com.shouFei.servlet;
 
 import com.alibaba.fastjson.JSONObject;
 import com.entity.PageBean;
+import com.shouFei.entity.Pay;
 import com.shouFei.service.PayService;
 import com.utils.DateUtil;
 import com.utils.JsonUtil;
@@ -47,7 +48,7 @@ public class PayServlet extends HttpServlet {
         String reason = request.getParameter("reason");
         String transactor = request.getParameter("transactor");
         String shijian = request.getParameter("shijian");
-        int i = service.addPay(new shouFei.entity.Pay(department,Integer.parseInt(staffId),staffName,Double.parseDouble(monery), reason,transactor, DateUtil.formatString(shijian,"yyyy-MM-dd")));
+        int i = service.addPay(new Pay(department,Integer.parseInt(staffId),staffName,Double.parseDouble(monery), reason,transactor, DateUtil.formatString(shijian,"yyyy-MM-dd")));
         response.getWriter().print(i);
     }
     private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +60,7 @@ public class PayServlet extends HttpServlet {
         String reason = request.getParameter("reason");
         String transactor = request.getParameter("transactor");
         String shijian = request.getParameter("shijian");
-        int i = service.updatePay(new shouFei.entity.Pay(Integer.parseInt(pid),department,Integer.parseInt(staffId),staffName,Double.parseDouble(monery), reason,transactor, DateUtil.formatString(shijian,"yyyy-MM-dd")));
+        int i = service.updatePay(new Pay(Integer.parseInt(pid),department,Integer.parseInt(staffId),staffName,Double.parseDouble(monery), reason,transactor, DateUtil.formatString(shijian,"yyyy-MM-dd")));
         response.getWriter().print(i);
 
     }
@@ -78,7 +79,7 @@ public class PayServlet extends HttpServlet {
         if(!StringUtil.isEmpty(id)){
             pid=Integer.parseInt(id);
         }
-        shouFei.entity.Pay payById = service.findPayById(Integer.parseInt(id));
+        Pay payById = service.findPayById(Integer.parseInt(id));
         request.setAttribute("payById",payById);
         request.getRequestDispatcher("/shouFei/pay/payAdd.jsp").forward(request,response);
     }
@@ -91,7 +92,7 @@ public class PayServlet extends HttpServlet {
         pageBean.setPageCount(Integer.parseInt(limit));
         pageBean.setCount(service.findAll().size());
 
-        List<shouFei.entity.Pay> payList = service.queryByPage(pageBean);
+        List<Pay> payList = service.queryByPage(pageBean);
         JSONObject array = JsonUtil.getJsonObject(payList, pageBean);
         response.getWriter().print(array);
     }

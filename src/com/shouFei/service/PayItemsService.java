@@ -3,7 +3,7 @@ package com.shouFei.service;
 import com.shouFei.dao.PayItemsDao;
 import com.shouFei.dao.daoImpl.PayItemsDaoImpl;
 import com.entity.PageBean;
-import shouFei.entity.PayItems;
+import com.shouFei.entity.PayItems;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class PayItemsService {
     private PayItemsDao pIdao=new PayItemsDaoImpl();
+
     public List<PayItems> findAll(){
         return pIdao.findAll();
     }
@@ -31,6 +32,7 @@ public class PayItemsService {
     public List<PayItems> queryByPage(PageBean pageBean){
         return pIdao.queryByPage(pageBean);
     }
+
     public PayItems findPayItemsById(int id){
         return  pIdao.findPayItemsById(id);
     }

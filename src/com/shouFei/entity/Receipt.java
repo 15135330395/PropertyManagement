@@ -1,4 +1,4 @@
-package shouFei.entity;
+package com.shouFei.entity;
 
 import java.util.Date;
 
