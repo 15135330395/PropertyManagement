@@ -37,7 +37,7 @@ public class HouseDaoImpl implements HouseDao {
                 house.setHouseId(rs.getInt("house_id"));
                 house.setBuildingId(rs.getInt("building_id"));
                 house.setAcreage(rs.getString("acreage"));
-                house.setUes(rs.getString("use"));
+                house.setPurpose(rs.getString("purpose"));
                 house.setHouseType(rs.getString("house_type"));
                 list.add(house);
             }
@@ -73,7 +73,7 @@ public class HouseDaoImpl implements HouseDao {
                 house.setHouseId(rs.getInt("house_id"));
                 house.setBuildingId(rs.getInt("building_id"));
                 house.setAcreage(rs.getString("acreage"));
-                house.setUes(rs.getString("use"));
+                house.setPurpose(rs.getString("purpose"));
                 house.setHouseType(rs.getString("house_type"));
             }
         } catch (SQLException e) {
@@ -94,9 +94,9 @@ public class HouseDaoImpl implements HouseDao {
 
     @Override
     public int addHouse(House house) {
-        String sql="insert into property_management.house (house_id,building_id,acreage,use,house_type) values (?,?,?,?,?)";
+        String sql="insert into property_management.house (house_id,building_id,acreage,purpose,house_type) values (?,?,?,?,?)";
         try {
-            int i = queryRunner.update(JdbcUtil.getConnection(), sql,house.getHouseId(), house.getBuildingId() ,house.getAcreage(),house.getUes(),house.getHouseType());
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql,house.getHouseId(), house.getBuildingId() ,house.getAcreage(),house.getPurpose(),house.getHouseType());
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -118,9 +118,9 @@ public class HouseDaoImpl implements HouseDao {
 
     @Override
     public int updateHouse(House house) {
-        String sql="update house set house_name=?,acreage=?,use=?,house_type=? where house_id = ?";
+        String sql="update house set building_id=?,acreage=?,purpose=?,house_type=? where house_id = ?";
         try {
-            int i = queryRunner.update(JdbcUtil.getConnection(), sql, house.getBuildingId() ,house.getAcreage(),house.getUes(),house.getHouseType(), house.getHouseId());
+            int i = queryRunner.update(JdbcUtil.getConnection(), sql, house.getBuildingId() ,house.getAcreage(),house.getPurpose(),house.getHouseType(), house.getHouseId());
             return  i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -160,7 +160,7 @@ public class HouseDaoImpl implements HouseDao {
     @Override
     public List<House> queryPageList(PageBean pageBean) {
         List<House> list = new ArrayList<>();
-        String sql="select * from house order by house_id limit ?,?";
+        String sql="select * from house order by building_id limit ?,?";
         PreparedStatement ps=null;
         ResultSet rs = null;
         try {
@@ -170,12 +170,12 @@ public class HouseDaoImpl implements HouseDao {
             ps.setInt(2,pageBean.getPageCount());
             rs = ps.executeQuery();
             while (rs.next()){
-                int houseId = rs.getInt("building_id");
+                int houseId = rs.getInt("house_id");
                 int buildingId = rs.getInt("building_id");
                 String acreage = rs.getString("acreage");
-                String use = rs.getString("use");
-                String houseType = rs.getString("houseType");
-                House house =  new House(houseId,buildingId,acreage,use,houseType);
+                String purpose = rs.getString("purpose");
+                String houseType = rs.getString("house_type");
+                House house =  new House(houseId,buildingId,acreage,purpose,houseType);
                 list.add(house);
             }
         } catch (SQLException e) {
@@ -205,11 +205,11 @@ public class HouseDaoImpl implements HouseDao {
             ps.setInt(1,houseId);
             rs = ps.executeQuery();
             while (rs.next()){
-                int buildingId = rs.getInt("buildingId");
+                int buildingId = rs.getInt("building_id");
                 String acreage = rs.getString("acreage");
-                String use = rs.getString("use");
-                String houseType = rs.getString("houseType");
-                House house = new House(buildingId,buildingId,acreage,use,houseType);
+                String purpose = rs.getString("purpose");
+                String houseType = rs.getString("house_type");
+                House house = new House(houseId,buildingId,acreage,purpose,houseType);
 
                 return house;
             }

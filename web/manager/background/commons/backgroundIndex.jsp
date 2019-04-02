@@ -81,7 +81,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="<%=request.getContextPath()%>/manager/background/house/houseList.jsp">
+                        <a _href="<%=request.getContextPath()%>/HouseServlet?action=query">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>房屋信息</cite>
                         </a>
@@ -100,7 +100,7 @@
 <div class="page-content">
     <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
         <ul class="layui-tab-title">
-            <li class="home"><i class="layui-icon">&#xe68e;</i>我的桌面</li>
+            <li class="home"><i class="layui-icon">&#xe68e;</i>我的工作区</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">

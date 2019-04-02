@@ -76,8 +76,11 @@
     </table>
     <div class="page">
         <div>
-            <a class="prev" href="">&lt;&lt;</a>
-            <c:forEach var="i" begin="1" end="${pageBean.pages}" step="1">
+            <c:if test="${pageBean.pageIndex!=1}">
+                <a class="prev" href="<%=request.getContextPath()%>/BuildingServlet?action=query&pageIndex=${pageBean.pageIndex-1}">&lt;&lt;</a>
+            </c:if>
+            <c:forEach
+                    var="i" begin="1" end="${pageBean.pages}" step="1">
                 <c:if test="${i==pageBean.pageIndex}">
                     <span class="current">${i}</span>
                 </c:if>
@@ -85,7 +88,10 @@
                     <a class="num" href="<%=request.getContextPath()%>/BuildingServlet?action=query&pageIndex=${i}">${i}</a>
                 </c:if>
             </c:forEach>
-            <a class="next" href="">&gt;&gt;</a>
+            <c:if test="${pageBean.pageIndex < pageBean.pages}">
+                <a class="next" href="<%=request.getContextPath()%>/BuildingServlet?action=query&pageIndex=${pageBean.pageIndex+1}">&gt;&gt;</a>
+            </c:if>
+
         </div>
     </div>
 
@@ -111,7 +117,7 @@
             $.ajax({
                 type:"post",
                 url:"<%=request.getContextPath()%>/BuildingServlet",
-                data:"action=delete&kid="+id,
+                data:"action=delete&bid="+id,
                 success:function(msg){
                     //发异步删除数据
                     $(obj).parents("tr").remove();

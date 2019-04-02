@@ -26,7 +26,7 @@
                 <span class="x-red"></span>
             </label>
             <div class="layui-input-inline">
-                <input value="${building.buildingId}" type="hidden" id="buildingId" name="buildingId" required="" lay-verify="required"
+                <input value="${building.buildingId}" type="hidden" id="buildingId" name="buildingId" required="" lay-verify=""
                        autocomplete="off" class="layui-input">
             </div>
         </div>

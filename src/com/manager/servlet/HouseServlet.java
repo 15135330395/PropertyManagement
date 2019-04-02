@@ -52,7 +52,6 @@ public class HouseServlet extends HttpServlet {
         pageBean.setCount(dao.getConut());
         // list数据
         List<House> houseList = dao.queryPageList(pageBean);
-
         request.setAttribute("houseList",houseList);
         request.setAttribute("pageBean",pageBean);
         request.getRequestDispatcher("/manager/background/house/houseList.jsp").forward(request,response);
@@ -62,12 +61,11 @@ public class HouseServlet extends HttpServlet {
         String houseId = request.getParameter("houseId");
         String buildingId = request.getParameter("buildingId");
         String acreage = request.getParameter("acreage");
-        String use = request.getParameter("use");
+        String purpose = request.getParameter("purpose");
         String houseType = request.getParameter("houseType");
 
-        House house = new House(Integer.parseInt(houseId),Integer.parseInt(buildingId),acreage,use,houseType);
+        House house = new House(Integer.parseInt(houseId),Integer.parseInt(buildingId),acreage,purpose,houseType);
         int i = dao.addHouse(house);
-
         response.getWriter().print(""+i);
 
     }
@@ -75,9 +73,9 @@ public class HouseServlet extends HttpServlet {
         String houseId = request.getParameter("houseId");
         String buildingId = request.getParameter("buildingId");
         String acreage = request.getParameter("acreage");
-        String use = request.getParameter("use");
+        String purpose = request.getParameter("purpose");
         String houseType = request.getParameter("houseType");
-        House house = new House(Integer.parseInt(houseId),Integer.parseInt(buildingId),acreage,use,houseType);
+        House house = new House(Integer.parseInt(houseId),Integer.parseInt(buildingId),acreage,purpose,houseType);
         int i = dao.updateHouse(house);
         response.getWriter().print(""+i);
     }
@@ -109,7 +107,7 @@ public class HouseServlet extends HttpServlet {
         House house = dao.queryOne(houseId);
 
         request.setAttribute("house",house);
-        request.getRequestDispatcher("/manager/background/house/houseupdate.jsp").forward(request,response);
+        request.getRequestDispatcher("/manager/background/house/houseUpdate.jsp").forward(request,response);
 
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

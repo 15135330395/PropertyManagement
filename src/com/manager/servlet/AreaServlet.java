@@ -72,6 +72,7 @@ public class AreaServlet extends HttpServlet {
         int i = dao.addArea(new Area(areaName));
         response.getWriter().print(i);
     }
+
     protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String areaId = request.getParameter("areaId");
         String areaName = request.getParameter("areaName");
@@ -108,7 +109,6 @@ public class AreaServlet extends HttpServlet {
 
     protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AreaDao dao = new AreaDaoImpl();
-        System.out.println("gsgsss");
         String ids = request.getParameter("ids");
         System.out.println(ids);
         String[] id = ids.split(",");
@@ -130,7 +130,7 @@ public class AreaServlet extends HttpServlet {
         Area area = dao.findAreaById(areaId);
 
         request.setAttribute("area",area);
-        request.getRequestDispatcher("/background/area/areaAdd.jsp").forward(request,response);
+        request.getRequestDispatcher("/manager/background/area/areaAdd.jsp").forward(request,response);
 
     }
 }

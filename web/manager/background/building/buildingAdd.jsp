@@ -71,12 +71,12 @@
 
             $.ajax({
                 type:"post",
-                url:"<%=request.getContextPath()%>/LinkServlet",
+                url:"<%=request.getContextPath()%>/BuildingServlet",
                 data:{
                     "action":"add",
                     "buildingName":buildingName,
                     "staffId":staffId,
-                    "areaId":areaId,
+                    "areaId":areaId
                 },
                 success:function(msg){
                     if(msg=="1"){

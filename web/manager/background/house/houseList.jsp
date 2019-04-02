@@ -35,7 +35,7 @@
 <div class="x-body">
     <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-        <button class="layui-btn" onclick="x_admin_show('添加房屋','<%=request.getContextPath()%>/background/house/houseList.jsp')"><i class="layui-icon"></i>添加</button>
+        <button class="layui-btn" onclick="x_admin_show('添加房屋','<%=request.getContextPath()%>/manager/background/house/houseAdd.jsp')"><i class="layui-icon"></i>添加</button>
         <span class="x-right" style="line-height:40px">共有数据：${pageBean.count} 条</span>
     </xblock>
     <table class="layui-table">
@@ -61,10 +61,10 @@
                 <td>${house.houseId}</td>
                 <td>${house.buildingId}</td>
                 <td>${house.acreage}</td>
-                <td>${house.use}</td>
+                <td>${house.purpose}</td>
                 <td>${house.houseType}</td>
                 <td class="td-manage">
-                    <a title="查看"  onclick="x_admin_show('编辑','<%=request.getContextPath()%>/HouseServlet?action=queryOne&kid=${house.houseId}')" href="javascript:;">
+                    <a title="查看"  onclick="x_admin_show('编辑','<%=request.getContextPath()%>/HouseServlet?action=queryOne&hid=${house.houseId}')" href="javascript:;">
                         <i class="layui-icon">&#xe63c;</i>
                     </a>
                     <a title="删除" onclick="member_del(this,'${house.houseId}')" href="javascript:;">
@@ -78,7 +78,9 @@
     </table>
     <div class="page">
         <div>
-            <a class="prev" href="">&lt;&lt;</a>
+            <c:if test="${pageBean.pageIndex!=1}">
+                <a class="prev" href="<%=request.getContextPath()%>/HouseServlet?action=query&pageIndex=${pageBean.pageIndex-1}">&lt;&lt;</a>
+            </c:if>
             <c:forEach var="i" begin="1" end="${pageBean.pages}" step="1">
                 <c:if test="${i==pageBean.pageIndex}">
                     <span class="current">${i}</span>
@@ -87,7 +89,9 @@
                     <a class="num" href="<%=request.getContextPath()%>/HouseServlet?action=query&pageIndex=${i}">${i}</a>
                 </c:if>
             </c:forEach>
-            <a class="next" href="">&gt;&gt;</a>
+            <c:if test="${pageBean.pageIndex < pageBean.pages}">
+                <a class="next" href="<%=request.getContextPath()%>/HouseServlet?action=query&pageIndex=${pageBean.pageIndex+1}">&gt;&gt;</a>
+            </c:if>
         </div>
     </div>
 
@@ -113,7 +117,7 @@
             $.ajax({
                 type:"post",
                 url:"<%=request.getContextPath()%>/HouseServlet",
-                data:"action=delete&kid="+id,
+                data:"action=delete&hid="+id,
                 success:function(msg){
                     //发异步删除数据
                     $(obj).parents("tr").remove();
