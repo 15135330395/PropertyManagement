@@ -47,6 +47,8 @@ public class KpiServlet extends HttpServlet {
             toEidt(request, response);
         }else if ("queryDetail".equals(action)) {
             queryDetail(request, response);
+        }else if ("deleteAll".equals(action)) {
+            deleteAll(request, response);
         }
 
 
@@ -69,12 +71,14 @@ public class KpiServlet extends HttpServlet {
     }
     protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ids = request.getParameter("ids");
+        System.out.println(ids);
         String[] array = ids.split(",");
         int sum=0;
-        for (String labourContractId: array) {
-            int i = service.deleteKpi(Integer.parseInt(labourContractId));
+        for (String id: array) {
+            int i = service.deleteKpi(Integer.parseInt(id));
             sum+=i;
         }
+        System.out.println(sum);
         response.getWriter().print(sum);
     }
 

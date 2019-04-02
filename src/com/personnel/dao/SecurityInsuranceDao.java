@@ -19,4 +19,5 @@ public interface SecurityInsuranceDao {
     public SecurityInsurance queryOne(int securityInsuranceId);
 
     SecurityInsurance queryOneByStaffId(int staffId);
+
 }

@@ -18,51 +18,21 @@
     <form class="layui-form" action="">
         <input type="hidden" name="attendanceId" value="${attendance.attendanceId}" autocomplete="off" class="layui-input">
         <div class="layui-form-item">
-            <label class="layui-form-label">部门名称</label>
-            <div class="layui-input-block">
-                <select  lay-verify="required" lay-filter="provSel">
-                    <option value=""></option>
-                    <c:forEach items="${lsit}" var="aList">
-                        <option id="area" value="${aList.area_id}">${aList.area_name}</option>
-                    </c:forEach>
-                </select>
-            </div>
-            <label class="layui-form-label">员工姓名</label>
-            <div class="layui-input-block">
-                <select id="build" class="asd" name="build" lay-verify="required">
-                    <option value=""></option>
-                </select>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">员工姓名：</label>
+            <label class="layui-form-label">部门名称:</label>
             <div class="layui-input-inline">
-                <select name="staffId" lay-verify="required" value="${attendance.staffId}">
-                    <option value=""></option>
-                    <c:forEach items="${staffList}" var="list">
-                        <c:if test="${list.staffId == attendance.staffId}">
-                            <option  selected value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
-                        <c:if test="${list.staffId != attendance.staffId}">
-                            <option value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">所属部门：</label>
-            <div class="layui-input-inline">
-                <select name="departmentId" lay-verify="required" value="${attendance.departmentId}">
+                <select   lay-verify="required" lay-filter="departmentSel" name="departmentId" >
                     <option value=""></option>
                     <c:forEach items="${departmentList}" var="list">
-                        <c:if test="${list.departmentId == attendance.departmentId}">
-                            <option selected value="${list.departmentId}">${list.departmentName}</option>
-                        </c:if>
-                        <c:if test="${list.departmentId != attendance.departmentId}">
-                            <option value="${list.departmentId}">${list.departmentName}</option>
-                        </c:if>
+                            <option id="department"  value="${list.departmentId}">${list.departmentName}</option>
                     </c:forEach>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">员工姓名:</label>
+            <div class="layui-input-inline">
+                <select id="staff"   lay-verify="required" name="staffId" >
+                    <option value=""></option>
                 </select>
             </div>
         </div>
@@ -143,18 +113,21 @@
                 })
             return false;
         });
-        form.on('select(provSel)', function (data) {
+
+        form.on('select(departmentSel)', function (data) {
             $.ajax({
-                url: "<%=request.getContextPath()%>/AddrServlet",
+                url: "<%=request.getContextPath()%>/AttendanceServlet",
                 dataType: 'json',
                 data: {
-                    action: "queryBuild",
-                    bid: data.value
+                    action: "queryStaff",
+                    departmentId: data.value
                 },
                 success: function (result) {
+
                     var arr = eval(result);
+                    $("#staff option").remove();
                     $.each(arr, function (key, val) {
-                        $(".asd").append("<option id='" + val.building_id + "'>" + val.building_name + "</option>")
+                        $("#staff").append("<option value='" + val.staffId + "'>" + val.staffName + "</option>")
                     });
                     form.render('select');
                 }

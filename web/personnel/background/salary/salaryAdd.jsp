@@ -20,15 +20,10 @@
         <div class="layui-form-item">
             <label class="layui-form-label">员工姓名：</label>
             <div class="layui-input-inline">
-                <select name="staffId" lay-verify="required" value="${salary.staffId}">
+                <select name="staffId" lay-verify="required" lay-filter="staffSel">
                     <option value=""></option>
                     <c:forEach items="${staffList}" var="list">
-                        <c:if test="${list.staffId == salary.staffId}">
-                            <option  selected value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
-                        <c:if test="${list.staffId != salary.staffId}">
-                            <option value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
+                            <option id="staff" value="${list.staffId}">${list.staffName}</option>
                     </c:forEach>
                 </select>
             </div>
@@ -42,15 +37,15 @@
         <div class="layui-form-item">
             <label class="layui-form-label">考勤编号：</label>
             <div class="layui-input-inline">
-                <input  type="number" name="attantanceId" required lay-verify="required" value="${salary.attantanceId}"  placeholder="请输入考勤编号" autocomplete="off" class="layui-input">
+                <input readonly id="attantance"  type="number" name="attantanceId" required lay-verify="required" value=""  placeholder="暂未添加考勤"  autocomplete="off" class="layui-input">
             </div>
             <label class="layui-form-label">绩效编号：</label>
             <div class="layui-input-inline">
-                <input type="number" name="kpiId" required lay-verify="required" value="${salary.kpiId}"  placeholder="请输入绩效编号" autocomplete="off" class="layui-input">
+                <input readonly id="kpi" type="number" name="kpiId" required lay-verify="required" value=""  placeholder="暂未添加绩效" autocomplete="off" class="layui-input">
             </div>
             <label class="layui-form-label">社保编号：</label>
             <div class="layui-input-inline">
-                <input  type="number" name="securityInsuranceId" required lay-verify="required" value="${salary.securityInsuranceId}"  placeholder="请输入社保编号" autocomplete="off" class="layui-input">
+                <input readonly id="securityInsurance" type="number" name="securityInsuranceId" required lay-verify="required" value=""  placeholder="暂未添加社保" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -95,7 +90,44 @@
                 })
             return false;
         });
-
+        form.on('select(staffSel)', function (data) {
+            $("#attantance").val('');
+            $("#kpi").val('');
+            $("#securityInsurance").val('');
+            $.ajax({
+                url: "<%=request.getContextPath()%>/SalaryServlet",
+                data: {
+                    action: "queryAttantanceId",
+                    staffId: data.value
+                },
+                success: function (result) {
+                    var arr = eval("("+result+")");
+                        $("#attantance").val(arr)
+                }
+            });
+            $.ajax({
+                url: "<%=request.getContextPath()%>/SalaryServlet",
+                data: {
+                    action: "querySecurityInsuranceId",
+                    staffId: data.value
+                },
+                success: function (result) {
+                    var arr = eval("("+result+")");
+                    $("#securityInsurance").val(arr)
+                }
+            });
+            $.ajax({
+                url: "<%=request.getContextPath()%>/SalaryServlet",
+                data: {
+                    action: "queryKpiId",
+                    staffId: data.value
+                },
+                success: function (result) {
+                    var arr = eval("("+result+")");
+                    $("#kpi").val(arr)
+                }
+            });
+        });
     });
 </script>
 </body>

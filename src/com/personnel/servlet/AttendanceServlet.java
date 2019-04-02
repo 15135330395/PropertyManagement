@@ -32,10 +32,11 @@ import java.util.List;
  * @author: LiGX
  * @Date: 2019/3/30
  */
-@WebServlet(name = "AttendanceServlet",urlPatterns = "/AttendanceServlet")
+@WebServlet(name = "AttendanceServlet", urlPatterns = "/AttendanceServlet")
 public class AttendanceServlet extends HttpServlet {
-    private AttendanceService service=new AttendanceService();
-    private StaffService staffService=new StaffService();
+    private AttendanceService service = new AttendanceService();
+    private StaffService staffService = new StaffService();
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
@@ -53,56 +54,58 @@ public class AttendanceServlet extends HttpServlet {
             queryOne(request, response);
         } else if ("queryPage".equals(action)) {
             queryPage(request, response);
-        }else if ("toEdit".equals(action)) {
+        } else if ("toEdit".equals(action)) {
             toEdit(request, response);
-        }else if ("queryDetail".equals(action)) {
+        } else if ("queryDetail".equals(action)) {
             queryDetail(request, response);
-        }else if ("queryStaff".equals(action)) {
+        } else if ("queryStaff".equals(action)) {
             queryStaff(request, response);
         }
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        doPost(request, response);
     }
-    private void queryStaff(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+
+    private void queryStaff(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
         String departmentId = request.getParameter("departmentId");
-        request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=UTF-8");
         List<Staff> staffList = staffService.queryStaffByDepartmentId(Integer.parseInt(departmentId));
-            JSONArray jsonArray = new JSONArray();
-            for(int i = 0;i < staffList.size();i++){
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("staffId",staffList.get(i).getStaffId());
-                jsonObject.put("staffName",staffList.get(i).getStaffName());
-                jsonArray.add(jsonObject);
-            }
-        try {
-            response.getWriter().print(jsonArray);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//            JSONArray jsonArray = new JSONArray();
+//            for(int i = 0;i < staffList.size();i++){
+//                JSONObject jsonObject = new JSONObject();
+//                jsonObject.put("staffId",staffList.get(i).getStaffId());
+//                jsonObject.put("staffName",staffList.get(i).getStaffName());
+//                jsonArray.add(jsonObject);
+//            }
+//        try {
+//            response.getWriter().print(jsonArray);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        response.getWriter().print(JSONArray.toJSON(staffList));
     }
 
     protected void queryDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String staffId = request.getParameter("staffId");
         Attendance attendance = service.queryOneByStaffId(Integer.parseInt(staffId));
-        DepartmentDao dao=new DepartmentDaoImpl();
+        DepartmentDao dao = new DepartmentDaoImpl();
         List<Department> departmentList = dao.findAll();
 
-        request.setAttribute("departmentList",departmentList);
+        request.setAttribute("departmentList", departmentList);
         List<Staff> staffList = staffService.findAll();
-        request.setAttribute("attendance",attendance);
-        request.setAttribute("staffList",staffList);
+        request.setAttribute("attendance", attendance);
+        request.setAttribute("staffList", staffList);
         request.getRequestDispatcher("/personnel/background/attendance/attendanceDetail.jsp").forward(request, response);
     }
+
     protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ids = request.getParameter("ids");
         String[] array = ids.split(",");
-        int sum=0;
-        for (String attendanceId: array) {
+        int sum = 0;
+        for (String attendanceId : array) {
             int i = service.deleteAttendance(Integer.parseInt(attendanceId));
-            sum+=i;
+            sum += i;
         }
         response.getWriter().print(sum);
     }
@@ -113,18 +116,16 @@ public class AttendanceServlet extends HttpServlet {
         String workDay = request.getParameter("workDay");
 
 
-
         String sickLeave = request.getParameter("sickLeave");
         String affairLeave = request.getParameter("affairLeave");
         String onduty = request.getParameter("onduty");
         String abnormal = request.getParameter("abnormal");
 
 
-
         Attendance attendance = new Attendance(
-                Integer.parseInt(staffId),Integer.parseInt(departmentId),
+                Integer.parseInt(staffId), Integer.parseInt(departmentId),
                 Integer.parseInt(workDay),
-                Integer.parseInt(sickLeave),Integer.parseInt(affairLeave),Integer.parseInt(onduty),
+                Integer.parseInt(sickLeave), Integer.parseInt(affairLeave), Integer.parseInt(onduty),
                 Integer.parseInt(abnormal)
         );
 
@@ -140,20 +141,18 @@ public class AttendanceServlet extends HttpServlet {
         String workDay = request.getParameter("workDay");
 
 
-
         String sickLeave = request.getParameter("sickLeave");
         String affairLeave = request.getParameter("affairLeave");
         String onduty = request.getParameter("onduty");
         String abnormal = request.getParameter("abnormal");
 
 
-
         Attendance attendance = new Attendance(Integer.parseInt(attendanceId),
-                Integer.parseInt(staffId),Integer.parseInt(departmentId),
+                Integer.parseInt(staffId), Integer.parseInt(departmentId),
                 Integer.parseInt(workDay),
-                Integer.parseInt(sickLeave),Integer.parseInt(affairLeave),Integer.parseInt(onduty),
+                Integer.parseInt(sickLeave), Integer.parseInt(affairLeave), Integer.parseInt(onduty),
                 Integer.parseInt(abnormal)
-                );
+        );
 
         int i = service.updateAttendance(attendance);
 
@@ -166,27 +165,29 @@ public class AttendanceServlet extends HttpServlet {
             Attendance attendance = service.queryOne(Integer.parseInt(attendanceId));
             request.setAttribute("attendance", attendance);
         }
-        DepartmentDao dao=new DepartmentDaoImpl();
+        DepartmentDao dao = new DepartmentDaoImpl();
         List<Department> departmentList = dao.findAll();
-        request.setAttribute("departmentList",departmentList);
+        request.setAttribute("departmentList", departmentList);
         List<Staff> staffList = staffService.findAll();
-        request.setAttribute("staffList",staffList);
+        request.setAttribute("staffList", staffList);
         request.getRequestDispatcher("/personnel/background/attendance/attendanceAdd.jsp").forward(request, response);
     }
+
     protected void toEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String attendanceId = request.getParameter("attendanceId");
         if (attendanceId != null) {
             Attendance attendance = service.queryOne(Integer.parseInt(attendanceId));
             request.setAttribute("attendance", attendance);
         }
-        DepartmentDao dao=new DepartmentDaoImpl();
+        DepartmentDao dao = new DepartmentDaoImpl();
         List<Department> departmentList = dao.findAll();
-        request.setAttribute("departmentList",departmentList);
+        request.setAttribute("departmentList", departmentList);
         List<Staff> staffList = staffService.findAll();
-        request.setAttribute("staffList",staffList);
+        request.setAttribute("staffList", staffList);
 
         request.getRequestDispatcher("/personnel/background/attendance/attendanceEdit.jsp").forward(request, response);
     }
+
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String attendanceId = request.getParameter("attendanceId");
         int i = service.deleteAttendance(Integer.parseInt(attendanceId));

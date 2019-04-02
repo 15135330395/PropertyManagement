@@ -1,5 +1,6 @@
 package com.personnel.servlet;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.entity.Department;
 import com.entity.PageBean;
@@ -54,9 +55,30 @@ public class SalaryServlet extends HttpServlet {
             deleteAll(request, response);
         }else if ("toEdit".equals(action)) {
             toEdit(request, response);
+        }else if ("queryAttantanceId".equals(action)) {
+            queryAttantanceId(request, response);
+        }else if ("querySecurityInsuranceId".equals(action)) {
+            querySecurityInsuranceId(request, response);
+        }else if ("queryKpiId".equals(action)) {
+            queryKpiId(request, response);
         }
-    }
 
+    }
+    protected void querySecurityInsuranceId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String staffId = request.getParameter("staffId");
+        SecurityInsurance securityInsurance = securityInsuranceService.queryOneByStaffId(Integer.parseInt(staffId));
+        response.getWriter().print(securityInsurance.getSecurityInsuranceId());
+    }
+    protected void queryKpiId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String staffId = request.getParameter("staffId");
+        Kpi kpi = kpiService.queryOneByStaffId(Integer.parseInt(staffId));
+        response.getWriter().print(kpi.getKpiId());
+    }
+    protected void queryAttantanceId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String staffId = request.getParameter("staffId");
+        Attendance attendance = attendanceService.queryOneByStaffId(Integer.parseInt(staffId));
+        response.getWriter().print(attendance.getAttendanceId());
+    }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }

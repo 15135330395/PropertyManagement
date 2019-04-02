@@ -19,15 +19,10 @@
         <div class="layui-form-item">
             <label class="layui-form-label">员工姓名：</label>
             <div class="layui-input-inline">
-                <select name="staffId" lay-verify="required" value="${kpi.staffId}">
+                <select name="staffId" lay-verify="required" >
                     <option value=""></option>
                     <c:forEach items="${staffList}" var="list">
-                        <c:if test="${list.staffId == kpi.staffId}">
-                            <option  selected value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
-                        <c:if test="${list.staffId != kpi.staffId}">
-                            <option value="${list.staffId}">${list.staffName}</option>
-                        </c:if>
+                        <option   value="${list.staffId}">${list.staffName}</option>
                     </c:forEach>
                 </select>
             </div>
@@ -35,7 +30,7 @@
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">评价人：</label>
             <div class="layui-input-inline">
-                <input type="text"   name="evaluatePerson"  value="${kpi.evaluatePerson}"  lay-verify="required" placeholder="请输入评价人"class="layui-input">
+                <input type="text"   name="evaluatePerson"    lay-verify="required" placeholder="请输入评价人"class="layui-input">
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
