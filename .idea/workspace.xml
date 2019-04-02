@@ -7,167 +7,195 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="956c5c81-414e-4503-b7aa-b2c1b41e20ed" name="Default Changelist" comment="修改文件路径">
-      <change afterPath="$PROJECT_DIR$/web/logistics/info.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f9283fef-34ad-4761-99b6-2797f986f02c.corrupted.20190402-035359.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f9283fef-34ad-4761-99b6-2797f986f02c.corrupted.20190402-035359.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f9283fef-34ad-4761-99b6-2797f986f02c.corrupted.20190402-120038.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f9283fef-34ad-4761-99b6-2797f986f02c.corrupted.20190402-120038.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/DiaoBoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/GoodsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/OutStorageDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/PurchaseDeliverDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/PurchaseListOrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/StorageDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/SupplierDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/daoImpl/DiaoBoDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/daoImpl/GoodsDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/daoImpl/OutStorageDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/daoImpl/PurchaseDeliverDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/daoImpl/PurchaseListOrderDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/daoImpl/StorageDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/dao/daoImpl/SupplierDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/entity/DiaoBo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/entity/Goods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/entity/OutStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/entity/PageBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/entity/PurchaseDeliver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/entity/PurchaseListOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/entity/Storage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/entity/Supplier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/service/DiaoBoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/service/GoodsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/service/OutStorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/service/PurchaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/service/StorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/service/SupplierService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/servlet/DiaoBoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/servlet/GoodsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/servlet/OutStorageServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/servlet/PurchaseServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/servlet/StorageServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/servlet/SupplierServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/util/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/util/JdbcUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/util/JsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/storage/util/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/background/commons/info.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/css/font.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/css/xadmin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/db/newsdb_link.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/db/newsdb_news.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/db/newsdb_news_type.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/fonts/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/fonts/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/fonts/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/fonts/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/img/aiwrap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/img/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/js/dateFormat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/js/xadmin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/js/xcity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/layui.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/images/face/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/layedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/rate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/lay/modules/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/layui.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/static/layui/layui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/DiaoBo/DiaoBo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/DiaoBo/DiaoBoAdd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/DiaoBo/QueryLimitDate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Goods/Check.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Goods/EarlyWarning.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Goods/Goods.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Goods/GoodsAdd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Goods/GoodsOutStorage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/OutStorage/OutStorage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/OutStorage/QueryLimitDate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Purchase/PurchaseDeliver.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Purchase/PurchaseDeliverAdd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Purchase/PurchaseDeliverEdit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Purchase/PurchaseListOrder.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Purchase/QueryLimitDate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Storage/Storage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Storage/StorageUpdate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Supplier/Supplier.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Supplier/SupplierAdd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Supplier/SupplierUpdate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Storage/wuliao/Welcome/Welcome.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/Menu/AddMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Menu/AddMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/Menu/EditMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Menu/EditMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/Menu/MenuList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Menu/MenuList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/Role/AddRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Role/AddRole.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/Role/EditRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Role/EditRole.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/Role/GrantRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Role/GrantRole.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/Role/RoleList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/Role/RoleList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/User/AddUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/User/AddUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/User/EditUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/User/EditUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/User/GiveUsersARole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/User/GiveUsersARole.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SystemManager/User/UserList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/User/UserList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SystemManager/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/info.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/AddCleaningTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/AddCleaningTask.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskByTaskId.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskByTaskId.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskCompletion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskCompletion.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/CleaningTask/EditCleaningTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/CleaningTask/EditCleaningTask.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/AddFireFightingEquipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/AddFireFightingEquipment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/AddSecurityGuardEquipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/AddSecurityGuardEquipment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/EditEquipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/EditEquipment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/EquipmentById.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/EquipmentById.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/FireFightingEquipmentList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/FireFightingEquipmentList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Equipment/SecurityGuardEquipmentList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Equipment/SecurityGuardEquipmentList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/FireIncident/AddFireIncident.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/FireIncident/AddFireIncident.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/FireIncident/EditFireIncident.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/FireIncident/EditFireIncident.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/FireIncident/FireIncidentById.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/FireIncident/FireIncidentById.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/FireIncident/FireIncidentList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/FireIncident/FireIncidentList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/AddGuardRota.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/AddGuardRota.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/ClockInAndOut.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/ClockInAndOut.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/EditGuardRota.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/EditGuardRota.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/GuardRotaByRotaId.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/GuardRotaByRotaId.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/GuardRota/GuardRotaList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/GuardRota/GuardRotaList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/AddScore.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/AddScore.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/CleaningTaskList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/CleaningTaskList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/EditLogisticsStaff.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/EditLogisticsStaff.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/LogisticsStaffById.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/LogisticsStaffById.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/Manager/LogisticsStaffList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/Manager/LogisticsStaffList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/AddOperatingRecord.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/AddOperatingRecord.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/EditOperatingRecord.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/EditOperatingRecord.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordById.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordById.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logistics/OperatingRecord/ReturnEquipment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/OperatingRecord/ReturnEquipment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/css/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/css/font.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/css/xadmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/css/xadmin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/fonts/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/fonts/iconfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/fonts/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/fonts/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/fonts/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/fonts/iconfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/fonts/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/fonts/iconfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/dateFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/js/dateFormat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/xadmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/js/xadmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/layui.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/layui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/layui.mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/layui.mobile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/code.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/code.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/laydate/default/laydate.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/layer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/font/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/font/iconfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/font/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/font/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/font/iconfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/font/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/font/iconfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/0.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/10.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/10.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/11.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/11.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/12.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/12.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/13.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/13.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/14.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/14.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/15.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/15.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/16.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/16.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/17.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/17.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/18.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/18.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/19.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/19.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/2.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/20.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/20.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/21.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/21.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/22.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/22.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/23.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/23.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/24.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/24.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/25.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/25.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/26.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/26.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/27.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/27.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/28.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/28.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/29.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/29.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/3.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/3.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/30.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/30.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/31.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/31.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/32.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/32.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/33.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/33.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/34.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/34.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/35.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/35.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/36.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/36.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/37.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/37.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/38.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/38.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/39.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/39.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/4.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/4.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/40.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/40.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/41.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/41.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/42.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/42.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/43.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/43.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/44.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/44.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/45.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/45.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/46.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/46.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/47.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/47.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/48.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/48.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/49.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/49.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/5.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/5.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/50.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/50.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/51.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/51.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/52.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/52.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/53.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/53.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/54.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/54.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/55.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/55.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/56.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/56.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/57.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/57.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/58.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/58.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/59.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/59.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/6.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/6.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/60.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/60.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/61.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/61.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/62.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/62.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/63.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/63.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/64.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/64.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/65.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/65.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/66.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/66.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/67.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/67.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/68.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/68.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/69.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/69.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/7.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/7.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/70.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/70.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/71.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/71.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/8.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/8.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/images/face/9.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/images/face/9.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/code.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/colorpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/colorpicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/element.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/flow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/laydate.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/laydate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/layedit.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/layedit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/layer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/laypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/laypage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/laytpl.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/laytpl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/mobile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/rate.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/rate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/tree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/lay/modules/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/lay/modules/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/layui.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/lib/layui/layui.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/logistics/static/lib/layui/layui.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -209,18 +237,50 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="865353051">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="1" />
+          <entry key="java" value="47" />
+          <entry key="jsp" value="8" />
+          <entry key="sql" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="1" />
+          <entry key="JAVA" value="47" />
+          <entry key="JSP" value="8" />
+          <entry key="SQL" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="48" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="48" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.create.new" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/logistics/static/css/xadmin.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -248,39 +308,39 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="后勤" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="物料管理" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/system/RoleUser.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5763eb55-6f1f-41f2-b587-5d6460a4ec5f/console.sql" />
-        <option value="$PROJECT_DIR$/src/com/system/Menu.java" />
-        <option value="$PROJECT_DIR$/src/com/system/MenuRole.java" />
-        <option value="$PROJECT_DIR$/src/com/utils/MD5.java" />
-        <option value="$PROJECT_DIR$/web/SystemManager/RoleList.jsp" />
-        <option value="$PROJECT_DIR$/src/com/system/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/com/system/service/UserService.java" />
-        <option value="$PROJECT_DIR$/web/SystemManager/Role/addRole.jsp" />
-        <option value="$PROJECT_DIR$/src/com/system/service/RoleService.java" />
-        <option value="$PROJECT_DIR$/src/com/system/dao/RoleDao.java" />
-        <option value="$PROJECT_DIR$/src/com/system/dao/impl/RoleDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/system/entity/Role.java" />
-        <option value="$PROJECT_DIR$/web/logistics/GuardRota/AddGuardRota.jsp" />
-        <option value="$PROJECT_DIR$/src/com/system/entity/User.java" />
-        <option value="$PROJECT_DIR$/web/SystemManager/User/EditUser.jsp" />
-        <option value="$PROJECT_DIR$/src/com/system/dao/MenuDao.java" />
-        <option value="$PROJECT_DIR$/src/com/system/service/MenuService.java" />
-        <option value="$PROJECT_DIR$/web/SystemManager/Menu/EditMenu.jsp" />
-        <option value="$PROJECT_DIR$/web/SystemManager/Menu/AddMenu.jsp" />
-        <option value="$PROJECT_DIR$/src/com/system/entity/Menu.java" />
-        <option value="$PROJECT_DIR$/src/com/system/servlet/MenuServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/system/dao/impl/MenuDaoImpl.java" />
-        <option value="$PROJECT_DIR$/web/logistics/index.jsp" />
-        <option value="$PROJECT_DIR$/web/SystemManager/Menu/MenuList.jsp" />
-        <option value="$PROJECT_DIR$/web/SystemManager/User/AddUser.jsp" />
         <option value="$PROJECT_DIR$/src/com/utils/JdbcUtil.java" />
         <option value="$PROJECT_DIR$/web/logistics/Equipment/AddSecurityGuardEquipment.jsp" />
         <option value="$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordList.jsp" />
@@ -306,8 +366,40 @@
         <option value="$PROJECT_DIR$/src/com/system/dao/impl/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/com/system/servlet/UserServlet.java" />
         <option value="$PROJECT_DIR$/web/logistics/info.jsp" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/DiaoBoDao.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/GoodsDao.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/OutStorageDao.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/PurchaseDeliverDao.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/PurchaseListOrderDao.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/StorageDao.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/SupplierDao.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/daoImpl/DiaoBoDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/daoImpl/GoodsDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/daoImpl/OutStorageDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/daoImpl/PurchaseDeliverDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/daoImpl/PurchaseListOrderDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/daoImpl/StorageDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/dao/daoImpl/SupplierDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/service/DiaoBoService.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/service/GoodsService.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/service/OutStorageService.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/service/PurchaseService.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/service/StorageService.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/service/SupplierService.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/servlet/DiaoBoServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/servlet/GoodsServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/servlet/OutStorageServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/servlet/PurchaseServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/servlet/StorageServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/storage/servlet/SupplierServlet.java" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -324,10 +416,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="196" />
-    <option name="y" value="59" />
-    <option name="width" value="1628" />
-    <option name="height" value="916" />
+    <option name="x" value="-26" />
+    <option name="y" value="14" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -339,8 +431,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -364,23 +455,12 @@
               <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="logistics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PropertyManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PropertyManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="logistics" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -393,6 +473,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554204696083" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -404,12 +485,11 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\课程\web\web项目\PropertyManagement\web\logistics\static" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\Menu" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\User" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\logistics\Equipment" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\课程\web\web项目\PropertyManagement\web\SystemManager" />
+      <recent name="E:\课程\web\web项目\PropertyManagement\web\logistics" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\Role" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\logistics" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.system.service" />
@@ -417,11 +497,12 @@
       <recent name="com.logistics.dao" />
       <recent name="com.logistics.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\课程\web\web项目\PropertyManagement\web\SystemManager" />
-      <recent name="E:\课程\web\web项目\PropertyManagement\web\logistics" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\Role" />
-      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\logistics" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ IDEA 2018.2.1\workspace\PropertyManagement\web" />
+      <recent name="D:\IntelliJ IDEA 2018.2.1\workspace\PropertyManagement\src\com" />
+      <recent name="E:\课程\web\web项目\PropertyManagement\web\logistics\static" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\Menu" />
+      <recent name="D:\中软国际\web\web项目\PropertyManagement\web\SystemManager\User" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -450,11 +531,11 @@
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_PropertyManagement" />
       </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="54696" />
       </RunnerSettings>
@@ -527,6 +608,8 @@
       <workItem from="1554012525069" duration="20543000" />
       <workItem from="1554080240204" duration="300000" />
       <workItem from="1554080892833" duration="18694000" />
+      <workItem from="1554177641250" duration="615000" />
+      <workItem from="1554191644591" duration="2444000" />
     </task>
     <task id="LOCAL-00001" summary="基本完成了后勤部的页面">
       <created>1553960869050</created>
@@ -553,17 +636,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56970000" />
+    <option name="totallyTimeSpent" value="60029000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="196" y="59" width="1628" height="916" extended-state="0" />
+    <frame x="-26" y="14" width="1386" height="788" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49794802" visible="true" weight="0.24550128" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49794802" visible="true" weight="0.25263953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" sideWeight="0.502052" side_tool="true" weight="0.24569537" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32831737" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49839056" weight="0.33944955" />
@@ -573,7 +658,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49785408" weight="0.27522936" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50160944" side_tool="true" weight="0.33944955" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
@@ -587,6 +672,9 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Maven" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20771313" />
@@ -651,20 +739,9 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="基本完成了后勤部的页面" />
@@ -673,353 +750,360 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改文件路径" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/utils/JdbcUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/eqeuipment">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/Equipment/AddSecurityGuardEquipment.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/FireIncident/FireIncidentList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="57" column="37" lean-forward="true" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskCompletion.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1134" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/OperatingRecord/EditOperatingRecord.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entity/Staff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="118" column="24" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/equipment">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/staff">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/system/servlet/UserServlet.java" />
+    <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/AddCleaningTask.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskByTaskId.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/logistics/Equipment/AddFireFightingEquipment.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/logistics/Equipment/EquipmentById.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/logistics/OperatingRecord/AddOperatingRecord.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordById.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/logistics/static/css/xadmin.css" />
     <entry file="file://$PROJECT_DIR$/src/com/utils/MD5Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="171">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/entity/MenuRole.java">
+    <entry file="file://$PROJECT_DIR$/src/com/utils/JdbcUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="171">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/xtgl_menu">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/index.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f9283fef-34ad-4761-99b6-2797f986f02c/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/com/storage/entity/Goods.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/DiaoBoDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="42" lean-forward="true" selection-start-column="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="114" column="55" lean-forward="true" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/static/js/xadmin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="176" column="32" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/Role/EditRole.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/Role/GrantRole.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/dao/impl/MenuRoleDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/dao/MenuRoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="50" />
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/service/MenuRoleService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/GoodsDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/servlet/RoleServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/OutStorageDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/User/EditUser.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/PurchaseDeliverDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" selection-start-line="7" selection-end-line="97" />
+        <state relative-caret-position="95">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/entity/User.java">
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/PurchaseListOrderDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-616">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/StorageDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/SupplierDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/daoImpl/DiaoBoDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/daoImpl/GoodsDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/daoImpl/OutStorageDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/daoImpl/PurchaseDeliverDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/daoImpl/PurchaseListOrderDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/daoImpl/StorageDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/dao/daoImpl/SupplierDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/entity/DiaoBo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/service/DiaoBoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/service/GoodsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/service/OutStorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/service/PurchaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/service/StorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/service/SupplierService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/servlet/DiaoBoServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="89" column="160" selection-start-line="89" selection-start-column="160" selection-end-line="89" selection-end-column="160" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/servlet/GoodsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="90" column="145" selection-start-line="90" selection-start-column="145" selection-end-line="90" selection-end-column="145" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/servlet/OutStorageServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/servlet/PurchaseServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-171">
+          <caret line="108" column="57" selection-start-line="108" selection-start-column="57" selection-end-line="108" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/servlet/StorageServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/servlet/SupplierServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/storage/util/JdbcUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/xtgl_menu_role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/xtgl_userrole">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/dao/RoleUserDao.java">
+    <entry file="file://$PROJECT_DIR$/src/com/storage/util/JsonUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        <state relative-caret-position="76">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/Role/RoleList.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/storage/util/StringUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+        <state relative-caret-position="95">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/User/UserList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="62" column="65" selection-start-line="62" selection-start-column="65" selection-end-line="62" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/xtgl_role_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/xtgl_role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/dao/impl/RoleUserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/service/RoleUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-          <folding>
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/entity/RoleUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/dao/impl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-          <folding>
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9283fef-34ad-4761-99b6-2797f986f02c/schema/property_management/table/xtgl_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/SystemManager/User/GiveUsersARole.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/servlet/UserServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="79" column="56" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/AddCleaningTask.jsp">
+    <entry file="file://$PROJECT_DIR$/web/Storage/static/db/newsdb_link.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/CleaningTask/CleaningTaskByTaskId.jsp">
+    <entry file="file://$PROJECT_DIR$/web/Storage/static/css/font.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/Equipment/AddFireFightingEquipment.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/Equipment/EquipmentById.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/OperatingRecord/AddOperatingRecord.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/OperatingRecord/OperatingRecordById.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.jsp">
+    <entry file="file://$PROJECT_DIR$/web/Storage/background/commons/info.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184" />
+        <state relative-caret-position="171">
+          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/logistics/static/css/xadmin.css">
+    <entry file="file://$PROJECT_DIR$/web/Storage/wuliao/DiaoBo/DiaoBo.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Storage/wuliao/Goods/Check.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-        </state>
+        <state relative-caret-position="-285" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Storage/wuliao/OutStorage/OutStorage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-513" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Storage/wuliao/OutStorage/QueryLimitDate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-570" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Storage/wuliao/Purchase/PurchaseDeliver.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-171" />
       </provider>
     </entry>
   </component>
