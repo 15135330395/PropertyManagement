@@ -22,7 +22,7 @@
         <div class="main_left"></div>
         <div class="main_right">
             <div class="right_title">用户登录</div>
-            <form>
+            <form action="#" method="post"  onsubmit="return false">
                 <div class="username">
                     <img src="login/img/username.png" alt="">
                     <input id="username" type="text" placeholder="请输入用户名">
@@ -52,6 +52,7 @@
     $('form').submit(function () {
         var username = $('#username').val();
         var password = $('#password').val();
+        alert(username + " " + password)
         $.ajax({
             type: "POST",//方法类型
             url: "<%=request.getContextPath()%>/UserServlet",//url

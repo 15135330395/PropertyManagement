@@ -112,7 +112,6 @@ public class UserServlet extends HttpServlet {
                     session.setAttribute("user", user);
                     MenuService menuService = new MenuService();
                     List<Menu> menuList = menuService.findMenuByUserId(user.getUserId());
-                    System.out.println(menuList.get(0).getImg()+" "+menuList.get(0).getMenuName());
                     request.getSession().setAttribute("menus", menuList);
                     response.getWriter().print(200);
                 } else {
