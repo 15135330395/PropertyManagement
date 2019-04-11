@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.hibernate.entity">
+
+    <class name="Student" table="student" dynamic-insert="true">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" type="java.lang.String" column="name"/>
+        <property name="birthday" type="java.util.Date" />
+
+        <many-to-one name="classes" column="c_id" class="com.hibernate.entity.Classes" cascade="save-update" />
+
+    </class>
+
+</hibernate-mapping>
