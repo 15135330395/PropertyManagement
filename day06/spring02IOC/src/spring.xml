@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="com.spring.entity.User">
+        <property name="id" value="1"></property>
+        <property name="name" value="zhangsan"></property>
+        <property name="age" value="20"></property>
+    </bean>
+
+    <bean id="javaWork" class="com.java.JavaWork">
+       <!--value是设置基本数据类型 ref是设置对象的-->
+        <property name="tester" ref="zhangsan"></property>
+
+    </bean>
+
+    <bean id="zhangsan" class="com.java.ZhangSan"></bean>
+    <bean id="lisi" class="com.java.LiSi"></bean>
+
+</beans>

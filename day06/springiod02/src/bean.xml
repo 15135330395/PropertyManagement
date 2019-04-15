@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean注入
+     xmlns:p="http://www.springframework.org/schema/p" -->
+    <bean id="dog" class="com.spring.entity.Dog" p:name="旺财"></bean>
+    <bean id="person1" class="com.spring.entity.Person">
+        <property name="name" value="zhangsan"></property>
+        <property name="age" value="10"></property>
+        <property name="dog" ref="dog"></property>
+    </bean>
+
+<!--内部bean注入-->
+    <bean id="person2" class="com.spring.entity.Person">
+        <property name="name" value="zhangsan2"></property>
+        <property name="age" value="12"></property>
+        <property name="dog">
+            <bean id="dog" class="com.spring.entity.Dog" p:name="豆豆"></bean>
+
+        </property>
+    </bean>
+<!--注入null-->
+    <bean id="person3" class="com.spring.entity.Person">
+        <property name="name" value="zhangsan3"></property>
+        <property name="age" value="13"></property>
+        <property name="dog">
+            <null></null>
+        </property>
+    </bean>
+<!--级联注入  必须先创建对象 在Person类中Dog属性上创建dog对象-->
+     <bean id="person4" class="com.spring.entity.Person">
+         <property name="age" value="4"></property>
+         <property name="name" value="zhangsan4"></property>
+         <property name="dog.name" value="花猪"></property>
+     </bean>
+<!--集合 注入-->
+    <!--list集合 属性名 addr-->
+     <bean id="person5" class="com.spring.entity.Person" >
+         <property name="name" value="zhangsan5"></property>
+         <property name="age" value="5"></property>
+         <property name="addr">
+             <list>
+                 <value>太原小店</value>
+                 <value>太原迎泽</value>
+                 <value>太原西山</value>
+                 <value>太原西山</value>
+             </list>
+         </property>
+
+     </bean>
+
+ <!--set集合-->
+    <bean id="person6" class="com.spring.entity.Person">
+        <property name="name" value="6"></property>
+        <property name="age" value="6"></property>
+        <property name="love">
+            <set>
+                <value>太原小店</value>
+                <value>太原迎泽</value>
+                <value>太原西山</value>
+                <value>太原西山</value>
+            </set>
+        </property>
+
+    </bean>
+<!--map集合注入-->
+    <bean id="person7" class="com.spring.entity.Person">
+        <property name="age" value="7"></property>
+        <property name="name" value="7"></property>
+        <property name="address">
+            <map>
+                <entry value="太原"><key><value>山西</value></key></entry>
+                <entry value="青岛"><key><value>山东</value></key></entry>
+                <entry><key><value>山东</value></key>
+                <value>烟台</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!--properties属性-->
+    <bean id="person8" class="com.spring.entity.Person">
+     <property name="name" value="8"></property>
+        <property name="age" value="8"></property>
+        <property name="properties">
+            <!--<props value-type="driverClassName">com.mysql.jdbc.Driver</props>-->
+            <props>
+                <prop key="driverClassName">com.mysql.jdbc.Driver</prop>
+                <prop key="url">jdbc:mysq://172.16.4.18:3306/test</prop>
+                <prop key="username">root</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
